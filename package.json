@@ -1,7 +1,7 @@
 {
-  "name": "nuxt-pwa-sample",
+  "name": "nuxt-pwa-template",
   "version": "1.0.0",
-  "description": "Nuxt.js project",
+  "description": "nuxt-pwa-template",
   "author": "koudaiishigame <kira5052@gmail.com>",
   "private": true,
   "scripts": {
