@@ -13,6 +13,7 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  css: ['@/assets/scss/index.scss'],
   /*
   ** Customize the progress bar color
   */
@@ -33,6 +34,20 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+
+      config.module.rules = config.module.rules.map(rule => {
+        if (rule.loader === "url-loader" && rule.test
+            .toString()
+            .includes("svg")) {
+          return { ...rule, test: /\.(png|jpe?g|gif)$/ };
+        }
+        return rule;
+      });
+
+      config.module.rules.push({
+        test: /\.svg$/,
+        loader: "vue-svg-loader"
+      });
     }
   },
   manifest: {
@@ -43,6 +58,6 @@ module.exports = {
     ['@nuxtjs/pwa',{ icon: false }]
   ],
   workbox: {
-    dev: true
+    dev: false
   }
 }

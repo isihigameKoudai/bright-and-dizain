@@ -3,6 +3,7 @@ node_modules
 
 # logs
 npm-debug.log
+yarn-error.log
 
 # Nuxt build
 .nuxt
@@ -12,3 +13,10 @@ dist
 
 # Service Worker
 sw.*
+
+# others
+build/
+dest/
+temp/
+.ds_store
+
