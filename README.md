@@ -1,6 +1,6 @@
 # nuxt-pwa-sample
 
-> Nuxt.js project
+> Nuxt.js project SPA+SSR+PWA Applications
 
 ## Build Setup
 
