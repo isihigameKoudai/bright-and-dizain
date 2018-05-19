@@ -1,8 +1,8 @@
 {
-  "name": "nuxt-pwa-template",
+  "name": "BrightAndDezain",
   "version": "1.0.0",
-  "description": "nuxt-pwa-template",
-  "author": "koudaiishigame <kira5052@gmail.com>",
+  "description": "Bright&dezain web site",
+  "author": "koudaiishigame <koudaiishigame@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "nuxt --spa",
@@ -14,10 +14,12 @@
   },
   "dependencies": {
     "@nuxtjs/pwa": "^2.0.8",
+    "mime": "^1.6.0",
     "nuxt": "^1.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
+    "debug": "^3.1.0",
     "eslint": "^4.15.0",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
