@@ -9,7 +9,7 @@ yarn-error.log
 .nuxt
 
 # Nuxt generate
-dist
+dist/
 
 # Service Worker
 sw.*
@@ -20,4 +20,6 @@ dest/
 temp/
 .ds_store
 assets/
+static/img/
+static/svg/
 

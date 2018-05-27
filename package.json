@@ -1,5 +1,5 @@
 {
-  "name": "BrightAndDezain",
+  "name": "bright-and-dezain",
   "version": "1.0.0",
   "description": "Bright&dezain web site",
   "author": "koudaiishigame <koudaiishigame@gmail.com>",
@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
+    "css-loader": "^0.28.11",
     "debug": "^3.1.0",
     "eslint": "^4.15.0",
     "eslint-friendly-formatter": "^3.0.0",
