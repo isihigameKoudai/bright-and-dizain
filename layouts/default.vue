@@ -141,7 +141,7 @@ html {
 
 .fixed-humburegr {
   top: 20px;
-  left: 20px;
+  right: 40px;
 }
 
 .fixed-content {

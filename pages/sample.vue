@@ -7,7 +7,10 @@
     <LabelNomal content="いつものテキスト" />
     <image-title isDark="true" />
     <image-title />
-    <text-box placeHolder="Name" row=5 />
+    <text-box placeHolder="Name" row=5 width="450" />
+    <text-area placeHolder="Message" width="450"/>
+    <image-box path="/img/webApp.JPG" :shadow="true" />
+    <image-box-thumbnail path="/img/webApp.JPG" />
   </section>
 </template>
 
@@ -19,6 +22,9 @@ import LabelSection from '../components/atoms/LabelSection';
 import LabelNomal from '../components/atoms/LabelNomal';
 import ImageTitle from '../components/atoms/ImageTitle';
 import TextBox from '../components/atoms/TextBox';
+import TextArea from '../components/atoms/TextArea';
+import ImageBox from '../components/atoms/ImageBox';
+import ImageBoxThumbnail from '../components/atoms/ImageBoxThumbnail';
 
 export default {
   components: {
@@ -27,7 +33,10 @@ export default {
     LabelSection,
     LabelNomal,
     ImageTitle,
-    TextBox
+    TextBox,
+    TextArea,
+    ImageBox,
+    ImageBoxThumbnail
   }
 }
 

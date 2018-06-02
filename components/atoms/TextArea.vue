@@ -1,9 +1,9 @@
 <template>
-  <input 
-    type="text"
-    class="text-box"
+  <textarea 
+    class="text-area"
     :placeholder="placeHolder"
     :style="contentWidth"
+    rows="5"
   />
 </template>
 <script>
@@ -18,11 +18,13 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.text-box {
+.text-area {
+  height: 300px;
   padding: 10px 15px;
   border: none;
   background-color: #fff;
   font-size: 18px;
+  line-height: 1.2;
   filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.2));
   outline: 0;
 
@@ -31,7 +33,6 @@ export default {
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
-	line-height: 39.6px;
   letter-spacing: 1px;
 
   &::-webkit-input-placeholder {

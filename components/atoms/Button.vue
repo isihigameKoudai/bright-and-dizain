@@ -54,7 +54,7 @@ export default {
     transform: rotate(-45deg);
   }
 
-  &:active {
+  &:hover {
     background-color: #fff;
     color: #070B10;
     outline: 0;

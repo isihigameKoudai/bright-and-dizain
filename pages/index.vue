@@ -1,7 +1,7 @@
 <template>
-  <div class="position-fixed fixed-content">
-    <img src="/img/mainImage.JPG" alt="" width="100%">
-    <img src="/svg/mainTitleBlack.svg" alt="" width="200px" style="position:absolute; top:50%; left: 200px;">
+  <div  class="top-container">
+    <img class="main-visual" src="/img/mainImageSmall.JPG" alt="mainVisual"/>
+    <img class="title-position" src="/svg/mainTitleWhite.svg" alt="" width="200px"  />
   </div>
 </template>
 
@@ -9,9 +9,24 @@
 
 </script>
 
-<style>
-.position-title {
-  margin-top: 80px;
-  text-align: center;
+<style lang="scss" scoped>
+.top-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
+.title-position {
+  position: absolute;
+  top: 50%;
+  left: 10vw;
+  transform: translate3d(0,-50%,0);
+}
+
+.main-visual {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  filter: brightness(95%) opacity(83%);
+}
+
 </style>
