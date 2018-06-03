@@ -26,7 +26,7 @@
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  filter: brightness(95%) opacity(83%);
+  filter: brightness(97%) opacity(83%);
 }
 
 </style>

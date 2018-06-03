@@ -3,7 +3,7 @@
     :src="path"
     alt=""
     class="image-box"
-    :class="{'is-shadow': shadow}"
+    :class="{'is-shadow': shadow, 'small': isSmall}"
   />
 </template>
 <script>
@@ -11,6 +11,10 @@ export default {
   props: {
     path: String,
     shadow: {
+      type: Boolean,
+      default: false
+    },
+    isSmall: {
       type: Boolean,
       default: false
     }
@@ -27,6 +31,11 @@ export default {
   width: 480px;
   height: 320px;
   object-fit: cover;
+}
+
+.image-box.small {
+  width: 320px;
+  height: 240px;
 }
 
 .is-shadow {

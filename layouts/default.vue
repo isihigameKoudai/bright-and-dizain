@@ -25,7 +25,7 @@ export default {
 
 </script>
 
-<style>
+<style lang="scss">
 
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -135,6 +135,17 @@ html {
   margin: 0;
 }
 
+.wrapper {
+  width: 960px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (max-width: 768px){
+    width: 100vw;
+  }
+}
+
 .position-fixed {
   position: fixed;
 }
@@ -149,7 +160,40 @@ html {
 }
 
 .position-title {
-  margin-top: 80px;
+  margin-top: 60px;
   text-align: center;
 }
+
+.label-nomal {
+  position: relative;
+  font-size: 16px;
+  color: #402C2C;
+  font-family: "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 33px;
+  letter-spacing: 2.5px;
+}
+
+/*
+Utility Styles
+*/
+
+.mt10 {margin-top: 10px;}
+.mt20 {margin-top: 20px;}
+.mt30 {margin-top: 30px;}
+.mt40 {margin-top: 40px;}
+.mt50 {margin-top: 50px;}
+.mt60 {margin-top: 60px;}
+.mt70 {margin-top: 70px;}
+.mt80 {margin-top: 80px;}
+.mt90 {margin-top: 90px;}
+.mt100 {margin-top: 100px;}
+
+.mb100{margin-bottom: 100px;}
+
+.taC {text-align: center;}
+.taR {text-align: right;}
+.taL {text-align: left;}
 </style>

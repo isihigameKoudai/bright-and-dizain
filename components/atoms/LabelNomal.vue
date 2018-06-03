@@ -1,6 +1,6 @@
 <template>
   <p 
-    class="label-normal"
+    class="label-nomal"
     :style="exportFontSize"
   >{{content}}</p>
 </template>
@@ -17,7 +17,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 
-.label-normal {
+.label-nomal {
   position: relative;
   font-size: 16px;
   color: #402C2C;
@@ -25,7 +25,7 @@ export default {
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
-	line-height: 39.6px;
-  letter-spacing: 1px;
+	line-height: 36.6px;
+  letter-spacing: 2.5px;
 }
 </style>
