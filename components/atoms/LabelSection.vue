@@ -1,7 +1,5 @@
 <template>
-  <div class="label-section">
-    <h2>{{content}}</h2>
-  </div>
+  <h2 class="label-section">{{content}}</h2>
 </template>
 <script>
 export default {

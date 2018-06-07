@@ -27,10 +27,6 @@ export default {
   background-repeat: no-repeat;
   filter: brightness(90%) opacity(80%);
 
-  @media screen and (max-width: 768px){
-    height: 100vh;
-  }
-
   p {
     position: absolute;
     display: block;
@@ -39,12 +35,17 @@ export default {
     width: auto;
     height: auto;
     color: #fff;
+    text-align: center;
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.8);
     transform: translate3d(-50%,-50%,0);
     font-size: 68px;
     font-family: Cambria, Georgia, serif;
     font-style: normal;
     font-variant: normal;
+  }
+
+  @media screen and (max-width: 768px){
+    height: 100vh;
   }
 }
 </style>

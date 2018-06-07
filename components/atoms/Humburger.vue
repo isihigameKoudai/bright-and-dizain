@@ -36,15 +36,18 @@ export default {
   height: 56px;
   background:transparent;
   z-index: 110;
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.3));
+  }
 
   > div {
     position: absolute;
     width: 56px;
     height: 3px;
     transition: all 0.2s;
-
     background-color: #000;
-    filter: none;;
 
     &:first-child {
       top: 15px;

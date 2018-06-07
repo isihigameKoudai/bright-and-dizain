@@ -25,13 +25,13 @@ export default {
   font-size: 17px;
   font-weight: bold;
   font-family: "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
-  filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, .2));
+  outline: 0;
 
   color: #fff;
   background-color: #070B10;
   border: solid 4px #070B10;
-
-
+  transition: 0.2s all ease;
+  filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, .2));
 
   &::before {
     position: absolute;
@@ -58,7 +58,7 @@ export default {
   &:hover {
     background-color: #fff;
     color: #070B10;
-    outline: 0;
+    filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, .6));
 
     &::before {
       background-color: #070B10;

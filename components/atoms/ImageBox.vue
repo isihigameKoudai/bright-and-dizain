@@ -38,6 +38,13 @@ export default {
   height: 240px;
 }
 
+@media screen and (max-width: 768px){
+  .image-box,.image-box.small {
+    width: 100vw;
+    height: auto;
+  }
+}
+
 .is-shadow {
   filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.2));
 }

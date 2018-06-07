@@ -180,6 +180,8 @@ html {
 Utility Styles
 */
 
+.fz-24 {font-size: 24px;}
+
 .mt10 {margin-top: 10px;}
 .mt20 {margin-top: 20px;}
 .mt30 {margin-top: 30px;}
@@ -192,8 +194,21 @@ Utility Styles
 .mt100 {margin-top: 100px;}
 
 .mb100{margin-bottom: 100px;}
+.pb100{padding-bottom: 100px;}
 
 .taC {text-align: center;}
 .taR {text-align: right;}
 .taL {text-align: left;}
+
+.sp-dn {
+  @media screen and (max-width: 768px) {
+    display: none !important;
+  }
+}
+
+.pc-dn {
+  @media screen and (min-width: 769px){
+    display: none !important;
+  }
+}
 </style>
