@@ -2,23 +2,29 @@
   <textarea 
     class="text-area"
     :placeholder="placeHolder"
-    :style="contentWidth"
     rows="5"
+    v-model="text"
+    @blur="updateContactMessage(text)"
   />
 </template>
 <script>
+import {mapMutations} from 'vuex';
+
 export default {
-  props: ['placeHolder','width'],
-  computed: {
-    contentWidth() {
-      const contentSize = this.width ? this.width : 300;
-      return 'width: ' + contentSize + 'px';
+  props: ['placeHolder'],
+  data() {
+    return {
+      text: '',
     }
+  },
+  methods: {
+    ...mapMutations(['updateContactMessage']),
   }
 }
 </script>
 <style lang="scss" scoped>
 .text-area {
+  width: 380px;
   height: 300px;
   padding: 10px 15px;
   border: none;
@@ -27,6 +33,7 @@ export default {
   line-height: 1.2;
   filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.2));
   outline: 0;
+  resize: none;
 
   color: #402C2C;
   font-family: "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
@@ -37,6 +44,10 @@ export default {
 
   &::-webkit-input-placeholder {
     color: #C3BFBF; 
+  }
+
+  @media screen and (max-width: 768px){
+    width: calc(100% - 100px);
   }
 }
 </style>

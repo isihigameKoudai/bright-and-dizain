@@ -7,20 +7,20 @@
         <label-section class="mt40" content="Koudai Ishigame"/>
       </div>
       <div class="area-profile-right">
-        <p class="label-nomal">1994年6月28日生まれ、青森県出身・東京都在住。
+        <p class="label-nomal">1994年6月28日生まれ、<br class="pc-dn"/>青森県出身・東京都在住。
           <br/>プログラミングと音楽が好きで、
-          <br/>学生時代にはプレーヤーとSNSを統合させた音楽アプリや
-          <br/>調理工程と材料を限定した簡易型料理レシピアプリをリリース。
+          <br/>学生時代にはプレーヤーと<br class="pc-dn"/>SNSを統合させた音楽アプリや
+          <br/>調理工程と材料を限定した<br class="pc-dn"/>簡易型料理レシピアプリをリリース。
         </p>
-        <p class="label-nomal mt30">大学時代に大手家電量販店での販売員の仕事でカメラと出会う。
+        <p class="label-nomal mt30">大学時代に大手家電量販店での<br class="pc-dn"/>販売員の仕事でカメラと出会う。
           <br/>たまたま撮った写真を機に
-          <br/>知人がフリーペーパーのモデルに挑戦してくれたことをキッカケに、
+          <br/>知人がフリーペーパーのモデルに<br class="pc-dn"/>挑戦してくれたことをキッカケに、
           <br/>本格的に人物・ポートレート写真を始める。
         </p>
-        <p class="label-nomal mt30">現在はエンジニア兼フォトグラファーとして都内で活動中。
-          <br/>「作り込み」と呼ばれる、コンセプトに応じた背景や衣装などを用いて
+        <p class="label-nomal mt30">現在はエンジニア兼フォトグラファー<br class="pc-dn"/>として都内で活動中。
+          <br/>「作り込み」と呼ばれる、コンセプトに応じた<br class="pc-dn"/>背景や衣装などを用いて
           <br/>世界観を描き出す分野の写真を得意とし、
-          <br/>モデルの撮影だけでなく音楽CDのアルバムジャケットなど
+          <br/>モデルの撮影だけでなく<br class="pc-dn"/>音楽CDのアルバムジャケットなど
           <br/>アーティスティックな撮影もこなす。
         </p>
         <p class="label-nomal mt30">その他、Webメディアへの写真提供や
@@ -61,7 +61,7 @@
         />
         <logo-media
           path="/img/LogoGithub.png"
-          url="https://github.com/isihigameKoudai"
+          link="https://github.com/isihigameKoudai"
         />
       </div>
       <p class="label-nomal mt20">
@@ -118,8 +118,13 @@ export default {
   height: auto;
   padding-left: 10px;
   padding-right: 10px;
+  box-sizing: border-box;
   @media screen and (max-width: 768px){
     width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 }
 

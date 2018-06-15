@@ -1,18 +1,39 @@
 <template>
   <button 
     class="btn"
-    :class="{'disable': disable}"
-    :disabled="disable"
+    :class="{'disable': isDisable}"
+    :disabled="isDisable"
+    @click="sendEmail(contact.name)"
   >{{title}}</button>
 </template>
 <script>
+import {mapState, mapActions} from 'vuex';
+
 export default {
-  props: ['title'],
+  props: {
+    title: {
+      type: String,
+      default: ''
+    },
+    btnType: {
+      type: String,
+      default: ''
+    }
+  },
   data() {
     return {
       disable: false,
     }
   },
+  computed: {
+    ...mapState(['contact']),
+    isDisable() {
+      return this.btnType === 'submit' && (!this.contact.name || !this.contact.email || !this.contact.phone);
+    }
+  },
+  methods: {
+    ...mapActions(["sendEmail"]),
+  }
 }
 </script>
 <style lang="scss" scoped>
