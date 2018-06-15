@@ -15,7 +15,8 @@ export const state = () => ({
     phone: '',
     message: ''
   },
-  imagePath: ''
+  imagePath: '',
+
 });
 
 export const mutations = {
@@ -53,7 +54,14 @@ export const actions = {
   },
   sendEmail({commit},payload) {
     // Send Succecc
+
     console.log(payload);
+    commit("updateContactCompany", "");
+    commit("updateContactName", "");
+    commit("updateContactEmail", "");
+    commit("updateContactPhone", "");
+    commit("updateContactMessage", "");
+    
     //Send Failed
   }
 };

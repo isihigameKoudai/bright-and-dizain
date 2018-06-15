@@ -4,14 +4,16 @@
       class="modal-wrap"
     >
       <modal-image v-if="modal.modalType === 'image'"/>
-      <modal-menu v-else/>
+      <modal-complet-email v-else-if="modal.modalType === 'email'"/>
+      <modal-menu v-else />
     </div>   
   </transition> 
 </template>
 <script>
 import ModalMenu from '../organisms/ModalMenu';
 import ModalImage from '../organisms/ModalImage';
-import { mapState } from 'vuex';
+import ModalCompletEmail from '../organisms/ModalCompleteEmail';
+import { mapState, mapMutations } from 'vuex';
 
 export default {
   computed: {
@@ -19,7 +21,8 @@ export default {
   },
   components: {
     ModalMenu,
-    ModalImage
+    ModalImage,
+    ModalCompletEmail
   }
 }
 

@@ -3,11 +3,11 @@
     class="btn"
     :class="{'disable': isDisable}"
     :disabled="isDisable"
-    @click="sendEmail(contact.name)"
+    @click="pushButton()"
   >{{title}}</button>
 </template>
 <script>
-import {mapState, mapActions} from 'vuex';
+import {mapState, mapActions, mapMutations} from 'vuex';
 
 export default {
   props: {
@@ -33,6 +33,22 @@ export default {
   },
   methods: {
     ...mapActions(["sendEmail"]),
+    ...mapMutations(["updateModal"]),
+    pushButton() {
+      switch (this.btnType) {
+        case 'GoTop':
+          this.updateModal();
+          break;
+          
+        case 'submit':
+          this.sendEmail();
+          this.updateModal('email');
+          break;
+    
+        default:
+          break;
+      }
+    }
   }
 }
 </script>
