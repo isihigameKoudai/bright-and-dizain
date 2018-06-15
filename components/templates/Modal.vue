@@ -3,16 +3,23 @@
     <div
       class="modal-wrap"
     >
-      <modal-menu />
+      <modal-image v-if="modal.modalType === 'image'"/>
+      <modal-menu v-else/>
     </div>   
   </transition> 
 </template>
 <script>
 import ModalMenu from '../organisms/ModalMenu';
+import ModalImage from '../organisms/ModalImage';
+import { mapState } from 'vuex';
 
 export default {
+  computed: {
+    ...mapState(['modal']),
+  },
   components: {
     ModalMenu,
+    ModalImage
   }
 }
 
@@ -23,8 +30,7 @@ export default {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: #1D1D24;
-  opacity: 0.9;
+  background: rgba($color: #1D1D24, $alpha: 0.9);
   z-index: 100;
 
   & > * {

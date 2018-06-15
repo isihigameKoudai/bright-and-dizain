@@ -2,7 +2,7 @@
   <div>
     <humburger class="fixed-humburegr" />
     <Modal 
-      v-if="modal"
+      v-if="modal.mode"
       class="positiond-fixed fixed-content"
     />
     <nuxt　/>

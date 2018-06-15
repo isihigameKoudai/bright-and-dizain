@@ -4,19 +4,28 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export const state = () => ({
-  modal: false,
+  modal: {
+    mode: false,
+    modalType: ''
+  },
   contact: {
     company:'',
     name: '',
     email: '',
     phone: '',
     message: ''
-  }
+  },
+  imagePath: ''
 });
 
 export const mutations = {
   updateModal(state,payload) {
-    state.modal = !state.modal;
+    if (!state.modal.mode) {
+      state.modal.modalType = payload;
+    } else {
+      state.modal.modalType = "";
+    }
+    state.modal.mode = !state.modal.mode;
   },
   updateContactCompany(state,payload) {
     state.contact.company = payload;
@@ -33,6 +42,9 @@ export const mutations = {
   updateContactMessage(state, payload) {
     state.contact.message = payload;
   },
+  updateImagePath(state,payload) {
+    state.imagePath = payload;
+  }
 };
 
 export const actions = {

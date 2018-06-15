@@ -1,7 +1,7 @@
 <template>
   <div 
     class="btn-humburger"
-    :class="{'is-active on-modal': modal}"
+    :class="{'is-active on-modal': modal.mode}"
     @click="updateModal()"
   >
     <div></div>

@@ -6,6 +6,7 @@
     :placeholder="placeHolder"
     v-model="text"
     @input="outOfKey()"
+    @focus="onFocus()"
   />
 </template>
 <script>
@@ -25,21 +26,18 @@ export default {
   data() {
     return {
       text: '',
-      isErr: false
+      isFocus: false
     }
-  },
-  mounted() {
-    this.text = this.value;
   },
   computed: {
     ...mapState(['contact']),
     contactRule() {
       if (this.contentType === 'name') {
-        return !this.contact.name ? true : false;
+        return this.isFocus && !this.contact.name ? true : false;
       } else if (this.contentType === 'email') {
-        return !this.contact.email ? true : false;
+        return this.isFocus && !this.contact.email ? true : false;
       } else if (this.contentType === 'phone') {
-        return !this.contact.phone ? true : false;
+        return this.isFocus && !this.contact.phone ? true : false;
       } else {
         return false;
       }
@@ -67,6 +65,9 @@ export default {
         default:
           break;
       }
+    },
+    onFocus() {
+      this.isFocus = true;
     }
   }
 }

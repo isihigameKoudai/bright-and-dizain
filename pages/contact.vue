@@ -10,8 +10,8 @@
       </p>
       <p class="mt30">
         <text-box
-        placeHolder="Name"
-        contentType='name'
+          placeHolder="Name"
+          contentType='name'
       />
       </p>
       <p class="mt30">
@@ -61,15 +61,6 @@ import Button from '../components/atoms/Button';
 import LogoMedia from '../components/atoms/LogoMedia';
 
 export default {
-  data() {
-    return {
-      companyTxt: 'aaaaa',
-      nameTxt: '',
-      mailTxt: '',
-      PhoneTxt: '',
-      MessageTxt: ''
-    }
-  },
   components: {
     LabelTitle,
     TextBox,

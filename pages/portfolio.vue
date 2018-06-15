@@ -2,9 +2,9 @@
   <div class="pb100">
     <label-title class="position-title" title="Portfolio"/>
     <div class="wrapper position-title flex-con">
-      <image-box-thumbnail 
-        v-for="image in imageArr"
-        :key="image"
+      <image-box-thumbnail
+        v-for="(image,index) in imageArr"
+        :key="index"
         :path="image.url"
       />
     </div>
@@ -19,8 +19,8 @@ export default {
   data() {
     return {
       imageArr: [
-        {url: ''},
-        {url: ''},
+        {url: '/img/mainImageSmall.jpg'},
+        {url: '/img/sample.jpg'},
         {url: ''},
         {url: ''},
         {url: ''},

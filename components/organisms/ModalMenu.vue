@@ -56,11 +56,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-
-
 .list-menu {
   position: relative;
-  
   filter: drop-shadow(3px 3px 2px rgba(0,0,0,0.9));
   text-align: center;
   opacity: 1.0;
