@@ -43,10 +43,6 @@ export default {
         {
           title: 'Contact',
           path: '/contact'
-        },
-        {
-          title: 'sample',
-          path: '/sample'
         }
       ]
   },

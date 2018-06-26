@@ -51,11 +51,16 @@ module.exports = {
       });
     }
   },
-  manifest: {
-    name: "project-name",
-    lang: "ja"
-  },
   modules: [["@nuxtjs/pwa", { icon: false }]],
+  manifest: {
+    name: "BrightAndDizain",
+    lang: "ja",
+    short_name: "bnd",
+    title: "Briht&dizain",
+    "og:title": "Brnriht&dizain",
+    description: "My portfolio site. Please enjoy!",
+    "og:description": ""
+  },
   workbox: {
     dev: false
   }
