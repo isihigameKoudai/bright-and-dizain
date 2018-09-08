@@ -2,7 +2,7 @@
   <div
     class="image-box"
     :style="{ backgroundImage: 'url('+ imagePath +')' }"
-    @click="updateImagePath(path); updateModal('image');"
+    @click="$emit('click')"
     ></div>
 </template>
 <script>
@@ -12,18 +12,13 @@ export default {
   props: {
     path: {
       type: String,
+      default: '/img/NonThumbnail.png'
     }
   },
   computed: {
-    toggleShadow() {
-      return this.shadow ? 'shadow' : '';
-    },
     imagePath() {
       return this.path ? this.path : '/img/NonThumbnail.png';
     }
-  },
-  methods: {
-    ...mapMutations(['updateModal','updateImagePath']),
   }
 }
 </script>

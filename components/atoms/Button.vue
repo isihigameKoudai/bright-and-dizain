@@ -8,6 +8,7 @@
 </template>
 <script>
 import {mapState, mapActions, mapMutations} from 'vuex';
+import api from '../../utils/api';
 
 export default {
   props: {
@@ -48,6 +49,16 @@ export default {
         default:
           break;
       }
+    },
+    test() {
+      api
+        .get('/api/v2/users',{})
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((e)=>{
+          console.log(e);
+        });
     }
   }
 }

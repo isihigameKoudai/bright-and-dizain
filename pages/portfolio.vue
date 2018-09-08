@@ -1,19 +1,20 @@
 <template>
-  <div class="pb100">
-    <label-title class="position-title" title="Portfolio"/>
+  <default-view title="Portfolio">
     <div class="wrapper position-title flex-con">
       <image-box-thumbnail
         v-for="(image,index) in imageArr"
         :key="index"
         :path="image.url"
+        @click="updateImagePath(image.url); updateModal('image');"
       />
     </div>
-  </div>
+  </default-view>
 </template>
 
 <script>
-import LabelTitle from '../components/atoms/LabelPageTop';
-import ImageBoxThumbnail from '../components/atoms/ImageBoxThumbnail';
+import DefaultView from '@components/templates/DefaultView';
+import ImageBoxThumbnail from '@components/atoms/ImageBoxThumbnail';
+import { mapMutations } from 'vuex';
 
 export default {
   data() {
@@ -38,8 +39,11 @@ export default {
     }
   },
   components: {
-    LabelTitle,
+    DefaultView,
     ImageBoxThumbnail
+  },
+  methods: {
+    ...mapMutations(['updateModal','updateImagePath'])
   }
 }
 </script>

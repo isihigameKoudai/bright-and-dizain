@@ -5,12 +5,12 @@
 </template>
 <script>
 export default {
-  props: ['title'],
-  data() {
-    return {
-      disable: false,
+  props: {
+    title: {
+      type: String,
+      default: 'None'
     }
-  },
+  }
 }
 </script>
 <style lang="scss" scoped>

@@ -1,29 +1,19 @@
 <template>
   <div 
     class="btn-humburger"
-    :class="{'is-active on-modal': modal.mode}"
-    @click="updateModal()"
+    :class="{'is-active on-modal': isActive}"
+    @click="$emit('click')"
   >
     <div></div>
     <div></div>
   </div>
 </template>
 <script>
-import { mapState, mapMutations} from 'vuex';
-
 export default {
-  data() {
-    return {
-      isActive: false,
-    }
-  },
-  computed: {
-    ...mapState(['modal']),
-  },
-  methods: {
-    ...mapMutations(['updateModal']),
-    pushHumburger() {
-      this.isActive = !this.isActive;
+  props: {
+    isActive: {
+      type: Boolean,
+      default: false
     }
   }
 }

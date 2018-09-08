@@ -1,6 +1,5 @@
 <template>
-  <div class="pb100">
-    <label-title class="position-title" title="Profile"/>
+  <default-view title="Contact">
     <section class="wrapper mt90">
       <div class="area-profile-left">
         <image-circle class="position-img-profile" path="/img/ProfileImage.jpg" />
@@ -41,6 +40,12 @@
     <section class="position-title">
       <label-section content="SNS & Media"/>
       <div class="logo-wrapper mt40">
+        <!-- <logo-media 
+          v-for="(social, i) in socials"
+          :key="i"
+          :path="social.imagePath"
+          :link="social.link"
+        /> -->
         <logo-media
           path="/svg/LogoFacebook.svg"
           link="https://www.facebook.com/koudai.ishigame"
@@ -65,24 +70,60 @@
         />
       </div>
       <p class="label-nomal mt20">
-        <a class="link-nomal" target="_blank" href="https://oneeyeland.com/member/member_portfolio.php?pgrid=107158">OneEyeLand</a> /
-        <a class="link-nomal" target="_blank" href="https://1x.com/member/koudaiishigame">1X.com</a> /
-        <a class="link-nomal" target="_blank" href="http://www.vogue.it/photovogue/myportfolio/?id=0B9D2B3B-3F81-41B4-9866-B0A3BC03CF14">PhotoVogue</a> /
-        <a class="link-nomal" target="_blank" href="https://valu.is/kodai2100">VALU</a>
+        <a 
+          v-for="(media, i) in medias"
+          :key="i"
+          :href="media.link"
+          class="link-nomal"
+        >{{media.title}}</a>
       </p>
     </section>
-  </div>
+  </default-view>
 </template>
 
 <script>
-import LabelTitle from '../components/atoms/LabelPageTop';
-import ImageCircle from '../components/atoms/ImageCircle';
-import LabelSection from '../components/atoms/LabelSection';
-import LogoMedia from '../components/atoms/LogoMedia';
+import DefaultView from '@components/templates/DefaultView';
+
+import ImageCircle from '@components/atoms/ImageCircle';
+import LabelSection from '@components/atoms/LabelSection';
+import LogoMedia from '@components/atoms/LogoMedia';
 
 export default {
+  data() {
+    return {
+      socials: [{
+				imagePath: '/svg/LogoFacebook.svg',
+				link: 'https://www.facebook.com/koudai.ishigame'
+			},{
+				imagePath: '/img/LogoTwitter.png',
+				link: 'https://twitter.com/TVK382'
+			},{
+				imagePath: '/img/LogoInstagram.png',
+				link: 'https://www.instagram.com/koudai_ishigame/?hl=ja'
+			},{
+        imagePath: "/img/LogoQiita.png",
+        link: "https://qiita.com/isihigameKoudai"
+      },{
+        imagePath: "/img/LogoGithub.png",
+        link: "https://github.com/isihigameKoudai"
+      }],
+      medias: [{
+        title: 'OneEyeLand',
+        link: 'https://oneeyeland.com/member/member_portfolio.php?pgrid=107158'
+      },{
+        title: '1X.com',
+        link: 'https://1x.com/member/koudaiishigame'
+      },{
+        title: 'PhotoVogue',
+        link: 'http://www.vogue.it/photovogue/myportfolio/?id=0B9D2B3B-3F81-41B4-9866-B0A3BC03CF14'
+      },{
+        title: 'VALU',
+        link: 'https://valu.is/kodai2100'
+      }]
+    }
+  },
   components: {
-    LabelTitle,
+    DefaultView,
     ImageCircle,
     LabelSection,
     LogoMedia
@@ -92,11 +133,25 @@ export default {
 
 <style lang="scss" scoped>
 .link-nomal {
+  position: relative;
   text-decoration: none;
   color: #402C2C;
   transition: filter 0.2s;
   &:hover {
     filter:  drop-shadow(3px 3px 2px #808080f0);
+  }
+
+  &:not(:first-child) {
+    margin-left: 10px;
+    padding-left: 17px;
+    
+    &::before {
+      content: '/';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(0, -50%);
+    }
   }
 }
 .area-profile-left,.area-profile-right {

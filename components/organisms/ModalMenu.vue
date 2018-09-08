@@ -24,27 +24,26 @@ export default {
   },
   beforeMount() {
     this.menus = [
-        {
-          title: 'Top',
-          path: '/'
-        },
-        {
-          title: 'Works',
-          path: '/works'
-        },
-        {
-          title: 'Profile',
-          path: '/profile'
-        },
-        {
-          title: 'Portfolio',
-          path: '/portfolio'
-        },
-        {
-          title: 'Contact',
-          path: '/contact'
-        }
-      ]
+      {
+        title: 'Top',
+        path: '/'
+      },
+      {
+        title: 'Works',
+        path: '/works'
+      },
+      {
+        title: 'Profile',
+        path: '/profile'
+      },
+      {
+        title: 'Portfolio',
+        path: '/portfolio'
+      },
+      {
+        title: 'Contact',
+        path: '/contact'
+      }]
   },
   methods: {
     ...mapMutations(['updateModal']),

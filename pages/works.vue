@@ -1,6 +1,5 @@
 <template>
-  <div class="pb100">
-    <label-title class="position-title" title="Works"/>
+  <default-view title="Works">
     <label-section class="position-title" content="Concept"/>
     <p class="position-title label-nomal fz-24"><span class="sp-dn">「</span>Make Bright All The People<br class="pc-dn"/> - 全ての人を輝かせる -<span class="sp-dn">」</span></p>
     <div class="position-title">
@@ -120,20 +119,21 @@
       <nuxt-link to="/contact"><Button title="Contact" /></nuxt-link>
       <label-nomal class="mt30" content="お問い合わせはこちらから" />
     </section>
-  </div>
+  </default-view>
 </template>
 
 <script>
-import LabelTitle from '../components/atoms/LabelPageTop';
-import LabelSection from '../components/atoms/LabelSection';
-import LabelNomal from '../components/atoms/LabelNomal';
-import TitleParallax from '../components/atoms/TitleParallax';
-import ImageBox from '../components/atoms/ImageBox';
-import Button from '../components/atoms/Button';
+import DefaultView from '@components/templates/DefaultView';
+
+import LabelSection from '@components/atoms/LabelSection';
+import LabelNomal from '@components/atoms/LabelNomal';
+import TitleParallax from '@components/atoms/TitleParallax';
+import ImageBox from '@components/atoms/ImageBox';
+import Button from '@components/atoms/Button';
 
 export default {
   components: {
-    LabelTitle,
+    DefaultView,
     LabelSection,
     LabelNomal,
     TitleParallax,

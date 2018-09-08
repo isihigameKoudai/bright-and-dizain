@@ -49,6 +49,9 @@ module.exports = {
         test: /\.svg$/,
         loader: "vue-svg-loader"
       });
+
+      let path = require('path');
+      config.resolve.alias['@components'] = path.join(__dirname, 'components')
     }
   },
   modules: [["@nuxtjs/pwa", { icon: false }]],
@@ -59,7 +62,7 @@ module.exports = {
     title: "Briht&dizain",
     "og:title": "Brnriht&dizain",
     description: "My portfolio site. Please enjoy!",
-    "og:description": ""
+    "og:description": "My portfolio site. Please enjoy!"
   },
   workbox: {
     dev: false

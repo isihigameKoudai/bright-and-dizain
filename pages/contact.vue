@@ -1,6 +1,5 @@
 <template>
-  <div class="pb100">
-    <label-title class="position-title" title="Contact" />
+  <default-view title="Contact">
     <section class="position-title mt100">
       <p class="mt30">
         <text-box
@@ -35,34 +34,43 @@
     </section>
     <section class="position-title">
       <div class="logo-wrapper mt70">
-        <logo-media
-          path="/svg/LogoFacebook.svg"
-          link="https://www.facebook.com/koudai.ishigame"
-        />
-        <logo-media
-          path="/img/LogoTwitter.png"
-          link="https://twitter.com/TVK382"
-        />
-        <logo-media
-          path="/img/LogoInstagram.png"
-          link="https://www.instagram.com/koudai_ishigame/?hl=ja"
-        />
+				<logo-media 
+					v-for="( social, i ) in socials" 
+					:key="i"
+					:path="social.imagePath"
+					:link="social.link"
+				/>
       </div>
       <p class="label-nomal mt40">SNSのDM（ダイレクトメッセージ）<br class="pc-dn" />からもご連絡可能です。</p>
     </section>
-  </div>
+  </default-view>
 </template>
 
 <script>
-import LabelTitle from '../components/atoms/LabelPageTop';
-import TextBox from '../components/atoms/TextBox';
-import TextArea from '../components/atoms/TextArea';
-import Button from '../components/atoms/Button';
-import LogoMedia from '../components/atoms/LogoMedia';
+import DefaultView from '@components/templates/DefaultView';
+
+import TextBox from '@components/atoms/TextBox';
+import TextArea from '@components/atoms/TextArea';
+import Button from '@components/atoms/Button';
+import LogoMedia from '@components/atoms/LogoMedia';
 
 export default {
+	data() {
+		return {
+			socials: [{
+				imagePath: '/svg/LogoFacebook.svg',
+				link: 'https://www.facebook.com/koudai.ishigame'
+			},{
+				imagePath: '/img/LogoTwitter.png',
+				link: 'https://twitter.com/TVK382'
+			},{
+				imagePath: '/img/LogoInstagram.png',
+				link: 'https://www.instagram.com/koudai_ishigame/?hl=ja'
+			}]
+		}
+	},
   components: {
-    LabelTitle,
+    DefaultView,
     TextBox,
     TextArea,
     Button,
