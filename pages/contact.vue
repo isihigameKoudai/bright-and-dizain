@@ -1,33 +1,19 @@
 <template>
   <default-view title="Contact">
     <section class="position-title mt100">
-      <p class="mt30">
+      <p
+        v-for="(item, i) in textTypes"
+        :key="i"
+        class="mt30"
+      >
         <text-box
-          placeHolder="Company"
-          contentType='company'
+          v-if="item.contentType !== 'content'"
+          :placeHolder="item.placeHolder"
+          :contentType="item.contentType"
         />
-      </p>
-      <p class="mt30">
-        <text-box
-          placeHolder="Name"
-          contentType='name'
-      />
-      </p>
-      <p class="mt30">
-        <text-box
-          placeHolder="E-maild(example@email.com)"
-          contentType='email'
-        />
-      </p>
-      <p class="mt30">
-        <text-box
-          placeHolder="Number"
-          contentType='phone'
-        />
-      </p>
-      <p class="mt30">
         <text-area
-          placeHolder="Message"
+          v-else
+          :placeHolder='item.placeHolder'
         />
       </p>
       <Button class="mt70" title="Send" btnType="submit" />
@@ -67,7 +53,28 @@ export default {
 			},{
 				imagePath: '/img/LogoInstagram.png',
 				link: 'https://www.instagram.com/koudai_ishigame/?hl=ja'
-			}]
+      }],
+      textTypes: [{
+        placeHolder: 'Company',
+        contentType: 'company',
+        text: ''
+      },{
+        placeHolder: 'Name',
+        contentType: 'name',
+        text: ''
+      },{
+        placeHolder: 'E-maild(example@email.com)',
+        contentType: 'email',
+        text: ''
+      },{
+        placeHolder: 'Number',
+        contentType: 'phone',
+        text: ''
+      },{
+        placeHolder: 'Message',
+        contentType: 'content',
+        text: ''
+      }]
 		}
 	},
   components: {

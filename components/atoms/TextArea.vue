@@ -12,7 +12,12 @@ import {mapMutations} from 'vuex';
 
 export default {
   name: 'TextArea',
-  props: ['placeHolder'],
+  props: {
+    placeHolder: {
+      type: String,
+      default: ''
+    }
+  },
   data() {
     return {
       text: '',

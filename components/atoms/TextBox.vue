@@ -2,11 +2,8 @@
   <input 
     type="text"
     class="text-box"
-    :class="{'is-error': contactRule}"
+    :class="{'is-error': isInvalid}"
     :placeholder="placeHolder"
-    v-model="text"
-    @input="outOfKey()"
-    @focus="onFocus()"
   />
 </template>
 <script>
@@ -22,53 +19,10 @@ export default {
     contentType: {
       type: String,
       default: ''
-    }
-  },
-  data() {
-    return {
-      text: '',
-      isFocus: false
-    }
-  },
-  computed: {
-    ...mapState(['contact']),
-    contactRule() {
-      if (this.contentType === 'name') {
-        return this.isFocus && !this.contact.name ? true : false;
-      } else if (this.contentType === 'email') {
-        return this.isFocus && !this.contact.email ? true : false;
-      } else if (this.contentType === 'phone') {
-        return this.isFocus && !this.contact.phone ? true : false;
-      } else {
-        return false;
-      }
-    }
-  },
-  methods: {
-    ...mapMutations(['updateContactCompany',
-                      'updateContactName',
-                      'updateContactEmail',
-                      'updateContactPhone']),
-    outOfKey() {
-      switch (this.contentType) {
-        case 'company':
-          this.updateContactCompany(this.text);
-          break;
-        case 'name':
-          this.updateContactName(this.text);
-          break;
-        case 'email':
-          this.updateContactEmail(this.text);
-          break;
-        case 'phone':
-          this.updateContactPhone(this.text);
-          break;
-        default:
-          break;
-      }
     },
-    onFocus() {
-      this.isFocus = true;
+    isInvalid: {
+      type: Boolean,
+      default: false
     }
   }
 }
