@@ -9,6 +9,7 @@
 import {mapState} from 'vuex';
 
 export default {
+	name: 'ModalImage',
 	computed: {
 		...mapState(['imagePath']),
 	}

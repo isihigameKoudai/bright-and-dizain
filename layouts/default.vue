@@ -15,6 +15,7 @@ import Modal from '@components/templates/Modal';
 import Humburger from '@components/atoms/Humburger';
 
 export default {
+  name: 'default',
   components: {
     Modal,
     Humburger

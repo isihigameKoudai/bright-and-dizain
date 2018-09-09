@@ -9,6 +9,7 @@
 import { mapMutations } from 'vuex';
 
 export default {
+  name: 'ImageBoxThumbnail',
   props: {
     path: {
       type: String,

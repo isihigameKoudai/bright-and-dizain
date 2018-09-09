@@ -8,6 +8,7 @@
 import LabelPageTop from '@components/atoms/LabelPageTop';
 
 export default {
+	name: 'DefaultView',
 	props: {
 		title: {
 			type: String,

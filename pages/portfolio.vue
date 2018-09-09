@@ -17,6 +17,7 @@ import ImageBoxThumbnail from '@components/atoms/ImageBoxThumbnail';
 import { mapMutations } from 'vuex';
 
 export default {
+  name: 'portfolio',
   data() {
     return {
       imageArr: [

@@ -8,6 +8,7 @@
 </template>
 <script>
 export default {
+  name: 'TitleParallax',
   props: {
     path: String,
     title: String

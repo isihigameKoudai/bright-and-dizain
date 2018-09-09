@@ -8,6 +8,7 @@
 </template>
 <script>
 export default {
+  name: 'ImageBox',
   props: {
     path: String,
     shadow: {

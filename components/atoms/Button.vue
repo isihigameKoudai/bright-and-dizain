@@ -11,6 +11,7 @@ import {mapState, mapActions, mapMutations} from 'vuex';
 import api from '../../utils/api';
 
 export default {
+  name: 'Button',
   props: {
     title: {
       type: String,

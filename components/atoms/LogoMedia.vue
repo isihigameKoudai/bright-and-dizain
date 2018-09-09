@@ -3,6 +3,7 @@
 </template>
 <script>
 export default {
+	name: 'LogoMedia',
 	props: {
 		path: String,
 		link: String,

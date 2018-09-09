@@ -12,6 +12,7 @@ import Button from '../atoms/Button';
 import LabelSection from '../atoms/LabelSection';
 
 export default {
+	name: 'ModalCompleteEmail',
 	computed: {
 		...mapState(['imagePath']),
 	},

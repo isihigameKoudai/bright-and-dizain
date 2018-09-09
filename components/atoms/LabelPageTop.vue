@@ -5,6 +5,7 @@
 </template>
 <script>
 export default {
+  name: 'LabelPageTop',
   props: {
     title: {
       type: String,

@@ -13,6 +13,7 @@
 import {mapState,mapMutations} from 'vuex';
 
 export default {
+  name: 'TextBox',
   props: {
     placeHolder: {
       type: String,

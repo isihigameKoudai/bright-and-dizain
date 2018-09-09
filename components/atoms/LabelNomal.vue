@@ -6,6 +6,7 @@
 </template>
 <script>
 export default {
+  name: 'LabelNomal',
   props: ['content','fontSize'],
   computed: {
     exportFontSize() {

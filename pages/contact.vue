@@ -55,6 +55,7 @@ import Button from '@components/atoms/Button';
 import LogoMedia from '@components/atoms/LogoMedia';
 
 export default {
+  name: 'contact',
 	data() {
 		return {
 			socials: [{

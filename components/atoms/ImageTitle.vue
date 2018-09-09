@@ -12,6 +12,7 @@
 </template>
 <script>
 export default {
+  name: 'ImageTitle',
   props: ['isDark'],
 }
 </script>

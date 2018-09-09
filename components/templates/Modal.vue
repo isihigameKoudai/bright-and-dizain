@@ -16,6 +16,7 @@ import ModalCompletEmail from '../organisms/ModalCompleteEmail';
 import { mapState, mapMutations } from 'vuex';
 
 export default {
+  name: 'Modal',
   computed: {
     ...mapState(['modal']),
   },

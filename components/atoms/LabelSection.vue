@@ -3,7 +3,13 @@
 </template>
 <script>
 export default {
-  props: ['content'],
+  name: 'LabelSection',
+  props: {
+    content : {
+      tyoe: String,
+      default: ''
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

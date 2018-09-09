@@ -17,6 +17,7 @@
 import {mapMutations} from 'vuex';
 
 export default {
+  name: 'ModalMenu',
   date() {
     return {
       menus: [],

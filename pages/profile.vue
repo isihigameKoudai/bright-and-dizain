@@ -89,6 +89,7 @@ import LabelSection from '@components/atoms/LabelSection';
 import LogoMedia from '@components/atoms/LogoMedia';
 
 export default {
+  name: 'profile',
   data() {
     return {
       socials: [{

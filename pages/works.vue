@@ -132,6 +132,7 @@ import ImageBox from '@components/atoms/ImageBox';
 import Button from '@components/atoms/Button';
 
 export default {
+  name: 'works',
   components: {
     DefaultView,
     LabelSection,
