@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 390 380">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #061121;
+        font-size: 123px;
+        font-family: Cambria;
+        letter-spacing: 0.02em;
+      }
+
+      .cls-2 {
+        filter: url(#Bright_dizain);
+      }
+    </style>
+    <filter id="Bright_dizain" x="0" y="0" width="390" height="380" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.78"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g class="cls-2" transform="matrix(1, 0, 0, 1, 0, 0)">
+    <text id="Bright_dizain-2" data-name="Bright 
+&amp; 
+dizain" class="cls-1" transform="translate(9 123)"><tspan x="0" y="0">Bright </tspan><tspan x="0" y="109">&amp; </tspan><tspan x="0" y="218">dizain</tspan></text>
+  </g>
+</svg>

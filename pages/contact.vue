@@ -16,7 +16,7 @@
           :placeHolder='item.placeHolder'
         />
       </p>
-      <Button class="mt70" title="Send" btnType="submit" />
+      <Button class="mt70">Send</Button>
     </section>
     <section class="position-title">
       <div class="logo-wrapper mt70">
@@ -27,7 +27,7 @@
 					:link="social.link"
 				/>
       </div>
-      <p class="label-nomal mt40">SNSのDM（ダイレクトメッセージ）<br class="pc-dn" />からもご連絡可能です。</p>
+      <label-nomal class="mt40">SNSのDM（ダイレクトメッセージ）<br class="pc-dn" />からもご連絡可能です。</label-nomal>
     </section>
   </default-view>
 </template>
@@ -38,7 +38,9 @@ import DefaultView from '@components/templates/DefaultView';
 import TextBox from '@components/atoms/TextBox';
 import TextArea from '@components/atoms/TextArea';
 import Button from '@components/atoms/Button';
+import LabelNomal from '@components/atoms/LabelNomal';
 import LogoMedia from '@components/atoms/LogoMedia';
+
 
 export default {
   name: 'contact',
@@ -82,7 +84,8 @@ export default {
     TextBox,
     TextArea,
     Button,
-    LogoMedia
+    LogoMedia,
+    LabelNomal
   }
 }
 </script>

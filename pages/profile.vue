@@ -1,51 +1,45 @@
 <template>
-  <default-view title="Contact">
+  <default-view title="Profile">
     <section class="wrapper mt90">
       <div class="area-profile-left">
         <image-circle class="position-img-profile" path="/img/ProfileImage.jpg" />
-        <label-section class="mt40" content="Koudai Ishigame"/>
+        <label-section class="mt40">Koudai Ishigame</label-section>
       </div>
       <div class="area-profile-right">
-        <p class="label-nomal">1994年6月28日生まれ、<br class="pc-dn"/>青森県出身・東京都在住。
+        <label-nomal>1994年6月28日生まれ、<br class="pc-dn"/>青森県出身・東京都在住。
           <br/>プログラミングと音楽が好きで、
           <br/>学生時代にはプレーヤーと<br class="pc-dn"/>SNSを統合させた音楽アプリや
           <br/>調理工程と材料を限定した<br class="pc-dn"/>簡易型料理レシピアプリをリリース。
-        </p>
-        <p class="label-nomal mt30">大学時代に大手家電量販店での<br class="pc-dn"/>販売員の仕事でカメラと出会う。
+        </label-nomal>
+        <label-nomal class="label-nomal mt30">大学時代に大手家電量販店での<br class="pc-dn"/>販売員の仕事でカメラと出会う。
           <br/>たまたま撮った写真を機に
           <br/>知人がフリーペーパーのモデルに<br class="pc-dn"/>挑戦してくれたことをキッカケに、
           <br/>本格的に人物・ポートレート写真を始める。
-        </p>
-        <p class="label-nomal mt30">現在はエンジニア兼フォトグラファー<br class="pc-dn"/>として都内で活動中。
+        </label-nomal>
+        <label-nomal class="mt30">現在はエンジニア兼フォトグラファー<br class="pc-dn"/>として都内で活動中。
           <br/>「作り込み」と呼ばれる、コンセプトに応じた<br class="pc-dn"/>背景や衣装などを用いて
           <br/>世界観を描き出す分野の写真を得意とし、
           <br/>モデルの撮影だけでなく<br class="pc-dn"/>音楽CDのアルバムジャケットなど
           <br/>アーティスティックな撮影もこなす。
-        </p>
-        <p class="label-nomal mt30">その他、Webメディアへの写真提供や
+        </label-nomal>
+        <label-nomal class="mt30">その他、Webメディアへの写真提供や
           <br/>海外の厳正写真審査サイトでの掲載経験もあり。
-        </p>
+        </label-nomal>
       </div>
     </section>
     <section class="position-title">
-      <label-section content="skills"/>
-      <p class="label-nomal mt20">Photograph
+      <label-section>skills</label-section>
+      <label-nomal class="mt20">Photograph
         <br/>Retouch
         <br/>Art Direction
         <br/>HTML/CSS/Javascript(ES6)
         <br/>Vue.js
         <br/>jQuery
-      </p>
+      </label-nomal>
     </section>
-    <section class="position-title">
-      <label-section content="SNS & Media"/>
+    <section class="wrapper position-title">
+      <label-section>SNS & Media</label-section>
       <div class="logo-wrapper mt40">
-        <!-- <logo-media 
-          v-for="(social, i) in socials"
-          :key="i"
-          :path="social.imagePath"
-          :link="social.link"
-        /> -->
         <logo-media
           path="/svg/LogoFacebook.svg"
           link="https://www.facebook.com/koudai.ishigame"
@@ -69,45 +63,32 @@
           link="https://github.com/isihigameKoudai"
         />
       </div>
-      <p class="label-nomal mt20">
-        <a 
+      <div class="wrapper mt40">
+        <label-nomal 
           v-for="(media, i) in medias"
           :key="i"
-          :href="media.link"
-          class="link-nomal"
-        >{{media.title}}</a>
-      </p>
+        >
+          <a 
+            :href="media.link"
+            class="link-nomal"  
+          >{{media.title}}</a>
+        </label-nomal>
+      </div>
     </section>
   </default-view>
 </template>
 
 <script>
 import DefaultView from '@components/templates/DefaultView';
-
 import ImageCircle from '@components/atoms/ImageCircle';
 import LabelSection from '@components/atoms/LabelSection';
+import LabelNomal from '@components/atoms/LabelNomal';
 import LogoMedia from '@components/atoms/LogoMedia';
 
 export default {
   name: 'profile',
   data() {
     return {
-      socials: [{
-				imagePath: '/svg/LogoFacebook.svg',
-				link: 'https://www.facebook.com/koudai.ishigame'
-			},{
-				imagePath: '/img/LogoTwitter.png',
-				link: 'https://twitter.com/TVK382'
-			},{
-				imagePath: '/img/LogoInstagram.png',
-				link: 'https://www.instagram.com/koudai_ishigame/?hl=ja'
-			},{
-        imagePath: "/img/LogoQiita.png",
-        link: "https://qiita.com/isihigameKoudai"
-      },{
-        imagePath: "/img/LogoGithub.png",
-        link: "https://github.com/isihigameKoudai"
-      }],
       medias: [{
         title: 'OneEyeLand',
         link: 'https://oneeyeland.com/member/member_portfolio.php?pgrid=107158'
@@ -127,7 +108,8 @@ export default {
     DefaultView,
     ImageCircle,
     LabelSection,
-    LogoMedia
+    LogoMedia,
+    LabelNomal
   }
 }
 </script>
@@ -138,6 +120,7 @@ export default {
   text-decoration: none;
   color: #402C2C;
   transition: filter 0.2s;
+  filter:  drop-shadow(1px 1px 1px #808080f0);
   &:hover {
     filter:  drop-shadow(3px 3px 2px #808080f0);
   }
@@ -194,6 +177,10 @@ export default {
   margin-right: auto;
   display: flex;
   justify-content: space-around;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 </style>

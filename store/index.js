@@ -21,11 +21,8 @@ export const state = () => ({
 
 export const mutations = {
   updateModal(state,payload) {
-    if (!state.modal.mode) {
-      state.modal.modalType = payload;
-    } else {
-      state.modal.modalType = "";
-    }
+    state.modal.modalType = "";
+    if (!state.modal.mode) { state.modal.modalType = payload; }
     state.modal.mode = !state.modal.mode;
   },
   updateContactCompany(state,payload) {

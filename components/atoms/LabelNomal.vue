@@ -2,12 +2,19 @@
   <p 
     class="label-nomal"
     :style="exportFontSize"
-  >{{content}}</p>
+  >
+    <slot />
+  </p>
 </template>
 <script>
 export default {
   name: 'LabelNomal',
-  props: ['content','fontSize'],
+  props: {
+    fontSize: {
+      type: Number,
+      default: 16
+    }
+  },
   computed: {
     exportFontSize() {
       const size = this.fontSize ? 'font-size: ' + this.fontSize + 'px' : '';

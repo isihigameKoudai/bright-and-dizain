@@ -1,6 +1,34 @@
 <template>
   <default-view title="Portfolio">
-    <div class="wrapper position-title flex-con">
+    <label-nomal
+      class="position-title mt80"
+      :fontSize="32"
+    >Creative</label-nomal>
+    <div class="wrapper flex-con mt30">
+      <image-box-thumbnail
+        v-for="(image,index) in imageArr"
+        :key="index"
+        :path="image.url"
+        @click="updateImagePath(image.url); updateModal('image');"
+      />
+    </div>
+    <label-nomal
+      class="position-title mt80"
+      :fontSize="32"
+    >Portrait</label-nomal>
+    <div class="wrapper flex-con mt30">
+      <image-box-thumbnail
+        v-for="(image,index) in imageArr"
+        :key="index"
+        :path="image.url"
+        @click="updateImagePath(image.url); updateModal('image');"
+      />
+    </div>
+    <label-nomal
+      class="position-title mt80"
+      :fontSize="32"
+    >Media</label-nomal>
+    <div class="wrapper flex-con mt30">
       <image-box-thumbnail
         v-for="(image,index) in imageArr"
         :key="index"
@@ -14,6 +42,7 @@
 <script>
 import DefaultView from '@components/templates/DefaultView';
 import ImageBoxThumbnail from '@components/atoms/ImageBoxThumbnail';
+import LabelNomal from '@components/atoms/LabelNomal';
 import { mapMutations } from 'vuex';
 
 export default {
@@ -41,7 +70,8 @@ export default {
   },
   components: {
     DefaultView,
-    ImageBoxThumbnail
+    ImageBoxThumbnail,
+    LabelNomal
   },
   methods: {
     ...mapMutations(['updateModal','updateImagePath'])

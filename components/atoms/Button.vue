@@ -3,25 +3,17 @@
     class="btn"
     :class="{'disable': isDisable}"
     :disabled="isDisable"
-    @click="pushButton()"
-  >{{title}}</button>
+    @click="emit()"
+  >
+    <slot />
+  </button>
 </template>
 <script>
-import {mapState, mapActions, mapMutations} from 'vuex';
+import { mapState, mapActions, mapMutations } from 'vuex';
 import api from '../../utils/api';
 
 export default {
   name: 'Button',
-  props: {
-    title: {
-      type: String,
-      default: ''
-    },
-    btnType: {
-      type: String,
-      default: ''
-    }
-  },
   data() {
     return {
       disable: false,

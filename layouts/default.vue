@@ -169,18 +169,6 @@ html {
   text-align: center;
 }
 
-.label-nomal {
-  position: relative;
-  font-size: 16px;
-  color: #402C2C;
-  font-family: "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	line-height: 33px;
-  letter-spacing: 2.5px;
-}
-
 /*
 Utility Styles
 */

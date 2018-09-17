@@ -1,8 +1,8 @@
 <template>
 	<div class="complete-wrapper">
-		<label-section class="mt100" content="お問い合わせが完了しました。"/>
+		<label-section class="mt100">お問い合わせが完了しました。</label-section>
 		<nuxt-link to="/">
-			<Button class="mt100" title="Topへ" btnType="GoTop" />
+			<Button class="mt100">Topへ</Button>
 		</nuxt-link>
 	</div>
 </template>

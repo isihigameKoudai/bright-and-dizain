@@ -20,7 +20,4 @@ build/
 dest/
 temp/
 .ds_store
-assets/
-static/img/
-static/svg/
 

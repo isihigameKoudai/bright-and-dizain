@@ -2,6 +2,7 @@
   <transition name="fade">
     <div
       class="modal-wrap"
+      @click="toggleModal()"
     >
       <modal-image v-if="modal.modalType === 'image'"/>
       <modal-complet-email v-else-if="modal.modalType === 'email'"/>
@@ -13,12 +14,13 @@
 import ModalMenu from '../organisms/ModalMenu';
 import ModalImage from '../organisms/ModalImage';
 import ModalCompletEmail from '../organisms/ModalCompleteEmail';
-import { mapState, mapMutations } from 'vuex';
+import { mapState, mapMutations, mapActions } from 'vuex';
 
 export default {
   name: 'Modal',
   computed: {
     ...mapState(['modal']),
+    ...mapActions(['toggleModal'])
   },
   components: {
     ModalMenu,

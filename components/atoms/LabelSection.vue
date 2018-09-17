@@ -1,15 +1,11 @@
 <template>
-  <h2 class="label-section">{{content}}</h2>
+  <h2 class="label-section">
+    <slot />
+  </h2>
 </template>
 <script>
 export default {
-  name: 'LabelSection',
-  props: {
-    content : {
-      tyoe: String,
-      default: ''
-    }
-  }
+  name: 'LabelSection'
 }
 </script>
 <style lang="scss" scoped>
