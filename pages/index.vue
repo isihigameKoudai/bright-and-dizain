@@ -1,17 +1,25 @@
 <template>
-  <div  class="top-container">
+  <div class="top-container">
     <img class="main-visual" src="/img/mainImageSmall.JPG" alt="mainVisual"/>
-    <img class="title-position" src="/svg/mainTitleWhite.svg" alt="" width="200px"  />
+    <img class="title-position appear" src="/svg/mainTitleWhite.svg" alt="" width="200px"  />
   </div>
 </template>
 
 <script>
+import { init, scroller } from '~/utils/animations';
+
 export default {
-  name: 'index'
+  name: 'index',
+  mounted() {
+    init();
+    scroller();
+  }
 }
 </script>
 
 <style lang="scss" scoped>
+@import url('~/assets/css/animation.scss');
+
 .top-container {
   position: relative;
   width: 100%;

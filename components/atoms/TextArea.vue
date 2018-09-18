@@ -3,28 +3,26 @@
     class="text-area"
     :placeholder="placeHolder"
     rows="5"
-    v-model="text"
-    @blur="updateContactMessage(text)"
+    @text="event => $emit(event.target.value)"
   />
 </template>
 <script>
-import {mapMutations} from 'vuex';
-
 export default {
   name: 'TextArea',
   props: {
     placeHolder: {
       type: String,
       default: ''
+    },
+    isInvalid: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
     return {
       text: '',
     }
-  },
-  methods: {
-    ...mapMutations(['updateContactMessage']),
   }
 }
 </script>

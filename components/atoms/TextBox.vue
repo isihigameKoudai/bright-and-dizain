@@ -4,10 +4,10 @@
     class="text-box"
     :class="{'is-error': isInvalid}"
     :placeholder="placeHolder"
+    @input="event => $emit('text',event.target.value)"
   />
 </template>
 <script>
-import { mapState,mapMutations } from 'vuex';
 
 export default {
   name: 'TextBox',

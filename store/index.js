@@ -8,15 +8,7 @@ export const state = () => ({
     mode: false,
     modalType: ''
   },
-  contact: {
-    company:'',
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  },
-  imagePath: '',
-
+  imagePath: ''
 });
 
 export const mutations = {
@@ -24,21 +16,6 @@ export const mutations = {
     state.modal.modalType = "";
     if (!state.modal.mode) { state.modal.modalType = payload; }
     state.modal.mode = !state.modal.mode;
-  },
-  updateContactCompany(state,payload) {
-    state.contact.company = payload;
-  },
-  updateContactName(state, payload) {
-    state.contact.name = payload; 
-  },
-  updateContactEmail(state, payload) {
-    state.contact.email = payload;
-  },
-  updateContactPhone(state, payload) {
-    state.contact.phone = payload;
-  },
-  updateContactMessage(state, payload) {
-    state.contact.message = payload;
   },
   updateImagePath(state,payload) {
     state.imagePath = payload;
@@ -48,17 +25,5 @@ export const mutations = {
 export const actions = {
   toggleModal({commit},payload) {
     commit('updateModal',payload);
-  },
-  sendEmail({commit},payload) {
-    // Send Succecc
-
-    console.log(payload);
-    commit("updateContactCompany", "");
-    commit("updateContactName", "");
-    commit("updateContactEmail", "");
-    commit("updateContactPhone", "");
-    commit("updateContactMessage", "");
-    
-    //Send Failed
   }
 };
