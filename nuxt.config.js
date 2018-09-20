@@ -51,7 +51,7 @@ module.exports = {
       });
 
       let path = require('path');
-      config.resolve.alias['@components'] = path.join(__dirname, 'components')
+      config.resolve.alias['@components'] = path.join(__dirname, 'components');
     }
   },
   modules: [["@nuxtjs/pwa", { icon: false }]],

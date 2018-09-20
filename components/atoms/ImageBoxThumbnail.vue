@@ -39,6 +39,7 @@ export default {
   @media screen and (min-width: 769px){
     &:hover {
       filter: drop-shadow(3px 3px 4px #909090f0);
+      transform: translate(-1px,-1px);
     }
   }
 

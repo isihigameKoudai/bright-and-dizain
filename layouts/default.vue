@@ -5,12 +5,15 @@
       :isActive="modal.mode"
       @click="toggleModal()"
     />
-    <Modal  v-if="modal.mode" class="positiond-fixed fixed-content" />
     <nuxt />
+    <Modal
+      v-if="modal.mode"
+      class="positiond-fixed fixed-content"
+    />
   </div>
 </template>
 <script>
-import {mapState, mapActions} from 'vuex';
+import { mapState, mapActions } from 'vuex';
 import Modal from '@components/templates/Modal';
 import Humburger from '@components/atoms/Humburger';
 

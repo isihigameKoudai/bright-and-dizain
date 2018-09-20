@@ -1,14 +1,16 @@
 <template>
   <transition name="fade">
-    <div
-      class="modal-wrap"
-      @click="toggleModal()"
-    >
-      <modal-image v-if="modal.modalType === 'image'"/>
-      <modal-complet-email v-else-if="modal.modalType === 'email'"/>
-      <modal-menu v-else />
-    </div>   
-  </transition> 
+    <div>
+      <div
+        class="modal-wrap"
+        @click="toggleModal()"
+        :key="1"
+      ></div>
+      <modal-image v-if="modal.modalType === 'image'" class="modal-content" :key="2"/>
+      <modal-complet-email v-else-if="modal.modalType === 'email'" class="modal-content" :key="3"/>
+      <modal-menu v-else class="modal-content" :key="4" />
+    </div>  
+  </transition>
 </template>
 <script>
 import ModalMenu from '../organisms/ModalMenu';
@@ -34,17 +36,19 @@ export default {
 
 .modal-wrap {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: rgba($color: #1D1D24, $alpha: 0.9);
-  z-index: 100;
+}
 
-  & > * {
-  position: absolute;
+.modal-content {
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  }
+  z-index: 10;
 }
 
 .fade-enter-active, .fade-leave-active {
