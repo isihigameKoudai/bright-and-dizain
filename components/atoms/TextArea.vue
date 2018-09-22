@@ -1,9 +1,10 @@
 <template>
   <textarea 
     class="text-area"
+    :class="{'is-error': isInvalid}"
     :placeholder="placeHolder"
     rows="5"
-    @text="event => $emit(event.target.value)"
+    @input="event => $emit('text', event.target.value)"
   />
 </template>
 <script>
@@ -45,6 +46,10 @@ export default {
 	font-variant: normal;
 	font-weight: 500;
   letter-spacing: 1px;
+
+  &.is-error {
+    border: solid 1px #F51F1F;
+  }
 
   &::-webkit-input-placeholder {
     color: #C3BFBF; 

@@ -3,55 +3,24 @@
     class="btn"
     :class="{'disable': isDisable}"
     :disabled="isDisable"
-    @click="emit()"
+    @click="pushButton"
   >
     <slot />
   </button>
 </template>
 <script>
-import { mapState, mapActions, mapMutations } from 'vuex';
-import api from '../../utils/api';
 
 export default {
   name: 'Button',
-  data() {
-    return {
-      disable: false,
-    }
-  },
-  computed: {
-    ...mapState(['contact']),
-    isDisable() {
-      return this.btnType === 'submit' && (!this.contact.name || !this.contact.email || !this.contact.phone);
+  props: {
+    isDisable: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
-    ...mapActions(["sendEmail"]),
-    ...mapMutations(["updateModal"]),
-    pushButton() {
-      switch (this.btnType) {
-        case 'GoTop':
-          this.updateModal();
-          break;
-          
-        case 'submit':
-          this.sendEmail();
-          this.updateModal('email');
-          break;
-    
-        default:
-          break;
-      }
-    },
-    test() {
-      api
-        .get('/api/v2/users',{})
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((e)=>{
-          console.log(e);
-        });
+    pushButton(e) {
+      this.$emit('click', e.target.value);
     }
   }
 }

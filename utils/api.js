@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = "https://qiita.com";
+const API_URL = "";
 
 export default {
     request(method, path, params) {
@@ -14,16 +14,14 @@ export default {
         switch (method) {
             case "post":
                 return axios.post(url, { params }).catch(error);
-                break;
             case "get":
                 return axios.get(url, { params }).catch(error);
-                break;
             default:
                 break;
         }
     },
     post(path, params) {
-        return this, this.request("post", path, params)
+				return this.request("post", path, params);
     },
     get(path, params) {
         const paramaters = params ? params : '';

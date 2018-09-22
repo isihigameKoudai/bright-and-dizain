@@ -52,7 +52,8 @@ module.exports = {
 
       let path = require('path');
       config.resolve.alias['@components'] = path.join(__dirname, 'components');
-    }
+    },
+    vendor: ['axios']
   },
   modules: [["@nuxtjs/pwa", { icon: false }]],
   manifest: {

@@ -15,10 +15,15 @@
         <text-area
           v-else
           :placeHolder='item.placeHolder'
+          :isInvalid="item.isInvalid"
           @text="item.inputValue"
         />
       </p>
-      <Button class="mt70">Send</Button>
+      <Button
+        class="mt70"
+        :isDisable="invalid"
+        @click="pushSubmit"
+      >Send</Button>
     </section>
     <section class="position-title">
       <div class="logo-wrapper mt70">
@@ -35,14 +40,16 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex';
 import DefaultView from '@components/templates/DefaultView';
-
 import TextBox from '@components/atoms/TextBox';
 import TextArea from '@components/atoms/TextArea';
 import Button from '@components/atoms/Button';
 import LabelNomal from '@components/atoms/LabelNomal';
 import LogoMedia from '@components/atoms/LogoMedia';
 
+import axios from 'axios';
+import requestApi from '~/assets/datas/request';
 
 export default {
   name: 'contact',
@@ -91,14 +98,11 @@ export default {
           isInvalid: false,
           inputValue: (e) => {
             this.textInputs.email.value = e;
-            this.textInputs.email.validate(this.textInputs.company.value);
+            this.textInputs.email.validate(this.textInputs.email.value);
           },
           validate: (e) => {
             const regex = new RegExp(/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/);
-            // const regex = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/;
-            // console.log(regex.test(e));
-            // console.log(regexp.test(e));
-			      this.textInputs.email.isInvalid = !regex.test(e);
+            this.textInputs.email.isInvalid = !regex.test(e);
           }
         },
         number: {
@@ -110,7 +114,7 @@ export default {
             this.textInputs.number.validate(this.textInputs.number.value);
           },
           validate: (e) => {
-            const err = e.length < 8;
+            const err = e.length < 8 || isNaN(Number(e));        
 			      this.textInputs.number.isInvalid = err;
           }
         },
@@ -119,12 +123,64 @@ export default {
           placeHolder: "Message",
           isInvalid: false,
           inputValue: (e) => {
-            this.textInputs.number.value = e;
+            this.textInputs.message.value = e;
+            this.textInputs.message.validate(this.textInputs.message.value);
+          },
+          validate: (e) => {
+            console.log(e);
+            
+            const err = e.length < 10;
+            console.log(err);
+            
+			      this.textInputs.message.isInvalid = err;
           }
         }
       }
 		}
-	},
+  },
+  methods: {
+    async pushSubmit(e) {
+      const API_URL = requestApi.slack.url;
+      const header = requestApi.slack.header;
+      
+      const message = 'hello bnd';
+      const data = { text: message };
+      const options = {
+        method: 'post',
+        baseURL: API_URL,
+        header,
+        data: `payload={
+          "channel": "#order-message",
+          "username": "foobar",
+          "text": "<!here> ${this.contactData}",
+          "icon_emoji":":ghost:"
+        }`
+      };
+      const res = await axios(options).catch( e => console.log(e) );
+
+    }
+  },
+  computed: {
+    contactData() {
+      const company = this.textInputs.company.value;
+      const name = this.textInputs.name.value;
+      const email = this.textInputs.email.value;
+      const number = this.textInputs.number.value;
+      const message = this.textInputs.message.value;
+      const contacts = `会社・組織：${company}\n名前：${name}\nEメール：${email}\n電話番号：${number}\nメッセージ：${message}\n`;
+      return contacts;
+    },
+    invalid() {
+      const company = this.textInputs.company;
+      const name = this.textInputs.name;
+      const email = this.textInputs.email;
+      const number = this.textInputs.number;
+      const message = this.textInputs.message;
+
+      const invalid = company.isInvalid || name.isInvalid || email.isInvalid || number.isInvalid || message.isInvalid;
+      return invalid;
+    }
+  },
   components: {
     DefaultView,
     TextBox,
