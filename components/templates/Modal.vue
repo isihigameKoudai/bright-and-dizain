@@ -7,7 +7,7 @@
         :key="1"
       ></div>
       <modal-image v-if="modal.modalType === 'image'" class="modal-content" :key="2"/>
-      <modal-complet-email v-else-if="modal.modalType === 'email'" class="modal-content" :key="3"/>
+      <modal-complet-email v-else-if="modal.modalType === 'contact'" class="modal-content" :key="3"/>
       <modal-menu v-else class="modal-content" :key="4" />
     </div>  
   </transition>

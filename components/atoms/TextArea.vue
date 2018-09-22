@@ -1,7 +1,6 @@
 <template>
   <textarea 
     class="text-area"
-    :class="{'is-error': isInvalid}"
     :placeholder="placeHolder"
     rows="5"
     @input="event => $emit('text', event.target.value)"

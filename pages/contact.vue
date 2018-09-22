@@ -24,6 +24,10 @@
         :isDisable="invalid"
         @click="pushSubmit"
       >Send</Button>
+      <label-nomal
+        v-if="isFalse"
+        class="mt20"
+      >送信失敗しました、時間を空けてお試しください。</label-nomal>
     </section>
     <section class="position-title">
       <div class="logo-wrapper mt70">
@@ -40,7 +44,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
+import { mapActions } from 'vuex';
 import DefaultView from '@components/templates/DefaultView';
 import TextBox from '@components/atoms/TextBox';
 import TextArea from '@components/atoms/TextArea';
@@ -55,6 +59,7 @@ export default {
   name: 'contact',
 	data() {
 		return {
+      isFalse: false,
 			socials: [{
 				imagePath: '/svg/LogoFacebook.svg',
 				link: 'https://www.facebook.com/koudai.ishigame'
@@ -127,18 +132,18 @@ export default {
             this.textInputs.message.validate(this.textInputs.message.value);
           },
           validate: (e) => {
-            console.log(e);
-            
             const err = e.length < 10;
-            console.log(err);
-            
 			      this.textInputs.message.isInvalid = err;
           }
         }
       }
 		}
   },
+  mounted() {
+    this.textInputs.message.isInvalid = true;
+  },
   methods: {
+    ...mapActions(['toggleModal']),
     async pushSubmit(e) {
       const API_URL = requestApi.slack.url;
       const header = requestApi.slack.header;
@@ -151,14 +156,26 @@ export default {
         header,
         data: `payload={
           "channel": "#order-message",
-          "username": "foobar",
-          "text": "<!here> ${this.contactData}",
-          "icon_emoji":":ghost:"
+          "username": "bnd",
+          "text": "<!here> ${this.contactData}"
         }`
       };
-      const res = await axios(options).catch( e => console.log(e) );
-
-    }
+      const res = await axios(options)
+        .then( e => {
+           this.isFalse = false;
+           this.resetContactData();
+           this.toggleModal('contact');
+        }).catch( e => {
+          this.isFalse = true;
+      });     
+    },
+    resetContactData() {
+      this.textInputs.company.value = '';
+      this.textInputs.name.value = '';
+      this.textInputs.email.value = '';
+      this.textInputs.number.value = '';
+      this.textInputs.message.value = '';
+    },
   },
   computed: {
     contactData() {
@@ -171,13 +188,12 @@ export default {
       return contacts;
     },
     invalid() {
-      const company = this.textInputs.company;
-      const name = this.textInputs.name;
-      const email = this.textInputs.email;
-      const number = this.textInputs.number;
-      const message = this.textInputs.message;
-
-      const invalid = company.isInvalid || name.isInvalid || email.isInvalid || number.isInvalid || message.isInvalid;
+      const company = this.textInputs.company.isInvalid;
+      const name = this.textInputs.name.isInvalid;
+      const email = this.textInputs.email.isInvalid;
+      const number = this.textInputs.number.isInvalid;
+      const message = this.textInputs.message.isInvalid;
+      const invalid = company || name || email || number || message;
       return invalid;
     }
   },

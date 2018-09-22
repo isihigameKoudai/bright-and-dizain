@@ -2,20 +2,20 @@
 	<div class="complete-wrapper">
 		<label-section class="mt100">お問い合わせが完了しました。</label-section>
 		<nuxt-link to="/">
-			<Button class="mt100">Topへ</Button>
+			<Button
+				class="mt100"
+				@click="updateModal"
+			>Topへ</Button>
 		</nuxt-link>
 	</div>
 </template>
 <script>
-import {mapState, mapMutations} from 'vuex';
+import { mapMutations } from 'vuex';
 import Button from '../atoms/Button';
 import LabelSection from '../atoms/LabelSection';
 
 export default {
 	name: 'ModalCompleteEmail',
-	computed: {
-		...mapState(['imagePath']),
-	},
 	components: {
 		Button,
 		LabelSection
