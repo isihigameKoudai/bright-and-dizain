@@ -19,7 +19,6 @@ sw.*
 build/
 dest/
 temp/
-assets/datas/request.js
 .vscode
 .ds_store
 
