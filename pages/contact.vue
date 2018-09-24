@@ -208,13 +208,17 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .logo-wrapper {
   width: 400px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   justify-content: space-around;
+
+  @media screen and (max-width: 400px) {
+    width: 100%
+  }
 }
 
 </style>

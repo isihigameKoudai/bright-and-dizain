@@ -36,6 +36,7 @@ export default {
   font-size: 18px;
   line-height: 1.2;
   filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.2));
+  box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
   outline: 0;
   resize: none;
 
@@ -45,6 +46,7 @@ export default {
 	font-variant: normal;
 	font-weight: 500;
   letter-spacing: 1px;
+  -webkit-appearance: none;
 
   &.is-error {
     border: solid 1px #F51F1F;

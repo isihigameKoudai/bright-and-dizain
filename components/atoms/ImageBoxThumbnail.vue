@@ -18,7 +18,7 @@ export default {
   },
   computed: {
     imagePath() {
-      return this.path ? this.path : '/img/NonThumbnail.png';
+      return this.path ? this.path : '/static/img/NonThumbnail.png';
     }
   }
 }

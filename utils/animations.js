@@ -1,3 +1,4 @@
+
 export function init() {
 	window.addEventListener('load', scroller);
 	window.addEventListener('scroll', scroller);
@@ -6,7 +7,7 @@ export function init() {
 export　function scroller() {
 	const appearUps = document.querySelectorAll('.appear-up');
 	const appears = document.querySelectorAll('.appear');
-	const height = window.outerHeight - 300;
+	const height = window.innerHeight - window.innerHeight * 0.3;
 
 	appearUps.forEach((v) => {
 		const top = v.getBoundingClientRect().top;

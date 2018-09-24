@@ -10,9 +10,20 @@ module.exports = {
         name: "viewport",
         content: "width=device-width, initial-scale=1, user-scalable=no"
       },
-      { hid: "description", name: "description", content: "Nuxt.js project" }
+      { hid: "description", name: "description", content: "My portfolio site. Photograph, Art direction, Web, Engineering, Creative." },
+      { property: 'og:title', content: 'Brnriht&dizain'},
+      { property: 'og:type', content: 'website'},
+      { property: 'og:image', content: '/img/mainImageSmall.jpg' },
+      { property: 'og:image:alt', content: 'bnd images' },
+      { property: 'og:url', content: 'http://brightanddizain.tokyo'},
+      { property: 'og:locale', content: 'ja_JP'},
+      { name: 'twitter:card', content: 'summary_large_image' }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: 'apple-touch-icon', size: '200x200', href: '/icon.jpg' },
+      { rel: 'dns-prefetch', href: 'http://brightanddizain.tokyo' }
+    ]
   },
   /*
   ** Customize the progress bar color
@@ -59,11 +70,11 @@ module.exports = {
   manifest: {
     name: "BrightAndDizain",
     lang: "ja",
-    short_name: "bnd",
+    short_name: "Bright&dizain",
     title: "Briht&dizain",
     "og:title": "Brnriht&dizain",
-    description: "My portfolio site. Please enjoy!",
-    "og:description": "My portfolio site. Please enjoy!"
+    description: "My portfolio site. Photograph, Art direction, Web, Engineering, Creative.",
+    "og:description": "My portfolio site. Photograph, Art direction, Web, Engineering, Creative."
   },
   workbox: {
     dev: false

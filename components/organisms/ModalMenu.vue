@@ -72,27 +72,35 @@ export default {
     margin-top: 30px;
   }
 
-  &:after, &::before {
-    position: absolute;
-    content: '';
-    display: block;
-    top: 55px;
-    width: 0;
-    height: 2px;
-    background: #fff;
-    transition: all 0.3s ease;
+  @media screen and (min-width: 769px){
+   &:after, &::before {
+      position: absolute;
+      content: '';
+      display: block;
+      top: 55px;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: all 0.3s ease;
+    }
+
+    &::before {
+      left: 50%;
+    }
+
+    &::after {
+      right: 50%;
+    }
+
+    &:hover:after,&:hover:before {
+      width: 50%;
+    } 
   }
 
-  &::before {
-    left: 50%;
-  }
-
-  &::after {
-    right: 50%;
-  }
-
-  &:hover:after,&:hover:before {
-    width: 50%;
+  @media screen and (max-width: 768px){
+    &:active:after,&:active:before {
+      width: 50%;
+    } 
   }
 }
 </style>

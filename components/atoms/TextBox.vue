@@ -42,6 +42,7 @@ export default {
 	font-weight: 500;
 	line-height: 39.6px;
   letter-spacing: 1px;
+  -webkit-appearance: none;
 
   &::-webkit-input-placeholder {
     color: #C3BFBF; 
