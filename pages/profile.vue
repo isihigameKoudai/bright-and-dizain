@@ -71,6 +71,7 @@
           <a 
             :href="media.link"
             class="link-nomal"
+            target="_blank"
           >{{media.title}}</a>
         </label-nomal>
       </div>
