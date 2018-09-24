@@ -13,16 +13,19 @@ module.exports = {
       { hid: "description", name: "description", content: "My portfolio site. Photograph, Art direction, Web, Engineering, Creative." },
       { property: 'og:title', content: 'Bright&dizain'},
       { property: 'og:type', content: 'website'},
-      { property: 'og:image', content: '/img/mainImageSmall.JPG' },
+      { property: 'og:image', content: '/card.jpg' },
       { property: 'og:image:alt', content: 'bnd images' },
       { property: 'og:url', content: 'https://www.brightanddizain.com/'},
       { property: 'og:locale', content: 'ja_JP'},
-      { name: 'twitter:card', content: 'summary_large_image' }
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: 'Bright&dizain' },
+      { name: 'twitter:description', content: 'My portfolio site. Photograph, Art direction, Web, Engineering, Creative.' },
+      { name: 'twitter:image', content: '/card.jpg' }
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       { rel: 'apple-touch-icon', size: '200x200', href: '/icon.jpg' },
-      { rel: 'dns-prefetch', href: 'http://brightanddizain.tokyo' }
+      { rel: 'dns-prefetch', href: 'https://www.brightanddizain.com/'}
     ]
   },
   /*
