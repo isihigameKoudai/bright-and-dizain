@@ -21,4 +21,5 @@ dest/
 temp/
 .vscode
 .ds_store
+yarn.lock
 

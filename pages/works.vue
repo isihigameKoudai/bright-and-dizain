@@ -96,10 +96,10 @@
         <label-section class="appear-up">HTML/CSS Coding</label-section>
         <image-box class="mt30 sp-dn appear" path="/img/webCoding.jpg" :isSmall="true"/>
         <label-nomal class="mt20 appear-up">
-          大規模サイトのコーディングや<br/>
-          リニューアルの経験などを活かし<br/>
-          HPやWebアプリにおける<br/>
-          HTML/CSSのコーディングをいたします。
+          各種サービス、Webサイト、<br/>
+          HP、Webアプリにおける<br/>
+          小〜中規模なHTML/CSSの<br/>
+          コーディングをいたします。
         </label-nomal>
         <image-box class="mt30 pc-dn sp-space appear" path="/img/webCoding.jpg" :isSmall="true"/>
       </div>
@@ -109,8 +109,8 @@
         <label-nomal class="mt20 appear-up">
           Web上で動くアプリやサイトの<br/>
           フロントエンド開発を行います。<br/>
-          Vue.jsでの開発がメインですが<br/>
-          jQueryにも対応いたします。
+          Vue.js,Nuxt.jsなどを取り入れた<br/>
+          モダンな開発で進めて行きます。
         </label-nomal>
         <image-box class="mt30 pc-dn sp-space appear" path="/img/webApp.jpg" :isSmall="true"/>
       </div>
