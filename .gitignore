@@ -22,4 +22,6 @@ temp/
 .vscode
 .ds_store
 yarn.lock
+assets/datas/request.js
+
 
