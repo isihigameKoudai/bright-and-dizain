@@ -14,13 +14,13 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^2.0.8",
     "mime": "^2.3.1",
     "nuxt": "^2.3.1"
   },
   "devDependencies": {
     "ajv": "^6.5.1",
-    "axios": "^0.18.0",
     "babel-eslint": "^10.0.1",
     "clone": "^2.1.1",
     "css-loader": "^1.0.1",
