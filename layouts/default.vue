@@ -32,9 +32,3 @@ export default {
 }
 
 </script>
-
-<style lang="scss">
-@import url('~/assets/css/reset.scss');
-@import url('~/assets/css/style.scss');
-@import url('~/assets/css/util.scss');
-</style>

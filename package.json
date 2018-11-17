@@ -15,24 +15,24 @@
   },
   "dependencies": {
     "@nuxtjs/pwa": "^2.0.8",
-    "mime": "^1.6.0",
-    "nuxt": "^1.0.0"
+    "mime": "^2.3.1",
+    "nuxt": "^2.3.1"
   },
   "devDependencies": {
     "ajv": "^6.5.1",
     "axios": "^0.18.0",
-    "babel-eslint": "^8.2.1",
+    "babel-eslint": "^10.0.1",
     "clone": "^2.1.1",
-    "css-loader": "^0.28.11",
-    "debug": "^3.1.0",
-    "eslint": "^4.15.0",
-    "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.7.1",
+    "css-loader": "^1.0.1",
+    "debug": "^4.1.0",
+    "eslint": "^5.9.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.1.1",
     "eslint-plugin-vue": "^4.0.0",
-    "hoek": "^5.0.3",
+    "hoek": "^6.0.3",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
     "url-loader": "^1.0.1",
-    "vue-svg-loader": "^0.5.0"
+    "vue-svg-loader": "^0.11.0"
   }
 }

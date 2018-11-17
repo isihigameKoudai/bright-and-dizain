@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url('~/assets/css/animation.scss');
+@import '~/assets/css/animation.scss';
 
 .top-container {
   position: relative;

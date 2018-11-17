@@ -29,6 +29,11 @@ module.exports = {
       { rel: 'dns-prefetch', href: 'https://www.brightanddizain.com/'}
     ]
   },
+  css: [
+    `~/assets/css/reset.scss`,
+    `~/assets/css/style.scss`,
+    `~/assets/css/util.scss`
+  ],
   /*
   ** Customize the progress bar color
   */

@@ -122,7 +122,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url('~/assets/css/animation.scss');
+@import '~/assets/css/animation.scss';
 
 .link-nomal {
   position: relative;
@@ -162,7 +162,7 @@ export default {
 }
 
 .area-profile-right {
-  width: 60%;
+  width: 58%;
   height: auto;
   padding-left: 10px;
   padding-right: 10px;

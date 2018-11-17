@@ -153,7 +153,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url('~/assets/css/animation.scss');
+@import '~/assets/css/animation.scss';
 
 .area-content-works {
   width: 480px;
