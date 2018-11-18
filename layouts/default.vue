@@ -1,8 +1,8 @@
 <template>
   <div>
     <humburger
+      :is-active="modal.mode"
       class="fixed-humburegr"
-      :isActive="modal.mode"
       @click="toggleModal()"
     />
     <nuxt />
@@ -18,7 +18,7 @@ import Modal from '@components/templates/Modal';
 import Humburger from '@components/atoms/Humburger';
 
 export default {
-  name: 'default',
+  name: 'Default',
   components: {
     Modal,
     Humburger

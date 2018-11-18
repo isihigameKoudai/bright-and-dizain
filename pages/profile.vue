@@ -2,39 +2,41 @@
   <default-view title="Profile">
     <section class="wrapper mt90">
       <div class="area-profile-left appear">
-        <image-circle class="position-img-profile" path="/img/ProfileImage.jpg" />
+        <image-circle 
+          class="position-img-profile" 
+          path="/img/ProfileImage.jpg" />
         <label-section class="mt40">Koudai Ishigame</label-section>
       </div>
       <div class="area-profile-right">
-        <label-nomal class="appear-up">1994年6月28日生まれ、<br class="pc-dn"/>青森県出身・東京都在住。
-          <br/>プログラミングと音楽が好きで、
-          <br/>学生時代にはプレーヤーと<br class="pc-dn"/>SNSを統合させた音楽アプリや
-          <br/>調理工程と材料を限定した<br class="pc-dn"/>簡易型料理レシピアプリをリリース。
+        <label-nomal class="appear-up">1994年6月28日生まれ、<br class="pc-dn">青森県出身・東京都在住。
+          <br>プログラミングと音楽が好きで、
+          <br>学生時代にはプレーヤーと<br class="pc-dn">SNSを統合させた音楽アプリや
+          <br>調理工程と材料を限定した<br class="pc-dn">簡易型料理レシピアプリをリリース。
         </label-nomal>
-        <label-nomal class="label-nomal mt30 appear-up">大学時代に大手家電量販店での<br class="pc-dn"/>販売員の仕事でカメラと出会う。
-          <br/>たまたま撮った写真を機に
-          <br/>知人がフリーペーパーのモデルに<br class="pc-dn"/>挑戦してくれたことをキッカケに、
-          <br/>本格的に人物・ポートレート写真を始める。
+        <label-nomal class="label-nomal mt30 appear-up">大学時代に大手家電量販店での<br class="pc-dn">販売員の仕事でカメラと出会う。
+          <br>たまたま撮った写真を機に
+          <br>知人がフリーペーパーのモデルに<br class="pc-dn">挑戦してくれたことをキッカケに、
+          <br>本格的に人物・ポートレート写真を始める。
         </label-nomal>
-        <label-nomal class="mt30 appear-up">現在はエンジニア兼フォトグラファー<br class="pc-dn"/>として都内で活動中。
-          <br/>「作り込み」と呼ばれる、コンセプトに応じた<br class="pc-dn"/>背景や衣装などを用いて
-          <br/>世界観を描き出す分野の写真を得意とし、
-          <br/>モデルの撮影だけでなく<br class="pc-dn"/>音楽CDのアルバムジャケットなど
-          <br/>アーティスティックな撮影もこなす。
+        <label-nomal class="mt30 appear-up">現在はエンジニア兼フォトグラファー<br class="pc-dn">として都内で活動中。
+          <br>「作り込み」と呼ばれる、コンセプトに応じた<br class="pc-dn">背景や衣装などを用いて
+          <br>世界観を描き出す分野の写真を得意とし、
+          <br>モデルの撮影だけでなく<br class="pc-dn">音楽CDのアルバムジャケットなど
+          <br>アーティスティックな撮影もこなす。
         </label-nomal>
         <label-nomal class="mt30 appear-up">その他、Webメディアへの写真提供や
-          <br/>海外の厳正写真審査サイトでの掲載経験もあり。
+          <br>海外の厳正写真審査サイトでの掲載経験もあり。
         </label-nomal>
       </div>
     </section>
     <section class="position-title">
       <label-section class="appear-up">skills</label-section>
       <label-nomal class="mt20 appear-up">Photograph
-        <br/>Retouch
-        <br/>Art Direction
-        <br/>HTML/CSS/Javascript(ES6)
-        <br/>Vue.js
-        <br/>jQuery
+        <br>Retouch
+        <br>Art Direction
+        <br>HTML/CSS/Javascript(ES6)
+        <br>Vue.js
+        <br>jQuery
       </label-nomal>
     </section>
     <section class="wrapper position-title">
@@ -72,7 +74,7 @@
             :href="media.link"
             class="link-nomal"
             target="_blank"
-          >{{media.title}}</a>
+          >{{ media.title }}</a>
         </label-nomal>
       </div>
     </section>
@@ -89,7 +91,14 @@ import LogoMedia from '@components/atoms/LogoMedia';
 import { init, scroller } from '~/utils/animations';
 
 export default {
-  name: 'profile',
+  name: 'Profile',
+  components: {
+    DefaultView,
+    ImageCircle,
+    LabelSection,
+    LogoMedia,
+    LabelNomal
+  },
   data() {
     return {
       medias: [{
@@ -111,13 +120,6 @@ export default {
     init();
     scroller();
   },
-  components: {
-    DefaultView,
-    ImageCircle,
-    LabelSection,
-    LogoMedia,
-    LabelNomal
-  }
 }
 </script>
 
@@ -127,17 +129,17 @@ export default {
 .link-nomal {
   position: relative;
   text-decoration: none;
-  color: #402C2C;
+  color: #402c2c;
   transition: filter 0.2s;
-  filter:  drop-shadow(1px 1px 1px #808080f0);
+  filter: drop-shadow(1px 1px 1px #808080f0);
   &:hover {
-    filter:  drop-shadow(3px 3px 2px #808080f0);
+    filter: drop-shadow(3px 3px 2px #808080f0);
   }
 
   &:not(:first-child) {
     margin-left: 10px;
     padding-left: 17px;
-    
+
     &::before {
       content: '/';
       position: absolute;
@@ -147,7 +149,8 @@ export default {
     }
   }
 }
-.area-profile-left,.area-profile-right {
+.area-profile-left,
+.area-profile-right {
   display: inline-block;
   vertical-align: top;
 }
@@ -156,7 +159,7 @@ export default {
   width: 40%;
   height: auto;
   text-align: center;
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 768px) {
     width: 100%;
   }
 }
@@ -167,7 +170,7 @@ export default {
   padding-left: 10px;
   padding-right: 10px;
   box-sizing: border-box;
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 768px) {
     width: 100%;
     text-align: center;
     margin-top: 50px;
@@ -191,5 +194,4 @@ export default {
     width: 100%;
   }
 }
-
 </style>

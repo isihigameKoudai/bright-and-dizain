@@ -1,11 +1,11 @@
 <template>
   <div 
-    class="btn-humburger"
     :class="{'is-active on-modal': isActive}"
+    class="btn-humburger"
     @click="$emit('click')"
   >
-    <div></div>
-    <div></div>
+    <div/>
+    <div/>
   </div>
 </template>
 <script>
@@ -25,12 +25,12 @@ export default {
   display: block;
   width: 56px;
   height: 56px;
-  background:transparent;
+  background: transparent;
   z-index: 110;
   transition: filter 0.2s;
 
   &:hover {
-    filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.3));
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.3));
   }
 
   > div {
@@ -53,7 +53,7 @@ export default {
 
   &.is-active > div {
     background-color: #ffffff;
-    filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.3));
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.3));
 
     &:first-child {
       -webkit-transform: translateY(11px) rotate(45deg);
@@ -66,5 +66,4 @@ export default {
     }
   }
 }
-
 </style>

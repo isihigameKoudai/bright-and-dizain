@@ -1,6 +1,6 @@
 <template>
   <div class="label-top">
-    <h1>{{title}}</h1>
+    <h1>{{ title }}</h1>
   </div>
 </template>
 <script>
@@ -29,7 +29,7 @@ export default {
     width: 50px;
     height: 3px;
     top: 18px;
-    background: #402C2C;
+    background: #402c2c;
     margin-left: auto;
     margin-right: auto;
   }
@@ -38,12 +38,12 @@ export default {
 h1 {
   position: relative;
   font-size: 36px;
-  color: #402C2C;
+  color: #402c2c;
   font-family: Cambria, Georgia, serif;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	line-height: 39.6px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 39.6px;
   letter-spacing: 2px;
 }
 </style>

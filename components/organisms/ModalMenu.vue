@@ -4,11 +4,11 @@
       <li
         v-for="(menu,index) in menus"
         :key="index"
-        :text=menu.title
+        :text="menu.title"
         class="list-menu"
         @click="updateModal()"
       >
-        <nuxt-link :to="menu.path">{{menu.title}}</nuxt-link>
+        <nuxt-link :to="menu.path">{{ menu.title }}</nuxt-link>
       </li>
     </ul>
   </div>    
@@ -54,9 +54,9 @@ export default {
 <style lang="scss" scoped>
 .list-menu {
   position: relative;
-  filter: drop-shadow(3px 3px 2px rgba(0,0,0,0.9));
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.9));
   text-align: center;
-  opacity: 1.0;
+  opacity: 1;
   font-size: 40px;
   font-family: Cambria, Georgia, serif;
   letter-spacing: 2px;
@@ -72,8 +72,9 @@ export default {
     margin-top: 30px;
   }
 
-  @media screen and (min-width: 769px){
-   &:after, &::before {
+  @media screen and (min-width: 769px) {
+    &:after,
+    &::before {
       position: absolute;
       content: '';
       display: block;
@@ -92,15 +93,17 @@ export default {
       right: 50%;
     }
 
-    &:hover:after,&:hover:before {
+    &:hover:after,
+    &:hover:before {
       width: 50%;
-    } 
+    }
   }
 
-  @media screen and (max-width: 768px){
-    &:active:after,&:active:before {
+  @media screen and (max-width: 768px) {
+    &:active:after,
+    &:active:before {
       width: 50%;
-    } 
+    }
   }
 }
 </style>

@@ -1,18 +1,27 @@
 <template>
   <div class="top-container">
-    <img class="main-visual" src="/img/mainImageSmall.JPG" alt="mainVisual"/>
-    <img class="title-position appear" src="/svg/mainTitleWhite.svg" alt="" width="200px"  />
+    <img 
+      class="main-visual" 
+      src="/img/mainImageSmall.JPG" 
+      alt="mainVisual"
+    >
+    <img
+      class="title-position appear"
+      src="/svg/mainTitleWhite.svg"
+      alt=""
+      width="200px"
+    >
   </div>
 </template>
 
 <script>
-import { init, scroller } from '~/utils/animations';
+import { init, scroller } from '~/utils/animations'
 
 export default {
-  name: 'index',
+  name: 'Index',
   mounted() {
-    init();
-    scroller();
+    init()
+    scroller()
   }
 }
 </script>
@@ -29,7 +38,7 @@ export default {
   position: absolute;
   top: 50%;
   left: 10vw;
-  transform: translate3d(0,-50%,0);
+  transform: translate3d(0, -50%, 0);
 }
 
 .main-visual {
@@ -38,5 +47,4 @@ export default {
   object-fit: cover;
   filter: brightness(97%) opacity(83%);
 }
-
 </style>

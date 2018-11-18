@@ -1,155 +1,196 @@
 <template>
   <default-view title="Contact">
     <section class="position-title mt100">
-      <p
-        v-for="(item, index) in textInputs"
-        :key="index"
+      <p 
+        v-for="(item, index) in textInputs" 
+        :key="index" 
         class="mt30"
       >
         <text-box
           v-if="index !== 'message'"
-          :placeHolder="item.placeHolder"
-          :isInvalid="item.isInvalid"
+          :place-holder="item.placeHolder"
+          :is-invalid="item.isInvalid"
           @text="item.inputValue"
         />
         <text-area
           v-else
-          :placeHolder='item.placeHolder'
-          :isInvalid="item.isInvalid"
+          :place-holder="item.placeHolder"
+          :is-invalid="item.isInvalid"
           @text="item.inputValue"
         />
       </p>
       <Button
-        class="mt70"
         :isDisable="invalid"
+        class="mt70"
         @click="pushSubmit"
       >Send</Button>
-      <label-nomal
-        v-if="isFalse"
+      <label-nomal 
+        v-if="
+        isFalse" 
         class="mt20"
-      >送信失敗しました、時間を空けてお試しください。</label-nomal>
+      >送信失敗しました、時間を空けてお試しください。</label-nomal
+      >
     </section>
     <section class="position-title">
       <div class="logo-wrapper mt70">
-				<logo-media 
-					v-for="( social, i ) in socials" 
-					:key="i"
-					:path="social.imagePath"
-					:link="social.link"
-				/>
+        <logo-media
+          v-for="(social, i) in socials"
+          :key="i"
+          :path="social.imagePath"
+          :link="social.link"
+        />
       </div>
-      <label-nomal class="mt40">SNSのDM（ダイレクトメッセージ）<br class="pc-dn" />からもご連絡可能です。</label-nomal>
+      <label-nomal 
+        class="mt40"
+      >SNSのDM（ダイレクトメッセージ）<br
+        class="pc-dn"
+      >からもご連絡可能です。</label-nomal
+      >
     </section>
   </default-view>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
-import DefaultView from '@components/templates/DefaultView';
-import TextBox from '@components/atoms/TextBox';
-import TextArea from '@components/atoms/TextArea';
-import Button from '@components/atoms/Button';
-import LabelNomal from '@components/atoms/LabelNomal';
-import LogoMedia from '@components/atoms/LogoMedia';
+import { mapActions } from 'vuex'
+import Button from '@components/atoms/Button'
+import DefaultView from '@components/templates/DefaultView'
+import TextBox from '@components/atoms/TextBox'
+import TextArea from '@components/atoms/TextArea'
+import LabelNomal from '@components/atoms/LabelNomal'
+import LogoMedia from '@components/atoms/LogoMedia'
 
-import axios from 'axios';
-import requestApi from '~/assets/datas/request';
+import axios from 'axios'
+import requestApi from '~/assets/datas/request'
 
 export default {
-  name: 'contact',
-	data() {
-		return {
+  name: 'Contact',
+  components: {
+    Button,
+    DefaultView,
+    TextBox,
+    TextArea,
+    LogoMedia,
+    LabelNomal
+  },
+  data() {
+    return {
       isFalse: false,
-			socials: [{
-				imagePath: '/svg/LogoFacebook.svg',
-				link: 'https://www.facebook.com/koudai.ishigame'
-			},{
-				imagePath: '/img/LogoTwitter.png',
-				link: 'https://twitter.com/TVK382'
-			},{
-				imagePath: '/img/LogoInstagram.png',
-				link: 'https://www.instagram.com/koudai_ishigame/?hl=ja'
-      }],
+      socials: [
+        {
+          imagePath: '/svg/LogoFacebook.svg',
+          link: 'https://www.facebook.com/koudai.ishigame'
+        },
+        {
+          imagePath: '/img/LogoTwitter.png',
+          link: 'https://twitter.com/TVK382'
+        },
+        {
+          imagePath: '/img/LogoInstagram.png',
+          link: 'https://www.instagram.com/koudai_ishigame/?hl=ja'
+        }
+      ],
       textInputs: {
         company: {
-          value: "",
-          placeHolder: "Company",
+          value: '',
+          placeHolder: 'Company',
           isInvalid: false,
-          inputValue: (e) => {
-            this.textInputs.company.value = e;
-            this.textInputs.company.validate(this.textInputs.company.value);
+          inputValue: e => {
+            this.textInputs.company.value = e
+            this.textInputs.company.validate(this.textInputs.company.value)
           },
-          validate: (e) => {
-            const err = e.length < 4;
-			      this.textInputs.company.isInvalid = err;
+          validate: e => {
+            const err = e.length < 4
+            this.textInputs.company.isInvalid = err
           }
         },
         name: {
-          value: "",
-          placeHolder: "Name",
+          value: '',
+          placeHolder: 'Name',
           isInvalid: false,
-          inputValue: (e) => {
-            this.textInputs.name.value = e;
-            this.textInputs.name.validate(this.textInputs.name.value);
+          inputValue: e => {
+            this.textInputs.name.value = e
+            this.textInputs.name.validate(this.textInputs.name.value)
           },
-          validate: (e) => {
-            const err = e.length < 4;
-			      this.textInputs.name.isInvalid = err;
+          validate: e => {
+            const err = e.length < 4
+            this.textInputs.name.isInvalid = err
           }
         },
         email: {
-          value: "",
-          placeHolder: "E-mail(example@email.com)",
+          value: '',
+          placeHolder: 'E-mail(example@email.com)',
           isInvalid: false,
-          inputValue: (e) => {
-            this.textInputs.email.value = e;
-            this.textInputs.email.validate(this.textInputs.email.value);
+          inputValue: e => {
+            this.textInputs.email.value = e
+            this.textInputs.email.validate(this.textInputs.email.value)
           },
-          validate: (e) => {
-            const regex = new RegExp(/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i);
-            this.textInputs.email.isInvalid = !regex.test(e);
+          validate: e => {
+            const regex = new RegExp(
+              /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i
+            )
+            this.textInputs.email.isInvalid = !regex.test(e)
           }
         },
         number: {
-          value: "",
-          placeHolder: "Number",
+          value: '',
+          placeHolder: 'Number',
           isInvalid: false,
-          inputValue: (e) => {
-            this.textInputs.number.value = e;
-            this.textInputs.number.validate(this.textInputs.number.value);
+          inputValue: e => {
+            this.textInputs.number.value = e
+            this.textInputs.number.validate(this.textInputs.number.value)
           },
-          validate: (e) => {
-            const err = e.length < 8 || isNaN(Number(e));        
-			      this.textInputs.number.isInvalid = err;
+          validate: e => {
+            const err = e.length < 8 || isNaN(Number(e))
+            this.textInputs.number.isInvalid = err
           }
         },
         message: {
-          value: "",
-          placeHolder: "Message",
+          value: '',
+          placeHolder: 'Message',
           isInvalid: false,
-          inputValue: (e) => {
-            this.textInputs.message.value = e;
-            this.textInputs.message.validate(this.textInputs.message.value);
+          inputValue: e => {
+            this.textInputs.message.value = e
+            this.textInputs.message.validate(this.textInputs.message.value)
           },
-          validate: (e) => {
-            const err = e.length < 10;
-			      this.textInputs.message.isInvalid = err;
+          validate: e => {
+            const err = e.length < 10
+            this.textInputs.message.isInvalid = err
           }
         }
       }
-		}
+    }
+  },
+  computed: {
+    contactData() {
+      const company = this.textInputs.company.value
+      const name = this.textInputs.name.value
+      const email = this.textInputs.email.value
+      const number = this.textInputs.number.value
+      const message = this.textInputs.message.value
+      const contacts = `会社・組織：${company}\n名前：${name}\nEメール：${email}\n電話番号：${number}\nメッセージ：${message}\n`
+      return contacts
+    },
+    invalid() {
+      const company = this.textInputs.company.isInvalid
+      const name = this.textInputs.name.isInvalid
+      const email = this.textInputs.email.isInvalid
+      const number = this.textInputs.number.isInvalid
+      const message = this.textInputs.message.isInvalid
+      const invalid = company || name || email || number || message
+      return invalid
+    }
   },
   mounted() {
-    this.textInputs.message.isInvalid = true;
+    this.textInputs.message.isInvalid = true
   },
   methods: {
     ...mapActions(['toggleModal']),
     async pushSubmit(e) {
-      const API_URL = requestApi.slack.url;
-      const header = requestApi.slack.header;
-      
-      const message = 'hello bnd';
-      const data = { text: message };
+      const API_URL = requestApi.slack.url
+      const header = requestApi.slack.header
+
+      const message = 'hello bnd'
+      const data = { text: message }
       const options = {
         method: 'post',
         baseURL: API_URL,
@@ -159,51 +200,24 @@ export default {
           "username": "bnd",
           "text": "<!here> ${this.contactData}"
         }`
-      };
+      }
       const res = await axios(options)
-        .then( e => {
-           this.isFalse = false;
-           this.resetContactData();
-           this.toggleModal('contact');
-        }).catch( e => {
-          this.isFalse = true;
-      });     
+        .then(e => {
+          this.isFalse = false
+          this.resetContactData()
+          this.toggleModal('contact')
+        })
+        .catch(e => {
+          this.isFalse = true
+        })
     },
     resetContactData() {
-      this.textInputs.company.value = '';
-      this.textInputs.name.value = '';
-      this.textInputs.email.value = '';
-      this.textInputs.number.value = '';
-      this.textInputs.message.value = '';
-    },
-  },
-  computed: {
-    contactData() {
-      const company = this.textInputs.company.value;
-      const name = this.textInputs.name.value;
-      const email = this.textInputs.email.value;
-      const number = this.textInputs.number.value;
-      const message = this.textInputs.message.value;
-      const contacts = `会社・組織：${company}\n名前：${name}\nEメール：${email}\n電話番号：${number}\nメッセージ：${message}\n`;
-      return contacts;
-    },
-    invalid() {
-      const company = this.textInputs.company.isInvalid;
-      const name = this.textInputs.name.isInvalid;
-      const email = this.textInputs.email.isInvalid;
-      const number = this.textInputs.number.isInvalid;
-      const message = this.textInputs.message.isInvalid;
-      const invalid = company || name || email || number || message;
-      return invalid;
+      this.textInputs.company.value = ''
+      this.textInputs.name.value = ''
+      this.textInputs.email.value = ''
+      this.textInputs.number.value = ''
+      this.textInputs.message.value = ''
     }
-  },
-  components: {
-    DefaultView,
-    TextBox,
-    TextArea,
-    Button,
-    LogoMedia,
-    LabelNomal
   }
 }
 </script>
@@ -217,8 +231,7 @@ export default {
   justify-content: space-around;
 
   @media screen and (max-width: 400px) {
-    width: 100%
+    width: 100%;
   }
 }
-
 </style>

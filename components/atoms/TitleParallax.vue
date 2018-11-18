@@ -1,17 +1,23 @@
 <template>
   <div 
-    class="box-parallax"
     :style="{ backgroundImage: 'url(' + path + ')' }"
+    class="box-parallax"
   >
-    <p>{{title}}</p>
+    <p>{{ title }}</p>
   </div>
 </template>
 <script>
 export default {
   name: 'TitleParallax',
   props: {
-    path: String,
-    title: String
+    path: {
+      type: String,
+      default: ''
+    },
+    title: {
+      type: String,
+      default: ''
+    }
   },
 }
 </script>
@@ -38,14 +44,14 @@ export default {
     color: #fff;
     text-align: center;
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.8);
-    transform: translate3d(-50%,-50%,0);
+    transform: translate3d(-50%, -50%, 0);
     font-size: 68px;
     font-family: Cambria, Georgia, serif;
     font-style: normal;
     font-variant: normal;
   }
 
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 768px) {
     height: 100vh;
     background-size: auto 100vh;
     background-attachment: scroll;

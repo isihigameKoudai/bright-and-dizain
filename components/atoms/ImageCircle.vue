@@ -3,26 +3,29 @@
     <img 
       :src="path"
       alt=""
-    />
+    >
   </div>
 </template>
 <script>
 export default {
   name: 'ImageCircle',
   props: {
-    path: String,
+    path: {
+      type: String,
+      default: ''
+    },
   }
 }
 </script>
 <style lang="scss" scoped>
 .img-circle {
-  position: relative; 
+  position: relative;
   width: 200px;
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
   z-index: 1;
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 768px) {
     width: 130px;
     height: 130px;
   }
@@ -34,6 +37,6 @@ export default {
   left: 50%;
   width: 100%;
   height: auto;
-  transform: translate3d(-50%,-50%,0);
+  transform: translate3d(-50%, -50%, 0);
 }
 </style>

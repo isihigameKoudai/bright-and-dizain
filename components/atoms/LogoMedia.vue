@@ -1,7 +1,12 @@
 <template>
-	<a :href="link" target="_blank">
-		<img class="img-logo" :src="path" alt="" />
-	</a>
+  <a 
+    :href="link" 
+    target="_blank">
+    <img 
+      :src="path" 
+      class="img-logo" 
+      alt="" >
+  </a>
 </template>
 <script>
 export default {
@@ -20,7 +25,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .img-logo {
-	height: 60px;
+  height: 60px;
   transition: 0.2s all ease;
   &:hover {
     filter: brightness(110%) drop-shadow(3px 3px 4px #909090f0);

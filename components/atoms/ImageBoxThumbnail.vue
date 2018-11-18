@@ -1,9 +1,9 @@
 <template>
   <div
-    class="image-box"
     :style="{ backgroundImage: 'url('+ imagePath +')' }"
+    class="image-box"
     @click="$emit('click')"
-    ></div>
+  />
 </template>
 <script>
 import { mapMutations } from 'vuex';
@@ -36,14 +36,14 @@ export default {
   background-repeat: no-repeat;
   transition: 0.2s all ease;
 
-  @media screen and (min-width: 769px){
+  @media screen and (min-width: 769px) {
     &:hover {
       filter: drop-shadow(3px 3px 4px #909090f0);
-      transform: translate(-1px,-1px);
+      transform: translate(-1px, -1px);
     }
   }
 
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 768px) {
     width: 33vw;
     height: 33vw;
   }
