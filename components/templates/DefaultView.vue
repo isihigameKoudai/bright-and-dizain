@@ -1,11 +1,11 @@
 <template>
-  <div class="pb100">
+  <article class="pb100">
     <label-page-top 
       :title="title" 
       class="position-title"
     />
     <slot />
-  </div>
+  </article>
 </template>
 <script>
 import LabelPageTop from '@components/atoms/LabelPageTop';

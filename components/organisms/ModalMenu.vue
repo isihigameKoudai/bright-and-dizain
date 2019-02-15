@@ -30,10 +30,6 @@ export default {
         path: '/'
       },
       {
-        title: 'Works',
-        path: '/works'
-      },
-      {
         title: 'Profile',
         path: '/profile'
       },
