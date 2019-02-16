@@ -23,11 +23,11 @@
         width="200px"
       >
       <div class="arrow">
-        <span>
+        <div>
           <span/>
           <span/>
           <span/>
-        </span>
+        </div>
       </div>
     </div>
     <default-view title="Works">
@@ -273,19 +273,45 @@ export default {
   height: 50px;
   background: transparent;
   border: solid 2px #fff;
+  transition-duration: 0.1s;
+  filter: drop-shadow(2px 2px 2px #402c2caa);
   z-index: 1;
-  & > span {
+  & > div {
     position: relative;
+    width: 100%;
+    height: 100%;
+    background:transparent;
+
     & > span {
       position: absolute;
       height: 2px;
       background-color: #fff;
+      transition-duration: 0.1s;
+
+      &:first-child {
+        bottom: 15px;
+        left: 38%;
+        width: 15px;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
       &:nth-child(2) {
         top: 50%;
         left: 50%;
-        width: 30px;
-        transform: rotate(90deg);
+        width: 25px;
+        transform: translate(-50%, -50%) rotate(90deg);
       }
+      &:last-child {
+        bottom: 15px;
+        right: 2%;
+        width: 16px;
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+  &:hover {
+    filter: drop-shadow(3px 3px 2px #402c2caa);
+    & > div > span {
+      filter: drop-shadow(3px 3px 2px #402c2caa);
     }
   }
 }
