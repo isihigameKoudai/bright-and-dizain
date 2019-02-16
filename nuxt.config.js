@@ -78,6 +78,7 @@ module.exports = {
     ["@nuxtjs/pwa", { icon: false }],
     '@nuxtjs/axios'
   ],
+  plugins: ['~/plugins/vue-awesome-swiper'],
   manifest: {
     name: "BrightAndDizain",
     lang: "ja",

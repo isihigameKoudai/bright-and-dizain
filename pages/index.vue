@@ -1,17 +1,34 @@
 <template>
   <div>
     <div class="top-container">
-      <img 
-        class="main-visual" 
-        src="/img/mainImageSmall.JPG" 
-        alt="mainVisual"
+      <swiper
+        :options="swiperOption"
       >
+        <swiper-slide
+          v-for="(image,key) in images"
+          :key="key"
+        >
+          <img 
+            :alt="image.alt" 
+            :src="image.path"
+            class="main-visual"
+          >
+        </swiper-slide> 
+      </swiper>
+      
       <img
         class="title-position appear"
         src="/svg/mainTitleWhite.svg"
         alt=""
         width="200px"
       >
+      <div class="arrow">
+        <span>
+          <span/>
+          <span/>
+          <span/>
+        </span>
+      </div>
     </div>
     <default-view title="Works">
       <label-section class="position-title">Concept</label-section>
@@ -192,6 +209,30 @@ export default {
     ImageBox,
     Button
   },
+  data() {
+    return {
+      swiperOption: {
+        loop: true,
+        speed: 600,
+        autoplay: {
+          delay: 3000,
+          stopOnLast: false,
+          disableOnInteraction: false
+        },
+        effect: 'fade'
+      },
+      images: [{
+        path: '/img/top/mainImage01.jpg',
+        alt: 'creative'
+      },{
+        path: '/img/top/mainImage02.jpg',
+        alt: 'portrate'
+      },{
+        path: '/img/top/mainImage03.jpg',
+        alt: 'portrait'
+      }]
+    }
+  },
   mounted() {
     init()
     scroller()
@@ -212,13 +253,41 @@ export default {
   top: 50%;
   left: 10vw;
   transform: translate3d(0, -50%, 0);
+  z-index: 10;
 }
 
 .main-visual {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  filter: brightness(97%) opacity(83%);
+  filter: brightness(97%);
+}
+
+.arrow {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border: solid 2px #fff;
+  z-index: 1;
+  & > span {
+    position: relative;
+    & > span {
+      position: absolute;
+      height: 2px;
+      background-color: #fff;
+      &:nth-child(2) {
+        top: 50%;
+        left: 50%;
+        width: 30px;
+        transform: rotate(90deg);
+      }
+    }
+  }
 }
 
 .area-content-works {
