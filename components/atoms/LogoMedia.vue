@@ -1,11 +1,13 @@
 <template>
   <a 
     :href="link" 
-    target="_blank">
+    target="_blank"
+  >
     <img 
       :src="path" 
       class="img-logo" 
-      alt="" >
+      alt=""
+    >
   </a>
 </template>
 <script>

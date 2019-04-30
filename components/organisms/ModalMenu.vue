@@ -8,7 +8,9 @@
         class="list-menu"
         @click="updateModal()"
       >
-        <nuxt-link :to="menu.path">{{ menu.title }}</nuxt-link>
+        <nuxt-link :to="menu.path">
+          {{ menu.title }}
+        </nuxt-link>
       </li>
     </ul>
   </div>    
@@ -36,6 +38,10 @@ export default {
       {
         title: 'Portfolio',
         path: '/portfolio'
+      },
+      {
+        title: 'Plan',
+        path: '/plan'
       },
       {
         title: 'Contact',

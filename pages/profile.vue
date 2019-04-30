@@ -4,34 +4,44 @@
       <div class="area-profile-left appear">
         <image-circle 
           class="position-img-profile" 
-          path="/img/ProfileImage.jpg" />
-        <label-section class="mt40">Koudai Ishigame</label-section>
+          path="/img/ProfileImage.jpg"
+        />
+        <label-section class="mt40">
+          Koudai Ishigame
+        </label-section>
       </div>
       <div class="area-profile-right">
-        <label-nomal class="appear-up">1994年6月28日生まれ、<br class="pc-dn">青森県出身・東京都在住。
+        <label-nomal class="appear-up">
+          1994年6月28日生まれ、<br class="pc-dn">青森県出身・東京都在住。
           <br>プログラミングと音楽が好きで、
           <br>学生時代にはプレーヤーと<br class="pc-dn">SNSを統合させた音楽アプリや
           <br>調理工程と材料を限定した<br class="pc-dn">簡易型料理レシピアプリをリリース。
         </label-nomal>
-        <label-nomal class="label-nomal mt30 appear-up">大学時代に大手家電量販店での<br class="pc-dn">販売員の仕事でカメラと出会う。
+        <label-nomal class="label-nomal mt30 appear-up">
+          大学時代に大手家電量販店での<br class="pc-dn">販売員の仕事でカメラと出会う。
           <br>たまたま撮った写真を機に
           <br>知人がフリーペーパーのモデルに<br class="pc-dn">挑戦してくれたことをキッカケに、
           <br>本格的に人物・ポートレート写真を始める。
         </label-nomal>
-        <label-nomal class="mt30 appear-up">現在はエンジニア兼フォトグラファー<br class="pc-dn">として都内で活動中。
+        <label-nomal class="mt30 appear-up">
+          現在はエンジニア兼フォトグラファー<br class="pc-dn">として都内で活動中。
           <br>「作り込み」と呼ばれる、コンセプトに応じた<br class="pc-dn">背景や衣装などを用いて
           <br>世界観を描き出す分野の写真を得意とし、
           <br>モデルの撮影だけでなく<br class="pc-dn">音楽CDのアルバムジャケットなど
           <br>アーティスティックな撮影もこなす。
         </label-nomal>
-        <label-nomal class="mt30 appear-up">その他、Webメディアへの写真提供や
+        <label-nomal class="mt30 appear-up">
+          その他、Webメディアへの写真提供や
           <br>海外の厳正写真審査サイトでの掲載経験もあり。
         </label-nomal>
       </div>
     </section>
     <section class="position-title">
-      <label-section class="appear-up">skills</label-section>
-      <label-nomal class="mt20 appear-up">Photograph
+      <label-section class="appear-up">
+        skills
+      </label-section>
+      <label-nomal class="mt20 appear-up">
+        Photograph
         <br>Retouch
         <br>Art Direction
         <br>HTML/CSS/Javascript(ES6)
@@ -40,7 +50,9 @@
       </label-nomal>
     </section>
     <section class="wrapper position-title">
-      <label-section class="appear-up">SNS & Media</label-section>
+      <label-section class="appear-up">
+        SNS & Media
+      </label-section>
       <div class="logo-wrapper mt40 appear-up">
         <logo-media
           path="/svg/LogoFacebook.svg"

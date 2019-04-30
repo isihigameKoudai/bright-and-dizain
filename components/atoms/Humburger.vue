@@ -4,8 +4,8 @@
     class="btn-humburger"
     @click="$emit('click')"
   >
-    <div/>
-    <div/>
+    <div />
+    <div />
   </div>
 </template>
 <script>

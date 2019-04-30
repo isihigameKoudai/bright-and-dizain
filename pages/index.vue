@@ -3,6 +3,7 @@
     <div class="top-container">
       <swiper
         :options="swiperOption"
+        class="appear"
       >
         <swiper-slide
           v-for="(image,key) in images"
@@ -22,19 +23,27 @@
         alt=""
         width="200px"
       >
-      <div class="arrow">
+      <div
+        class="arrow"
+        @click="moveScroll"
+      >
         <div>
-          <span/>
-          <span/>
-          <span/>
+          <span />
+          <span />
+          <span />
         </div>
       </div>
     </div>
     <default-view title="Works">
-      <label-section class="position-title">Concept</label-section>
+      <label-section class="position-title">
+        Concept
+      </label-section>
       <label-nomal 
         :font-size="24" 
-        class="position-title appear-up"><span class="sp-dn">「</span>Make Bright All The People<br class="pc-dn"> - 全ての人を輝かせる -<span class="sp-dn">」</span></label-nomal>
+        class="position-title appear-up"
+      >
+        <span class="sp-dn">「</span>Make Bright All The People<br class="pc-dn"> - 全ての人を輝かせる -<span class="sp-dn">」</span>
+      </label-nomal>
       <div class="position-title">
         <label-nomal class="mt20 appear-up">
           上記ビジョンのもと、<br>
@@ -60,10 +69,13 @@
       <title-parallax 
         class="mt90" 
         path="/img/TitlePhotograph.jpg" 
-        title="Photograph" />
+        title="Photograph"
+      />
       <section class="wrapper area-content mt90">
         <div class="area-content-works">
-          <label-section class="appear-up">Creative</label-section>
+          <label-section class="appear-up">
+            Creative
+          </label-section>
           <label-nomal class="mt20 appear-up">
             創作、クリエイティブ、作り込みなど<br>
             背景や衣装・ドレス、メイクからヘアメイクまで<br>
@@ -79,16 +91,20 @@
         <image-box 
           :shadow="true" 
           class="sp-space appear" 
-          path="/img/worksCreative.jpg"/>
+          path="/img/worksCreative.jpg"
+        />
       </section>
 
       <section class="wrapper area-content mt90">
         <image-box 
           :shadow="true" 
           class="sp-dn appear" 
-          path="/img/worksPortrait.jpg"/>
+          path="/img/worksPortrait.jpg"
+        />
         <div class="area-content-works">
-          <label-section class="appear-up">Portrait</label-section>
+          <label-section class="appear-up">
+            Portrait
+          </label-section>
           <label-nomal class="mt20 appear-up">
             手軽な人物・プロフィールの撮影から<br>
             結婚式の前撮りなど<br>
@@ -105,12 +121,15 @@
         <image-box 
           :shadow="true" 
           class="pc-dn sp-space appear" 
-          path="/img/worksPortrait.jpg"/>
+          path="/img/worksPortrait.jpg"
+        />
       </section>
 
       <section class="wrapper area-content mt90">
         <div class="area-content-works">
-          <label-section class="appear-up">Media & Report</label-section>
+          <label-section class="appear-up">
+            Media & Report
+          </label-section>
           <label-nomal class="mt20 appear-up">
             宣伝商材やHP素材、Webメディアや記事の<br>
             ための写真などをご提供いたします。<br>
@@ -127,28 +146,35 @@
         <image-box 
           :shadow="true" 
           class="sp-space appear" 
-          path="/img/worksMediaReport.jpg"/>
+          path="/img/worksMediaReport.jpg"
+        />
       </section>
 
       <section class="wrapper mt100 taC">
         <nuxt-link to="/contact">
           <Button>Contact</Button>
         </nuxt-link>
-        <label-nomal class="mt30">お問い合わせはこちらから</label-nomal>
+        <label-nomal class="mt30">
+          お問い合わせはこちらから
+        </label-nomal>
       </section>
 
       <!-- Web Works -->
       <title-parallax 
         class="mt90" 
         path="/img/TitleWebDevelop.jpg" 
-        title="Web Works" />
+        title="Web Works"
+      />
       <section class="wrapper area-content vertical-top">
         <div class="area-content-works mt90">
-          <label-section class="appear-up">HTML/CSS Coding</label-section>
+          <label-section class="appear-up">
+            HTML/CSS Coding
+          </label-section>
           <image-box 
             :is-small="true" 
             class="mt30 sp-dn appear" 
-            path="/img/webCoding.jpg"/>
+            path="/img/webCoding.jpg"
+          />
           <label-nomal class="mt20 appear-up">
             各種サービス、Webサイト、<br>
             HP、Webアプリにおける<br>
@@ -158,14 +184,18 @@
           <image-box 
             :is-small="true" 
             class="mt30 pc-dn sp-space appear" 
-            path="/img/webCoding.jpg"/>
+            path="/img/webCoding.jpg"
+          />
         </div>
         <div class="area-content-works mt90">
-          <label-section class="appear-up">WebApp Develop</label-section>
+          <label-section class="appear-up">
+            WebApp Develop
+          </label-section>
           <image-box 
             :is-small="true" 
             class="mt30 sp-dn appear" 
-            path="/img/webApp.jpg"/>
+            path="/img/webApp.jpg"
+          />
           <label-nomal class="mt20 appear-up">
             Web上で動くアプリやサイトの<br>
             フロントエンド開発を行います。<br>
@@ -175,7 +205,8 @@
           <image-box 
             :is-small="true" 
             class="mt30 pc-dn sp-space appear" 
-            path="/img/webApp.jpg"/>
+            path="/img/webApp.jpg"
+          />
         </div>
       </section>
 
@@ -183,13 +214,16 @@
         <nuxt-link to="/contact">
           <Button>Contact</Button>
         </nuxt-link>
-        <label-nomal class="mt30">お問い合わせはこちらから</label-nomal>
+        <label-nomal class="mt30">
+          お問い合わせはこちらから
+        </label-nomal>
       </section>
     </default-view>
   </div>
 </template>
 
 <script>
+import $ from 'jquery';
 import DefaultView from '@components/templates/DefaultView'
 import LabelSection from '@components/atoms/LabelSection'
 import LabelNomal from '@components/atoms/LabelNomal'
@@ -236,6 +270,11 @@ export default {
   mounted() {
     init()
     scroller()
+  },
+  methods: {
+    moveScroll() {
+      $('html,body').animate({ scrollTop: window.innerHeight }, 700, 'swing')
+    }
   }
 }
 </script>

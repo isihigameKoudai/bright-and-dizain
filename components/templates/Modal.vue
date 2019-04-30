@@ -9,15 +9,18 @@
       <modal-image 
         v-if="modal.modalType === 'image'" 
         :key="2" 
-        class="modal-content"/>
+        class="modal-content"
+      />
       <modal-complet-email 
         v-else-if="modal.modalType === 'contact'" 
         :key="3" 
-        class="modal-content"/>
+        class="modal-content"
+      />
       <modal-menu 
         v-else 
         :key="4" 
-        class="modal-content" />
+        class="modal-content"
+      />
     </div>  
   </transition>
 </template>
@@ -51,6 +54,7 @@ export default {
   width: 100%;
   height: 100%;
   background: rgba($color: #1d1d24, $alpha: 0.9);
+  z-index: 50;
 }
 
 .modal-content {
@@ -58,7 +62,7 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10;
+  z-index: 60;
 }
 
 .fade-enter-active,

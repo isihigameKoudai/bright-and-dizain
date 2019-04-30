@@ -3,8 +3,9 @@
     <label-nomal 
       :font-size="32" 
       class="position-title mt80"
-    >Creative</label-nomal
     >
+      Creative
+    </label-nomal>
     <div class="wrapper flex-con mt30">
       <image-box-thumbnail
         v-for="(image, index) in portfolio.creative"
@@ -19,7 +20,9 @@
     <label-nomal 
       :font-size="32" 
       class="position-title mt80"
-    >Portrait</label-nomal>
+    >
+      Portrait
+    </label-nomal>
     <div class="wrapper flex-con mt30">
       <image-box-thumbnail
         v-for="(image, index) in portfolio.portrait"
@@ -34,7 +37,9 @@
     <label-nomal 
       :font-size="32" 
       class="position-title mt80"
-    >Landscape</label-nomal>
+    >
+      Landscape
+    </label-nomal>
     <div class="wrapper flex-con mt30">
       <image-box-thumbnail
         v-for="(image, index) in portfolio.landscape"

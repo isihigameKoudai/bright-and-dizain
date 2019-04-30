@@ -1,37 +1,22 @@
 <template>
-  <default-view title="Contact">
+  <default-view title="Plan">
     <section class="position-title mt100">
-      <p 
-        v-for="(item, index) in textInputs" 
-        :key="index" 
-        class="mt30"
+      <label-nomal
+        :font-size="24"
+        class="position-title appear-up"
       >
-        <text-box
-          v-if="index !== 'message'"
-          :place-holder="item.placeHolder"
-          :is-invalid="item.isInvalid"
-          @text="item.inputValue"
-        />
-        <text-area
-          v-else
-          :place-holder="item.placeHolder"
-          :is-invalid="item.isInvalid"
-          @text="item.inputValue"
-        />
-      </p>
-      <Button
-        :is-disable="invalid"
-        class="mt70"
-        @click="pushSubmit"
-      >
-        Send
-      </Button>
-      <label-nomal 
-        v-if="isFalse" 
-        class="mt20"
-      >
-        送信失敗しました、時間を空けてお試しください。
+        各種料金
       </label-nomal>
+      <div class="table-container">
+        <ul>
+          <li class="col">
+            aaaa
+          </li>
+          <li class="col">
+            bbbb
+          </li>
+        </ul>
+      </div>
     </section>
     <section class="position-title">
       <div class="logo-wrapper mt70">
@@ -42,13 +27,9 @@
           :link="social.link"
         />
       </div>
-      <label-nomal 
-        class="mt40"
-      >
-        SNSのDM（ダイレクトメッセージ）<br
-          class="pc-dn"
-        >
-        からもご連絡可能です。
+      <label-nomal class="mt40">
+        SNSのDM（ダイレクトメッセージ）
+        <br class="pc-dn">からもご連絡可能です。
       </label-nomal>
     </section>
   </default-view>
@@ -56,10 +37,7 @@
 
 <script>
 import { mapActions } from 'vuex'
-import Button from '@components/atoms/Button'
 import DefaultView from '@components/templates/DefaultView'
-import TextBox from '@components/atoms/TextBox'
-import TextArea from '@components/atoms/TextArea'
 import LabelNomal from '@components/atoms/LabelNomal'
 import LogoMedia from '@components/atoms/LogoMedia'
 
@@ -69,10 +47,7 @@ import requestApi from '~/assets/datas/request'
 export default {
   name: 'Contact',
   components: {
-    Button,
     DefaultView,
-    TextBox,
-    TextArea,
     LogoMedia,
     LabelNomal
   },
@@ -226,7 +201,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .logo-wrapper {
   width: 400px;
   margin-left: auto;
@@ -235,6 +210,25 @@ export default {
   justify-content: space-around;
 
   @media screen and (max-width: 400px) {
+    width: 100%;
+  }
+}
+
+.table-container {
+  width: 768px;
+  margin: 0 auto;
+  & > ul {
+    display: table;
+
+    .col {
+      display: table-cell;
+      border-collapse: collapse;
+      list-style: none;
+      padding: 10px;
+      border: solid 1px #402c2c;
+    }
+  }
+  @media screen and (max-width: 768px) {
     width: 100%;
   }
 }
