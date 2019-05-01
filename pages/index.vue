@@ -209,7 +209,6 @@
           />
         </div>
       </section>
-
       <section class="wrapper mt100 taC">
         <nuxt-link to="/contact">
           <Button>Contact</Button>
@@ -258,12 +257,6 @@ export default {
       images: [{
         path: '/img/top/mainImage01.jpg',
         alt: 'creative'
-      },{
-        path: '/img/top/mainImage02.jpg',
-        alt: 'portrate'
-      },{
-        path: '/img/top/mainImage03.jpg',
-        alt: 'portrait'
       }]
     }
   },

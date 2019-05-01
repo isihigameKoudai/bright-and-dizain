@@ -7,18 +7,80 @@
       >
         各種料金
       </label-nomal>
-      <div class="table-container">
-        <ul>
-          <li class="col">
-            aaaa
+      <div class="container">
+        <ul class="table-container mt50">
+          <!-- header of table -->
+          <li class="row title">
+            項目
           </li>
-          <li class="col">
-            bbbb
+          <li class="row title">
+            料金
+          </li>
+          <li class="row title">
+            内容
+          </li>
+          <!-- content of table -->
+          <li class="row title">
+            Portrait
+          </li>
+          <li class="row title">
+            ３万円〜
+          </li>
+          <li class="row taL">
+            <p class="label-nomal">
+              ・撮影時間：１時間程度
+            </p>
+            <p class="label-nomal">
+              ・枚数：４０〜７０程度
+            </p>
+            <p class="label-nomal">
+              ・撮影場所：屋外、スタジオ撮影対応
+            </p>
+            <p class="label-nomal">
+              ・内容：全データレタッチ込
+            </p>
+          </li>
+          <li class="row title">
+            Creative
+          </li>
+          <li class="row title">
+            １０万円〜
+          </li>
+          <li class="row taL">
+            <p class="label-nomal">
+              ・撮影時間：３時間〜（メイク、セッティング等時間含む）
+            </p>
+            <p class="label-nomal">
+              ・枚数：４０〜７０枚程度
+            </p>
+            <p class="label-nomal">
+              ・撮影場所：スタジオ
+            </p>
+            <p class="label-nomal">
+              ・内容：ヘアメイク、メイク、衣装、空間デザイン、全データレタッチ込
+            </p>
+            <p class="label-nomal">
+              ※ 撮影規模が大きくなる場合は、別途ご相談にて承ります。
+            </p>
+          </li>
+          <li class="row ttile">
+            Web works
+          </li>
+          <li class="row" />
+          <li class="row label-nomal taL">
+            お問い合わせ、またはご相談にて承ります。
           </li>
         </ul>
       </div>
     </section>
     <section class="position-title">
+      <nuxt-link to="/contact">
+        <Button>Contact</Button>
+      </nuxt-link>
+      <label-nomal class="mt70">
+        SNSのDM（ダイレクトメッセージ）
+        <br class="pc-dn">からもご連絡可能です。
+      </label-nomal>
       <div class="logo-wrapper mt70">
         <logo-media
           v-for="(social, i) in socials"
@@ -27,33 +89,26 @@
           :link="social.link"
         />
       </div>
-      <label-nomal class="mt40">
-        SNSのDM（ダイレクトメッセージ）
-        <br class="pc-dn">からもご連絡可能です。
-      </label-nomal>
     </section>
   </default-view>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import Button from '@components/atoms/Button'
 import DefaultView from '@components/templates/DefaultView'
 import LabelNomal from '@components/atoms/LabelNomal'
 import LogoMedia from '@components/atoms/LogoMedia'
 
-import axios from 'axios'
-import requestApi from '~/assets/datas/request'
-
 export default {
-  name: 'Contact',
+  name: 'Plan',
   components: {
     DefaultView,
     LogoMedia,
-    LabelNomal
+    LabelNomal,
+    Button
   },
   data() {
     return {
-      isFalse: false,
       socials: [
         {
           imagePath: '/svg/LogoFacebook.svg',
@@ -67,141 +122,15 @@ export default {
           imagePath: '/img/LogoInstagram.png',
           link: 'https://www.instagram.com/koudai_ishigame/?hl=ja'
         }
-      ],
-      textInputs: {
-        company: {
-          value: '',
-          placeHolder: 'Company',
-          isInvalid: false,
-          inputValue: e => {
-            this.textInputs.company.value = e
-            this.textInputs.company.validate(this.textInputs.company.value)
-          },
-          validate: e => {
-            const err = e.length < 4
-            this.textInputs.company.isInvalid = err
-          }
-        },
-        name: {
-          value: '',
-          placeHolder: 'Name',
-          isInvalid: false,
-          inputValue: e => {
-            this.textInputs.name.value = e
-            this.textInputs.name.validate(this.textInputs.name.value)
-          },
-          validate: e => {
-            const err = e.length < 4
-            this.textInputs.name.isInvalid = err
-          }
-        },
-        email: {
-          value: '',
-          placeHolder: 'E-mail(example@email.com)',
-          isInvalid: false,
-          inputValue: e => {
-            this.textInputs.email.value = e
-            this.textInputs.email.validate(this.textInputs.email.value)
-          },
-          validate: e => {
-            const regex = new RegExp(
-              /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i
-            )
-            this.textInputs.email.isInvalid = !regex.test(e)
-          }
-        },
-        number: {
-          value: '',
-          placeHolder: 'Number',
-          isInvalid: false,
-          inputValue: e => {
-            this.textInputs.number.value = e
-            this.textInputs.number.validate(this.textInputs.number.value)
-          },
-          validate: e => {
-            const err = e.length < 8 || isNaN(Number(e))
-            this.textInputs.number.isInvalid = err
-          }
-        },
-        message: {
-          value: '',
-          placeHolder: 'Message',
-          isInvalid: false,
-          inputValue: e => {
-            this.textInputs.message.value = e
-            this.textInputs.message.validate(this.textInputs.message.value)
-          },
-          validate: e => {
-            const err = e.length < 10
-            this.textInputs.message.isInvalid = err
-          }
-        }
-      }
-    }
-  },
-  computed: {
-    contactData() {
-      const company = this.textInputs.company.value
-      const name = this.textInputs.name.value
-      const email = this.textInputs.email.value
-      const number = this.textInputs.number.value
-      const message = this.textInputs.message.value
-      const contacts = `会社・組織：${company}\n名前：${name}\nEメール：${email}\n電話番号：${number}\nメッセージ：${message}\n`
-      return contacts
-    },
-    invalid() {
-      const company = this.textInputs.company.isInvalid
-      const name = this.textInputs.name.isInvalid
-      const email = this.textInputs.email.isInvalid
-      const number = this.textInputs.number.isInvalid
-      const message = this.textInputs.message.isInvalid
-      const invalid = company || name || email || number || message
-      return invalid
-    }
-  },
-  mounted() {
-    this.textInputs.message.isInvalid = true
-  },
-  methods: {
-    ...mapActions(['toggleModal']),
-    async pushSubmit(e) {
-      const API_URL = requestApi.slack.url
-      const header = requestApi.slack.header
-
-      const message = 'hello bnd'
-      const data = { text: message }
-      const options = {
-        method: 'post',
-        baseURL: API_URL,
-        header,
-        data: `payload={
-          "channel": "#order-message",
-          "username": "bnd",
-          "text": "<!here> ${this.contactData}"
-        }`
-      }
-      const res = await axios(options)
-        .then(e => {
-          this.isFalse = false
-          this.resetContactData()
-          this.toggleModal('contact')
-        })
-        .catch(e => {
-          this.isFalse = true
-        })
-    },
-    resetContactData() {
-      this.textInputs.company.value = ''
-      this.textInputs.name.value = ''
-      this.textInputs.email.value = ''
-      this.textInputs.number.value = ''
-      this.textInputs.message.value = ''
+      ]
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+@import '~/assets/css/util.scss';
+
 .logo-wrapper {
   width: 400px;
   margin-left: auto;
@@ -214,22 +143,47 @@ export default {
   }
 }
 
-.table-container {
+.container {
   width: 768px;
+  height: auto;
   margin: 0 auto;
-  & > ul {
-    display: table;
+  @media screen and (max-width: 768px) {
+    width: 90%;
+  }
+}
 
-    .col {
-      display: table-cell;
-      border-collapse: collapse;
-      list-style: none;
-      padding: 10px;
-      border: solid 1px #402c2c;
+.table-container {
+  display: grid;
+  grid-template-rows: 60px auto;
+  grid-template-columns: 20% 20% 1fr;
+  border: 1px solid #ccc;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 30% 30% 40%;
+  }
+
+  .row {
+    padding: 15px;
+    box-sizing: border-box;
+    line-height: 1.6;
+    letter-spacing: 2px;
+    border: 1px solid #ccc;
+
+    &.title {
+      display: grid;
+      align-items: center;
     }
   }
-  @media screen and (max-width: 768px) {
-    width: 100%;
-  }
+}
+
+.label-nomal {
+  font-size: 16px;
+  color: #402c2c;
+  font-family: 'HG明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', 'MS 明朝', serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 2.5px;
 }
 </style>
