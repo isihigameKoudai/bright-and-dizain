@@ -1,9 +1,11 @@
 <template>
   <div 
     :style="{ backgroundImage: 'url(' + path + ')' }"
-    class="box-parallax"
+    class="box-parallax jsc-parallax"
   >
-    <p>{{ title }}</p>
+    <p class="title-text">
+      {{ title }}
+    </p>
   </div>
 </template>
 <script>
@@ -18,7 +20,7 @@ export default {
       type: String,
       default: ''
     }
-  },
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -34,27 +36,28 @@ export default {
   background-repeat: no-repeat;
   filter: brightness(90%) opacity(80%);
 
-  p {
-    position: absolute;
-    display: block;
-    top: 50%;
-    left: 50%;
-    width: auto;
-    height: auto;
-    color: #fff;
-    text-align: center;
-    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.8);
-    transform: translate3d(-50%, -50%, 0);
-    font-size: 68px;
-    font-family: Cambria, Georgia, serif;
-    font-style: normal;
-    font-variant: normal;
-  }
-
   @media screen and (max-width: 768px) {
     height: 100vh;
     background-size: auto 100vh;
     background-attachment: scroll;
   }
+}
+
+.title-text {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+
+  color: #fff;
+  text-align: center;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.8);
+  font-size: 68px;
+  font-family: Cambria, Georgia, serif;
+  font-style: normal;
+  font-variant: normal;
 }
 </style>

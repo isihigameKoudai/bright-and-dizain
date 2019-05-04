@@ -25,3 +25,11 @@ export　function scroller() {
 		}
 	});
 }
+
+export function setParallax() {
+	const [$photo, $web] = document.querySelectorAll('.jsc-parallax');
+	window.addEventListener('scroll', () => {
+		$photo.style.backgroundPositionY = `${$photo.getBoundingClientRect().top / 3 - 200}px`;
+		$web.style.backgroundPositionY = `${$web.getBoundingClientRect().top / 3 - 200}px`;
+	});
+}

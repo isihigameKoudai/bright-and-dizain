@@ -230,7 +230,7 @@ import TitleParallax from '@components/atoms/TitleParallax'
 import ImageBox from '@components/atoms/ImageBox'
 import Button from '@components/atoms/Button'
 
-import { init, scroller } from '~/utils/animations'
+import { init, scroller, setParallax } from '~/utils/animations'
 
 export default {
   name: 'Index',
@@ -263,6 +263,7 @@ export default {
   mounted() {
     init()
     scroller()
+    setParallax()
   },
   methods: {
     moveScroll() {
@@ -280,6 +281,7 @@ export default {
   width: 100%;
   height: 100%;
 }
+
 .title-position {
   position: absolute;
   top: 50%;
