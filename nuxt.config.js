@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   mode: 'universal',
   /*
@@ -76,8 +78,12 @@ module.exports = {
   },
   modules: [
     ["@nuxtjs/pwa", { icon: false }],
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/dotenv'
   ],
+  env: {
+    SLACK_API_CODE: process.env.SLACK_API_CODE
+  },
   plugins: ['~/plugins/vue-awesome-swiper'],
   manifest: {
     name: "BrightAndDizain",

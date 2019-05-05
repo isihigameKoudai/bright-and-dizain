@@ -27,7 +27,7 @@
         Send
       </Button>
       <label-nomal 
-        v-if="isFalse" 
+        v-if="isFaildConnection" 
         class="mt20"
       >
         送信失敗しました、時間を空けてお試しください。
@@ -64,7 +64,7 @@ import LabelNomal from '@components/atoms/LabelNomal'
 import LogoMedia from '@components/atoms/LogoMedia'
 
 import axios from 'axios'
-import requestApi from '~/assets/datas/request'
+import submitContact from '~/service/Contact'
 
 export default {
   name: 'Contact',
@@ -78,7 +78,7 @@ export default {
   },
   data() {
     return {
-      isFalse: false,
+      isFaildConnection: false,
       socials: [
         {
           imagePath: '/svg/LogoFacebook.svg',
@@ -185,35 +185,20 @@ export default {
     }
   },
   mounted() {
+    console.log(process.env.SLACK_API_CODE);
+    
     this.textInputs.message.isInvalid = true
   },
   methods: {
     ...mapActions(['toggleModal']),
-    async pushSubmit(e) {
-      const API_URL = requestApi.slack.url
-      const header = requestApi.slack.header
-
-      const message = 'hello bnd'
-      const data = { text: message }
-      const options = {
-        method: 'post',
-        baseURL: API_URL,
-        header,
-        data: `payload={
-          "channel": "#order-message",
-          "username": "bnd",
-          "text": "<!here> ${this.contactData}"
-        }`
-      }
-      const res = await axios(options)
-        .then(e => {
-          this.isFalse = false
-          this.resetContactData()
-          this.toggleModal('contact')
-        })
-        .catch(e => {
-          this.isFalse = true
-        })
+    async pushSubmit() {
+      const res = await submitContact( this.contactData ).catch( e => {
+        console.log(e);
+        this.isFaildConnection = true
+      })
+      this.isFaildConnection = false
+      this.resetContactData()
+      this.toggleModal('contact')
     },
     resetContactData() {
       this.textInputs.company.value = ''
