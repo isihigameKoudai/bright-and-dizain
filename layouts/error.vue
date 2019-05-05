@@ -1,0 +1,106 @@
+<template>
+  <div id="error">
+    <humburger
+      :is-active="modal.mode"
+      class="fixed-humburegr"
+      @click="toggleModal()"
+    />
+    <Modal
+      v-if="modal.mode"
+      class="positiond-fixed fixed-content"
+    />
+    <div class="error-container">
+      <h1 class="error-code">
+        {{ error.statusCode }}
+      </h1>
+      <label-normal class="taC mt10">
+        {{ errorMessage }}
+      </label-normal>
+      <label-normal class="taC mt10">
+        <nuxt-link
+          to="/"
+          class="link"
+        >
+          TOPへ戻る
+        </nuxt-link>
+      </label-normal>
+    </div>
+  </div>
+</template>
+<script>
+import { mapState, mapActions } from 'vuex';
+import Modal from '@components/templates/Modal';
+import Humburger from '@components/atoms/Humburger';
+import LabelNormal from '@components/atoms/LabelNomal';
+
+export default {
+  name: 'Default',
+  components: {
+    Modal,
+    Humburger,
+    LabelNormal
+  },
+  props: {
+    error: {
+      type: Object,
+      default: () => {
+        return {}
+      }
+    }
+  },
+  computed: {
+    ...mapState(['modal']),
+    errorMessage() {
+      const code = this.error.statusCode
+      switch (code) {
+        case 400:
+          return 'リクエストエラー、URLに間違いがないか確認してみてください。'
+        case 403:
+          return 'アクセス権がないためページを表示することができません。'
+        case 404:
+          return '指定されたページは存在しません。'
+        case 500:
+        case 502:
+        case 503:
+          return 'アクセスが集中しています、時間を置いてからアクセスしてみてください。'
+        default:
+          return '不明なエラーです、TOPに戻ってみてください。'
+      }
+    }
+  },
+  methods: {
+    ...mapActions(['toggleModal'])
+  }
+}
+
+</script>
+<style lang="scss" scoped>
+#error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.error-container {
+  width: 80%;
+}
+
+.error-code {
+  font-size: 100px;
+  text-align: center;
+  letter-spacing: 2.5px;
+}
+
+.link {
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #070b10;
+  transition-duration: 0.2s;
+  &:hover {
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.3));
+  }
+}
+</style>
