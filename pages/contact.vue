@@ -185,15 +185,12 @@ export default {
     }
   },
   mounted() {
-    console.log(process.env.SLACK_API_CODE);
-    
     this.textInputs.message.isInvalid = true
   },
   methods: {
     ...mapActions(['toggleModal']),
     async pushSubmit() {
       const res = await submitContact( this.contactData ).catch( e => {
-        console.log(e);
         this.isFaildConnection = true
       })
       this.isFaildConnection = false
