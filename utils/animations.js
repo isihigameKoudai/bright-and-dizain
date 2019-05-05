@@ -28,8 +28,10 @@ export　function scroller() {
 
 export function setParallax() {
 	const [$photo, $web] = document.querySelectorAll('.jsc-parallax');
+	const isPC = window.innerWidth > 767;
+	const adaptHeight = isPC ? 130 : 0;
 	window.addEventListener('scroll', () => {
-		$photo.style.backgroundPositionY = `${$photo.getBoundingClientRect().top / 3 - 200}px`;
-		$web.style.backgroundPositionY = `${$web.getBoundingClientRect().top / 3 - 200}px`;
+		$photo.style.backgroundPositionY = `${$photo.getBoundingClientRect().top / 3 - adaptHeight}px`;
+		$web.style.backgroundPositionY = `${$web.getBoundingClientRect().top / 3 - adaptHeight}px`;
 	});
 }

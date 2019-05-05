@@ -39,7 +39,6 @@ export default {
   @media screen and (max-width: 768px) {
     height: 100vh;
     background-size: auto 100vh;
-    background-attachment: scroll;
   }
 }
 
