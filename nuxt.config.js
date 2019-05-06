@@ -84,7 +84,7 @@ module.exports = {
   env: {
     SLACK_API_CODE: process.env.SLACK_API_CODE
   },
-  plugins: ['~/plugins/vue-awesome-swiper'],
+  plugins: [{src: '~/plugins/vue-awesome-swiper', ssr: false}],
   manifest: {
     name: "BrightAndDizain",
     lang: "ja",

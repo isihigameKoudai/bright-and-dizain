@@ -1,7 +1,7 @@
 
 export function init() {
 	window.addEventListener('load', scroller);
-	window.addEventListener('scroll', scroller);
+	window.addEventListener('scroll', scroller);	
 }
 
 export　function scroller() {
@@ -33,5 +33,5 @@ export function setParallax() {
 	window.addEventListener('scroll', () => {
 		$photo.style.backgroundPositionY = `${$photo.getBoundingClientRect().top / 3 - adaptHeight}px`;
 		$web.style.backgroundPositionY = `${$web.getBoundingClientRect().top / 3 - adaptHeight}px`;
-	});
+	});	
 }

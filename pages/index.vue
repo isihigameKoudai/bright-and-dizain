@@ -16,7 +16,6 @@
           >
         </swiper-slide> 
       </swiper>
-      
       <img
         class="title-position appear"
         src="/svg/mainTitleWhite.svg"
@@ -261,13 +260,15 @@ export default {
     }
   },
   mounted() {
-    init()
-    scroller()
-    setParallax()
+    if (process.browser) {
+      init()
+      scroller()
+      setParallax()
+    }
   },
   methods: {
     moveScroll() {
-      $('html,body').animate({ scrollTop: window.innerHeight }, 700, 'swing')
+      if (process.browser) $('html,body').animate({ scrollTop: window.innerHeight }, 700, 'swing')
     }
   }
 }
