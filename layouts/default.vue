@@ -1,6 +1,6 @@
 <template>
   <div>
-    <humburger
+    <TheHumburger
       :is-active="modal.mode"
       class="fixed-humburegr"
       @click="toggleModal()"
@@ -15,13 +15,13 @@
 <script>
 import { mapState, mapActions } from 'vuex';
 import Modal from '@components/templates/Modal';
-import Humburger from '@components/atoms/Humburger';
+import TheHumburger from '@components/atoms/TheHumburger';
 
 export default {
   name: 'Default',
   components: {
     Modal,
-    Humburger
+    TheHumburger
   },
   computed: {
     ...mapState(['modal'])
