@@ -1,5 +1,5 @@
 <template>
-  <default-view title="Contact">
+  <the-default-view title="Contact">
     <section class="position-title mt100">
       <p
         v-for="(item, index) in textInputs"
@@ -51,13 +51,13 @@
         からもご連絡可能です。
       </label-nomal>
     </section>
-  </default-view>
+  </the-default-view>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
 import BaseButton from '@components/atoms/BaseButton'
-import DefaultView from '@components/templates/DefaultView'
+import TheDefaultView from '@components/templates/TheDefaultView'
 import BaseTextBox from '@components/atoms/BaseTextBox'
 import BaseTextArea from '@components/atoms/BaseTextArea'
 import LabelNomal from '@components/atoms/LabelNomal'
@@ -70,7 +70,7 @@ export default {
   name: 'Contact',
   components: {
     BaseButton,
-    DefaultView,
+    TheDefaultView,
     BaseTextBox,
     BaseTextArea,
     LogoMedia,

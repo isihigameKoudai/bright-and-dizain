@@ -1,9 +1,9 @@
 <template>
-  <default-view title="Profile">
+  <the-default-view title="Profile">
     <section class="wrapper mt90">
       <div class="area-profile-left appear">
-        <image-circle 
-          class="position-img-profile" 
+        <image-circle
+          class="position-img-profile"
           path="/img/ProfileImage.jpg"
         />
         <label-section class="mt40">
@@ -78,11 +78,11 @@
         />
       </div>
       <div class="wrapper mt40 appear-up">
-        <label-nomal 
+        <label-nomal
           v-for="(media, i) in medias"
           :key="i"
         >
-          <a 
+          <a
             :href="media.link"
             class="link-nomal"
             target="_blank"
@@ -90,11 +90,11 @@
         </label-nomal>
       </div>
     </section>
-  </default-view>
+  </the-default-view>
 </template>
 
 <script>
-import DefaultView from '@components/templates/DefaultView';
+import TheDefaultView from '@components/templates/TheDefaultView';
 import ImageCircle from '@components/atoms/ImageCircle';
 import LabelSection from '@components/atoms/LabelSection';
 import LabelNomal from '@components/atoms/LabelNomal';
@@ -105,7 +105,7 @@ import { init, scroller } from '~/utils/animations';
 export default {
   name: 'Profile',
   components: {
-    DefaultView,
+    TheDefaultView,
     ImageCircle,
     LabelSection,
     LogoMedia,

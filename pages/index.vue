@@ -33,7 +33,7 @@
         </div>
       </div>
     </div>
-    <default-view
+    <the-default-view
       id="top"
       title="Works"
     >
@@ -219,13 +219,13 @@
           お問い合わせはこちらから
         </label-nomal>
       </section>
-    </default-view>
+    </the-default-view>
   </div>
 </template>
 
 <script>
 import $ from 'jquery';
-import DefaultView from '@components/templates/DefaultView'
+import TheDefaultView from '@components/templates/TheDefaultView'
 import LabelSection from '@components/atoms/LabelSection'
 import LabelNomal from '@components/atoms/LabelNomal'
 import TitleParallax from '@components/atoms/TitleParallax'
@@ -237,7 +237,7 @@ import { init, scroller, setParallax } from '~/utils/animations'
 export default {
   name: 'Index',
   components: {
-    DefaultView,
+    TheDefaultView,
     LabelSection,
     LabelNomal,
     TitleParallax,

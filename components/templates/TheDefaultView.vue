@@ -1,7 +1,7 @@
 <template>
   <article class="pb100">
-    <label-page-top 
-      :title="title" 
+    <label-page-top
+      :title="title"
       class="position-title"
     />
     <slot />
@@ -11,7 +11,7 @@
 import LabelPageTop from '@components/atoms/LabelPageTop';
 
 export default {
-	name: 'DefaultView',
+	name: 'TheDefaultView',
   components: {
 		LabelPageTop
   },

@@ -1,5 +1,5 @@
 <template>
-  <default-view title="Plan">
+  <the-default-view title="Plan">
     <section class="position-title mt100">
       <label-nomal
         :font-size="24"
@@ -24,7 +24,7 @@
             Portrait
           </li>
           <li class="row title">
-            ３万円〜
+            ２万円〜
           </li>
           <li class="row taL">
             <p class="label-nomal">
@@ -38,6 +38,9 @@
             </p>
             <p class="label-nomal">
               ・内容：全データレタッチ込
+            </p>
+            <p class="label-nomal">
+              ・オプション：メイクorヘアメイク（１万５０００円）
             </p>
           </li>
           <li class="row title">
@@ -90,19 +93,19 @@
         />
       </div>
     </section>
-  </default-view>
+  </the-default-view>
 </template>
 
 <script>
 import BaseButton from '@components/atoms/BaseButton'
-import DefaultView from '@components/templates/DefaultView'
+import TheDefaultView from '@components/templates/TheDefaultView'
 import LabelNomal from '@components/atoms/LabelNomal'
 import LogoMedia from '@components/atoms/LogoMedia'
 
 export default {
   name: 'Plan',
   components: {
-    DefaultView,
+    TheDefaultView,
     LogoMedia,
     LabelNomal,
     BaseButton

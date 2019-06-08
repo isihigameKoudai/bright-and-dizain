@@ -1,7 +1,7 @@
 <template>
-  <default-view title="Portfolio">
-    <label-nomal 
-      :font-size="32" 
+  <the-default-view title="Portfolio">
+    <label-nomal
+      :font-size="32"
       class="position-title mt80"
     >
       Creative
@@ -17,8 +17,8 @@
         "
       />
     </div>
-    <label-nomal 
-      :font-size="32" 
+    <label-nomal
+      :font-size="32"
       class="position-title mt80"
     >
       Portrait
@@ -34,8 +34,8 @@
         "
       />
     </div>
-    <label-nomal 
-      :font-size="32" 
+    <label-nomal
+      :font-size="32"
       class="position-title mt80"
     >
       Landscape
@@ -51,11 +51,11 @@
         "
       />
     </div>
-  </default-view>
+  </the-default-view>
 </template>
 
 <script>
-import DefaultView from '@components/templates/DefaultView'
+import TheDefaultView from '@components/templates/TheDefaultView'
 import ImageBoxThumbnail from '@components/atoms/ImageBoxThumbnail'
 import LabelNomal from '@components/atoms/LabelNomal'
 import { mapMutations } from 'vuex'
@@ -63,7 +63,7 @@ import { mapMutations } from 'vuex'
 export default {
   name: 'Portfolio',
   components: {
-    DefaultView,
+    TheDefaultView,
     ImageBoxThumbnail,
     LabelNomal
   },
