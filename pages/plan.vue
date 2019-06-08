@@ -172,6 +172,7 @@ export default {
     &.title {
       display: grid;
       align-items: center;
+      word-break: break-all;
     }
   }
 }
