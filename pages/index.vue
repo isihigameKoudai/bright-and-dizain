@@ -33,7 +33,10 @@
         </div>
       </div>
     </div>
-    <default-view title="Works">
+    <default-view
+      id="top"
+      title="Works"
+    >
       <label-section class="position-title">
         Concept
       </label-section>
@@ -265,6 +268,7 @@ export default {
       scroller()
       setParallax()
     }
+    // this.$router.push('/#top');
   },
   methods: {
     moveScroll() {
