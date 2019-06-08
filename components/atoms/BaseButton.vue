@@ -1,5 +1,5 @@
 <template>
-  <button 
+  <button
     :class="{'disable': isDisable}"
     :disabled="isDisable"
     class="btn"
@@ -11,7 +11,7 @@
 <script>
 
 export default {
-  name: 'Button',
+  name: 'BaseButton',
   props: {
     isDisable: {
       type: Boolean,

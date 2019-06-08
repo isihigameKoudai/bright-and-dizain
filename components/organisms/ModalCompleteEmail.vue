@@ -4,31 +4,31 @@
       お問い合わせが完了しました。
     </label-section>
     <nuxt-link to="/">
-      <Button
+      <BaseButton
         class="mt100"
         @click="updateModal"
       >
         Topへ
-      </Button>
+      </BaseButton>
     </nuxt-link>
   </div>
 </template>
 <script>
 import { mapMutations } from 'vuex';
-import Button from '../atoms/Button';
-import LabelSection from '../atoms/LabelSection';
+import BaseButton from '@components/atoms/BaseButton';
+import LabelSection from '@components/atoms/LabelSection';
 
 export default {
 	name: 'ModalCompleteEmail',
 	components: {
-		Button,
+		BaseButton,
 		LabelSection
 	},
 	methods: {
 		...mapMutations(['updateModal'])
 	}
 }
-	
+
 </script>
 <style lang="scss" scoped>
 .complete-wrapper {

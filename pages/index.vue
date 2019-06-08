@@ -9,12 +9,12 @@
           v-for="(image,key) in images"
           :key="key"
         >
-          <img 
-            :alt="image.alt" 
+          <img
+            :alt="image.alt"
             :src="image.path"
             class="main-visual"
           >
-        </swiper-slide> 
+        </swiper-slide>
       </swiper>
       <img
         class="title-position appear"
@@ -40,8 +40,8 @@
       <label-section class="position-title">
         Concept
       </label-section>
-      <label-nomal 
-        :font-size="24" 
+      <label-nomal
+        :font-size="24"
         class="position-title appear-up"
       >
         <span class="sp-dn">「</span>Make Bright All The People<br class="pc-dn"> - 全ての人を輝かせる -<span class="sp-dn">」</span>
@@ -68,9 +68,9 @@
         </label-nomal>
       </div>
       <!-- Photograph Works -->
-      <title-parallax 
-        class="mt90" 
-        path="/img/TitlePhotograph.jpg" 
+      <title-parallax
+        class="mt90"
+        path="/img/TitlePhotograph.jpg"
         title="Photograph"
       />
       <section class="wrapper area-content mt90">
@@ -90,17 +90,17 @@
             世界観を作り出します。
           </label-nomal>
         </div>
-        <image-box 
-          :shadow="true" 
-          class="sp-space appear" 
+        <image-box
+          :shadow="true"
+          class="sp-space appear"
           path="/img/worksCreative.jpg"
         />
       </section>
 
       <section class="wrapper area-content mt90">
-        <image-box 
-          :shadow="true" 
-          class="sp-dn appear" 
+        <image-box
+          :shadow="true"
+          class="sp-dn appear"
           path="/img/worksPortrait.jpg"
         />
         <div class="area-content-works">
@@ -120,9 +120,9 @@
             色褪せない思い出にしていきます。
           </label-nomal>
         </div>
-        <image-box 
-          :shadow="true" 
-          class="pc-dn sp-space appear" 
+        <image-box
+          :shadow="true"
+          class="pc-dn sp-space appear"
           path="/img/worksPortrait.jpg"
         />
       </section>
@@ -145,16 +145,16 @@
             今、伝えて行きましょう
           </label-nomal>
         </div>
-        <image-box 
-          :shadow="true" 
-          class="sp-space appear" 
+        <image-box
+          :shadow="true"
+          class="sp-space appear"
           path="/img/worksMediaReport.jpg"
         />
       </section>
 
       <section class="wrapper mt100 taC">
         <nuxt-link to="/contact">
-          <Button>Contact</Button>
+          <BaseButton>Contact</BaseButton>
         </nuxt-link>
         <label-nomal class="mt30">
           お問い合わせはこちらから
@@ -162,9 +162,9 @@
       </section>
 
       <!-- Web Works -->
-      <title-parallax 
-        class="mt90" 
-        path="/img/TitleWebDevelop.jpg" 
+      <title-parallax
+        class="mt90"
+        path="/img/TitleWebDevelop.jpg"
         title="Web Works"
       />
       <section class="wrapper area-content vertical-top">
@@ -172,9 +172,9 @@
           <label-section class="appear-up">
             HTML/CSS Coding
           </label-section>
-          <image-box 
-            :is-small="true" 
-            class="mt30 sp-dn appear" 
+          <image-box
+            :is-small="true"
+            class="mt30 sp-dn appear"
             path="/img/webCoding.jpg"
           />
           <label-nomal class="mt20 appear-up">
@@ -183,9 +183,9 @@
             小〜中規模なHTML/CSSの<br>
             コーディングをいたします。
           </label-nomal>
-          <image-box 
-            :is-small="true" 
-            class="mt30 pc-dn sp-space appear" 
+          <image-box
+            :is-small="true"
+            class="mt30 pc-dn sp-space appear"
             path="/img/webCoding.jpg"
           />
         </div>
@@ -193,9 +193,9 @@
           <label-section class="appear-up">
             WebApp Develop
           </label-section>
-          <image-box 
-            :is-small="true" 
-            class="mt30 sp-dn appear" 
+          <image-box
+            :is-small="true"
+            class="mt30 sp-dn appear"
             path="/img/webApp.jpg"
           />
           <label-nomal class="mt20 appear-up">
@@ -204,16 +204,16 @@
             Vue.js,Nuxt.jsなどを取り入れた<br>
             モダンな開発で進めて行きます。
           </label-nomal>
-          <image-box 
-            :is-small="true" 
-            class="mt30 pc-dn sp-space appear" 
+          <image-box
+            :is-small="true"
+            class="mt30 pc-dn sp-space appear"
             path="/img/webApp.jpg"
           />
         </div>
       </section>
       <section class="wrapper mt100 taC">
         <nuxt-link to="/contact">
-          <Button>Contact</Button>
+          <BaseButton>Contact</BaseButton>
         </nuxt-link>
         <label-nomal class="mt30">
           お問い合わせはこちらから
@@ -230,7 +230,7 @@ import LabelSection from '@components/atoms/LabelSection'
 import LabelNomal from '@components/atoms/LabelNomal'
 import TitleParallax from '@components/atoms/TitleParallax'
 import ImageBox from '@components/atoms/ImageBox'
-import Button from '@components/atoms/Button'
+import BaseButton from '@components/atoms/BaseButton'
 
 import { init, scroller, setParallax } from '~/utils/animations'
 
@@ -242,7 +242,7 @@ export default {
     LabelNomal,
     TitleParallax,
     ImageBox,
-    Button
+    BaseButton
   },
   data() {
     return {

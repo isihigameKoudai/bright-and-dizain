@@ -75,7 +75,7 @@
     </section>
     <section class="position-title">
       <nuxt-link to="/contact">
-        <Button>Contact</Button>
+        <BaseButton>Contact</BaseButton>
       </nuxt-link>
       <label-nomal class="mt70">
         SNSのDM（ダイレクトメッセージ）
@@ -94,7 +94,7 @@
 </template>
 
 <script>
-import Button from '@components/atoms/Button'
+import BaseButton from '@components/atoms/BaseButton'
 import DefaultView from '@components/templates/DefaultView'
 import LabelNomal from '@components/atoms/LabelNomal'
 import LogoMedia from '@components/atoms/LogoMedia'
@@ -105,7 +105,7 @@ export default {
     DefaultView,
     LogoMedia,
     LabelNomal,
-    Button
+    BaseButton
   },
   data() {
     return {

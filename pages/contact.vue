@@ -1,9 +1,9 @@
 <template>
   <default-view title="Contact">
     <section class="position-title mt100">
-      <p 
-        v-for="(item, index) in textInputs" 
-        :key="index" 
+      <p
+        v-for="(item, index) in textInputs"
+        :key="index"
         class="mt30"
       >
         <text-box
@@ -19,15 +19,15 @@
           @text="item.inputValue"
         />
       </p>
-      <Button
+      <BaseButton
         :is-disable="invalid"
         class="mt70"
         @click="pushSubmit"
       >
         Send
-      </Button>
-      <label-nomal 
-        v-if="isFaildConnection" 
+      </BaseButton>
+      <label-nomal
+        v-if="isFaildConnection"
         class="mt20"
       >
         送信失敗しました、時間を空けてお試しください。
@@ -42,7 +42,7 @@
           :link="social.link"
         />
       </div>
-      <label-nomal 
+      <label-nomal
         class="mt40"
       >
         SNSのDM（ダイレクトメッセージ）<br
@@ -56,7 +56,7 @@
 
 <script>
 import { mapActions } from 'vuex'
-import Button from '@components/atoms/Button'
+import BaseButton from '@components/atoms/BaseButton'
 import DefaultView from '@components/templates/DefaultView'
 import TextBox from '@components/atoms/TextBox'
 import TextArea from '@components/atoms/TextArea'
@@ -69,7 +69,7 @@ import submitContact from '~/service/Contact'
 export default {
   name: 'Contact',
   components: {
-    Button,
+    BaseButton,
     DefaultView,
     TextBox,
     TextArea,
