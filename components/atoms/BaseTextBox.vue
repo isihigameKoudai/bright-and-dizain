@@ -1,5 +1,5 @@
 <template>
-  <input 
+  <input
     :class="{'is-error': isInvalid}"
     :placeholder="placeHolder"
     type="text"
@@ -10,7 +10,7 @@
 <script>
 
 export default {
-  name: 'TextBox',
+  name: 'BaseTextBox',
   props: {
     placeHolder: {
       type: String,

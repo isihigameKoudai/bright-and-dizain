@@ -6,7 +6,7 @@
         :key="index"
         class="mt30"
       >
-        <text-box
+        <BaseTextBox
           v-if="index !== 'message'"
           :place-holder="item.placeHolder"
           :is-invalid="item.isInvalid"
@@ -58,7 +58,7 @@
 import { mapActions } from 'vuex'
 import BaseButton from '@components/atoms/BaseButton'
 import DefaultView from '@components/templates/DefaultView'
-import TextBox from '@components/atoms/TextBox'
+import BaseTextBox from '@components/atoms/BaseTextBox'
 import BaseTextArea from '@components/atoms/BaseTextArea'
 import LabelNomal from '@components/atoms/LabelNomal'
 import LogoMedia from '@components/atoms/LogoMedia'
@@ -71,7 +71,7 @@ export default {
   components: {
     BaseButton,
     DefaultView,
-    TextBox,
+    BaseTextBox,
     BaseTextArea,
     LogoMedia,
     LabelNomal
