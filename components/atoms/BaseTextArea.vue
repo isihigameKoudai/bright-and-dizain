@@ -1,5 +1,5 @@
 <template>
-  <textarea 
+  <textarea
     :placeholder="placeHolder"
     class="text-area"
     rows="5"
@@ -8,7 +8,7 @@
 </template>
 <script>
 export default {
-  name: 'TextArea',
+  name: 'BaseTextArea',
   props: {
     placeHolder: {
       type: String,

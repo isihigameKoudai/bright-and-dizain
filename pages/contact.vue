@@ -12,7 +12,7 @@
           :is-invalid="item.isInvalid"
           @text="item.inputValue"
         />
-        <text-area
+        <BaseTextArea
           v-else
           :place-holder="item.placeHolder"
           :is-invalid="item.isInvalid"
@@ -59,7 +59,7 @@ import { mapActions } from 'vuex'
 import BaseButton from '@components/atoms/BaseButton'
 import DefaultView from '@components/templates/DefaultView'
 import TextBox from '@components/atoms/TextBox'
-import TextArea from '@components/atoms/TextArea'
+import BaseTextArea from '@components/atoms/BaseTextArea'
 import LabelNomal from '@components/atoms/LabelNomal'
 import LogoMedia from '@components/atoms/LogoMedia'
 
@@ -72,7 +72,7 @@ export default {
     BaseButton,
     DefaultView,
     TextBox,
-    TextArea,
+    BaseTextArea,
     LogoMedia,
     LabelNomal
   },
