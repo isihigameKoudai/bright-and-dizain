@@ -153,9 +153,9 @@
       </section>
 
       <section class="wrapper mt100 taC">
-        <nuxt-link to="/contact">
-          <BaseButton>Contact</BaseButton>
-        </nuxt-link>
+        <base-button @click="onPushRoute('contact')">
+          Contact
+        </base-button>
         <label-nomal class="mt30">
           お問い合わせはこちらから
         </label-nomal>
@@ -212,9 +212,9 @@
         </div>
       </section>
       <section class="wrapper mt100 taC">
-        <nuxt-link to="/contact">
-          <BaseButton>Contact</BaseButton>
-        </nuxt-link>
+        <base-button @click="onPushRoute('contact')">
+          Contact
+        </base-button>
         <label-nomal class="mt30">
           お問い合わせはこちらから
         </label-nomal>
@@ -273,6 +273,9 @@ export default {
   methods: {
     moveScroll() {
       if (process.browser) $('html,body').animate({ scrollTop: window.innerHeight }, 700, 'swing')
+    },
+    onPushRoute(e = '/') {
+      this.$router.push({path: e});
     }
   }
 }

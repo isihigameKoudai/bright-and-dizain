@@ -77,9 +77,9 @@
       </div>
     </section>
     <section class="position-title">
-      <nuxt-link to="/contact">
-        <BaseButton>Contact</BaseButton>
-      </nuxt-link>
+      <base-button @click="onPushRoute('contact')">
+        Contact
+      </base-button>
       <label-nomal class="mt70">
         SNSのDM（ダイレクトメッセージ）
         <br class="pc-dn">からもご連絡可能です。
@@ -126,6 +126,11 @@ export default {
           link: 'https://www.instagram.com/koudai_ishigame/?hl=ja'
         }
       ]
+    }
+  },
+  methods: {
+    onPushRoute(e = '/') {
+      this.$router.push({path: e});
     }
   }
 }
