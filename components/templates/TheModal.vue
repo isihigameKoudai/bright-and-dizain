@@ -6,36 +6,36 @@
         class="modal-wrap"
         @click="toggleModal()"
       />
-      <modal-image 
-        v-if="modal.modalType === 'image'" 
-        :key="2" 
+      <TheModalImage
+        v-if="modal.modalType === 'image'"
+        :key="2"
         class="modal-content"
       />
-      <modal-complet-email 
-        v-else-if="modal.modalType === 'contact'" 
-        :key="3" 
+      <TheModalCompletEmail
+        v-else-if="modal.modalType === 'contact'"
+        :key="3"
         class="modal-content"
       />
-      <modal-menu 
-        v-else 
-        :key="4" 
+      <TheModalMenu
+        v-else
+        :key="4"
         class="modal-content"
       />
-    </div>  
+    </div>
   </transition>
 </template>
 <script>
-import ModalMenu from '../organisms/ModalMenu';
-import ModalImage from '../organisms/ModalImage';
-import ModalCompletEmail from '../organisms/ModalCompleteEmail';
+import TheModalMenu from '@components/organisms/TheModalMenu';
+import TheModalImage from '@components/organisms/TheModalImage';
+import TheModalCompletEmail from '@components/organisms/TheModalCompleteEmail';
 import { mapState, mapActions } from 'vuex';
 
 export default {
-  name: 'Modal',
+  name: 'TheModal',
   components: {
-    ModalMenu,
-    ModalImage,
-    ModalCompletEmail
+    TheModalMenu,
+    TheModalImage,
+    TheModalCompletEmail
   },
   computed: {
     ...mapState(['modal']),

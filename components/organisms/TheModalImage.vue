@@ -9,12 +9,12 @@
 import {mapState} from 'vuex';
 
 export default {
-	name: 'ModalImage',
+	name: 'TheModalImage',
 	computed: {
 		...mapState(['imagePath']),
 	}
 }
-	
+
 </script>
 <style lang="scss" scoped>
 .modal-image {

@@ -6,7 +6,7 @@
       @click="toggleModal()"
     />
     <nuxt />
-    <Modal
+    <TheModal
       v-if="modal.mode"
       class="positiond-fixed fixed-content"
     />
@@ -14,13 +14,13 @@
 </template>
 <script>
 import { mapState, mapActions } from 'vuex';
-import Modal from '@components/templates/Modal';
+import TheModal from '@components/templates/TheModal';
 import TheHumburger from '@components/atoms/TheHumburger';
 
 export default {
   name: 'Default',
   components: {
-    Modal,
+    TheModal,
     TheHumburger
   },
   computed: {

@@ -13,13 +13,13 @@
         </nuxt-link>
       </li>
     </ul>
-  </div>    
+  </div>
 </template>
 <script>
 import {mapMutations} from 'vuex';
 
 export default {
-  name: 'ModalMenu',
+  name: 'TheModalMenu',
   date() {
     return {
       menus: [],

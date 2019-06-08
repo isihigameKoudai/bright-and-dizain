@@ -19,7 +19,7 @@ import BaseButton from '@components/atoms/BaseButton';
 import LabelSection from '@components/atoms/LabelSection';
 
 export default {
-	name: 'ModalCompleteEmail',
+	name: 'TheModalCompleteEmail',
 	components: {
 		BaseButton,
 		LabelSection
