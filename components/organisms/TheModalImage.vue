@@ -6,12 +6,12 @@
   >
 </template>
 <script>
-import {mapState} from 'vuex';
+import { mapState } from 'vuex';
 
 export default {
 	name: 'TheModalImage',
 	computed: {
-		...mapState(['imagePath']),
+		...mapState('view', ['imagePath']),
 	}
 }
 

@@ -49,7 +49,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['modal']),
+    ...mapState('view', ['modal']),
     errorMessage() {
       const code = this.error.statusCode
       switch (code) {
@@ -69,7 +69,9 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['toggleModal'])
+    ...mapActions({
+      toggleModal: 'view/toggleModal'
+    })
   }
 }
 

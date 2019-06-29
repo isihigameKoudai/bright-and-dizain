@@ -11,10 +11,7 @@
         v-for="(image, index) in portfolio.creative"
         :key="index"
         :path="image.url"
-        @click="
-          updateImagePath(image.lrg)
-          updateModal('image')
-        "
+        @click="onClickModal(image.lrg)"
       />
     </div>
     <label-nomal
@@ -28,10 +25,7 @@
         v-for="(image, index) in portfolio.portrait"
         :key="index"
         :path="image.url"
-        @click="
-          updateImagePath(image.lrg)
-          updateModal('image')
-        "
+        @click="onClickModal(image.lrg)"
       />
     </div>
     <label-nomal
@@ -45,10 +39,7 @@
         v-for="(image, index) in portfolio.landscape"
         :key="index"
         :path="image.url"
-        @click="
-          updateImagePath(image.lrg)
-          updateModal('image')
-        "
+        @click="onClickModal(image.lrg)"
       />
     </div>
   </the-default-view>
@@ -58,7 +49,7 @@
 import TheDefaultView from '@components/templates/TheDefaultView'
 import ImageBoxThumbnail from '@components/atoms/ImageBoxThumbnail'
 import LabelNomal from '@components/atoms/LabelNomal'
-import { mapMutations } from 'vuex'
+import { mapMutations, mapActions } from 'vuex'
 
 export default {
   name: 'Portfolio',
@@ -260,7 +251,15 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(['updateModal', 'updateImagePath'])
+    // ...mapMutations(['updateModal', 'updateImagePath']),
+    ...mapActions({
+      setImagePath: 'view/setImagePath',
+      updateModal: 'view/updateModal'
+    }),
+    onClickModal(path) {
+      this.setImagePath(path);
+      this.updateModal('image');
+    }
   }
 }
 </script>

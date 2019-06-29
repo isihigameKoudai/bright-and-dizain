@@ -1,14 +1,13 @@
 
 export function init() {
 	window.addEventListener('load', scroller);
-	window.addEventListener('scroll', scroller);	
+	window.addEventListener('scroll', scroller);
 }
 
-export　function scroller() {
+export function scroller() {
 	const appearUps = document.querySelectorAll('.appear-up');
 	const appears = document.querySelectorAll('.appear');
-	
-	// const height = window.innerHeight - window.innerHeight * 0.3;
+
 	const height = window.innerHeight - 100;
 
 	appearUps.forEach((v) => {
@@ -33,5 +32,5 @@ export function setParallax() {
 	window.addEventListener('scroll', () => {
 		$photo.style.backgroundPositionY = `${$photo.getBoundingClientRect().top / 3 - adaptHeight}px`;
 		$web.style.backgroundPositionY = `${$web.getBoundingClientRect().top / 3 - adaptHeight}px`;
-	});	
+	});
 }

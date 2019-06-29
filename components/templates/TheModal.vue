@@ -38,10 +38,12 @@ export default {
     TheModalCompletEmail
   },
   computed: {
-    ...mapState(['modal']),
+    ...mapState('view', ['modal'])
   },
   methods: {
-    ...mapActions(['toggleModal'])
+    ...mapActions({
+      toggleModal: 'view/toggleModal'
+    })
   }
 }
 

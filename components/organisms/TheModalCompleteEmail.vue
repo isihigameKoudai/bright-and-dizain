@@ -14,7 +14,7 @@
   </div>
 </template>
 <script>
-import { mapMutations } from 'vuex';
+import { mapActions } from 'vuex';
 import BaseButton from '@components/atoms/BaseButton';
 import LabelSection from '@components/atoms/LabelSection';
 
@@ -25,7 +25,9 @@ export default {
 		LabelSection
 	},
 	methods: {
-		...mapMutations(['updateModal'])
+		...mapActions({
+      updateModal: 'view/updateModal'
+    })
 	}
 }
 

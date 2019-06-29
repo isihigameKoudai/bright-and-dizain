@@ -6,7 +6,7 @@
         :key="index"
         :text="menu.title"
         class="list-menu"
-        @click="updateModal()"
+        @click="toggleModal"
       >
         <nuxt-link :to="menu.path">
           {{ menu.title }}
@@ -16,7 +16,7 @@
   </div>
 </template>
 <script>
-import {mapMutations} from 'vuex';
+import { mapActions } from 'vuex';
 
 export default {
   name: 'TheModalMenu',
@@ -49,7 +49,9 @@ export default {
       }]
   },
   methods: {
-    ...mapMutations(['updateModal']),
+    ...mapActions({
+      toggleModal: 'view/toggleModal'
+    }),
   }
 }
 </script>

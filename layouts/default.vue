@@ -3,7 +3,7 @@
     <TheHumburger
       :is-active="modal.mode"
       class="fixed-humburegr"
-      @click="toggleModal()"
+      @click="toggleModal"
     />
     <nuxt />
     <TheModal
@@ -24,10 +24,12 @@ export default {
     TheHumburger
   },
   computed: {
-    ...mapState(['modal'])
+    ...mapState('view', ['modal'])
   },
   methods: {
-    ...mapActions(['toggleModal'])
+    ...mapActions({
+      toggleModal: 'view/toggleModal'
+    })
   }
 }
 

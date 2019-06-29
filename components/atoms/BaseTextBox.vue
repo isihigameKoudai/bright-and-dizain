@@ -3,6 +3,7 @@
     :class="{'is-error': isInvalid}"
     :placeholder="placeHolder"
     type="text"
+    :value="value"
     class="text-box"
     @input="event => $emit('text',event.target.value)"
   >
@@ -19,6 +20,10 @@ export default {
     isInvalid: {
       type: Boolean,
       default: false
+    },
+    value: {
+      type: String,
+      default: ''
     }
   }
 }
