@@ -18,7 +18,7 @@
       </swiper>
       <img
         class="title-position appear"
-        src="/svg/mainTitleWhite.svg"
+        src="/svg/title_white.svg"
         alt=""
         width="200px"
       >
@@ -295,6 +295,7 @@ export default {
   top: 50%;
   left: 10vw;
   transform: translate3d(0, -50%, 0);
+  filter: drop-shadow(4px 4px 4px #888);
   z-index: 10;
 }
 
