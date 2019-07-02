@@ -1,7 +1,7 @@
 import Model from './model';
 import * as type from './type';
 import { validCompany, validName, validEmail, validTel, validMessage } from '~/service/validation';
-import submit from '~/service/contact';
+import submitContact from '~/service/contact';
 
 export const state = () => Model;
 
@@ -67,7 +67,7 @@ export const actions = {
   sendContacts({ state }) {
     const { company, name, email, tel, message } = state;
 
-    return submit({
+    return submitContact({
       company,
       name,
       email,
