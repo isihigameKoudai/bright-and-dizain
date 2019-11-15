@@ -24,7 +24,8 @@ export const actions = {
   setImagePath({ commit }, payload) {
     commit(type.SET_IMAGE_PATH, payload);
   },
-  toggleModal({ commit }) {
+  toggleModal({ state, commit }) {
+    if (state.modal.mode) commit(type.SET_MODAL_TYPE);
     commit(type.SET_MODAL_MODE);
   }
 };
