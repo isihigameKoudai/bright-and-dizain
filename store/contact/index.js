@@ -1,7 +1,7 @@
 import Model from './model';
 import * as type from './type';
 import { validCompany, validName, validEmail, validTel, validMessage } from '~/service/validation';
-import submitContact from '~/service/contact';
+import submitContact from '~/service/Contact';
 
 export const state = () => Model;
 
