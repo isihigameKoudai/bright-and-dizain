@@ -25,6 +25,7 @@ export const actions = {
     commit(type.SET_IMAGE_PATH, payload);
   },
   toggleModal({ commit }) {
+    commit(type.SET_MODAL_TYPE);
     commit(type.SET_MODAL_MODE);
   }
 };
