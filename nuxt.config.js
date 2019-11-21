@@ -1,7 +1,9 @@
+const srcDir = 'src/';
 require('dotenv').config()
 
 module.exports = {
   mode: 'universal',
+  srcDir,
   /*
   ** Headers of the page
   */
@@ -73,7 +75,7 @@ module.exports = {
       });
 
       let path = require('path');
-      config.resolve.alias['@components'] = path.join(__dirname, 'components');
+      config.resolve.alias['@components'] = path.join(__dirname, srcDir + 'components');
     }
   },
   modules: [
