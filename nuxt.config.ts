@@ -1,7 +1,12 @@
+import { Configuration as NuxtConfiguration } from '@nuxt/types';
+
+const srcDir: string = 'src/';
+const SLACK_API_CODE: string = process.env.SLACK_API_CODE || '';
 require('dotenv').config()
 
-module.exports = {
+const nuxtConfig: NuxtConfiguration = {
   mode: 'universal',
+  srcDir,
   /*
   ** Headers of the page
   */
@@ -47,7 +52,7 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
-    extend(config, { isDev, isClient }) {
+    extend(config: any, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: "pre",
@@ -73,7 +78,7 @@ module.exports = {
       });
 
       let path = require('path');
-      config.resolve.alias['@components'] = path.join(__dirname, 'components');
+      config.resolve.alias['@components'] = path.join(__dirname, srcDir + 'components');
     }
   },
   modules: [
@@ -81,8 +86,14 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/dotenv'
   ],
+  buildModules: [
+    ['@nuxt/typescript-build', {
+      typeCheck: true,
+      ignoreNotFoundWarnings: true
+    }]
+  ],
   env: {
-    SLACK_API_CODE: process.env.SLACK_API_CODE
+    SLACK_API_CODE: SLACK_API_CODE
   },
   plugins: [{src: '~/plugins/vue-awesome-swiper', ssr: false}],
   manifest: {
@@ -98,3 +109,5 @@ module.exports = {
     dev: false
   }
 };
+
+export default nuxtConfig;
