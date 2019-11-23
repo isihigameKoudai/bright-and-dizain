@@ -1,2 +1,2 @@
-import ImageBox from './ImageBox/vue'
+import ImageBox from './ImageBox.vue'
 export default ImageBox
