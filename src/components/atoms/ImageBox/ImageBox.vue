@@ -1,10 +1,10 @@
 <template>
-  <img 
+  <img
     :src="path"
-    :class="{'is-shadow': shadow, 'small': isSmall}"
+    :class="{ 'is-shadow': shadow, small: isSmall }"
     alt=""
     class="image-box"
-  >
+  />
 </template>
 <script>
 export default {
@@ -25,7 +25,7 @@ export default {
   },
   computed: {
     toggleShadow() {
-      return this.shadow ? 'shadow' : '';
+      return this.shadow ? 'shadow' : ''
     }
   }
 }

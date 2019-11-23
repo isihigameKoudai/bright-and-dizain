@@ -1,8 +1,5 @@
 <template>
-  <p 
-    :style="exportFontSize"
-    class="label-nomal"
-  >
+  <p :style="exportFontSize" class="label-nomal">
     <slot />
   </p>
 </template>
@@ -17,8 +14,8 @@ export default {
   },
   computed: {
     exportFontSize() {
-      const size = this.fontSize ? 'font-size: ' + this.fontSize + 'px' : '';
-      return size;
+      const size = this.fontSize ? 'font-size: ' + this.fontSize + 'px' : ''
+      return size
     }
   }
 }

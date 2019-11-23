@@ -1,11 +1,7 @@
 <template>
   <transition name="fade">
     <div>
-      <div
-        :key="1"
-        class="modal-wrap"
-        @click="toggleModal()"
-      />
+      <div :key="1" class="modal-wrap" @click="toggleModal()" />
       <TheModalImage
         v-if="modal.modalType === 'image'"
         :key="2"
@@ -16,19 +12,15 @@
         :key="3"
         class="modal-content"
       />
-      <TheModalMenu
-        v-else
-        :key="4"
-        class="modal-content"
-      />
+      <TheModalMenu v-else :key="4" class="modal-content" />
     </div>
   </transition>
 </template>
 <script>
-import TheModalMenu from '@components/organisms/TheModalMenu';
-import TheModalImage from '@components/organisms/TheModalImage';
-import TheModalCompletEmail from '@components/organisms/TheModalCompleteEmail';
-import { mapState, mapActions } from 'vuex';
+import TheModalMenu from '@components/organisms/TheModalMenu'
+import TheModalImage from '@components/organisms/TheModalImage'
+import TheModalCompletEmail from '@components/organisms/TheModalCompleteEmail'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'TheModal',
@@ -46,7 +38,6 @@ export default {
     })
   }
 }
-
 </script>
 <style lang="scss" scoped>
 .modal-wrap {
