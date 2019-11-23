@@ -4,6 +4,6 @@ const Model = {
   email: '',
   tel: '',
   message: ''
-};
+}
 
-export default Model;
+export default Model

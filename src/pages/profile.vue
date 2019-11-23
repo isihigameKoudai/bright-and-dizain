@@ -12,27 +12,37 @@
       </div>
       <div class="area-profile-right">
         <label-nomal class="appear-up">
-          1994年6月28日生まれ、<br class="pc-dn">青森県出身・東京都在住。
-          <br>プログラミングと音楽が好きで、
-          <br>学生時代にはプレーヤーと<br class="pc-dn">SNSを統合させた音楽アプリや
-          <br>調理工程と材料を限定した<br class="pc-dn">簡易型料理レシピアプリをリリース。
+          1994年6月28日生まれ、<br class="pc-dn" />青森県出身・東京都在住。
+          <br />プログラミングと音楽が好きで、 <br />学生時代にはプレーヤーと<br
+            class="pc-dn"
+          />SNSを統合させた音楽アプリや <br />調理工程と材料を限定した<br
+            class="pc-dn"
+          />簡易型料理レシピアプリをリリース。
         </label-nomal>
         <label-nomal class="label-nomal mt30 appear-up">
-          大学時代に大手家電量販店での<br class="pc-dn">販売員の仕事でカメラと出会う。
-          <br>たまたま撮った写真を機に
-          <br>知人がフリーペーパーのモデルに<br class="pc-dn">挑戦してくれたことをキッカケに、
-          <br>本格的に人物・ポートレート写真を始める。
+          大学時代に大手家電量販店での<br
+            class="pc-dn"
+          />販売員の仕事でカメラと出会う。 <br />たまたま撮った写真を機に
+          <br />知人がフリーペーパーのモデルに<br
+            class="pc-dn"
+          />挑戦してくれたことをキッカケに、
+          <br />本格的に人物・ポートレート写真を始める。
         </label-nomal>
         <label-nomal class="mt30 appear-up">
-          現在はエンジニア兼フォトグラファー<br class="pc-dn">として都内で活動中。
-          <br>「作り込み」と呼ばれる、コンセプトに応じた<br class="pc-dn">背景や衣装などを用いて
-          <br>世界観を描き出す分野の写真を得意とし、
-          <br>モデルの撮影だけでなく<br class="pc-dn">音楽CDのアルバムジャケットなど
-          <br>アーティスティックな撮影もこなす。
+          現在はエンジニア兼フォトグラファー<br
+            class="pc-dn"
+          />として都内で活動中。
+          <br />「作り込み」と呼ばれる、コンセプトに応じた<br
+            class="pc-dn"
+          />背景や衣装などを用いて <br />世界観を描き出す分野の写真を得意とし、
+          <br />モデルの撮影だけでなく<br
+            class="pc-dn"
+          />音楽CDのアルバムジャケットなど
+          <br />アーティスティックな撮影もこなす。
         </label-nomal>
         <label-nomal class="mt30 appear-up">
           その他、Webメディアへの写真提供や
-          <br>海外の厳正写真審査サイトでの掲載経験もあり。
+          <br />海外の厳正写真審査サイトでの掲載経験もあり。
         </label-nomal>
       </div>
     </section>
@@ -42,11 +52,8 @@
       </label-section>
       <label-nomal class="mt20 appear-up">
         Photograph
-        <br>Retouch
-        <br>Art Direction
-        <br>HTML/CSS/Javascript(ES6)
-        <br>Vue.js
-        <br>jQuery
+        <br />Retouch <br />Art Direction <br />HTML/CSS/Javascript(ES6)
+        <br />Vue.js <br />jQuery
       </label-nomal>
     </section>
     <section class="wrapper position-title">
@@ -78,15 +85,10 @@
         />
       </div>
       <div class="wrapper mt40 appear-up">
-        <label-nomal
-          v-for="(media, i) in medias"
-          :key="i"
-        >
-          <a
-            :href="media.link"
-            class="link-nomal"
-            target="_blank"
-          >{{ media.title }}</a>
+        <label-nomal v-for="(media, i) in medias" :key="i">
+          <a :href="media.link" class="link-nomal" target="_blank">{{
+            media.title
+          }}</a>
         </label-nomal>
       </div>
     </section>
@@ -94,13 +96,13 @@
 </template>
 
 <script>
-import TheDefaultView from '@components/templates/TheDefaultView';
-import ImageCircle from '@components/atoms/ImageCircle';
-import LabelSection from '@components/atoms/LabelSection';
-import LabelNomal from '@components/atoms/LabelNomal';
-import LogoMedia from '@components/atoms/LogoMedia';
+import TheDefaultView from '@components/templates/TheDefaultView'
+import ImageCircle from '@components/atoms/ImageCircle'
+import LabelSection from '@components/atoms/LabelSection'
+import LabelNomal from '@components/atoms/LabelNomal'
+import LogoMedia from '@components/atoms/LogoMedia'
 
-import { init, scroller } from '~/utils/animations';
+import { init, scroller } from '~/utils/animations'
 
 export default {
   name: 'Profile',
@@ -113,25 +115,32 @@ export default {
   },
   data() {
     return {
-      medias: [{
-        title: 'OneEyeLand',
-        link: 'https://oneeyeland.com/member/member_portfolio.php?pgrid=107158'
-      },{
-        title: '1X.com',
-        link: 'https://1x.com/member/koudaiishigame'
-      },{
-        title: 'PhotoVogue',
-        link: 'http://www.vogue.it/photovogue/myportfolio/?id=0B9D2B3B-3F81-41B4-9866-B0A3BC03CF14'
-      },{
-        title: 'VALU',
-        link: 'https://valu.is/kodai2100'
-      }]
+      medias: [
+        {
+          title: 'OneEyeLand',
+          link:
+            'https://oneeyeland.com/member/member_portfolio.php?pgrid=107158'
+        },
+        {
+          title: '1X.com',
+          link: 'https://1x.com/member/koudaiishigame'
+        },
+        {
+          title: 'PhotoVogue',
+          link:
+            'http://www.vogue.it/photovogue/myportfolio/?id=0B9D2B3B-3F81-41B4-9866-B0A3BC03CF14'
+        },
+        {
+          title: 'VALU',
+          link: 'https://valu.is/kodai2100'
+        }
+      ]
     }
   },
   mounted() {
-    init();
-    scroller();
-  },
+    init()
+    scroller()
+  }
 }
 </script>
 

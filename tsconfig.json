@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es5",
     "module": "esnext",
     "moduleResolution": "node",
     "lib": [
@@ -8,6 +8,7 @@
       "esnext.asynciterable",
       "dom"
     ],
+    "allowSyntheticDefaultImports": true,
     "noImplicitAny": false,
     "esModuleInterop": true,
     "allowJs": true,
@@ -16,11 +17,8 @@
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "./*"
-      ],
       "@/*": [
-        "./*"
+        "src/*"
       ]
     },
     "types": [
@@ -29,6 +27,13 @@
       "@nuxt/types"
     ]
   },
+  "files": [
+    "./src/type/shims-vue.d.ts"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue"
+  ],
   "exclude": [
     "node_modules"
   ]

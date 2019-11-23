@@ -4,6 +4,6 @@ const Model = {
     modalType: ''
   },
   imagePath: ''
-};
+}
 
-export default Model;
+export default Model

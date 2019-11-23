@@ -36,17 +36,10 @@
         class="wrap-text-box"
         @text="setMessage"
       />
-      <BaseButton
-        class="mt70"
-        :is-disable="isInvalid"
-        @click="pushSubmit"
-      >
+      <BaseButton class="mt70" :is-disable="isInvalid" @click="pushSubmit">
         Send
       </BaseButton>
-      <label-nomal
-        v-if="isFaildConnection"
-        class="mt20"
-      >
+      <label-nomal v-if="isFaildConnection" class="mt20">
         送信失敗しました、時間を空けてお試しください。
       </label-nomal>
     </section>
@@ -59,12 +52,8 @@
           :link="social.link"
         />
       </div>
-      <label-nomal
-        class="mt40"
-      >
-        SNSのDM（ダイレクトメッセージ）<br
-          class="pc-dn"
-        >
+      <label-nomal class="mt40">
+        SNSのDM（ダイレクトメッセージ）<br class="pc-dn" />
         からもご連絡可能です。
       </label-nomal>
     </section>
@@ -72,7 +61,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions} from 'vuex'
+import { mapState, mapGetters, mapActions } from 'vuex'
 
 import BaseButton from '@components/atoms/BaseButton'
 import TheDefaultView from '@components/templates/TheDefaultView'
@@ -112,15 +101,21 @@ export default {
   },
   computed: {
     ...mapState('contact', ['company', 'name', 'tel', 'email', 'message']),
-    ...mapGetters('contact', ['isErrCompany', 'isErrName', 'isErrTel', 'isErrEmail', 'isErrMessage']),
+    ...mapGetters('contact', [
+      'isErrCompany',
+      'isErrName',
+      'isErrTel',
+      'isErrEmail',
+      'isErrMessage'
+    ]),
     isInvalid() {
-      const isErrCompany = this.isErrCompany;
-      const isErrName = this.isErrName;
-      const isErrTel = this.isErrTel;
-      const isErrEmail = this.isErrEmail;
-      const isErrMessage = this.isErrMessage;
+      const isErrCompany = this.isErrCompany
+      const isErrName = this.isErrName
+      const isErrTel = this.isErrTel
+      const isErrEmail = this.isErrEmail
+      const isErrMessage = this.isErrMessage
 
-      return isErrCompany || isErrName || isErrTel || isErrEmail || isErrMessage;
+      return isErrCompany || isErrName || isErrTel || isErrEmail || isErrMessage
     }
   },
   methods: {
@@ -137,13 +132,13 @@ export default {
       resetContacts: 'contact/resetContacts'
     }),
     async pushSubmit() {
-      const { data } = await this.sendContacts().catch( () => {
-        this.isFaildConnection = true;
-      });
+      const { data } = await this.sendContacts().catch(() => {
+        this.isFaildConnection = true
+      })
 
-      this.isFaildConnection = false;
-      this.resetContacts();
-      this.updateModal('contact');
+      this.isFaildConnection = false
+      this.resetContacts()
+      this.updateModal('contact')
     }
   }
 }
@@ -166,5 +161,4 @@ export default {
   display: block;
   margin: 30px auto 0;
 }
-
 </style>
