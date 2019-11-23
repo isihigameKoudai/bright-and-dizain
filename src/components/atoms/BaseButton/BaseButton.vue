@@ -8,9 +8,10 @@
     <slot />
   </button>
 </template>
-<script>
+<script lang="ts">
+import Vue from 'vue';
 
-export default {
+export default Vue.extend({
   name: 'BaseButton',
   props: {
     isDisable: {
@@ -23,7 +24,7 @@ export default {
       this.$emit('click', e.target.value);
     }
   }
-}
+});
 </script>
 <style lang="scss" scoped>
 .btn {

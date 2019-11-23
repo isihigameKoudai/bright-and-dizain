@@ -8,6 +8,7 @@
       "esnext.asynciterable",
       "dom"
     ],
+    "allowSyntheticDefaultImports": true,
     "noImplicitAny": false,
     "esModuleInterop": true,
     "allowJs": true,
@@ -29,6 +30,13 @@
       "@nuxt/types"
     ]
   },
+  "files": [
+    "shims-vue.d.ts"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue"
+  ],
   "exclude": [
     "node_modules"
   ]
