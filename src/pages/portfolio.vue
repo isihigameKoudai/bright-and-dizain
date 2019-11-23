@@ -1,9 +1,6 @@
 <template>
   <the-default-view title="Portfolio">
-    <label-nomal
-      :font-size="32"
-      class="position-title mt80"
-    >
+    <label-nomal :font-size="32" class="position-title mt80">
       Creative
     </label-nomal>
     <div class="wrapper flex-con mt30">
@@ -14,10 +11,7 @@
         @click="onClickModal(image.lrg)"
       />
     </div>
-    <label-nomal
-      :font-size="32"
-      class="position-title mt80"
-    >
+    <label-nomal :font-size="32" class="position-title mt80">
       Portrait
     </label-nomal>
     <div class="wrapper flex-con mt30">
@@ -28,10 +22,7 @@
         @click="onClickModal(image.lrg)"
       />
     </div>
-    <label-nomal
-      :font-size="32"
-      class="position-title mt80"
-    >
+    <label-nomal :font-size="32" class="position-title mt80">
       Landscape
     </label-nomal>
     <div class="wrapper flex-con mt30">
@@ -257,8 +248,8 @@ export default {
       updateModal: 'view/updateModal'
     }),
     onClickModal(path) {
-      this.setImagePath(path);
-      this.updateModal('image');
+      this.setImagePath(path)
+      this.updateModal('image')
     }
   }
 }

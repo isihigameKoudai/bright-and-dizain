@@ -1,10 +1,7 @@
 <template>
   <the-default-view title="Plan">
     <section class="position-title mt100">
-      <label-nomal
-        :font-size="24"
-        class="position-title appear-up"
-      >
+      <label-nomal :font-size="24" class="position-title appear-up">
         各種料金
       </label-nomal>
       <div class="container">
@@ -82,7 +79,7 @@
       </base-button>
       <label-nomal class="mt70">
         SNSのDM（ダイレクトメッセージ）
-        <br class="pc-dn">からもご連絡可能です。
+        <br class="pc-dn" />からもご連絡可能です。
       </label-nomal>
       <div class="logo-wrapper mt70">
         <logo-media
@@ -130,7 +127,7 @@ export default {
   },
   methods: {
     onPushRoute(e = '/') {
-      this.$router.push({path: e});
+      this.$router.push({ path: e })
     }
   }
 }
