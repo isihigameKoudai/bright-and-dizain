@@ -6,8 +6,10 @@
     @input="event => $emit('text', event.target.value)"
   />
 </template>
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
   name: 'BaseTextArea',
   props: {
     placeHolder: {
@@ -24,7 +26,7 @@ export default {
       text: '',
     }
   }
-}
+})
 </script>
 <style lang="scss" scoped>
 .text-area {

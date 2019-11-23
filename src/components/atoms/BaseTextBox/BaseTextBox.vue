@@ -9,8 +9,9 @@
   >
 </template>
 <script>
+import Vue from 'vue';
 
-export default {
+export default Vue.extend({
   name: 'BaseTextBox',
   props: {
     placeHolder: {
@@ -26,7 +27,7 @@ export default {
       default: ''
     }
   }
-}
+})
 </script>
 <style lang="scss" scoped>
 .text-box {
