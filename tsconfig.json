@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es5",
     "module": "esnext",
     "moduleResolution": "node",
     "lib": [
@@ -17,9 +17,6 @@
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "./*"
-      ],
       "@/*": [
         "./*"
       ]
@@ -31,7 +28,7 @@
     ]
   },
   "files": [
-    "shims-vue.d.ts"
+    "./src/shims-vue.d.ts"
   ],
   "include": [
     "src/**/*.ts",
