@@ -2,7 +2,7 @@
   <div>
     <ul>
       <li
-        v-for="(menu,index) in menus"
+        v-for="(menu, index) in menus"
         :key="index"
         :text="menu.title"
         class="list-menu"
@@ -16,13 +16,13 @@
   </div>
 </template>
 <script>
-import { mapActions } from 'vuex';
+import { mapActions } from 'vuex'
 
 export default {
   name: 'TheModalMenu',
   date() {
     return {
-      menus: [],
+      menus: []
     }
   },
   beforeMount() {
@@ -46,12 +46,13 @@ export default {
       {
         title: 'Contact',
         path: '/contact'
-      }]
+      }
+    ]
   },
   methods: {
     ...mapActions({
       toggleModal: 'view/toggleModal'
-    }),
+    })
   }
 }
 </script>

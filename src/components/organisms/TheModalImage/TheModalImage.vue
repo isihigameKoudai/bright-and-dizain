@@ -1,20 +1,15 @@
 <template>
-  <img
-    :src="imagePath"
-    class="modal-image"
-    alt=""
-  >
+  <img :src="imagePath" class="modal-image" alt="" />
 </template>
 <script>
-import { mapState } from 'vuex';
+import { mapState } from 'vuex'
 
 export default {
-	name: 'TheModalImage',
-	computed: {
-		...mapState('view', ['imagePath']),
-	}
+  name: 'TheModalImage',
+  computed: {
+    ...mapState('view', ['imagePath'])
+  }
 }
-
 </script>
 <style lang="scss" scoped>
 .modal-image {

@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="{'is-active on-modal': isActive}"
+    :class="{ 'is-active on-modal': isActive }"
     class="btn-humburger"
     @click="$emit('click')"
   >

@@ -1,28 +1,21 @@
 <template>
-  <a 
-    :href="link" 
-    target="_blank"
-  >
-    <img 
-      :src="path" 
-      class="img-logo" 
-      alt=""
-    >
+  <a :href="link" target="_blank">
+    <img :src="path" class="img-logo" alt="" />
   </a>
 </template>
 <script>
 export default {
-	name: 'LogoMedia',
-	props: {
-		path: {
-			type: String,
-			default: ''
-		},
-		link: {
-			type: String,
-			default: ''
-		},
-	}
+  name: 'LogoMedia',
+  props: {
+    path: {
+      type: String,
+      default: ''
+    },
+    link: {
+      type: String,
+      default: ''
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

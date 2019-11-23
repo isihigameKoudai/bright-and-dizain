@@ -4,33 +4,29 @@
       お問い合わせが完了しました。
     </label-section>
     <nuxt-link to="/">
-      <BaseButton
-        class="mt100"
-        @click="updateModal"
-      >
+      <BaseButton class="mt100" @click="updateModal">
         Topへ
       </BaseButton>
     </nuxt-link>
   </div>
 </template>
 <script>
-import { mapActions } from 'vuex';
-import BaseButton from '@components/atoms/BaseButton';
-import LabelSection from '@components/atoms/LabelSection';
+import { mapActions } from 'vuex'
+import BaseButton from '@components/atoms/BaseButton'
+import LabelSection from '@components/atoms/LabelSection'
 
 export default {
-	name: 'TheModalCompleteEmail',
-	components: {
-		BaseButton,
-		LabelSection
-	},
-	methods: {
-		...mapActions({
+  name: 'TheModalCompleteEmail',
+  components: {
+    BaseButton,
+    LabelSection
+  },
+  methods: {
+    ...mapActions({
       updateModal: 'view/updateModal'
     })
-	}
+  }
 }
-
 </script>
 <style lang="scss" scoped>
 .complete-wrapper {

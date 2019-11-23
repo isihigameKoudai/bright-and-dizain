@@ -25,7 +25,8 @@ export function scroller() {
 }
 
 export function setParallax() {
-  const [$photo, $web] = document.querySelectorAll('.jsc-parallax')
+  const [$photo, $web]: any = document.querySelectorAll('.jsc-parallax')
+
   const isPC = window.innerWidth > 767
   const adaptHeight = isPC ? 130 : 0
   window.addEventListener('scroll', () => {

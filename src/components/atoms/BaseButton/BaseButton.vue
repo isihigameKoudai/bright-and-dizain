@@ -1,6 +1,6 @@
 <template>
   <button
-    :class="{'disable': isDisable}"
+    :class="{ disable: isDisable }"
     :disabled="isDisable"
     class="btn"
     @click="pushButton"
@@ -9,7 +9,7 @@
   </button>
 </template>
 <script lang="ts">
-import Vue from 'vue';
+import Vue from 'vue'
 
 export default Vue.extend({
   name: 'BaseButton',
@@ -21,10 +21,10 @@ export default Vue.extend({
   },
   methods: {
     pushButton(e) {
-      this.$emit('click', e.target.value);
+      this.$emit('click', e.target.value)
     }
   }
-});
+})
 </script>
 <style lang="scss" scoped>
 .btn {

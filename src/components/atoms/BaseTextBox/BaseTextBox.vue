@@ -1,15 +1,15 @@
 <template>
   <input
-    :class="{'is-error': isInvalid}"
+    :class="{ 'is-error': isInvalid }"
     :placeholder="placeHolder"
     type="text"
     :value="value"
     class="text-box"
-    @input="event => $emit('text',event.target.value)"
-  >
+    @input="event => $emit('text', event.target.value)"
+  />
 </template>
 <script>
-import Vue from 'vue';
+import Vue from 'vue'
 
 export default Vue.extend({
   name: 'BaseTextBox',

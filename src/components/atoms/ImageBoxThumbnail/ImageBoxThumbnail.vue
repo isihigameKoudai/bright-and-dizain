@@ -1,12 +1,12 @@
 <template>
   <div
-    :style="{ backgroundImage: 'url('+ imagePath +')' }"
+    :style="{ backgroundImage: 'url(' + imagePath + ')' }"
     class="image-box"
     @click="$emit('click')"
   />
 </template>
 <script>
-import { mapMutations } from 'vuex';
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'ImageBoxThumbnail',
@@ -18,7 +18,7 @@ export default {
   },
   computed: {
     imagePath() {
-      return this.path ? this.path : '/static/img/NonThumbnail.png';
+      return this.path ? this.path : '/static/img/NonThumbnail.png'
     }
   }
 }

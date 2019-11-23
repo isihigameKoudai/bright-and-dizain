@@ -1,5 +1,5 @@
 <template>
-  <div 
+  <div
     :style="{ backgroundImage: 'url(' + path + ')' }"
     class="box-parallax jsc-parallax"
   >
