@@ -1,4 +1,5 @@
 import { Configuration as NuxtConfiguration } from '@nuxt/types'
+import path from 'path'
 
 const srcDir: string = 'src/'
 const SLACK_API_CODE: string = process.env.SLACK_API_CODE || ''
@@ -86,13 +87,33 @@ const nuxtConfig: NuxtConfiguration = {
         loader: 'vue-svg-loader'
       })
 
-      let path = require('path')
       config.resolve.alias['@components'] = path.join(
         __dirname,
         srcDir + 'components'
       )
+
+      const tsLoader = {
+        loader: 'ts-loader',
+        options: {
+          appendTsSuffixTo: [/\.vue$/],
+          context: __dirname,
+          configFile: 'tsconfig.json'
+        }
+      }
+      for (let rule of config.module.rules) {
+        if (rule.loader === 'vue-loader') {
+          rule.options.loaders = {
+            ...rule.options.loaders,
+            ts: tsLoader
+          }
+        }
+      }
     }
   },
+  /*
+   ** Extensions
+   */
+  extensions: ['ts', 'tsx', 'js', 'jsx'],
   modules: [
     ['@nuxtjs/pwa', { icon: false }],
     '@nuxtjs/axios',

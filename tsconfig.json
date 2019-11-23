@@ -18,7 +18,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./*"
+        "src/*"
       ]
     },
     "types": [
@@ -28,7 +28,7 @@
     ]
   },
   "files": [
-    "./src/shims-vue.d.ts"
+    "./src/type/shims-vue.d.ts"
   ],
   "include": [
     "src/**/*.ts",

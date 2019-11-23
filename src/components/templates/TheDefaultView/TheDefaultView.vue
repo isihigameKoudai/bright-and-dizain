@@ -4,8 +4,10 @@
     <slot />
   </article>
 </template>
-<script>
-import LabelPageTop from '@components/atoms/LabelPageTop'
+<script lang="ts">
+import Vue from 'vue'
+
+import LabelPageTop from '@/components/atoms/LabelPageTop'
 
 export default {
   name: 'TheDefaultView',
