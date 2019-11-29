@@ -8,6 +8,7 @@
       "esnext.asynciterable",
       "dom"
     ],
+    "typeRoots" : ["./type"],
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": false,
     "esModuleInterop": true,
@@ -15,10 +16,15 @@
     "sourceMap": true,
     "strict": true,
     "noEmit": true,
-    "baseUrl": ".",
+    "rootDir": "./src/",
+    "baseUrl": "./src/",
     "paths": {
-      "@/*": [
-        "src/*"
+      "@": [
+        "components/*"
+      ],
+      "*": [
+        "*",
+        "components/*"
       ]
     },
     "types": [

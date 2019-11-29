@@ -11,11 +11,12 @@
   </div>
 </template>
 <script>
+import Vue from 'vue'
 import { mapActions } from 'vuex'
 import BaseButton from '@components/atoms/BaseButton'
 import LabelSection from '@components/atoms/LabelSection'
 
-export default {
+export default Vue.extend({
   name: 'TheModalCompleteEmail',
   components: {
     BaseButton,
@@ -26,7 +27,7 @@ export default {
       updateModal: 'view/updateModal'
     })
   }
-}
+})
 </script>
 <style lang="scss" scoped>
 .complete-wrapper {
