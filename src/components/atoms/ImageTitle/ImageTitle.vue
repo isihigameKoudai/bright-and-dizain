@@ -4,8 +4,10 @@
     <img v-else src="/svg/mainTitleWhite.svg" alt="" width="200px" />
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   name: 'ImageTitle',
   props: {
     isDark: {
@@ -13,6 +15,6 @@ export default {
       default: false
     }
   }
-}
+})
 </script>
 <style lang="scss" scoped></style>

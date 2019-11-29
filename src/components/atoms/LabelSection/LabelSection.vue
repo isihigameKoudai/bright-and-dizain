@@ -3,10 +3,12 @@
     <slot />
   </h2>
 </template>
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   name: 'LabelSection'
-}
+})
 </script>
 <style lang="scss" scoped>
 h2 {

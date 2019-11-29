@@ -5,10 +5,11 @@
     @click="$emit('click')"
   />
 </template>
-<script>
+<script lang="ts">
+import Vue from 'vue'
 import { mapMutations } from 'vuex'
 
-export default {
+export default Vue.extend({
   name: 'ImageBoxThumbnail',
   props: {
     path: {
@@ -21,7 +22,7 @@ export default {
       return this.path ? this.path : '/static/img/NonThumbnail.png'
     }
   }
-}
+})
 </script>
 <style lang="scss" scoped>
 .image-box {

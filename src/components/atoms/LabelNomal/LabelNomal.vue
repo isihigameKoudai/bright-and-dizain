@@ -3,8 +3,10 @@
     <slot />
   </p>
 </template>
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   name: 'LabelNomal',
   props: {
     fontSize: {
@@ -18,7 +20,7 @@ export default {
       return size
     }
   }
-}
+})
 </script>
 <style lang="scss" scoped>
 .label-nomal {

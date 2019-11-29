@@ -8,8 +8,10 @@
     <div />
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   name: 'TheHumbuger',
   props: {
     isActive: {
@@ -17,7 +19,7 @@ export default {
       default: false
     }
   }
-}
+})
 </script>
 <style lang="scss" scoped>
 .btn-humburger {
