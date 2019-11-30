@@ -4,12 +4,11 @@
     <slot />
   </article>
 </template>
-<script lang="ts">
+<script>
 import Vue from 'vue'
+import LabelPageTop from '@components/atoms/LabelPageTop'
 
-import LabelPageTop from '@/components/atoms/LabelPageTop'
-
-export default {
+export default Vue.extend({
   name: 'TheDefaultView',
   components: {
     LabelPageTop
@@ -20,6 +19,6 @@ export default {
       default: 'None'
     }
   }
-}
+})
 </script>
 <style lang="scss" scoped></style>

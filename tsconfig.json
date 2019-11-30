@@ -8,6 +8,7 @@
       "esnext.asynciterable",
       "dom"
     ],
+    "typeRoots" : ["./type"],
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": false,
     "esModuleInterop": true,
@@ -15,24 +16,34 @@
     "sourceMap": true,
     "strict": true,
     "noEmit": true,
-    "baseUrl": ".",
+    "rootDir": "./src/",
+    "baseUrl": "./src/",
     "paths": {
-      "@/*": [
-        "src/*"
+      "@*": [
+        "./*"
+      ],
+      "*": [
+        "*"
       ]
     },
     "types": [
       "@types/node",
       "@types/webpack",
-      "@nuxt/types"
+      "@nuxt/types",
+      "@types/jest"
     ]
   },
   "files": [
-    "./src/type/shims-vue.d.ts"
+    "src/types/vue/index.d.ts",
+    "src/types/vuex/index.d.ts"
   ],
   "include": [
     "src/**/*.ts",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "src/**/*.spec.ts",
+    "src/**/*.spec.tsx",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx"
   ],
   "exclude": [
     "node_modules"

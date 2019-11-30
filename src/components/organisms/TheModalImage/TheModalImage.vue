@@ -2,12 +2,12 @@
   <img :src="imagePath" class="modal-image" alt="" />
 </template>
 <script>
-import { mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'TheModalImage',
   computed: {
-    ...mapState('view', ['imagePath'])
+    ...mapGetters('view', ['imagePath'])
   }
 }
 </script>

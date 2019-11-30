@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 import BaseButton from '@components/atoms/BaseButton'
 import TheDefaultView from '@components/templates/TheDefaultView'
@@ -100,8 +100,12 @@ export default {
     }
   },
   computed: {
-    ...mapState('contact', ['company', 'name', 'tel', 'email', 'message']),
     ...mapGetters('contact', [
+      'company',
+      'name',
+      'tel',
+      'email',
+      'message',
       'isErrCompany',
       'isErrName',
       'isErrTel',
@@ -145,6 +149,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~/assets/css/page.scss';
+
 .logo-wrapper {
   width: 400px;
   margin-left: auto;

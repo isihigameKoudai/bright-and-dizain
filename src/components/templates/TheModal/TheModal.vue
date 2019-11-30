@@ -3,12 +3,12 @@
     <div>
       <div :key="1" class="modal-wrap" @click="toggleModal()" />
       <TheModalImage
-        v-if="modal.modalType === 'image'"
+        v-if="modalType === 'image'"
         :key="2"
         class="modal-content"
       />
       <TheModalCompletEmail
-        v-else-if="modal.modalType === 'contact'"
+        v-else-if="modalType === 'contact'"
         :key="3"
         class="modal-content"
       />
@@ -20,7 +20,7 @@
 import TheModalMenu from '@components/organisms/TheModalMenu'
 import TheModalImage from '@components/organisms/TheModalImage'
 import TheModalCompletEmail from '@components/organisms/TheModalCompleteEmail'
-import { mapState, mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'TheModal',
@@ -30,7 +30,7 @@ export default {
     TheModalCompletEmail
   },
   computed: {
-    ...mapState('view', ['modal'])
+    ...mapGetters('view', ['modalType'])
   },
   methods: {
     ...mapActions({

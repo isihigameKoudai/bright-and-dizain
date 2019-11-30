@@ -40,7 +40,7 @@
 import TheDefaultView from '@components/templates/TheDefaultView'
 import ImageBoxThumbnail from '@components/atoms/ImageBoxThumbnail'
 import LabelNomal from '@components/atoms/LabelNomal'
-import { mapMutations, mapActions } from 'vuex'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'Portfolio',
@@ -242,7 +242,6 @@ export default {
     }
   },
   methods: {
-    // ...mapMutations(['updateModal', 'updateImagePath']),
     ...mapActions({
       setImagePath: 'view/setImagePath',
       updateModal: 'view/updateModal'
@@ -256,6 +255,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~/assets/css/page.scss';
+
 .flex-con {
   display: flex;
   flex-wrap: wrap;

@@ -6,8 +6,10 @@
     class="image-box"
   />
 </template>
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   name: 'ImageBox',
   props: {
     path: {
@@ -28,7 +30,7 @@ export default {
       return this.shadow ? 'shadow' : ''
     }
   }
-}
+})
 </script>
 <style lang="scss" scoped>
 .image-box {

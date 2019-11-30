@@ -102,7 +102,7 @@ import LabelSection from '@components/atoms/LabelSection'
 import LabelNomal from '@components/atoms/LabelNomal'
 import LogoMedia from '@components/atoms/LogoMedia'
 
-import { init, scroller } from '~/utils/animations'
+import { setIntersectionObserver } from '~/utils/revealObserver'
 
 export default {
   name: 'Profile',
@@ -138,13 +138,28 @@ export default {
     }
   },
   mounted() {
-    init()
-    scroller()
+    if (process.browser) {
+      const options = {
+        threshold: 1.0
+      }
+
+      const clientHeight = document.documentElement.clientHeight
+      const callBack = entry => {
+        const rect = entry.target.getBoundingClientRect()
+        if (clientHeight > rect.top) {
+          entry.target.classList.add('on')
+        }
+      }
+
+      setIntersectionObserver('.appear-up', options, callBack)
+      setIntersectionObserver('.appear', options, callBack)
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+@import '~/assets/css/page.scss';
 @import '~/assets/css/animation.scss';
 
 .link-nomal {

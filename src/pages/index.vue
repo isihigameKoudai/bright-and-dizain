@@ -216,7 +216,8 @@ import TitleParallax from '@components/atoms/TitleParallax'
 import ImageBox from '@components/atoms/ImageBox'
 import BaseButton from '@components/atoms/BaseButton'
 
-import { init, scroller, setParallax } from '~/utils/animations'
+import { setParallax } from '~/utils/parallax'
+import { setIntersectionObserver } from '~/utils/revealObserver'
 
 export default {
   name: 'Index',
@@ -250,11 +251,9 @@ export default {
   },
   mounted() {
     if (process.browser) {
-      init()
-      scroller()
+      this.setObserver()
       setParallax()
     }
-    // this.$router.push('/#top');
   },
   methods: {
     moveScroll() {
@@ -263,6 +262,22 @@ export default {
     },
     onPushRoute(e = '/') {
       this.$router.push({ path: e })
+    },
+    setObserver() {
+      const options = {
+        threshold: 1.0
+      }
+
+      const clientHeight = document.documentElement.clientHeight
+      const callBack = entry => {
+        const rect = entry.target.getBoundingClientRect()
+        if (clientHeight > rect.top) {
+          entry.target.classList.add('on')
+        }
+      }
+
+      setIntersectionObserver('.appear-up', options, callBack)
+      setIntersectionObserver('.appear', options, callBack)
     }
   }
 }
@@ -270,6 +285,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/assets/css/animation.scss';
+@import '~/assets/css/page.scss';
 
 .top-container {
   position: relative;

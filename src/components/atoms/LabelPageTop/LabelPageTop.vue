@@ -3,8 +3,10 @@
     <h1>{{ title }}</h1>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   name: 'LabelPageTop',
   props: {
     title: {
@@ -12,7 +14,7 @@ export default {
       default: 'None'
     }
   }
-}
+})
 </script>
 <style lang="scss" scoped>
 .label-top {

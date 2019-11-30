@@ -4,7 +4,9 @@
   </div>
 </template>
 <script>
-export default {
+import Vue from 'vue'
+
+export default Vue.extend({
   name: 'ImageCircle',
   props: {
     path: {
@@ -12,7 +14,7 @@ export default {
       default: ''
     }
   }
-}
+})
 </script>
 <style lang="scss" scoped>
 .img-circle {

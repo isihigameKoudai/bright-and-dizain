@@ -100,6 +100,7 @@ const nuxtConfig: NuxtConfiguration = {
           configFile: 'tsconfig.json'
         }
       }
+
       for (let rule of config.module.rules) {
         if (rule.loader === 'vue-loader') {
           rule.options.loaders = {
