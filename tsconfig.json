@@ -19,12 +19,11 @@
     "rootDir": "./src/",
     "baseUrl": "./src/",
     "paths": {
-      "@": [
-        "components/*"
+      "@*": [
+        "./*"
       ],
       "*": [
-        "*",
-        "components/*"
+        "*"
       ]
     },
     "types": [
