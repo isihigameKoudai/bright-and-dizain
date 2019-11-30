@@ -149,6 +149,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~/assets/css/page.scss';
+
 .logo-wrapper {
   width: 400px;
   margin-left: auto;

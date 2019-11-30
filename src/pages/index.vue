@@ -285,6 +285,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/assets/css/animation.scss';
+@import '~/assets/css/page.scss';
 
 .top-container {
   position: relative;

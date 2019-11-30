@@ -255,6 +255,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~/assets/css/page.scss';
+
 .flex-con {
   display: flex;
   flex-wrap: wrap;
