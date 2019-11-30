@@ -19,6 +19,11 @@ export const state = (): S => ({
 })
 
 export const getters: Getters<S, G> = {
+  company: state => state.company,
+  name: state => state.name,
+  email: state => state.email,
+  tel: state => state.tel,
+  message: state => state.message,
   isErrCompany({ company }) {
     return validCompany(company)
   },

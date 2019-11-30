@@ -1,16 +1,16 @@
 <template>
   <div>
     <TheHumburger
-      :is-active="modal.mode"
+      :is-active="modalMode"
       class="fixed-humburegr"
       @click="toggleModal"
     />
     <nuxt />
-    <TheModal v-if="modal.mode" class="positiond-fixed fixed-content" />
+    <TheModal v-if="modalMode" class="positiond-fixed fixed-content" />
   </div>
 </template>
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import TheModal from '@components/templates/TheModal'
 import TheHumburger from '@components/atoms/TheHumburger'
 
@@ -21,7 +21,7 @@ export default {
     TheHumburger
   },
   computed: {
-    ...mapState('view', ['modal'])
+    ...mapGetters('view', ['modalMode'])
   },
   methods: {
     ...mapActions({

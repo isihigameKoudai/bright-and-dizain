@@ -7,6 +7,11 @@ export interface S {
 }
 
 export interface G {
+  company: string
+  name: string
+  email: string
+  tel: string
+  message: string
   isErrCompany: boolean
   isErrName: boolean
   isErrEmail: boolean
@@ -15,6 +20,11 @@ export interface G {
 }
 
 export interface RG {
+  'contact/company': G['company']
+  'contact/name': G['name']
+  'contact/email': G['email']
+  'contact/tel': G['tel']
+  'contact/message': G['message']
   'contact/isErrCompany': G['isErrCompany']
   'contact/isErrName': G['isErrName']
   'contact/isErrEmail': G['isErrEmail']

@@ -1,11 +1,11 @@
 <template>
   <div id="error">
     <TheHumburger
-      :is-active="modal.mode"
+      :is-active="modalMode"
       class="fixed-humburegr"
       @click="toggleModal()"
     />
-    <TheModal v-if="modal.mode" class="positiond-fixed fixed-content" />
+    <TheModal v-if="modalMode" class="positiond-fixed fixed-content" />
     <div class="error-container">
       <h1 class="error-code">
         {{ error.statusCode }}
@@ -22,7 +22,7 @@
   </div>
 </template>
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import TheModal from '@components/templates/TheModal'
 import TheHumburger from '@components/atoms/TheHumburger'
 import LabelNormal from '@components/atoms/LabelNomal'
@@ -43,7 +43,7 @@ export default {
     }
   },
   computed: {
-    ...mapState('view', ['modal']),
+    ...mapGetters('view', ['modalMode']),
     errorMessage() {
       const code = this.error.statusCode
       switch (code) {
