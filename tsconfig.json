@@ -33,7 +33,8 @@
     ]
   },
   "files": [
-    "./src/type/shims-vue.d.ts"
+    "src/types/vue/index.d.ts",
+    "src/types/vuex/index.d.ts"
   ],
   "include": [
     "src/**/*.ts",

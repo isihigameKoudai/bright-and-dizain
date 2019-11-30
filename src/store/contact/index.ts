@@ -1,17 +1,24 @@
-import Model from './model'
-import * as type from './type'
+import { Getters, Mutations, Actions } from 'vuex'
+import { S, G, M, A } from './type'
+
 import {
   validCompany,
   validName,
   validEmail,
   validTel,
   validMessage
-} from '~/service/validation'
-import submitContact from '~/service/Contact'
+} from '../../service/validation'
+import submitContact from '../../service/Contact'
 
-export const state = () => Model
+export const state = (): S => ({
+  company: '',
+  name: '',
+  email: '',
+  tel: '',
+  message: ''
+})
 
-export const getters = {
+export const getters: Getters<S, G> = {
   isErrCompany({ company }) {
     return validCompany(company)
   },
@@ -29,46 +36,46 @@ export const getters = {
   }
 }
 
-export const mutations = {
-  [type.SET_COMPANY](state, payload) {
+export const mutations: Mutations<S, M> = {
+  SET_COMPANY(state, payload) {
     state.company = payload
   },
-  [type.SET_NAME](state, payload) {
+  SET_NAME(state, payload) {
     state.name = payload
   },
-  [type.SET_TEL](state, payload) {
-    state.tel = payload
-  },
-  [type.SET_EMAIL](state, payload) {
+  SET_EMAIL(state, payload) {
     state.email = payload
   },
-  [type.SET_MESSAGE](state, payload) {
+  SET_TEL(state, payload) {
+    state.tel = payload
+  },
+  SET_MESSAGE(state, payload) {
     state.message = payload
   }
 }
 
-export const actions = {
+export const actions: Actions<S, A, G, M> = {
   setCompany({ commit }, payload) {
-    commit(type.SET_COMPANY, payload)
+    commit('SET_COMPANY', payload)
   },
   setName({ commit }, payload) {
-    commit(type.SET_NAME, payload)
+    commit('SET_NAME', payload)
   },
   setTel({ commit }, payload) {
-    commit(type.SET_TEL, payload)
+    commit('SET_TEL', payload)
   },
   setEmail({ commit }, payload) {
-    commit(type.SET_EMAIL, payload)
+    commit('SET_EMAIL', payload)
   },
   setMessage({ commit }, payload) {
-    commit(type.SET_MESSAGE, payload)
+    commit('SET_MESSAGE', payload)
   },
   resetContacts({ commit }) {
-    commit(type.SET_COMPANY, '')
-    commit(type.SET_NAME, '')
-    commit(type.SET_TEL, '')
-    commit(type.SET_EMAIL, '')
-    commit(type.SET_MESSAGE, '')
+    commit('SET_NAME', '')
+    commit('SET_TEL', '')
+    commit('SET_EMAIL', '')
+    commit('SET_COMPANY', '')
+    commit('SET_MESSAGE', '')
   },
   sendContacts({ state }) {
     const { company, name, email, tel, message } = state
