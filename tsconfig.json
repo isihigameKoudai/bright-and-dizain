@@ -29,7 +29,8 @@
     "types": [
       "@types/node",
       "@types/webpack",
-      "@nuxt/types"
+      "@nuxt/types",
+      "@types/jest"
     ]
   },
   "files": [
@@ -38,7 +39,11 @@
   ],
   "include": [
     "src/**/*.ts",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "src/**/*.spec.ts",
+    "src/**/*.spec.tsx",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx"
   ],
   "exclude": [
     "node_modules"
