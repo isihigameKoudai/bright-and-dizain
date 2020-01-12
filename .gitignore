@@ -86,6 +86,9 @@ dist
 #mac
 .DS_Store
 
+# storybook
+storybook-static
+
 #others
 package-lock.json
 yarn.lock

@@ -137,9 +137,7 @@
       </section>
 
       <section class="wrapper mt100 taC">
-        <base-button @click="onPushRoute('contact')">
-          Contact
-        </base-button>
+        <BaseButton title="Contact" @click="onPushRoute('contact')" />
         <label-nomal class="mt30">
           お問い合わせはこちらから
         </label-nomal>
@@ -196,9 +194,7 @@
         </div>
       </section>
       <section class="wrapper mt100 taC">
-        <base-button @click="onPushRoute('contact')">
-          Contact
-        </base-button>
+        <BaseButton title="Contact" @click="onPushRoute('contact')" />
         <label-nomal class="mt30">
           お問い合わせはこちらから
         </label-nomal>

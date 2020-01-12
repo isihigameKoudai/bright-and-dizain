@@ -36,9 +36,12 @@
         class="wrap-text-box"
         @text="setMessage"
       />
-      <BaseButton class="mt70" :is-disable="isInvalid" @click="pushSubmit">
-        Send
-      </BaseButton>
+      <BaseButton
+        class="mt70"
+        title="Send"
+        :is-disable="isInvalid"
+        @click="pushSubmit"
+      />
       <label-nomal v-if="isFaildConnection" class="mt20">
         送信失敗しました、時間を空けてお試しください。
       </label-nomal>

@@ -74,9 +74,7 @@
       </div>
     </section>
     <section class="position-title">
-      <base-button @click="onPushRoute('contact')">
-        Contact
-      </base-button>
+      <BaseButton title="Contact" @click="onPushRoute('contact')" />
       <label-nomal class="mt70">
         SNSのDM（ダイレクトメッセージ）
         <br class="pc-dn" />からもご連絡可能です。
