@@ -6,20 +6,20 @@
           class="position-img-profile"
           path="/img/ProfileImage.jpg"
         />
-        <label-section class="mt40">
+        <LabelSection class="mt40">
           Koudai Ishigame
-        </label-section>
+        </LabelSection>
       </div>
       <div class="area-profile-right">
-        <label-nomal class="appear-up">
+        <LabelNomal class="appear-up">
           1994年6月28日生まれ、<br class="pc-dn" />青森県出身・東京都在住。
           <br />プログラミングと音楽が好きで、 <br />学生時代にはプレーヤーと<br
             class="pc-dn"
           />SNSを統合させた音楽アプリや <br />調理工程と材料を限定した<br
             class="pc-dn"
           />簡易型料理レシピアプリをリリース。
-        </label-nomal>
-        <label-nomal class="label-nomal mt30 appear-up">
+        </LabelNomal>
+        <LabelNomal class="label-nomal mt30 appear-up">
           大学時代に大手家電量販店での<br
             class="pc-dn"
           />販売員の仕事でカメラと出会う。 <br />たまたま撮った写真を機に
@@ -27,8 +27,8 @@
             class="pc-dn"
           />挑戦してくれたことをキッカケに、
           <br />本格的に人物・ポートレート写真を始める。
-        </label-nomal>
-        <label-nomal class="mt30 appear-up">
+        </LabelNomal>
+        <LabelNomal class="mt30 appear-up">
           現在はエンジニア兼フォトグラファー<br
             class="pc-dn"
           />として都内で活動中。
@@ -39,27 +39,27 @@
             class="pc-dn"
           />音楽CDのアルバムジャケットなど
           <br />アーティスティックな撮影もこなす。
-        </label-nomal>
-        <label-nomal class="mt30 appear-up">
+        </LabelNomal>
+        <LabelNomal class="mt30 appear-up">
           その他、Webメディアへの写真提供や
           <br />海外の厳正写真審査サイトでの掲載経験もあり。
-        </label-nomal>
+        </LabelNomal>
       </div>
     </section>
     <section class="position-title">
-      <label-section class="appear-up">
+      <LabelSection class="appear-up">
         skills
-      </label-section>
-      <label-nomal class="mt20 appear-up">
+      </LabelSection>
+      <LabelNomal class="mt20 appear-up">
         Photograph
         <br />Retouch <br />Art Direction <br />HTML/CSS/Javascript(ES6)
         <br />Vue.js <br />jQuery
-      </label-nomal>
+      </LabelNomal>
     </section>
     <section class="wrapper position-title">
-      <label-section class="appear-up">
+      <LabelSection class="appear-up">
         SNS & Media
-      </label-section>
+      </LabelSection>
       <div class="logo-wrapper mt40 appear-up">
         <logo-media
           path="/svg/LogoFacebook.svg"
@@ -85,11 +85,11 @@
         />
       </div>
       <div class="wrapper mt40 appear-up">
-        <label-nomal v-for="(media, i) in medias" :key="i">
+        <LabelNomal v-for="(media, i) in medias" :key="i">
           <a :href="media.link" class="link-nomal" target="_blank">{{
             media.title
           }}</a>
-        </label-nomal>
+        </LabelNomal>
       </div>
     </section>
   </TheDefaultView>

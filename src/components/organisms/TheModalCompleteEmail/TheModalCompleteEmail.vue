@@ -1,8 +1,8 @@
 <template>
   <div class="complete-wrapper">
-    <label-section class="mt100">
+    <LabelSection class="mt100">
       お問い合わせが完了しました。
-    </label-section>
+    </LabelSection>
     <nuxt-link to="/">
       <BaseButton class="mt100" title="Topへ" @click="updateModal" />
     </nuxt-link>

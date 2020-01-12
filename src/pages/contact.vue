@@ -42,9 +42,9 @@
         :is-disable="isInvalid"
         @click="pushSubmit"
       />
-      <label-nomal v-if="isFaildConnection" class="mt20">
+      <LabelNomal v-if="isFaildConnection" class="mt20">
         送信失敗しました、時間を空けてお試しください。
-      </label-nomal>
+      </LabelNomal>
     </section>
     <section class="position-title">
       <div class="logo-wrapper mt70">
@@ -55,10 +55,10 @@
           :link="social.link"
         />
       </div>
-      <label-nomal class="mt40">
+      <LabelNomal class="mt40">
         SNSのDM（ダイレクトメッセージ）<br class="pc-dn" />
         からもご連絡可能です。
-      </label-nomal>
+      </LabelNomal>
     </section>
   </TheDefaultView>
 </template>

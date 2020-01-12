@@ -1,9 +1,9 @@
 <template>
   <TheDefaultView title="Plan">
     <section class="position-title mt100">
-      <label-nomal :font-size="24" class="position-title appear-up">
+      <LabelNomal :font-size="24" class="position-title appear-up">
         各種料金
-      </label-nomal>
+      </LabelNomal>
       <div class="container">
         <ul class="table-container mt50">
           <!-- header of table -->
@@ -75,10 +75,10 @@
     </section>
     <section class="position-title">
       <BaseButton title="Contact" @click="onPushRoute('contact')" />
-      <label-nomal class="mt70">
+      <LabelNomal class="mt70">
         SNSのDM（ダイレクトメッセージ）
         <br class="pc-dn" />からもご連絡可能です。
-      </label-nomal>
+      </LabelNomal>
       <div class="logo-wrapper mt70">
         <logo-media
           v-for="(social, i) in socials"

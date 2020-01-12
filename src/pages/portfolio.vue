@@ -1,8 +1,8 @@
 <template>
   <TheDefaultView title="Portfolio">
-    <label-nomal :font-size="32" class="position-title mt80">
+    <LabelNomal :font-size="32" class="position-title mt80">
       Creative
-    </label-nomal>
+    </LabelNomal>
     <div class="wrapper flex-con mt30">
       <image-box-thumbnail
         v-for="(image, index) in portfolio.creative"
@@ -11,9 +11,9 @@
         @click="onClickModal(image.lrg)"
       />
     </div>
-    <label-nomal :font-size="32" class="position-title mt80">
+    <LabelNomal :font-size="32" class="position-title mt80">
       Portrait
-    </label-nomal>
+    </LabelNomal>
     <div class="wrapper flex-con mt30">
       <image-box-thumbnail
         v-for="(image, index) in portfolio.portrait"
@@ -22,9 +22,9 @@
         @click="onClickModal(image.lrg)"
       />
     </div>
-    <label-nomal :font-size="32" class="position-title mt80">
+    <LabelNomal :font-size="32" class="position-title mt80">
       Landscape
-    </label-nomal>
+    </LabelNomal>
     <div class="wrapper flex-con mt30">
       <image-box-thumbnail
         v-for="(image, index) in portfolio.landscape"
