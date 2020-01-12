@@ -52,7 +52,7 @@
         </LabelNormal>
       </div>
       <!-- Photograph Works -->
-      <title-parallax
+      <TitleParallax
         class="mt90"
         path="/img/TitlePhotograph.jpg"
         title="Photograph"
@@ -144,7 +144,7 @@
       </section>
 
       <!-- Web Works -->
-      <title-parallax
+      <TitleParallax
         class="mt90"
         path="/img/TitleWebDevelop.jpg"
         title="Web Works"
