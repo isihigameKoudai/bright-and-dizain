@@ -18,7 +18,7 @@ export default {
       return size
     }
   }
-})
+}
 </script>
 <style lang="scss" scoped>
 .label-normal {
