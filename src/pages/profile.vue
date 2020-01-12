@@ -2,7 +2,7 @@
   <TheDefaultView title="Profile">
     <section class="wrapper mt90">
       <div class="area-profile-left appear">
-        <image-circle
+        <ImageCircle
           class="position-img-profile"
           path="/img/ProfileImage.jpg"
         />
@@ -226,10 +226,11 @@ export default {
 }
 
 .logo-wrapper {
-  width: 400px;
+  width: 640px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 
   @media screen and (max-width: 768px) {
