@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-    <the-default-view id="top" title="Works">
+    <TheDefaultView id="top" title="Works">
       <label-section class="position-title">
         Concept
       </label-section>
@@ -199,7 +199,7 @@
           お問い合わせはこちらから
         </label-nomal>
       </section>
-    </the-default-view>
+    </TheDefaultView>
   </div>
 </template>
 

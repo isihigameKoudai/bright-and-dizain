@@ -1,5 +1,5 @@
 <template>
-  <the-default-view title="Contact">
+  <TheDefaultView title="Contact">
     <section class="position-title mt100">
       <BaseTextBox
         place-holder="Company"
@@ -60,7 +60,7 @@
         からもご連絡可能です。
       </label-nomal>
     </section>
-  </the-default-view>
+  </TheDefaultView>
 </template>
 
 <script>

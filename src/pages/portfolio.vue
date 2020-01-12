@@ -1,5 +1,5 @@
 <template>
-  <the-default-view title="Portfolio">
+  <TheDefaultView title="Portfolio">
     <label-nomal :font-size="32" class="position-title mt80">
       Creative
     </label-nomal>
@@ -33,7 +33,7 @@
         @click="onClickModal(image.lrg)"
       />
     </div>
-  </the-default-view>
+  </TheDefaultView>
 </template>
 
 <script>

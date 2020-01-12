@@ -1,5 +1,5 @@
 <template>
-  <the-default-view title="Plan">
+  <TheDefaultView title="Plan">
     <section class="position-title mt100">
       <label-nomal :font-size="24" class="position-title appear-up">
         各種料金
@@ -88,7 +88,7 @@
         />
       </div>
     </section>
-  </the-default-view>
+  </TheDefaultView>
 </template>
 
 <script>

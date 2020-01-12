@@ -1,5 +1,5 @@
 <template>
-  <the-default-view title="Profile">
+  <TheDefaultView title="Profile">
     <section class="wrapper mt90">
       <div class="area-profile-left appear">
         <image-circle
@@ -92,7 +92,7 @@
         </label-nomal>
       </div>
     </section>
-  </the-default-view>
+  </TheDefaultView>
 </template>
 
 <script>
