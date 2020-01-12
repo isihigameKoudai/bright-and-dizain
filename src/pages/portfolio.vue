@@ -4,7 +4,7 @@
       Creative
     </LabelNormal>
     <div class="wrapper flex-con mt30">
-      <image-box-thumbnail
+      <ImageBoxThumbnail
         v-for="(image, index) in portfolio.creative"
         :key="index"
         :path="image.url"
@@ -15,7 +15,7 @@
       Portrait
     </LabelNormal>
     <div class="wrapper flex-con mt30">
-      <image-box-thumbnail
+      <ImageBoxThumbnail
         v-for="(image, index) in portfolio.portrait"
         :key="index"
         :path="image.url"
@@ -26,7 +26,7 @@
       Landscape
     </LabelNormal>
     <div class="wrapper flex-con mt30">
-      <image-box-thumbnail
+      <ImageBoxThumbnail
         v-for="(image, index) in portfolio.landscape"
         :key="index"
         :path="image.url"

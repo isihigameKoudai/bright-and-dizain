@@ -74,7 +74,7 @@
             世界観を作り出します。
           </LabelNormal>
         </div>
-        <image-box
+        <ImageBox
           :shadow="true"
           class="sp-space appear"
           path="/img/worksCreative.jpg"
@@ -82,7 +82,7 @@
       </section>
 
       <section class="wrapper area-content mt90">
-        <image-box
+        <ImageBox
           :shadow="true"
           class="sp-dn appear"
           path="/img/worksPortrait.jpg"
@@ -104,7 +104,7 @@
             色褪せない思い出にしていきます。
           </LabelNormal>
         </div>
-        <image-box
+        <ImageBox
           :shadow="true"
           class="pc-dn sp-space appear"
           path="/img/worksPortrait.jpg"
@@ -129,7 +129,7 @@
             今、伝えて行きましょう
           </LabelNormal>
         </div>
-        <image-box
+        <ImageBox
           :shadow="true"
           class="sp-space appear"
           path="/img/worksMediaReport.jpg"
@@ -154,7 +154,7 @@
           <LabelSection class="appear-up">
             HTML/CSS Coding
           </LabelSection>
-          <image-box
+          <ImageBox
             :is-small="true"
             class="mt30 sp-dn appear"
             path="/img/webCoding.jpg"
@@ -165,7 +165,7 @@
             小〜中規模なHTML/CSSの<br />
             コーディングをいたします。
           </LabelNormal>
-          <image-box
+          <ImageBox
             :is-small="true"
             class="mt30 pc-dn sp-space appear"
             path="/img/webCoding.jpg"
@@ -175,7 +175,7 @@
           <LabelSection class="appear-up">
             WebApp Develop
           </LabelSection>
-          <image-box
+          <ImageBox
             :is-small="true"
             class="mt30 sp-dn appear"
             path="/img/webApp.jpg"
@@ -186,7 +186,7 @@
             Vue.js,Nuxt.jsなどを取り入れた<br />
             モダンな開発で進めて行きます。
           </LabelNormal>
-          <image-box
+          <ImageBox
             :is-small="true"
             class="mt30 pc-dn sp-space appear"
             path="/img/webApp.jpg"
