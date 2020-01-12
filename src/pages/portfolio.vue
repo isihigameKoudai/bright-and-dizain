@@ -1,8 +1,8 @@
 <template>
   <TheDefaultView title="Portfolio">
-    <LabelNomal :font-size="32" class="position-title mt80">
+    <LabelNormal :font-size="32" class="position-title mt80">
       Creative
-    </LabelNomal>
+    </LabelNormal>
     <div class="wrapper flex-con mt30">
       <image-box-thumbnail
         v-for="(image, index) in portfolio.creative"
@@ -11,9 +11,9 @@
         @click="onClickModal(image.lrg)"
       />
     </div>
-    <LabelNomal :font-size="32" class="position-title mt80">
+    <LabelNormal :font-size="32" class="position-title mt80">
       Portrait
-    </LabelNomal>
+    </LabelNormal>
     <div class="wrapper flex-con mt30">
       <image-box-thumbnail
         v-for="(image, index) in portfolio.portrait"
@@ -22,9 +22,9 @@
         @click="onClickModal(image.lrg)"
       />
     </div>
-    <LabelNomal :font-size="32" class="position-title mt80">
+    <LabelNormal :font-size="32" class="position-title mt80">
       Landscape
-    </LabelNomal>
+    </LabelNormal>
     <div class="wrapper flex-con mt30">
       <image-box-thumbnail
         v-for="(image, index) in portfolio.landscape"
@@ -39,15 +39,15 @@
 <script>
 import TheDefaultView from '@components/templates/TheDefaultView'
 import ImageBoxThumbnail from '@components/atoms/ImageBoxThumbnail'
-import LabelNomal from '@components/atoms/LabelNomal'
-import { mapActions } from 'vuex'
+import LabelNormal from '@components/atoms/LabelNormal'
+import { mapMutations, mapActions } from 'vuex'
 
 export default {
   name: 'Portfolio',
   components: {
     TheDefaultView,
     ImageBoxThumbnail,
-    LabelNomal
+    LabelNormal
   },
   data() {
     return {

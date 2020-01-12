@@ -1,13 +1,11 @@
 <template>
-  <p :style="exportFontSize" class="label-nomal">
+  <p :style="exportFontSize" class="label-normal">
     <slot />
   </p>
 </template>
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
-  name: 'LabelNomal',
+<script>
+export default {
+  name: 'LabelNormal',
   props: {
     fontSize: {
       type: Number,
@@ -23,7 +21,7 @@ export default Vue.extend({
 })
 </script>
 <style lang="scss" scoped>
-.label-nomal {
+.label-normal {
   position: relative;
   font-size: 16px;
   color: #402c2c;

@@ -24,14 +24,14 @@
       <LabelSection class="position-title">
         Concept
       </LabelSection>
-      <LabelNomal :font-size="24" class="position-title appear-up">
+      <LabelNormal :font-size="24" class="position-title appear-up">
         <span class="sp-dn">「</span>Make Bright All The People<br
           class="pc-dn"
         />
         - 全ての人を輝かせる -<span class="sp-dn">」</span>
-      </LabelNomal>
+      </LabelNormal>
       <div class="position-title">
-        <LabelNomal class="mt20 appear-up">
+        <LabelNormal class="mt20 appear-up">
           上記ビジョンのもと、<br />
           モノづくりを通して<br />
           みなさんが少しでも<br />
@@ -39,17 +39,17 @@
           そして,<br />
           その起爆剤になれるよう<br />
           活動していきます。
-        </LabelNomal>
-        <LabelNomal class="mt20 appear-up">
+        </LabelNormal>
+        <LabelNormal class="mt20 appear-up">
           何を実現しようか、<br />
           どんな世界観にしようか、<br />
           どうやって作ろうか、
-        </LabelNomal>
-        <LabelNomal class="mt20 appear-up">
+        </LabelNormal>
+        <LabelNormal class="mt20 appear-up">
           共感やワクワクから始まる、<br />
           モノづくりやクリエイティブを<br />
           全力で応援していきます。
-        </LabelNomal>
+        </LabelNormal>
       </div>
       <!-- Photograph Works -->
       <title-parallax
@@ -62,17 +62,17 @@
           <LabelSection class="appear-up">
             Creative
           </LabelSection>
-          <LabelNomal class="mt20 appear-up">
+          <LabelNormal class="mt20 appear-up">
             創作、クリエイティブ、作り込みなど<br />
             背景や衣装・ドレス、メイクからヘアメイクまで<br />
             トータルでご準備し、<br />
             ストーリー・コンセプトなど世界観を<br />
             決めていき制作にあたります。
-          </LabelNomal>
-          <LabelNomal class="mt20 appear-up">
+          </LabelNormal>
+          <LabelNormal class="mt20 appear-up">
             他では真似できないような<br />
             世界観を作り出します。
-          </LabelNomal>
+          </LabelNormal>
         </div>
         <image-box
           :shadow="true"
@@ -91,18 +91,18 @@
           <LabelSection class="appear-up">
             Portrait
           </LabelSection>
-          <LabelNomal class="mt20 appear-up">
+          <LabelNormal class="mt20 appear-up">
             手軽な人物・プロフィールの撮影から<br />
             結婚式の前撮りなど<br />
             雰囲気のあるお写真まで<br />
             ご対応します。<br />
-          </LabelNomal>
-          <LabelNomal class="mt20 appear-up">
+          </LabelNormal>
+          <LabelNormal class="mt20 appear-up">
             日常の何気ない瞬間も<br />
             記念になるような時も<br />
             永遠に残る<br />
             色褪せない思い出にしていきます。
-          </LabelNomal>
+          </LabelNormal>
         </div>
         <image-box
           :shadow="true"
@@ -116,18 +116,18 @@
           <LabelSection class="appear-up">
             Media & Report
           </LabelSection>
-          <LabelNomal class="mt20 appear-up">
+          <LabelNormal class="mt20 appear-up">
             宣伝商材やHP素材、Webメディアや記事の<br />
             ための写真などをご提供いたします。<br />
             また、音楽CDのアルバムジャケットなど<br />
             フォーマルなものだけでなく<br />
             アーティスティックなものもご対応いたします。<br />
-          </LabelNomal>
-          <LabelNomal class="mt20 appear-up">
+          </LabelNormal>
+          <LabelNormal class="mt20 appear-up">
             表現したいもの<br />
             伝えたいことは<br />
             今、伝えて行きましょう
-          </LabelNomal>
+          </LabelNormal>
         </div>
         <image-box
           :shadow="true"
@@ -138,9 +138,9 @@
 
       <section class="wrapper mt100 taC">
         <BaseButton title="Contact" @click="onPushRoute('contact')" />
-        <LabelNomal class="mt30">
+        <LabelNormal class="mt30">
           お問い合わせはこちらから
-        </LabelNomal>
+        </LabelNormal>
       </section>
 
       <!-- Web Works -->
@@ -159,12 +159,12 @@
             class="mt30 sp-dn appear"
             path="/img/webCoding.jpg"
           />
-          <LabelNomal class="mt20 appear-up">
+          <LabelNormal class="mt20 appear-up">
             各種サービス、Webサイト、<br />
             HP、Webアプリにおける<br />
             小〜中規模なHTML/CSSの<br />
             コーディングをいたします。
-          </LabelNomal>
+          </LabelNormal>
           <image-box
             :is-small="true"
             class="mt30 pc-dn sp-space appear"
@@ -180,12 +180,12 @@
             class="mt30 sp-dn appear"
             path="/img/webApp.jpg"
           />
-          <LabelNomal class="mt20 appear-up">
+          <LabelNormal class="mt20 appear-up">
             Web上で動くアプリやサイトの<br />
             フロントエンド開発を行います。<br />
             Vue.js,Nuxt.jsなどを取り入れた<br />
             モダンな開発で進めて行きます。
-          </LabelNomal>
+          </LabelNormal>
           <image-box
             :is-small="true"
             class="mt30 pc-dn sp-space appear"
@@ -195,9 +195,9 @@
       </section>
       <section class="wrapper mt100 taC">
         <BaseButton title="Contact" @click="onPushRoute('contact')" />
-        <LabelNomal class="mt30">
+        <LabelNormal class="mt30">
           お問い合わせはこちらから
-        </LabelNomal>
+        </LabelNormal>
       </section>
     </TheDefaultView>
   </div>
@@ -207,7 +207,7 @@
 import $ from 'jquery'
 import TheDefaultView from '@components/templates/TheDefaultView'
 import LabelSection from '@components/atoms/LabelSection'
-import LabelNomal from '@components/atoms/LabelNomal'
+import LabelNormal from '@components/atoms/LabelNormal'
 import TitleParallax from '@components/atoms/TitleParallax'
 import ImageBox from '@components/atoms/ImageBox'
 import BaseButton from '@components/atoms/BaseButton'
@@ -220,7 +220,7 @@ export default {
   components: {
     TheDefaultView,
     LabelSection,
-    LabelNomal,
+    LabelNormal,
     TitleParallax,
     ImageBox,
     BaseButton

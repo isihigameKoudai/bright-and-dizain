@@ -25,7 +25,7 @@
 import { mapGetters, mapActions } from 'vuex'
 import TheModal from '@components/templates/TheModal'
 import TheHumburger from '@components/atoms/TheHumburger'
-import LabelNormal from '@components/atoms/LabelNomal'
+import LabelNormal from '@components/atoms/LabelNormal'
 
 export default {
   name: 'Default',

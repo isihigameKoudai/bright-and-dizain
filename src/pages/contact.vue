@@ -42,9 +42,9 @@
         :is-disable="isInvalid"
         @click="pushSubmit"
       />
-      <LabelNomal v-if="isFaildConnection" class="mt20">
+      <LabelNormal v-if="isFaildConnection" class="mt20">
         送信失敗しました、時間を空けてお試しください。
-      </LabelNomal>
+      </LabelNormal>
     </section>
     <section class="position-title">
       <div class="logo-wrapper mt70">
@@ -55,10 +55,10 @@
           :link="social.link"
         />
       </div>
-      <LabelNomal class="mt40">
+      <LabelNormal class="mt40">
         SNSのDM（ダイレクトメッセージ）<br class="pc-dn" />
         からもご連絡可能です。
-      </LabelNomal>
+      </LabelNormal>
     </section>
   </TheDefaultView>
 </template>
@@ -70,7 +70,7 @@ import BaseButton from '@components/atoms/BaseButton'
 import TheDefaultView from '@components/templates/TheDefaultView'
 import BaseTextBox from '@components/atoms/BaseTextBox'
 import BaseTextArea from '@components/atoms/BaseTextArea'
-import LabelNomal from '@components/atoms/LabelNomal'
+import LabelNormal from '@components/atoms/LabelNormal'
 import LogoMedia from '@components/atoms/LogoMedia'
 
 export default {
@@ -81,7 +81,7 @@ export default {
     BaseTextBox,
     BaseTextArea,
     LogoMedia,
-    LabelNomal
+    LabelNormal
   },
   data() {
     return {

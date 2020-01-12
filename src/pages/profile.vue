@@ -11,15 +11,15 @@
         </LabelSection>
       </div>
       <div class="area-profile-right">
-        <LabelNomal class="appear-up">
+        <LabelNormal class="appear-up">
           1994年6月28日生まれ、<br class="pc-dn" />青森県出身・東京都在住。
           <br />プログラミングと音楽が好きで、 <br />学生時代にはプレーヤーと<br
             class="pc-dn"
           />SNSを統合させた音楽アプリや <br />調理工程と材料を限定した<br
             class="pc-dn"
           />簡易型料理レシピアプリをリリース。
-        </LabelNomal>
-        <LabelNomal class="label-nomal mt30 appear-up">
+        </LabelNormal>
+        <LabelNormal class="label-nomal mt30 appear-up">
           大学時代に大手家電量販店での<br
             class="pc-dn"
           />販売員の仕事でカメラと出会う。 <br />たまたま撮った写真を機に
@@ -27,8 +27,8 @@
             class="pc-dn"
           />挑戦してくれたことをキッカケに、
           <br />本格的に人物・ポートレート写真を始める。
-        </LabelNomal>
-        <LabelNomal class="mt30 appear-up">
+        </LabelNormal>
+        <LabelNormal class="mt30 appear-up">
           現在はエンジニア兼フォトグラファー<br
             class="pc-dn"
           />として都内で活動中。
@@ -39,22 +39,22 @@
             class="pc-dn"
           />音楽CDのアルバムジャケットなど
           <br />アーティスティックな撮影もこなす。
-        </LabelNomal>
-        <LabelNomal class="mt30 appear-up">
+        </LabelNormal>
+        <LabelNormal class="mt30 appear-up">
           その他、Webメディアへの写真提供や
           <br />海外の厳正写真審査サイトでの掲載経験もあり。
-        </LabelNomal>
+        </LabelNormal>
       </div>
     </section>
     <section class="position-title">
       <LabelSection class="appear-up">
         skills
       </LabelSection>
-      <LabelNomal class="mt20 appear-up">
+      <LabelNormal class="mt20 appear-up">
         Photograph
         <br />Retouch <br />Art Direction <br />HTML/CSS/Javascript(ES6)
         <br />Vue.js <br />jQuery
-      </LabelNomal>
+      </LabelNormal>
     </section>
     <section class="wrapper position-title">
       <LabelSection class="appear-up">
@@ -85,11 +85,11 @@
         />
       </div>
       <div class="wrapper mt40 appear-up">
-        <LabelNomal v-for="(media, i) in medias" :key="i">
+        <LabelNormal v-for="(media, i) in medias" :key="i">
           <a :href="media.link" class="link-nomal" target="_blank">{{
             media.title
           }}</a>
-        </LabelNomal>
+        </LabelNormal>
       </div>
     </section>
   </TheDefaultView>
@@ -99,7 +99,7 @@
 import TheDefaultView from '@components/templates/TheDefaultView'
 import ImageCircle from '@components/atoms/ImageCircle'
 import LabelSection from '@components/atoms/LabelSection'
-import LabelNomal from '@components/atoms/LabelNomal'
+import LabelNormal from '@components/atoms/LabelNormal'
 import LogoMedia from '@components/atoms/LogoMedia'
 
 import { setIntersectionObserver } from '~/utils/revealObserver'
@@ -111,7 +111,7 @@ export default {
     ImageCircle,
     LabelSection,
     LogoMedia,
-    LabelNomal
+    LabelNormal
   },
   data() {
     return {
