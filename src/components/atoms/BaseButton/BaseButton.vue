@@ -5,7 +5,7 @@
     class="btn"
     @click="pushButton"
   >
-    <slot />
+    {{ title }}
   </button>
 </template>
 <script lang="ts">
@@ -14,6 +14,10 @@ import Vue from 'vue'
 export default Vue.extend({
   name: 'BaseButton',
   props: {
+    title: {
+      type: String,
+      default: ''
+    },
     isDisable: {
       type: Boolean,
       default: false

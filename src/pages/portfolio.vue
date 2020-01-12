@@ -1,53 +1,53 @@
 <template>
-  <the-default-view title="Portfolio">
-    <label-nomal :font-size="32" class="position-title mt80">
+  <TheDefaultView title="Portfolio">
+    <LabelNormal :font-size="32" class="position-title mt80">
       Creative
-    </label-nomal>
+    </LabelNormal>
     <div class="wrapper flex-con mt30">
-      <image-box-thumbnail
+      <ImageBoxThumbnail
         v-for="(image, index) in portfolio.creative"
         :key="index"
         :path="image.url"
         @click="onClickModal(image.lrg)"
       />
     </div>
-    <label-nomal :font-size="32" class="position-title mt80">
+    <LabelNormal :font-size="32" class="position-title mt80">
       Portrait
-    </label-nomal>
+    </LabelNormal>
     <div class="wrapper flex-con mt30">
-      <image-box-thumbnail
+      <ImageBoxThumbnail
         v-for="(image, index) in portfolio.portrait"
         :key="index"
         :path="image.url"
         @click="onClickModal(image.lrg)"
       />
     </div>
-    <label-nomal :font-size="32" class="position-title mt80">
+    <LabelNormal :font-size="32" class="position-title mt80">
       Landscape
-    </label-nomal>
+    </LabelNormal>
     <div class="wrapper flex-con mt30">
-      <image-box-thumbnail
+      <ImageBoxThumbnail
         v-for="(image, index) in portfolio.landscape"
         :key="index"
         :path="image.url"
         @click="onClickModal(image.lrg)"
       />
     </div>
-  </the-default-view>
+  </TheDefaultView>
 </template>
 
 <script>
 import TheDefaultView from '@components/templates/TheDefaultView'
 import ImageBoxThumbnail from '@components/atoms/ImageBoxThumbnail'
-import LabelNomal from '@components/atoms/LabelNomal'
-import { mapActions } from 'vuex'
+import LabelNormal from '@components/atoms/LabelNormal'
+import { mapMutations, mapActions } from 'vuex'
 
 export default {
   name: 'Portfolio',
   components: {
     TheDefaultView,
     ImageBoxThumbnail,
-    LabelNomal
+    LabelNormal
   },
   data() {
     return {

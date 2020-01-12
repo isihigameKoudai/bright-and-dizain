@@ -10,14 +10,14 @@
       <h1 class="error-code">
         {{ error.statusCode }}
       </h1>
-      <label-normal class="taC mt10">
+      <LabelNormal class="taC mt10">
         {{ errorMessage }}
-      </label-normal>
-      <label-normal class="taC mt10">
+      </LabelNormal>
+      <LabelNormal class="taC mt10">
         <nuxt-link to="/" class="link">
           TOPへ戻る
         </nuxt-link>
-      </label-normal>
+      </LabelNormal>
     </div>
   </div>
 </template>
@@ -25,7 +25,7 @@
 import { mapGetters, mapActions } from 'vuex'
 import TheModal from '@components/templates/TheModal'
 import TheHumburger from '@components/atoms/TheHumburger'
-import LabelNormal from '@components/atoms/LabelNomal'
+import LabelNormal from '@components/atoms/LabelNormal'
 
 export default {
   name: 'Default',

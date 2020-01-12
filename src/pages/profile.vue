@@ -1,25 +1,25 @@
 <template>
-  <the-default-view title="Profile">
+  <TheDefaultView title="Profile">
     <section class="wrapper mt90">
       <div class="area-profile-left appear">
-        <image-circle
+        <ImageCircle
           class="position-img-profile"
           path="/img/ProfileImage.jpg"
         />
-        <label-section class="mt40">
+        <LabelSection class="mt40">
           Koudai Ishigame
-        </label-section>
+        </LabelSection>
       </div>
       <div class="area-profile-right">
-        <label-nomal class="appear-up">
+        <LabelNormal class="appear-up">
           1994年6月28日生まれ、<br class="pc-dn" />青森県出身・東京都在住。
           <br />プログラミングと音楽が好きで、 <br />学生時代にはプレーヤーと<br
             class="pc-dn"
           />SNSを統合させた音楽アプリや <br />調理工程と材料を限定した<br
             class="pc-dn"
           />簡易型料理レシピアプリをリリース。
-        </label-nomal>
-        <label-nomal class="label-nomal mt30 appear-up">
+        </LabelNormal>
+        <LabelNormal class="label-nomal mt30 appear-up">
           大学時代に大手家電量販店での<br
             class="pc-dn"
           />販売員の仕事でカメラと出会う。 <br />たまたま撮った写真を機に
@@ -27,8 +27,8 @@
             class="pc-dn"
           />挑戦してくれたことをキッカケに、
           <br />本格的に人物・ポートレート写真を始める。
-        </label-nomal>
-        <label-nomal class="mt30 appear-up">
+        </LabelNormal>
+        <LabelNormal class="mt30 appear-up">
           現在はエンジニア兼フォトグラファー<br
             class="pc-dn"
           />として都内で活動中。
@@ -39,67 +39,51 @@
             class="pc-dn"
           />音楽CDのアルバムジャケットなど
           <br />アーティスティックな撮影もこなす。
-        </label-nomal>
-        <label-nomal class="mt30 appear-up">
+        </LabelNormal>
+        <LabelNormal class="mt30 appear-up">
           その他、Webメディアへの写真提供や
           <br />海外の厳正写真審査サイトでの掲載経験もあり。
-        </label-nomal>
+        </LabelNormal>
       </div>
     </section>
     <section class="position-title">
-      <label-section class="appear-up">
+      <LabelSection class="appear-up">
         skills
-      </label-section>
-      <label-nomal class="mt20 appear-up">
+      </LabelSection>
+      <LabelNormal class="mt20 appear-up">
         Photograph
         <br />Retouch <br />Art Direction <br />HTML/CSS/Javascript(ES6)
         <br />Vue.js <br />jQuery
-      </label-nomal>
+      </LabelNormal>
     </section>
     <section class="wrapper position-title">
-      <label-section class="appear-up">
+      <LabelSection class="appear-up">
         SNS & Media
-      </label-section>
+      </LabelSection>
       <div class="logo-wrapper mt40 appear-up">
-        <logo-media
-          path="/svg/LogoFacebook.svg"
-          link="https://www.facebook.com/koudai.ishigame"
-        />
-        <logo-media
-          path="/img/LogoTwitter.png"
-          link="https://twitter.com/TVK382"
-        />
-        <logo-media
-          path="/img/LogoInstagram.png"
-          link="https://www.instagram.com/koudai_ishigame/?hl=ja"
-        />
-      </div>
-      <div class="logo-wrapper mt20 appear-up">
-        <logo-media
-          path="/img/LogoQiita.png"
-          link="https://qiita.com/isihigameKoudai"
-        />
-        <logo-media
-          path="/img/LogoGithub.png"
-          link="https://github.com/isihigameKoudai"
+        <LogoMedia
+          v-for="(social, i) in socials"
+          :key="i"
+          :path="social.path"
+          :link="social.link"
         />
       </div>
       <div class="wrapper mt40 appear-up">
-        <label-nomal v-for="(media, i) in medias" :key="i">
+        <LabelNormal v-for="(media, i) in medias" :key="i">
           <a :href="media.link" class="link-nomal" target="_blank">{{
             media.title
           }}</a>
-        </label-nomal>
+        </LabelNormal>
       </div>
     </section>
-  </the-default-view>
+  </TheDefaultView>
 </template>
 
 <script>
 import TheDefaultView from '@components/templates/TheDefaultView'
 import ImageCircle from '@components/atoms/ImageCircle'
 import LabelSection from '@components/atoms/LabelSection'
-import LabelNomal from '@components/atoms/LabelNomal'
+import LabelNormal from '@components/atoms/LabelNormal'
 import LogoMedia from '@components/atoms/LogoMedia'
 
 import { setIntersectionObserver } from '~/utils/revealObserver'
@@ -111,7 +95,7 @@ export default {
     ImageCircle,
     LabelSection,
     LogoMedia,
-    LabelNomal
+    LabelNormal
   },
   data() {
     return {
@@ -133,6 +117,28 @@ export default {
         {
           title: 'VALU',
           link: 'https://valu.is/kodai2100'
+        }
+      ],
+      socials: [
+        {
+          path: '/svg/LogoFacebook.svg',
+          link: 'https://www.facebook.com/koudai.ishigame'
+        },
+        {
+          path: '/img/LogoTwitter.png',
+          link: 'https://twitter.com/TVK382'
+        },
+        {
+          path: '/img/LogoInstagram.png',
+          link: 'https://www.instagram.com/koudai_ishigame/?hl=ja'
+        },
+        {
+          path: '/img/LogoQiita.png',
+          link: 'https://qiita.com/isihigameKoudai'
+        },
+        {
+          path: '/img/LogoGithub.png',
+          link: 'https://github.com/isihigameKoudai'
         }
       ]
     }
@@ -220,10 +226,11 @@ export default {
 }
 
 .logo-wrapper {
-  width: 400px;
+  width: 640px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 
   @media screen and (max-width: 768px) {

@@ -20,18 +20,18 @@
         </div>
       </div>
     </div>
-    <the-default-view id="top" title="Works">
-      <label-section class="position-title">
+    <TheDefaultView id="top" title="Works">
+      <LabelSection class="position-title">
         Concept
-      </label-section>
-      <label-nomal :font-size="24" class="position-title appear-up">
+      </LabelSection>
+      <LabelNormal :font-size="24" class="position-title appear-up">
         <span class="sp-dn">「</span>Make Bright All The People<br
           class="pc-dn"
         />
         - 全ての人を輝かせる -<span class="sp-dn">」</span>
-      </label-nomal>
+      </LabelNormal>
       <div class="position-title">
-        <label-nomal class="mt20 appear-up">
+        <LabelNormal class="mt20 appear-up">
           上記ビジョンのもと、<br />
           モノづくりを通して<br />
           みなさんが少しでも<br />
@@ -39,42 +39,42 @@
           そして,<br />
           その起爆剤になれるよう<br />
           活動していきます。
-        </label-nomal>
-        <label-nomal class="mt20 appear-up">
+        </LabelNormal>
+        <LabelNormal class="mt20 appear-up">
           何を実現しようか、<br />
           どんな世界観にしようか、<br />
           どうやって作ろうか、
-        </label-nomal>
-        <label-nomal class="mt20 appear-up">
+        </LabelNormal>
+        <LabelNormal class="mt20 appear-up">
           共感やワクワクから始まる、<br />
           モノづくりやクリエイティブを<br />
           全力で応援していきます。
-        </label-nomal>
+        </LabelNormal>
       </div>
       <!-- Photograph Works -->
-      <title-parallax
+      <TitleParallax
         class="mt90"
         path="/img/TitlePhotograph.jpg"
         title="Photograph"
       />
       <section class="wrapper area-content mt90">
         <div class="area-content-works">
-          <label-section class="appear-up">
+          <LabelSection class="appear-up">
             Creative
-          </label-section>
-          <label-nomal class="mt20 appear-up">
+          </LabelSection>
+          <LabelNormal class="mt20 appear-up">
             創作、クリエイティブ、作り込みなど<br />
             背景や衣装・ドレス、メイクからヘアメイクまで<br />
             トータルでご準備し、<br />
             ストーリー・コンセプトなど世界観を<br />
             決めていき制作にあたります。
-          </label-nomal>
-          <label-nomal class="mt20 appear-up">
+          </LabelNormal>
+          <LabelNormal class="mt20 appear-up">
             他では真似できないような<br />
             世界観を作り出します。
-          </label-nomal>
+          </LabelNormal>
         </div>
-        <image-box
+        <ImageBox
           :shadow="true"
           class="sp-space appear"
           path="/img/worksCreative.jpg"
@@ -82,29 +82,29 @@
       </section>
 
       <section class="wrapper area-content mt90">
-        <image-box
+        <ImageBox
           :shadow="true"
           class="sp-dn appear"
           path="/img/worksPortrait.jpg"
         />
         <div class="area-content-works">
-          <label-section class="appear-up">
+          <LabelSection class="appear-up">
             Portrait
-          </label-section>
-          <label-nomal class="mt20 appear-up">
+          </LabelSection>
+          <LabelNormal class="mt20 appear-up">
             手軽な人物・プロフィールの撮影から<br />
             結婚式の前撮りなど<br />
             雰囲気のあるお写真まで<br />
             ご対応します。<br />
-          </label-nomal>
-          <label-nomal class="mt20 appear-up">
+          </LabelNormal>
+          <LabelNormal class="mt20 appear-up">
             日常の何気ない瞬間も<br />
             記念になるような時も<br />
             永遠に残る<br />
             色褪せない思い出にしていきます。
-          </label-nomal>
+          </LabelNormal>
         </div>
-        <image-box
+        <ImageBox
           :shadow="true"
           class="pc-dn sp-space appear"
           path="/img/worksPortrait.jpg"
@@ -113,23 +113,23 @@
 
       <section class="wrapper area-content mt90">
         <div class="area-content-works">
-          <label-section class="appear-up">
+          <LabelSection class="appear-up">
             Media & Report
-          </label-section>
-          <label-nomal class="mt20 appear-up">
+          </LabelSection>
+          <LabelNormal class="mt20 appear-up">
             宣伝商材やHP素材、Webメディアや記事の<br />
             ための写真などをご提供いたします。<br />
             また、音楽CDのアルバムジャケットなど<br />
             フォーマルなものだけでなく<br />
             アーティスティックなものもご対応いたします。<br />
-          </label-nomal>
-          <label-nomal class="mt20 appear-up">
+          </LabelNormal>
+          <LabelNormal class="mt20 appear-up">
             表現したいもの<br />
             伝えたいことは<br />
             今、伝えて行きましょう
-          </label-nomal>
+          </LabelNormal>
         </div>
-        <image-box
+        <ImageBox
           :shadow="true"
           class="sp-space appear"
           path="/img/worksMediaReport.jpg"
@@ -137,58 +137,56 @@
       </section>
 
       <section class="wrapper mt100 taC">
-        <base-button @click="onPushRoute('contact')">
-          Contact
-        </base-button>
-        <label-nomal class="mt30">
+        <BaseButton title="Contact" @click="onPushRoute('contact')" />
+        <LabelNormal class="mt30">
           お問い合わせはこちらから
-        </label-nomal>
+        </LabelNormal>
       </section>
 
       <!-- Web Works -->
-      <title-parallax
+      <TitleParallax
         class="mt90"
         path="/img/TitleWebDevelop.jpg"
         title="Web Works"
       />
       <section class="wrapper area-content vertical-top">
         <div class="area-content-works mt90">
-          <label-section class="appear-up">
+          <LabelSection class="appear-up">
             HTML/CSS Coding
-          </label-section>
-          <image-box
+          </LabelSection>
+          <ImageBox
             :is-small="true"
             class="mt30 sp-dn appear"
             path="/img/webCoding.jpg"
           />
-          <label-nomal class="mt20 appear-up">
+          <LabelNormal class="mt20 appear-up">
             各種サービス、Webサイト、<br />
             HP、Webアプリにおける<br />
             小〜中規模なHTML/CSSの<br />
             コーディングをいたします。
-          </label-nomal>
-          <image-box
+          </LabelNormal>
+          <ImageBox
             :is-small="true"
             class="mt30 pc-dn sp-space appear"
             path="/img/webCoding.jpg"
           />
         </div>
         <div class="area-content-works mt90">
-          <label-section class="appear-up">
+          <LabelSection class="appear-up">
             WebApp Develop
-          </label-section>
-          <image-box
+          </LabelSection>
+          <ImageBox
             :is-small="true"
             class="mt30 sp-dn appear"
             path="/img/webApp.jpg"
           />
-          <label-nomal class="mt20 appear-up">
+          <LabelNormal class="mt20 appear-up">
             Web上で動くアプリやサイトの<br />
             フロントエンド開発を行います。<br />
             Vue.js,Nuxt.jsなどを取り入れた<br />
             モダンな開発で進めて行きます。
-          </label-nomal>
-          <image-box
+          </LabelNormal>
+          <ImageBox
             :is-small="true"
             class="mt30 pc-dn sp-space appear"
             path="/img/webApp.jpg"
@@ -196,14 +194,12 @@
         </div>
       </section>
       <section class="wrapper mt100 taC">
-        <base-button @click="onPushRoute('contact')">
-          Contact
-        </base-button>
-        <label-nomal class="mt30">
+        <BaseButton title="Contact" @click="onPushRoute('contact')" />
+        <LabelNormal class="mt30">
           お問い合わせはこちらから
-        </label-nomal>
+        </LabelNormal>
       </section>
-    </the-default-view>
+    </TheDefaultView>
   </div>
 </template>
 
@@ -211,7 +207,7 @@
 import $ from 'jquery'
 import TheDefaultView from '@components/templates/TheDefaultView'
 import LabelSection from '@components/atoms/LabelSection'
-import LabelNomal from '@components/atoms/LabelNomal'
+import LabelNormal from '@components/atoms/LabelNormal'
 import TitleParallax from '@components/atoms/TitleParallax'
 import ImageBox from '@components/atoms/ImageBox'
 import BaseButton from '@components/atoms/BaseButton'
@@ -224,7 +220,7 @@ export default {
   components: {
     TheDefaultView,
     LabelSection,
-    LabelNomal,
+    LabelNormal,
     TitleParallax,
     ImageBox,
     BaseButton

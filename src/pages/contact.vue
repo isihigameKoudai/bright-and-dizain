@@ -1,5 +1,5 @@
 <template>
-  <the-default-view title="Contact">
+  <TheDefaultView title="Contact">
     <section class="position-title mt100">
       <BaseTextBox
         place-holder="Company"
@@ -36,28 +36,31 @@
         class="wrap-text-box"
         @text="setMessage"
       />
-      <BaseButton class="mt70" :is-disable="isInvalid" @click="pushSubmit">
-        Send
-      </BaseButton>
-      <label-nomal v-if="isFaildConnection" class="mt20">
+      <BaseButton
+        class="mt70"
+        title="Send"
+        :is-disable="isInvalid"
+        @click="pushSubmit"
+      />
+      <LabelNormal v-if="isFaildConnection" class="mt20">
         送信失敗しました、時間を空けてお試しください。
-      </label-nomal>
+      </LabelNormal>
     </section>
     <section class="position-title">
       <div class="logo-wrapper mt70">
-        <logo-media
+        <LogoMedia
           v-for="(social, i) in socials"
           :key="i"
           :path="social.imagePath"
           :link="social.link"
         />
       </div>
-      <label-nomal class="mt40">
+      <LabelNormal class="mt40">
         SNSのDM（ダイレクトメッセージ）<br class="pc-dn" />
         からもご連絡可能です。
-      </label-nomal>
+      </LabelNormal>
     </section>
-  </the-default-view>
+  </TheDefaultView>
 </template>
 
 <script>
@@ -67,7 +70,7 @@ import BaseButton from '@components/atoms/BaseButton'
 import TheDefaultView from '@components/templates/TheDefaultView'
 import BaseTextBox from '@components/atoms/BaseTextBox'
 import BaseTextArea from '@components/atoms/BaseTextArea'
-import LabelNomal from '@components/atoms/LabelNomal'
+import LabelNormal from '@components/atoms/LabelNormal'
 import LogoMedia from '@components/atoms/LogoMedia'
 
 export default {
@@ -78,7 +81,7 @@ export default {
     BaseTextBox,
     BaseTextArea,
     LogoMedia,
-    LabelNomal
+    LabelNormal
   },
   data() {
     return {
