@@ -80,7 +80,7 @@
         <br class="pc-dn" />からもご連絡可能です。
       </LabelNormal>
       <div class="logo-wrapper mt70">
-        <logo-media
+        <LogoMedia
           v-for="(social, i) in socials"
           :key="i"
           :path="social.imagePath"

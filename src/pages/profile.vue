@@ -61,27 +61,11 @@
         SNS & Media
       </LabelSection>
       <div class="logo-wrapper mt40 appear-up">
-        <logo-media
-          path="/svg/LogoFacebook.svg"
-          link="https://www.facebook.com/koudai.ishigame"
-        />
-        <logo-media
-          path="/img/LogoTwitter.png"
-          link="https://twitter.com/TVK382"
-        />
-        <logo-media
-          path="/img/LogoInstagram.png"
-          link="https://www.instagram.com/koudai_ishigame/?hl=ja"
-        />
-      </div>
-      <div class="logo-wrapper mt20 appear-up">
-        <logo-media
-          path="/img/LogoQiita.png"
-          link="https://qiita.com/isihigameKoudai"
-        />
-        <logo-media
-          path="/img/LogoGithub.png"
-          link="https://github.com/isihigameKoudai"
+        <LogoMedia
+          v-for="(social, i) in socials"
+          :key="i"
+          :path="social.path"
+          :link="social.link"
         />
       </div>
       <div class="wrapper mt40 appear-up">
@@ -133,6 +117,28 @@ export default {
         {
           title: 'VALU',
           link: 'https://valu.is/kodai2100'
+        }
+      ],
+      socials: [
+        {
+          path: '/svg/LogoFacebook.svg',
+          link: 'https://www.facebook.com/koudai.ishigame'
+        },
+        {
+          path: '/img/LogoTwitter.png',
+          link: 'https://twitter.com/TVK382'
+        },
+        {
+          path: '/img/LogoInstagram.png',
+          link: 'https://www.instagram.com/koudai_ishigame/?hl=ja'
+        },
+        {
+          path: '/img/LogoQiita.png',
+          link: 'https://qiita.com/isihigameKoudai'
+        },
+        {
+          path: '/img/LogoGithub.png',
+          link: 'https://github.com/isihigameKoudai'
         }
       ]
     }

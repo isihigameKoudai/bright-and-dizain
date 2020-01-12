@@ -48,7 +48,7 @@
     </section>
     <section class="position-title">
       <div class="logo-wrapper mt70">
-        <logo-media
+        <LogoMedia
           v-for="(social, i) in socials"
           :key="i"
           :path="social.imagePath"
