@@ -59,6 +59,11 @@ const nuxtConfig: NuxtConfiguration = {
    ** Build configuration
    */
   build: {
+    splitChunks: {
+      layouts: false,
+      pages: true,
+      commons: true
+    },
     /*
      ** Run ESLint on save
      */
