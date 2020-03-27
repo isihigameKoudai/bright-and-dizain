@@ -3,6 +3,7 @@ import path from 'path'
 
 const srcDir: string = 'src/'
 const SLACK_API_CODE: string = process.env.SLACK_API_CODE || ''
+const GA: string = process.env.GA || ''
 require('dotenv').config()
 
 const nuxtConfig: NuxtConfiguration = {
@@ -123,7 +124,13 @@ const nuxtConfig: NuxtConfiguration = {
   modules: [
     ['@nuxtjs/pwa', { icon: false }],
     '@nuxtjs/axios',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: GA
+      }
+    ]
   ],
   buildModules: [
     [
@@ -135,7 +142,8 @@ const nuxtConfig: NuxtConfiguration = {
     ]
   ],
   env: {
-    SLACK_API_CODE: SLACK_API_CODE
+    SLACK_API_CODE,
+    GA
   },
   plugins: [{ src: '~/plugins/vue-awesome-swiper', ssr: false }],
   manifest: {
