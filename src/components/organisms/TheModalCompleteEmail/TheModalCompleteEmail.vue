@@ -12,7 +12,7 @@
     </nuxt-link>
   </div>
 </template>
-<script>
+<script lang="ts">
 import Vue from 'vue'
 import { mapActions } from 'vuex'
 import BaseButton from '@components/atoms/BaseButton'

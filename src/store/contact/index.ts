@@ -8,7 +8,7 @@ import {
   validTel,
   validMessage
 } from '../../service/validation'
-import submitContact from '../../service/Contact'
+import submitContact from '../../service/contact'
 
 export const state = (): S => ({
   company: '',
