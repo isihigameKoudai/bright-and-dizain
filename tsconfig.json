@@ -36,7 +36,6 @@
   "files": [
     "src/types/vue/index.d.ts",
     "src/types/vuex/index.d.ts",
-    "src/types/nuxt/index.d.ts",
     "src/types/window/index.d.ts"
   ],
   "include": [

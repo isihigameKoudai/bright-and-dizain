@@ -31,6 +31,7 @@ declare module 'vuex' {
     commit: ExCommit<RootMutations>
     dispatch: ExDispatch<RootActions>
   }
+
   type StoreContext = ExActionContext<
     RootState,
     RootActions,
