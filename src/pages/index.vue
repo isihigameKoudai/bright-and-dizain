@@ -1,9 +1,19 @@
 <template>
   <div>
     <div class="top-container">
-      <swiper :options="swiperOption" class="appear">
-        <swiper-slide v-for="(image, key) in images" :key="key">
-          <img :alt="image.alt" :src="image.path" class="main-visual" />
+      <swiper
+        :options="swiperOption"
+        class="appear"
+      >
+        <swiper-slide
+          v-for="(image, key) in images"
+          :key="key"
+        >
+          <img
+            :alt="image.alt"
+            :src="image.path"
+            class="main-visual"
+          >
         </swiper-slide>
       </swiper>
       <img
@@ -11,8 +21,11 @@
         src="/svg/title_white.svg"
         alt=""
         width="200px"
-      />
-      <div class="arrow" @click="moveScroll">
+      >
+      <div
+        class="arrow"
+        @click="moveScroll"
+      >
         <div>
           <span />
           <span />
@@ -20,34 +33,40 @@
         </div>
       </div>
     </div>
-    <TheDefaultView id="top" title="Works">
+    <TheDefaultView
+      id="top"
+      title="Works"
+    >
       <LabelSection class="position-title">
         Concept
       </LabelSection>
-      <LabelNormal :font-size="24" class="position-title appear-up">
+      <LabelNormal
+        :font-size="24"
+        class="position-title appear-up"
+      >
         <span class="sp-dn">「</span>Make Bright All The People<br
           class="pc-dn"
-        />
+        >
         - 全ての人を輝かせる -<span class="sp-dn">」</span>
       </LabelNormal>
       <div class="position-title">
         <LabelNormal class="mt20 appear-up">
-          上記ビジョンのもと、<br />
-          モノづくりを通して<br />
-          みなさんが少しでも<br />
-          前に進むため<br />
-          そして,<br />
-          その起爆剤になれるよう<br />
+          上記ビジョンのもと、<br>
+          モノづくりを通して<br>
+          みなさんが少しでも<br>
+          前に進むため<br>
+          そして,<br>
+          その起爆剤になれるよう<br>
           活動していきます。
         </LabelNormal>
         <LabelNormal class="mt20 appear-up">
-          何を実現しようか、<br />
-          どんな世界観にしようか、<br />
+          何を実現しようか、<br>
+          どんな世界観にしようか、<br>
           どうやって作ろうか、
         </LabelNormal>
         <LabelNormal class="mt20 appear-up">
-          共感やワクワクから始まる、<br />
-          モノづくりやクリエイティブを<br />
+          共感やワクワクから始まる、<br>
+          モノづくりやクリエイティブを<br>
           全力で応援していきます。
         </LabelNormal>
       </div>
@@ -63,14 +82,14 @@
             Creative
           </LabelSection>
           <LabelNormal class="mt20 appear-up">
-            創作、クリエイティブ、作り込みなど<br />
-            背景や衣装・ドレス、メイクからヘアメイクまで<br />
-            トータルでご準備し、<br />
-            ストーリー・コンセプトなど世界観を<br />
+            創作、クリエイティブ、作り込みなど<br>
+            背景や衣装・ドレス、メイクからヘアメイクまで<br>
+            トータルでご準備し、<br>
+            ストーリー・コンセプトなど世界観を<br>
             決めていき制作にあたります。
           </LabelNormal>
           <LabelNormal class="mt20 appear-up">
-            他では真似できないような<br />
+            他では真似できないような<br>
             世界観を作り出します。
           </LabelNormal>
         </div>
@@ -92,15 +111,15 @@
             Portrait
           </LabelSection>
           <LabelNormal class="mt20 appear-up">
-            手軽な人物・プロフィールの撮影から<br />
-            結婚式の前撮りなど<br />
-            雰囲気のあるお写真まで<br />
-            ご対応します。<br />
+            手軽な人物・プロフィールの撮影から<br>
+            結婚式の前撮りなど<br>
+            雰囲気のあるお写真まで<br>
+            ご対応します。<br>
           </LabelNormal>
           <LabelNormal class="mt20 appear-up">
-            日常の何気ない瞬間も<br />
-            記念になるような時も<br />
-            永遠に残る<br />
+            日常の何気ない瞬間も<br>
+            記念になるような時も<br>
+            永遠に残る<br>
             色褪せない思い出にしていきます。
           </LabelNormal>
         </div>
@@ -117,15 +136,15 @@
             Media & Report
           </LabelSection>
           <LabelNormal class="mt20 appear-up">
-            宣伝商材やHP素材、Webメディアや記事の<br />
-            ための写真などをご提供いたします。<br />
-            また、音楽CDのアルバムジャケットなど<br />
-            フォーマルなものだけでなく<br />
-            アーティスティックなものもご対応いたします。<br />
+            宣伝商材やHP素材、Webメディアや記事の<br>
+            ための写真などをご提供いたします。<br>
+            また、音楽CDのアルバムジャケットなど<br>
+            フォーマルなものだけでなく<br>
+            アーティスティックなものもご対応いたします。<br>
           </LabelNormal>
           <LabelNormal class="mt20 appear-up">
-            表現したいもの<br />
-            伝えたいことは<br />
+            表現したいもの<br>
+            伝えたいことは<br>
             今、伝えて行きましょう
           </LabelNormal>
         </div>
@@ -137,7 +156,10 @@
       </section>
 
       <section class="wrapper mt100 taC">
-        <BaseButton title="Contact" @click="onPushRoute('contact')" />
+        <BaseButton
+          title="Contact"
+          @click="onPushRoute('contact')"
+        />
         <LabelNormal class="mt30">
           お問い合わせはこちらから
         </LabelNormal>
@@ -160,9 +182,9 @@
             path="/img/webCoding.jpg"
           />
           <LabelNormal class="mt20 appear-up">
-            各種サービス、Webサイト、<br />
-            HP、Webアプリにおける<br />
-            小〜中規模なHTML/CSSの<br />
+            各種サービス、Webサイト、<br>
+            HP、Webアプリにおける<br>
+            小〜中規模なHTML/CSSの<br>
             コーディングをいたします。
           </LabelNormal>
           <ImageBox
@@ -181,9 +203,9 @@
             path="/img/webApp.jpg"
           />
           <LabelNormal class="mt20 appear-up">
-            Web上で動くアプリやサイトの<br />
-            フロントエンド開発を行います。<br />
-            Vue.js,Nuxt.jsなどを取り入れた<br />
+            Web上で動くアプリやサイトの<br>
+            フロントエンド開発を行います。<br>
+            Vue.js,Nuxt.jsなどを取り入れた<br>
             モダンな開発で進めて行きます。
           </LabelNormal>
           <ImageBox
@@ -194,7 +216,10 @@
         </div>
       </section>
       <section class="wrapper mt100 taC">
-        <BaseButton title="Contact" @click="onPushRoute('contact')" />
+        <BaseButton
+          title="Contact"
+          @click="onPushRoute('contact')"
+        />
         <LabelNormal class="mt30">
           お問い合わせはこちらから
         </LabelNormal>

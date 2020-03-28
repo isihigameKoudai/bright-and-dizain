@@ -6,7 +6,7 @@
     :value="value"
     class="text-box"
     @input="event => $emit('text', event.target.value)"
-  />
+  >
 </template>
 <script lang="ts">
 import Vue from 'vue'

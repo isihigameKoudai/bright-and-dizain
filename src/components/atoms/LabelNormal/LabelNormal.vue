@@ -1,5 +1,8 @@
 <template>
-  <p :style="exportFontSize" class="label-normal">
+  <p
+    :style="exportFontSize"
+    class="label-normal"
+  >
     <slot />
   </p>
 </template>

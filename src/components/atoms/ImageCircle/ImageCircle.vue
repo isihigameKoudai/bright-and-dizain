@@ -1,6 +1,9 @@
 <template>
   <div class="img-circle">
-    <img :src="path" alt="" />
+    <img
+      :src="path"
+      alt=""
+    >
   </div>
 </template>
 <script>

@@ -1,6 +1,9 @@
 <template>
   <article class="pb100">
-    <label-page-top :title="title" class="position-title" />
+    <label-page-top
+      :title="title"
+      class="position-title"
+    />
     <slot />
   </article>
 </template>

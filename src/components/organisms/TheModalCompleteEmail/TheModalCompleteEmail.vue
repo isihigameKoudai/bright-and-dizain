@@ -4,7 +4,11 @@
       お問い合わせが完了しました。
     </LabelSection>
     <nuxt-link to="/">
-      <BaseButton class="mt100" title="Topへ" @click="updateModal" />
+      <BaseButton
+        class="mt100"
+        title="Topへ"
+        @click="updateModal"
+      />
     </nuxt-link>
   </div>
 </template>

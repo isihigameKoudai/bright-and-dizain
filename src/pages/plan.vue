@@ -1,7 +1,10 @@
 <template>
   <TheDefaultView title="Plan">
     <section class="position-title mt100">
-      <LabelNormal :font-size="24" class="position-title appear-up">
+      <LabelNormal
+        :font-size="24"
+        class="position-title appear-up"
+      >
         各種料金
       </LabelNormal>
       <div class="container">
@@ -74,10 +77,13 @@
       </div>
     </section>
     <section class="position-title">
-      <BaseButton title="Contact" @click="onPushRoute('contact')" />
+      <BaseButton
+        title="Contact"
+        @click="onPushRoute('contact')"
+      />
       <LabelNormal class="mt70">
         SNSのDM（ダイレクトメッセージ）
-        <br class="pc-dn" />からもご連絡可能です。
+        <br class="pc-dn">からもご連絡可能です。
       </LabelNormal>
       <div class="logo-wrapper mt70">
         <LogoMedia
