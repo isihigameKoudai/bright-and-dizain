@@ -26,10 +26,10 @@
 </template>
 <script lang="ts">
 import Vue from 'vue';
+import { mapGetters, mapActions } from 'vuex'
 import TheModalMenu from '@components/organisms/TheModalMenu'
 import TheModalImage from '@components/organisms/TheModalImage'
 import TheModalCompletEmail from '@components/organisms/TheModalCompleteEmail'
-import { mapGetters, mapActions } from 'vuex'
 
 export default Vue.extend({
   name: 'TheModal',
