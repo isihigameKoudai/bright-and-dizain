@@ -5,15 +5,16 @@
     alt=""
   >
 </template>
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import { mapGetters } from 'vuex'
 
-export default {
+export default Vue.extend({
   name: 'TheModalImage',
   computed: {
     ...mapGetters('view', ['imagePath'])
   }
-}
+})
 </script>
 <style lang="scss" scoped>
 .modal-image {
