@@ -1,6 +1,9 @@
 <template>
   <TheDefaultView title="Portfolio">
-    <LabelNormal :font-size="32" class="position-title mt80">
+    <LabelNormal
+      :font-size="32"
+      class="position-title mt80"
+    >
       Creative
     </LabelNormal>
     <div class="wrapper flex-con mt30">
@@ -11,7 +14,10 @@
         @click="onClickModal(image.lrg)"
       />
     </div>
-    <LabelNormal :font-size="32" class="position-title mt80">
+    <LabelNormal
+      :font-size="32"
+      class="position-title mt80"
+    >
       Portrait
     </LabelNormal>
     <div class="wrapper flex-con mt30">
@@ -22,7 +28,10 @@
         @click="onClickModal(image.lrg)"
       />
     </div>
-    <LabelNormal :font-size="32" class="position-title mt80">
+    <LabelNormal
+      :font-size="32"
+      class="position-title mt80"
+    >
       Landscape
     </LabelNormal>
     <div class="wrapper flex-con mt30">

@@ -6,7 +6,10 @@
       @click="toggleModal"
     />
     <nuxt />
-    <TheModal v-if="modalMode" class="positiond-fixed fixed-content" />
+    <TheModal
+      v-if="modalMode"
+      class="positiond-fixed fixed-content"
+    />
   </div>
 </template>
 <script>

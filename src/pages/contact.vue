@@ -42,7 +42,10 @@
         :is-disable="isInvalid"
         @click="pushSubmit"
       />
-      <LabelNormal v-if="isFaildConnection" class="mt20">
+      <LabelNormal
+        v-if="isFaildConnection"
+        class="mt20"
+      >
         送信失敗しました、時間を空けてお試しください。
       </LabelNormal>
     </section>
@@ -56,7 +59,7 @@
         />
       </div>
       <LabelNormal class="mt40">
-        SNSのDM（ダイレクトメッセージ）<br class="pc-dn" />
+        SNSのDM（ダイレクトメッセージ）<br class="pc-dn">
         からもご連絡可能です。
       </LabelNormal>
     </section>

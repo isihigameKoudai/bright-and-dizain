@@ -12,37 +12,37 @@
       </div>
       <div class="area-profile-right">
         <LabelNormal class="appear-up">
-          1994年6月28日生まれ、<br class="pc-dn" />青森県出身・東京都在住。
-          <br />プログラミングと音楽が好きで、 <br />学生時代にはプレーヤーと<br
+          1994年6月28日生まれ、<br class="pc-dn">青森県出身・東京都在住。
+          <br>プログラミングと音楽が好きで、 <br>学生時代にはプレーヤーと<br
             class="pc-dn"
-          />SNSを統合させた音楽アプリや <br />調理工程と材料を限定した<br
+          >SNSを統合させた音楽アプリや <br>調理工程と材料を限定した<br
             class="pc-dn"
-          />簡易型料理レシピアプリをリリース。
+          >簡易型料理レシピアプリをリリース。
         </LabelNormal>
         <LabelNormal class="label-nomal mt30 appear-up">
           大学時代に大手家電量販店での<br
             class="pc-dn"
-          />販売員の仕事でカメラと出会う。 <br />たまたま撮った写真を機に
-          <br />知人がフリーペーパーのモデルに<br
+          >販売員の仕事でカメラと出会う。 <br>たまたま撮った写真を機に
+          <br>知人がフリーペーパーのモデルに<br
             class="pc-dn"
-          />挑戦してくれたことをキッカケに、
-          <br />本格的に人物・ポートレート写真を始める。
+          >挑戦してくれたことをキッカケに、
+          <br>本格的に人物・ポートレート写真を始める。
         </LabelNormal>
         <LabelNormal class="mt30 appear-up">
           現在はエンジニア兼フォトグラファー<br
             class="pc-dn"
-          />として都内で活動中。
-          <br />「作り込み」と呼ばれる、コンセプトに応じた<br
+          >として都内で活動中。
+          <br>「作り込み」と呼ばれる、コンセプトに応じた<br
             class="pc-dn"
-          />背景や衣装などを用いて <br />世界観を描き出す分野の写真を得意とし、
-          <br />モデルの撮影だけでなく<br
+          >背景や衣装などを用いて <br>世界観を描き出す分野の写真を得意とし、
+          <br>モデルの撮影だけでなく<br
             class="pc-dn"
-          />音楽CDのアルバムジャケットなど
-          <br />アーティスティックな撮影もこなす。
+          >音楽CDのアルバムジャケットなど
+          <br>アーティスティックな撮影もこなす。
         </LabelNormal>
         <LabelNormal class="mt30 appear-up">
           その他、Webメディアへの写真提供や
-          <br />海外の厳正写真審査サイトでの掲載経験もあり。
+          <br>海外の厳正写真審査サイトでの掲載経験もあり。
         </LabelNormal>
       </div>
     </section>
@@ -52,8 +52,8 @@
       </LabelSection>
       <LabelNormal class="mt20 appear-up">
         Photograph
-        <br />Retouch <br />Art Direction <br />HTML/CSS/Javascript(ES6)
-        <br />Vue.js <br />jQuery
+        <br>Retouch <br>Art Direction <br>HTML/CSS/Javascript(ES6)
+        <br>Vue.js <br>jQuery
       </LabelNormal>
     </section>
     <section class="wrapper position-title">
@@ -69,8 +69,15 @@
         />
       </div>
       <div class="wrapper mt40 appear-up">
-        <LabelNormal v-for="(media, i) in medias" :key="i">
-          <a :href="media.link" class="link-nomal" target="_blank">{{
+        <LabelNormal
+          v-for="(media, i) in medias"
+          :key="i"
+        >
+          <a
+            :href="media.link"
+            class="link-nomal"
+            target="_blank"
+          >{{
             media.title
           }}</a>
         </LabelNormal>

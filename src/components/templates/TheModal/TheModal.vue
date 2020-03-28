@@ -1,7 +1,11 @@
 <template>
   <transition name="fade">
     <div>
-      <div :key="1" class="modal-wrap" @click="toggleModal()" />
+      <div
+        :key="1"
+        class="modal-wrap"
+        @click="toggleModal()"
+      />
       <TheModalImage
         v-if="modalType === 'image'"
         :key="2"
@@ -12,7 +16,11 @@
         :key="3"
         class="modal-content"
       />
-      <TheModalMenu v-else :key="4" class="modal-content" />
+      <TheModalMenu
+        v-else
+        :key="4"
+        class="modal-content"
+      />
     </div>
   </transition>
 </template>

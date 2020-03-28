@@ -1,6 +1,13 @@
 <template>
-  <a :href="link" target="_blank">
-    <img :src="path" class="img-logo" alt="" />
+  <a
+    :href="link"
+    target="_blank"
+  >
+    <img
+      :src="path"
+      class="img-logo"
+      alt=""
+    >
   </a>
 </template>
 <script lang="ts">

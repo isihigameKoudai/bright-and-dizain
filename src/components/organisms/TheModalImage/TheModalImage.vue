@@ -1,5 +1,9 @@
 <template>
-  <img :src="imagePath" class="modal-image" alt="" />
+  <img
+    :src="imagePath"
+    class="modal-image"
+    alt=""
+  >
 </template>
 <script>
 import { mapGetters } from 'vuex'

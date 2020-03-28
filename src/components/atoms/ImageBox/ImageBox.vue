@@ -4,7 +4,7 @@
     :class="{ 'is-shadow': shadow, small: isSmall }"
     alt=""
     class="image-box"
-  />
+  >
 </template>
 <script lang="ts">
 import Vue from 'vue'

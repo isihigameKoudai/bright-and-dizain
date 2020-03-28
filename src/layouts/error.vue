@@ -5,7 +5,10 @@
       class="fixed-humburegr"
       @click="toggleModal()"
     />
-    <TheModal v-if="modalMode" class="positiond-fixed fixed-content" />
+    <TheModal
+      v-if="modalMode"
+      class="positiond-fixed fixed-content"
+    />
     <div class="error-container">
       <h1 class="error-code">
         {{ error.statusCode }}
@@ -14,7 +17,10 @@
         {{ errorMessage }}
       </LabelNormal>
       <LabelNormal class="taC mt10">
-        <nuxt-link to="/" class="link">
+        <nuxt-link
+          to="/"
+          class="link"
+        >
           TOPへ戻る
         </nuxt-link>
       </LabelNormal>
