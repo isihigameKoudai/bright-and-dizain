@@ -67,6 +67,7 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import { mapGetters, mapActions } from 'vuex'
 
 import BaseButton from '@components/atoms/BaseButton'
@@ -76,7 +77,7 @@ import BaseTextArea from '@components/atoms/BaseTextArea'
 import LabelNormal from '@components/atoms/LabelNormal'
 import LogoMedia from '@components/atoms/LogoMedia'
 
-export default {
+export default Vue.extend({
   name: 'Contact',
   components: {
     BaseButton,
@@ -151,7 +152,7 @@ export default {
       this.updateModal('contact')
     }
   }
-}
+})
 </script>
 
 <style lang="scss">

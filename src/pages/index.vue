@@ -229,6 +229,7 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import $ from 'jquery'
 import TheDefaultView from '@components/templates/TheDefaultView'
 import LabelSection from '@components/atoms/LabelSection'
@@ -240,7 +241,7 @@ import BaseButton from '@components/atoms/BaseButton'
 import { setParallax } from '~/utils/parallax'
 import { setIntersectionObserver } from '~/utils/revealObserver'
 
-export default {
+export default Vue.extend({
   name: 'Index',
   components: {
     TheDefaultView,
@@ -301,7 +302,7 @@ export default {
       setIntersectionObserver('.appear', options, callBack)
     }
   }
-}
+})
 </script>
 
 <style lang="scss" scoped>

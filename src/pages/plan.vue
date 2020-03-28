@@ -98,12 +98,13 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import BaseButton from '@components/atoms/BaseButton'
 import TheDefaultView from '@components/templates/TheDefaultView'
 import LabelNormal from '@components/atoms/LabelNormal'
 import LogoMedia from '@components/atoms/LogoMedia'
 
-export default {
+export default Vue.extend({
   name: 'Plan',
   components: {
     TheDefaultView,
@@ -134,7 +135,7 @@ export default {
       this.$router.push({ path: e })
     }
   }
-}
+})
 </script>
 
 <style lang="scss" scoped>
