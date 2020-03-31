@@ -2,7 +2,7 @@ import axios, { AxiosPromise } from 'axios'
 
 const SLACK_API_CODE = process.env.SLACK_API_CODE
 const API_URL: string = 'https://hooks.slack.com/services/'
-const HOST_URL: string = 'https://localhost:3000/'
+const HOST_URL: string = 'https://www.brightanddizain.com/'
 
 interface SubmitType {
   name: string
