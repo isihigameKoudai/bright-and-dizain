@@ -87,6 +87,7 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import TheDefaultView from '@components/templates/TheDefaultView'
 import ImageCircle from '@components/atoms/ImageCircle'
 import LabelSection from '@components/atoms/LabelSection'
@@ -95,7 +96,7 @@ import LogoMedia from '@components/atoms/LogoMedia'
 
 import { setIntersectionObserver } from '~/utils/revealObserver'
 
-export default {
+export default Vue.extend({
   name: 'Profile',
   components: {
     TheDefaultView,
@@ -168,7 +169,7 @@ export default {
       setIntersectionObserver('.appear', options, callBack)
     }
   }
-}
+})
 </script>
 
 <style lang="scss" scoped>

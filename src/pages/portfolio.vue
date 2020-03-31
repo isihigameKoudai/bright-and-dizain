@@ -46,12 +46,13 @@
 </template>
 
 <script>
+import Vue from 'vue';
+import { mapMutations, mapActions } from 'vuex'
 import TheDefaultView from '@components/templates/TheDefaultView'
 import ImageBoxThumbnail from '@components/atoms/ImageBoxThumbnail'
 import LabelNormal from '@components/atoms/LabelNormal'
-import { mapMutations, mapActions } from 'vuex'
 
-export default {
+export default Vue.extend({
   name: 'Portfolio',
   components: {
     TheDefaultView,
@@ -260,7 +261,7 @@ export default {
       this.updateModal('image')
     }
   }
-}
+})
 </script>
 
 <style lang="scss">

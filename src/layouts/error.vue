@@ -27,13 +27,14 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import { mapGetters, mapActions } from 'vuex'
 import TheModal from '@components/templates/TheModal'
 import TheHumburger from '@components/atoms/TheHumburger'
 import LabelNormal from '@components/atoms/LabelNormal'
 
-export default {
+export default Vue.extend({
   name: 'Default',
   components: {
     TheModal,
@@ -73,7 +74,7 @@ export default {
       toggleModal: 'view/toggleModal'
     })
   }
-}
+})
 </script>
 <style lang="scss" scoped>
 #error {

@@ -7,7 +7,7 @@
     <slot />
   </article>
 </template>
-<script>
+<script lang="ts">
 import Vue from 'vue'
 import LabelPageTop from '@components/atoms/LabelPageTop'
 

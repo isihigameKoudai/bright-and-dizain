@@ -15,19 +15,15 @@
     </ul>
   </div>
 </template>
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import { mapActions } from 'vuex'
 
-export default {
+export default Vue.extend({
   name: 'TheModalMenu',
-  date() {
+  data() {
     return {
-      menus: []
-    }
-  },
-  beforeMount() {
-    this.menus = [
-      {
+      menus: [{
         title: 'Top',
         path: '/'
       },
@@ -46,15 +42,15 @@ export default {
       {
         title: 'Contact',
         path: '/contact'
-      }
-    ]
+      }]
+    }
   },
   methods: {
     ...mapActions({
       toggleModal: 'view/toggleModal'
     })
   }
-}
+})
 </script>
 <style lang="scss" scoped>
 .list-menu {

@@ -12,7 +12,7 @@ interface SubmitType {
   message: string
 }
 
-const submitContact = ({
+export const submitContact = ({
   name,
   email,
   tel,
@@ -39,4 +39,3 @@ const submitContact = ({
   return axios(options)
 }
 
-export default submitContact

@@ -25,7 +25,7 @@ export default Vue.extend({
   },
   methods: {
     pushButton(e) {
-      this.$emit('click', e.target.value)
+      this.$emit('click')
     }
   }
 })
