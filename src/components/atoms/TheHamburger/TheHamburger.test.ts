@@ -10,7 +10,7 @@ describe('TheHamburger.vue', () => {
       },
     })
     expect(wrapper.html()).toMatchInlineSnapshot(`
-      "<div class=\\"btn-humburger\\">
+      "<div class=\\"btn-hamburger\\">
         <div></div>
         <div></div>
       </div>"
@@ -24,7 +24,7 @@ describe('TheHamburger.vue', () => {
       },
     })
     expect(wrapper.html()).toMatchInlineSnapshot(`
-      "<div class=\\"btn-humburger is-active on-modal\\">
+      "<div class=\\"btn-hamburger is-active on-modal\\">
         <div></div>
         <div></div>
       </div>"

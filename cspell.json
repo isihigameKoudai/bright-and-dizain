@@ -1,0 +1,20 @@
+{
+  "enabledLanguageIds": [
+    "css",
+    "html",
+    "javascript",
+    "json",
+    "less",
+    "markdown",
+    "plaintext",
+    "scss",
+    "text",
+    "ruby",
+    "yaml",
+    "yml"
+  ],
+  "words": [
+    "dezain",
+    "nuxt"
+ ]
+}
