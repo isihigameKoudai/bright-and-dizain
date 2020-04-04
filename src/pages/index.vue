@@ -238,8 +238,8 @@ import TitleParallax from '@components/atoms/TitleParallax'
 import ImageBox from '@components/atoms/ImageBox'
 import BaseButton from '@components/atoms/BaseButton'
 
-import { setParallax } from '~/utils/parallax'
-import { setIntersectionObserver } from '~/utils/revealObserver'
+import { setParallax } from 'utils/parallax'
+import { setIntersectionObserver } from 'utils/revealObserver'
 
 export default Vue.extend({
   name: 'Index',

@@ -99,6 +99,7 @@ const nuxtConfig: NuxtConfiguration = {
         ...alias,
         '@components': path.join( __dirname, srcDir + 'components'),
         'utils': path.join( __dirname, srcDir + 'utils'),
+        'service': path.join( __dirname, srcDir + 'service'),
       }
 
       const tsLoader = {

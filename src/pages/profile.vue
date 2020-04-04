@@ -94,7 +94,7 @@ import LabelSection from '@components/atoms/LabelSection'
 import LabelNormal from '@components/atoms/LabelNormal'
 import LogoMedia from '@components/atoms/LogoMedia'
 
-import { setIntersectionObserver } from '~/utils/revealObserver'
+import { setIntersectionObserver } from 'utils/revealObserver'
 
 export default Vue.extend({
   name: 'Profile',
