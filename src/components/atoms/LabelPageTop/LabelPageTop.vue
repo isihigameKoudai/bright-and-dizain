@@ -1,6 +1,8 @@
 <template>
   <div class="label-top">
-    <h1>{{ title }}</h1>
+    <h1 class="label-top-title">
+      {{ title }}
+    </h1>
   </div>
 </template>
 <script lang="ts">
@@ -35,17 +37,18 @@ export default Vue.extend({
     margin-left: auto;
     margin-right: auto;
   }
+
+  .label-top-title {
+    position: relative;
+    font-size: 36px;
+    color: #402c2c;
+    font-family: Cambria, Georgia, serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 39.6px;
+    letter-spacing: 2px;
+  }
 }
 
-h1 {
-  position: relative;
-  font-size: 36px;
-  color: #402c2c;
-  font-family: Cambria, Georgia, serif;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 500;
-  line-height: 39.6px;
-  letter-spacing: 2px;
-}
 </style>

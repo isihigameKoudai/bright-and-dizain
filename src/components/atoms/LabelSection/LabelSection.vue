@@ -11,7 +11,7 @@ export default Vue.extend({
 })
 </script>
 <style lang="scss" scoped>
-h2 {
+.label-section {
   position: relative;
   font-size: 29px;
   color: #402c2c;
