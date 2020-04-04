@@ -12,7 +12,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'TheHumbuger',
+  name: 'TheHambuger',
   props: {
     isActive: {
       type: Boolean,

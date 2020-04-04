@@ -1,10 +1,10 @@
 import 'jest'
 import { shallowMount } from '@vue/test-utils'
-import TheHumburger from './TheHumburger.vue'
+import TheHamburger from './TheHamburger.vue'
 
-describe('TheHumburger.vue', () => {
+describe('TheHamburger.vue', () => {
   test('default test', () => {
-    const wrapper = shallowMount(TheHumburger, {
+    const wrapper = shallowMount(TheHamburger, {
       propsData: {
         isActive: false,
       },
@@ -18,7 +18,7 @@ describe('TheHumburger.vue', () => {
   })
 
   test('active test', () => {
-    const wrapper = shallowMount(TheHumburger, {
+    const wrapper = shallowMount(TheHamburger, {
       propsData: {
         isActive: true,
       },

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TheHumburger
+    <TheHamburger
       :is-active="modalMode"
       class="fixed-humburegr"
       @click="toggleModal"
@@ -16,13 +16,13 @@
 import Vue from 'vue'
 import { mapGetters, mapActions } from 'vuex'
 import TheModal from '@components/templates/TheModal'
-import TheHumburger from '@components/atoms/TheHumburger'
+import TheHamburger from '@components/atoms/TheHamburger'
 
 export default Vue.extend({
   name: 'Default',
   components: {
     TheModal,
-    TheHumburger
+    TheHamburger
   },
   computed: {
     ...mapGetters('view', ['modalMode'])
