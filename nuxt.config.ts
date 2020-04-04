@@ -2,9 +2,10 @@ import { Configuration as NuxtConfiguration } from '@nuxt/types'
 import path from 'path'
 
 const srcDir: string = 'src/'
+require('dotenv').config({path: './.env'})
+
 const SLACK_API_CODE: string = process.env.SLACK_API_CODE || ''
 const GA: string = process.env.GA || ''
-require('dotenv').config()
 
 const nuxtConfig: NuxtConfiguration = {
   mode: 'universal',
@@ -93,10 +94,12 @@ const nuxtConfig: NuxtConfiguration = {
         loader: 'vue-svg-loader'
       })
 
-      config.resolve.alias['@components'] = path.join(
-        __dirname,
-        srcDir + 'components'
-      )
+      const alias = config.resolve.alias;
+      config.resolve.alias = {
+        ...alias,
+        '@components': path.join( __dirname, srcDir + 'components'),
+        'utils': path.join( __dirname, srcDir + 'utils'),
+      }
 
       const tsLoader = {
         loader: 'ts-loader',
