@@ -1,8 +1,7 @@
-import axios, { AxiosPromise } from 'axios'
+import { AxiosPromise } from 'axios'
+import { api } from 'utils/api';
 
 const SLACK_API_CODE = process.env.SLACK_API_CODE
-const API_URL: string = 'https://hooks.slack.com/services/'
-const HOST_URL: string = 'https://www.brightanddizain.com/'
 
 interface SubmitType {
   name: string
@@ -19,23 +18,9 @@ export const submitContact = ({
   company,
   message
 }): AxiosPromise<SubmitType> => {
-  const url: string = API_URL + SLACK_API_CODE
-  const header: object = {
-    'Content-type': 'application/json',
-    'Access-Control-Allow-Origin': HOST_URL
-  }
+  const url: string = 'services/' + SLACK_API_CODE
   const contacts: string = `会社・組織：${company}\n名前：${name}\nEメール：${email}\n電話番号：${tel}\nメッセージ：${message}\n`
-  const options: object = {
-    method: 'post',
-    baseURL: url,
-    header,
-    data: `payload={
-      "channel": "#order-message",
-      "username": "bnd",
-      "text": "<!here> ${contacts}"
-    }`
-  }
 
-  return axios(options)
+  return api.post(url, contacts)
 }
 

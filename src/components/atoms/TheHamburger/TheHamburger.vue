@@ -1,7 +1,7 @@
 <template>
   <div
     :class="{ 'is-active on-modal': isActive }"
-    class="btn-humburger"
+    class="btn-hamburger"
     @click="$emit('click')"
   >
     <div />
@@ -12,7 +12,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'TheHumbuger',
+  name: 'TheHambuger',
   props: {
     isActive: {
       type: Boolean,
@@ -22,7 +22,7 @@ export default Vue.extend({
 })
 </script>
 <style lang="scss" scoped>
-.btn-humburger {
+.btn-hamburger {
   position: fixed;
   display: block;
   width: 56px;

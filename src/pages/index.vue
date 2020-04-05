@@ -16,12 +16,7 @@
           >
         </swiper-slide>
       </swiper>
-      <img
-        class="title-position appear"
-        src="/svg/title_white.svg"
-        alt=""
-        width="200px"
-      >
+      <ImageTitle class="title-position appear" />
       <div
         class="arrow"
         @click="moveScroll"
@@ -231,25 +226,28 @@
 <script>
 import Vue from 'vue';
 import $ from 'jquery'
-import TheDefaultView from '@components/templates/TheDefaultView'
-import LabelSection from '@components/atoms/LabelSection'
-import LabelNormal from '@components/atoms/LabelNormal'
-import TitleParallax from '@components/atoms/TitleParallax'
-import ImageBox from '@components/atoms/ImageBox'
-import BaseButton from '@components/atoms/BaseButton'
 
-import { setParallax } from '~/utils/parallax'
-import { setIntersectionObserver } from '~/utils/revealObserver'
+import BaseButton from '@components/atoms/BaseButton'
+import ImageBox from '@components/atoms/ImageBox'
+import ImageTitle from '@components/atoms/ImageTitle'
+import LabelNormal from '@components/atoms/LabelNormal'
+import LabelSection from '@components/atoms/LabelSection'
+import TheDefaultView from '@components/templates/TheDefaultView'
+import TitleParallax from '@components/atoms/TitleParallax'
+
+import { setParallax } from 'utils/parallax'
+import { setIntersectionObserver } from 'utils/revealObserver'
 
 export default Vue.extend({
   name: 'Index',
   components: {
-    TheDefaultView,
-    LabelSection,
-    LabelNormal,
-    TitleParallax,
+    BaseButton,
     ImageBox,
-    BaseButton
+    ImageTitle,
+    LabelNormal,
+    LabelSection,
+    TheDefaultView,
+    TitleParallax
   },
   data() {
     return {

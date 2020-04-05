@@ -1,18 +1,9 @@
 <template>
-  <div>
-    <img
-      v-if="isDark"
-      src="/svg/mainTitleBlack.svg"
-      alt=""
-      width="200px"
-    >
-    <img
-      v-else
-      src="/svg/mainTitleWhite.svg"
-      alt=""
-      width="200px"
-    >
-  </div>
+  <img
+    :src="imagePath"
+    alt=""
+    width="200px"
+  >
 </template>
 <script lang="ts">
 import Vue from 'vue'
@@ -23,6 +14,13 @@ export default Vue.extend({
     isDark: {
       type: Boolean,
       default: false
+    }
+  },
+  computed: {
+    imagePath() {
+      const darkImage: string = '/svg/title_black.svg'
+      const whiteImage: string = '/svg/title_white.svg'
+      return this.isDark ? darkImage : whiteImage
     }
   }
 })
