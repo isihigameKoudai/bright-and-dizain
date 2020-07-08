@@ -154,8 +154,8 @@ const nuxtConfig: NuxtConfiguration = {
     name: 'BrightAndDizain',
     lang: 'ja',
     short_name: 'Bright&dizain',
-    title: 'Briht&dizain',
-    'og:title': 'Brnriht&dizain',
+    title: 'Bright&dizain',
+    'og:title': 'Bright&dizain',
     description:
       'My portfolio site. Photograph, Art direction, Web, Engineering, Creative.',
     'og:description':
