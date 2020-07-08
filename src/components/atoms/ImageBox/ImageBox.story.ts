@@ -3,12 +3,13 @@ import { storiesOf } from '@storybook/vue'
 import { withKnobs, text, boolean } from '@storybook/addon-knobs/vue';
 
 import ImageBox from './ImageBox.vue'
+import image from '../../../static/img/TitleWebDevelop.jpg';
 
 storiesOf('atoms', module).addDecorator(withKnobs).add('ImageBox', () => ({
   components: { ImageBox },
   props: {
     path: {
-      default: text('path', '/img/TitleWebDevelop.jpg')
+      default: image
     },
     shadow: {
       default: boolean('shadow', false)
