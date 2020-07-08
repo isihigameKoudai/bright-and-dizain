@@ -16,15 +16,6 @@ export default Vue.extend({
     placeHolder: {
       type: String,
       default: ''
-    },
-    isInvalid: {
-      type: Boolean,
-      default: false
-    }
-  },
-  data() {
-    return {
-      text: ''
     }
   }
 })
