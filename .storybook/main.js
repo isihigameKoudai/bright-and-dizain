@@ -1,4 +1,5 @@
 const path = require('path');
+const srcDir = '../src/'
 
 module.exports = {
   addons: [
@@ -24,6 +25,16 @@ module.exports = {
         }
       }]
     })
+
+    config.resolve.extensions = ['.ts', '.js', '.vue', '.json'];
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      vue$: 'vue/dist/vue.esm.js',
+      '@': path.join(__dirname, srcDir, '/'),
+      'utils': path.join( srcDir + 'utils'),
+      'service': path.join( srcDir + 'service')
+    };
+    config.resolve.modules.push(path.resolve(__dirname, srcDir))
 
     return config;
   },
