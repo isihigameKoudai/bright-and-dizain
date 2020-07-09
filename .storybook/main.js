@@ -14,23 +14,16 @@ module.exports = {
       include: path.resolve(__dirname, '../'),
     });
 
-    // const tsLoader = {
-    //   loader: 'ts-loader',
-    //   options: {
-    //     appendTsSuffixTo: [/\.vue$/],
-    //     context: __dirname,
-    //     configFile: 'tsconfig.json'
-    //   }
-    // }
-
-    // for (let rule of config.module.rules) {
-    //   if (rule.loader === 'vue-loader') {
-    //     rule.options.loaders = {
-    //       ...rule.options.loaders,
-    //       ts: tsLoader
-    //     }
-    //   }
-    // }
+    config.module.rules.push({
+      test: /\.ts$/,
+      use: [{
+        loader: 'ts-loader',
+        options: {
+          appendTsSuffixTo: [/\.vue$/],
+          transpileOnly: true
+        }
+      }]
+    })
 
     return config;
   },
