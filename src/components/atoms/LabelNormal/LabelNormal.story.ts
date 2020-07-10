@@ -2,7 +2,6 @@ import { storiesOf } from '@storybook/vue'
 import { withKnobs, number, text } from '@storybook/addon-knobs/vue';
 
 import LabelNormal from './LabelNormal.vue'
-import image from '../../../assets/img/portfolio/creative/c2.jpg';
 
 storiesOf('atoms', module).addDecorator(withKnobs).add('LabelNormal', () => ({
   components: { LabelNormal },

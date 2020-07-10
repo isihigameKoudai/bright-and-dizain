@@ -3,7 +3,13 @@ import { withKnobs, boolean } from '@storybook/addon-knobs/vue';
 
 import ImageTitle from './ImageTitle.vue'
 
-storiesOf('atoms', module).addDecorator(withKnobs).add('ImageTitle', () => ({
+const decorator = () => ({
+  template: `<div style="background: #eee; padding: 30px;">
+    <story />
+  </div>`
+})
+
+storiesOf('atoms', module).addDecorator(decorator).addDecorator(withKnobs).add('ImageTitle', () => ({
   components: { ImageTitle },
   props: {
     isDark: {

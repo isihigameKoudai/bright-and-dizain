@@ -4,7 +4,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 import TheModalImage from './TheModalImage.vue'
-import image from '../../../assets/img/portfolio/portrait/p2.jpg'
+import image from '@/assets/img/portfolio/portrait/p2.jpg'
 
 Vue.use(Vuex);
 
