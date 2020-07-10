@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/vue'
 import { withKnobs } from '@storybook/addon-knobs/vue';
 
 import ImageBoxThumbnail from './ImageBoxThumbnail.vue'
-import image from '../../../static/img/TitleWebDevelop.jpg';
+import image from '@/static/img/TitleWebDevelop.jpg';
 
 storiesOf('atoms', module).addDecorator(withKnobs).add('ImageBoxThumbnail', () => ({
   components: { ImageBoxThumbnail },
