@@ -47,6 +47,8 @@
     "src/**/*.test.tsx"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/**/*story.ts",
+    "src/**/*story.tsx"
   ]
 }
