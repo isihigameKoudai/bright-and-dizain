@@ -3,7 +3,7 @@ import { withKnobs, text } from '@storybook/addon-knobs/vue';
 
 import TitleParallax from './TitleParallax.vue'
 
-import { setParallax } from '../../../utils/parallax.ts'
+import { setParallax } from '@/utils/parallax.ts'
 
 const decorator = () => ({
   template: `<div style="padding-top: 300px; padding-bottom: 300px;">
