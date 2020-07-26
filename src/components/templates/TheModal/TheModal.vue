@@ -1,6 +1,9 @@
 <template>
   <transition name="fade">
-    <div>
+    <div
+      v-show="modalMode"
+      class="the-modal"
+    >
       <div
         :key="1"
         class="modal-wrap"
@@ -39,7 +42,7 @@ export default Vue.extend({
     TheModalCompletEmail
   },
   computed: {
-    ...mapGetters('view', ['modalType'])
+    ...mapGetters('view', ['modalType', 'modalMode'])
   },
   methods: {
     ...mapActions({
@@ -56,7 +59,7 @@ export default Vue.extend({
   width: 100%;
   height: 100%;
   background: rgba($color: #1d1d24, $alpha: 0.9);
-  z-index: 50;
+  /* z-index: 50; */
 }
 
 .modal-content {
@@ -64,12 +67,12 @@ export default Vue.extend({
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 60;
+  /* z-index: 60; */
 }
 
 .fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.2s;
+.fade-leave-to {
+  transition: opacity 0.2s ease;
 }
 .fade-enter,
 .fade-leave-to {

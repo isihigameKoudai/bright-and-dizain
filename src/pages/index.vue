@@ -289,7 +289,6 @@ export default Vue.extend({
   left: 10vw;
   transform: translate3d(0, -50%, 0);
   filter: drop-shadow(4px 4px 4px #888);
-  z-index: 10;
 }
 
 .main-visual {
@@ -311,7 +310,7 @@ export default Vue.extend({
   border: solid 2px #fff;
   transition-duration: 0.1s;
   filter: drop-shadow(2px 2px 2px #402c2caa);
-  z-index: 1;
+
   & > div {
     position: relative;
     width: 100%;

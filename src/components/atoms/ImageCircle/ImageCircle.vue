@@ -26,7 +26,7 @@ export default Vue.extend({
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
-  z-index: 1;
+
   @media screen and (max-width: 768px) {
     width: 130px;
     height: 130px;
