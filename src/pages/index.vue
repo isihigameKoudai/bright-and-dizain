@@ -1,21 +1,11 @@
 <template>
   <div>
     <div class="top-container">
-      <swiper
-        :options="swiperOption"
-        class="appear"
+      <img
+        alt="creative"
+        src="/img/top/mainImage01.jpg"
+        class="main-visual appear"
       >
-        <swiper-slide
-          v-for="(image, key) in images"
-          :key="key"
-        >
-          <img
-            :alt="image.alt"
-            :src="image.path"
-            class="main-visual"
-          >
-        </swiper-slide>
-      </swiper>
       <ImageTitle class="title-position appear" />
       <div
         class="arrow"
@@ -248,26 +238,6 @@ export default Vue.extend({
     LabelSection,
     TheDefaultView,
     TitleParallax
-  },
-  data() {
-    return {
-      swiperOption: {
-        loop: true,
-        speed: 600,
-        autoplay: {
-          delay: 3000,
-          stopOnLast: false,
-          disableOnInteraction: false
-        },
-        effect: 'fade'
-      },
-      images: [
-        {
-          path: '/img/top/mainImage01.jpg',
-          alt: 'creative'
-        }
-      ]
-    }
   },
   mounted() {
     if (process.browser) {

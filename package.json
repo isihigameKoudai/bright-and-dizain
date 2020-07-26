@@ -26,11 +26,9 @@
     "@nuxtjs/pwa": "^2.6.0",
     "@types/webpack": "^4.41.8",
     "babel-core": "^6.26.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.1",
     "mime": "^2.4.4",
-    "nuxt": "^2.12.1",
-    "swiper": "^5.3.6",
-    "vue-awesome-swiper": "^4.0.4"
+    "nuxt": "^2.12.1"
   },
   "devDependencies": {
     "@nuxt/config": "^2.12.1",

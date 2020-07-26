@@ -149,7 +149,7 @@ const nuxtConfig: NuxtConfiguration = {
     SLACK_API_CODE,
     GA
   },
-  plugins: [{ src: '~/plugins/vue-awesome-swiper', ssr: false }],
+  plugins: [],
   manifest: {
     name: 'BrightAndDizain',
     lang: 'ja',
