@@ -1,5 +1,6 @@
 import { Getters, Mutations, Actions } from 'vuex'
 import { S, G, M, A } from './type'
+import { ResolvePlugin } from 'webpack'
 
 export const state = (): S => ({
   modal: {
@@ -38,8 +39,9 @@ export const actions: Actions<S, A, G, M> = {
   setImagePath({ commit }, payload) {
     commit('SET_IMAGE_PATH', payload)
   },
-  toggleModal({ commit }) {
-    commit('SET_MODAL_TYPE')
+  async toggleModal({ commit }) {
     commit('SET_MODAL_MODE')
+    await new Promise(resolve => setTimeout(() => resolve(), 200));
+    commit('SET_MODAL_TYPE')
   }
 }

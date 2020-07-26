@@ -6,12 +6,12 @@
   "private": true,
   "scripts": {
     "dev": "nuxt-ts --spa",
-    "build": "nuxt-ts build",
+    "build": "nuxt-ts build --es-module-specifier-resolution=node",
     "build:storybook": "build-storybook -s story-static",
     "build:analyze": "nuxt-ts build --analyze",
     "test:unit": "jest",
     "start": "nuxt-ts start",
-    "generate": "nuxt-ts generate",
+    "generate": "nuxt-ts generate --es-module-specifier-resolution=node",
     "dev:gen": "cd dist && python -m SimpleHTTPServer",
     "dev:storybook": "start-storybook -p 9001 -c .storybook -s src/static",
     "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
@@ -26,11 +26,9 @@
     "@nuxtjs/pwa": "^2.6.0",
     "@types/webpack": "^4.41.8",
     "babel-core": "^6.26.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.1",
     "mime": "^2.4.4",
-    "nuxt": "^2.12.1",
-    "swiper": "^5.3.6",
-    "vue-awesome-swiper": "^4.0.4"
+    "nuxt": "^2.12.1"
   },
   "devDependencies": {
     "@nuxt/config": "^2.12.1",
@@ -41,6 +39,7 @@
     "@storybook/addons": "^5.3.19",
     "@storybook/vue": "^5.3.17",
     "@types/jest": "^25.1.4",
+    "@types/node": "^14.0.26",
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.25.0",
     "@vue/test-utils": "^1.0.0-beta.32",

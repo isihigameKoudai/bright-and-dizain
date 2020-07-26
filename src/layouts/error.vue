@@ -5,10 +5,7 @@
       class="fixed-humburegr"
       @click="toggleModal()"
     />
-    <TheModal
-      v-if="modalMode"
-      class="positiond-fixed fixed-content"
-    />
+    <TheModal class="positiond-fixed fixed-content" />
     <div class="error-container">
       <h1 class="error-code">
         {{ error.statusCode }}

@@ -19,7 +19,7 @@ const nuxtConfig: NuxtConfiguration = {
       { charset: 'utf-8' },
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1, user-scalable=no'
+        content: 'width=device-width, initial-scale=1'
       },
       {
         hid: 'description',
@@ -45,6 +45,7 @@ const nuxtConfig: NuxtConfiguration = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'apple-touch-icon', size: '200x200', href: '/icon.jpg' },
+      { rel: 'preconnect', href: 'https://www.google-analytics.com' , crossorigin: true },
       { rel: 'dns-prefetch', href: 'https://www.brightanddizain.com/' }
     ]
   },
@@ -149,7 +150,7 @@ const nuxtConfig: NuxtConfiguration = {
     SLACK_API_CODE,
     GA
   },
-  plugins: [{ src: '~/plugins/vue-awesome-swiper', ssr: false }],
+  plugins: [],
   manifest: {
     name: 'BrightAndDizain',
     lang: 'ja',
