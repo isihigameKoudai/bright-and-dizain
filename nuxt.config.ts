@@ -45,6 +45,7 @@ const nuxtConfig: NuxtConfiguration = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'apple-touch-icon', size: '200x200', href: '/icon.jpg' },
+      { rel: 'preconnect', href: 'https://www.google-analytics.com' , crossorigin: true },
       { rel: 'dns-prefetch', href: 'https://www.brightanddizain.com/' }
     ]
   },
