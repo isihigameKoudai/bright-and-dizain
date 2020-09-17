@@ -28,7 +28,7 @@
     "babel-core": "^6.26.3",
     "jquery": "^3.5.1",
     "mime": "^2.4.4",
-    "nuxt": "^2.12.1"
+    "nuxt": "^2.14.5"
   },
   "devDependencies": {
     "@nuxt/config": "^2.12.1",
