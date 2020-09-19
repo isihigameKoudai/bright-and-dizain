@@ -1,19 +1,28 @@
 <template>
-  <div
-    :style="{ backgroundImage: 'url(' + imagePath + ')' }"
-    class="image-box"
-    @click="$emit('click')"
-  />
+  <figure>
+    <img
+      :src="path"
+      :alt="alt"
+      loading="lazy"
+      decoding="async"
+      class="image"
+      @click="() => $emit('click')"
+    >
+  </figure>
 </template>
 <script lang="ts">
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'ImageBoxThumbnail',
+  name: 'Sample',
   props: {
     path: {
       type: String,
       default: '/img/NonThumbnail.png'
+    },
+    alt: {
+      type: String,
+      default: 'image'
     }
   },
   computed: {
@@ -24,16 +33,13 @@ export default Vue.extend({
 })
 </script>
 <style lang="scss" scoped>
-.image-box {
+.image {
   width: 300px;
   height: 300px;
-  object-fit: cover;
   border: none;
   background: none;
   overflow: hidden;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  object-fit: cover;
   transition: 0.2s all ease;
 
   @media screen and (min-width: 769px) {
