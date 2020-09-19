@@ -2,7 +2,9 @@
   <img
     :src="imagePath"
     class="modal-image"
-    alt=""
+    loading="lazy"
+    decoding="async"
+    alt="modal-img"
   >
 </template>
 <script lang="ts">
