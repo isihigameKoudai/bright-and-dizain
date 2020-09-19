@@ -8,7 +8,7 @@ const SLACK_API_CODE: string = process.env.SLACK_API_CODE || ''
 const GA: string = process.env.GA || ''
 
 const nuxtConfig: NuxtConfiguration = {
-  mode: 'universal',
+  ssr: true,
   srcDir,
   /*
    ** Headers of the page
