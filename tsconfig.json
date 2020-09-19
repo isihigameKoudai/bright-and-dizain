@@ -29,7 +29,7 @@
     "types": [
       "@types/node",
       "@types/webpack",
-      "@nuxt/types",
+      "@nuxt/types@0.7.9+",
       "@types/jest"
     ]
   },
