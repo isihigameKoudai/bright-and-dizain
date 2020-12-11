@@ -2,9 +2,12 @@ const path = require('path');
 const srcDir = '../src/'
 
 module.exports = {
+  // stories: ['../src/components/**/*.story.(tsx|ts)'],
+  stories: ['../src/components/atoms/BaseButton/BaseButton.story.ts'],
   addons: [
     '@storybook/addon-actions/register',
     '@storybook/addon-knobs/register',
+    '@storybook/addon-knobs/vue',
     '@storybook/addon-notes/register',
   ],
   webpackFinal: async (config) => {
