@@ -33,7 +33,8 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .btn {
   position: relative;
-  width: 185px;
+  min-width: 185px;
+  padding: 0 30px;
   height: 44px;
   border-radius: 3px;
   letter-spacing: 2px;

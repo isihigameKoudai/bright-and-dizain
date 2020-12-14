@@ -9,6 +9,7 @@ module.exports = {
     '@storybook/addon-knobs/register',
     '@storybook/addon-knobs/vue',
     '@storybook/addon-notes/register',
+    '@storybook/addon-controls'
   ],
   webpackFinal: async (config) => {
 
