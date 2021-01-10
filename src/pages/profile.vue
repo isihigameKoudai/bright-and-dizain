@@ -86,7 +86,7 @@
   </TheDefaultView>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue';
 import TheDefaultView from '@components/templates/TheDefaultView'
 import ImageCircle from '@components/atoms/ImageCircle'
