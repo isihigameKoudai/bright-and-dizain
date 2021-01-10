@@ -97,7 +97,7 @@
   </TheDefaultView>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue';
 import BaseButton from '@components/atoms/BaseButton'
 import TheDefaultView from '@components/templates/TheDefaultView'
