@@ -138,6 +138,7 @@ const nuxtConfig: NuxtConfiguration = {
     ]
   ],
   buildModules: [
+    '@nuxtjs/composition-api',
     [
       '@nuxt/typescript-build',
       {
