@@ -24,7 +24,7 @@ export default {
   template: '<TheHamburger />'
 }
 
-export const defaultState = (args, { argTypes }) => ({
+const Template = (args, { argTypes }) => ({
   components: { TheHamburger },
   props: Object.keys(argTypes),
   methods: {
@@ -33,14 +33,13 @@ export const defaultState = (args, { argTypes }) => ({
   template: `<TheHamburger :isActive="isOpen" @click="onToggle" />`
 });
 
+export const defaultState = Template.bind({})
+defaultState.args = {
+  isOpen: false
+}
 
-export const isOpen = (args, { argTypes }) => ({
-  components: { TheHamburger },
-  props: Object.keys(argTypes),
-  methods: {
-    onToggle: action('click')
-  },
-  template: `<TheHamburger :isActive="true" @click="onToggle" />`
-});
-
+export const isOpen = Template.bind({})
+isOpen.args = {
+  isOpen: true
+}
 
