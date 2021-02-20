@@ -2,8 +2,7 @@ const path = require('path');
 const srcDir = '../src/'
 
 module.exports = {
-  // stories: ['../src/components/**/*.story.(tsx|ts)'],
-  stories: ['../src/components/atoms/BaseButton/BaseButton.story.ts'],
+  stories: ['../src/components/**/*.story.(tsx|ts)'],
   addons: [
     '@storybook/addon-actions/register',
     '@storybook/addon-knobs/register',
