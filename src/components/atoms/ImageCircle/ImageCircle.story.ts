@@ -1,15 +1,23 @@
-import { storiesOf } from '@storybook/vue'
-import { withKnobs } from '@storybook/addon-knobs/vue';
+import { action } from '@storybook/addon-actions';
 
 import ImageCircle from './ImageCircle.vue'
 import image from '@/assets/img/portfolio/creative/c2.jpg';
 
-storiesOf('atoms', module).addDecorator(withKnobs).add('ImageCircle', () => ({
+export default {
   components: { ImageCircle },
-  props: {
-    path: {
-      default: image
-    }
+  title: 'atoms/ImageCircle',
+  template: '<ImageCircle />'
+}
+
+export const withImage = (args, { argTypes }) => ({
+  components: { ImageCircle },
+  props: Object.keys(argTypes),
+  methods: {
+    onClick: action('click')
   },
   template: `<ImageCircle :path="path" @click="onClick" />`
-}))
+});
+
+withImage.args = {
+  path: image
+}
