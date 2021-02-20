@@ -1,6 +1,5 @@
 import LabelPageTop from './LabelPageTop.vue'
 
-
 export default {
   components: { LabelPageTop },
   title: 'atoms/LabelPageTop',
