@@ -1,14 +1,14 @@
-import { storiesOf } from '@storybook/vue'
-import { withKnobs, text } from '@storybook/addon-knobs/vue';
-
 import LabelSection from './LabelSection.vue'
 
-storiesOf('atoms', module).addDecorator(withKnobs).add('LabelSection', () => ({
+export default {
   components: { LabelSection },
-  props: {
-    text: {
-      default: text('title', 'テキスト')
-    }
-  },
-  template: `<LabelSection>{{ text }}</LabelSection>`
-}))
+  title: 'atoms/LabelSection',
+  template: '<LabelSection />'
+}
+
+export const defaultState = (args, { argTypes }) => ({
+  components: { LabelSection },
+  props: Object.keys(argTypes),
+  template: `<LabelSection>text</LabelSection>`
+});
+
