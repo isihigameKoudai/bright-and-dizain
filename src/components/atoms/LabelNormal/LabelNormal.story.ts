@@ -1,17 +1,18 @@
-import { storiesOf } from '@storybook/vue'
-import { withKnobs, number, text } from '@storybook/addon-knobs/vue';
-
 import LabelNormal from './LabelNormal.vue'
 
-storiesOf('atoms', module).addDecorator(withKnobs).add('LabelNormal', () => ({
+export default {
   components: { LabelNormal },
-  props: {
-    fontSize: {
-      default: number('fontSize', 16)
-    },
-    title: {
-      default: text('title', 'ラベル')
-    }
-  },
+  title: 'atoms/LabelNormal',
+  template: '<LabelNormal />'
+}
+
+export const defaultState = (args, { argTypes }) => ({
+  components: { LabelNormal },
+  props: Object.keys(argTypes),
   template: `<LabelNormal :font-size="LabelNormal">{{ title }}</LabelNormal>`
-}))
+});
+
+defaultState.args = {
+  title: 'ラベル',
+  fontSize: 24
+}
