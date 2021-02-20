@@ -2,7 +2,7 @@ import 'vuex'
 
 // Vuex Storeの肩を拡張するために汎用的に使うプロジェクト全体のための型定義
 declare module 'vuex' {
-  type Getters<S, G> = {
+  export type Getters<S, G> = {
     [K in keyof G]: (
       state: S,
       getters: G,
@@ -11,7 +11,7 @@ declare module 'vuex' {
     ) => G[K]
   }
 
-  type Mutations<S, M> = { [K in keyof M]: (state: S, payload: M[K]) => void }
+  export type Mutations<S, M> = { [K in keyof M]: (state: S, payload: M[K]) => void }
   type ExCommit<M> = <T extends keyof M>(type: T, payload?: M[T]) => void
   type ExDispatch<A> = <T extends keyof A>(type: T, payload?: A[T]) => any
   type ExActionContext<S, A, G, M> = {
@@ -22,7 +22,7 @@ declare module 'vuex' {
     rootState: RootState
     rootGetters: RootGetters
   }
-  type Actions<S, A, G = {}, M = {}> = {
+  export type Actions<S, A, G = {}, M = {}> = {
     [K in keyof A]: (ctx: ExActionContext<S, A, G, M>, payload: A[K]) => any
   }
 

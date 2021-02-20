@@ -1,6 +1,6 @@
+// @ts-nocheck
 import { Getters, Mutations, Actions } from 'vuex'
 import { S, G, M, A } from './type'
-import { ResolvePlugin } from 'webpack'
 
 export const state = (): S => ({
   modal: {
@@ -41,7 +41,7 @@ export const actions: Actions<S, A, G, M> = {
   },
   async toggleModal({ commit }) {
     commit('SET_MODAL_MODE')
-    await new Promise(resolve => setTimeout(() => resolve(), 200));
+    await new Promise(resolve => setTimeout(() => resolve(0), 200));
     commit('SET_MODAL_TYPE')
   }
 }

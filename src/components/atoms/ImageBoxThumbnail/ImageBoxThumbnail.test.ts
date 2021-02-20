@@ -10,7 +10,7 @@ describe('ImageBoxThumbnail.vue', () => {
       },
     })
     expect(wrapper.html()).toMatchInlineSnapshot(
-      `"<div class=\\"image-box\\" style=\\"background-image: url(assets/img/portfolio/creative/c1.jpg);\\"></div>"`
+      `"<figure><img src=\\"assets/img/portfolio/creative/c1.jpg\\" alt=\\"image\\" loading=\\"lazy\\" decoding=\\"async\\" class=\\"image\\"></figure>"`
     )
   })
 
@@ -21,7 +21,7 @@ describe('ImageBoxThumbnail.vue', () => {
       },
     })
     expect(wrapper.html()).toMatchInlineSnapshot(
-      `"<div class=\\"image-box\\" style=\\"background-image: url(/static/img/NonThumbnail.png);\\"></div>"`
+      `"<figure><img src=\\"\\" alt=\\"image\\" loading=\\"lazy\\" decoding=\\"async\\" class=\\"image\\"></figure>"`
     )
   })
 })

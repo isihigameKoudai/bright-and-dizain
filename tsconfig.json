@@ -8,7 +8,6 @@
       "esnext.asynciterable",
       "dom"
     ],
-    "typeRoots" : ["./type"],
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": false,
     "esModuleInterop": true,
@@ -30,7 +29,8 @@
       "@types/node",
       "@types/webpack",
       "@nuxt/types@0.7.9+",
-      "@types/jest"
+      "@types/jest",
+      "./src/types/"
     ]
   },
   "files": [

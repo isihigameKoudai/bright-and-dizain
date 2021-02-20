@@ -1,4 +1,3 @@
-import { Configuration as NuxtConfiguration } from '@nuxt/types'
 import path from 'path'
 
 const srcDir: string = 'src/'
@@ -7,7 +6,7 @@ require('dotenv').config({path: './.env'})
 const SLACK_API_CODE: string = process.env.SLACK_API_CODE || ''
 const GA: string = process.env.GA || ''
 
-const nuxtConfig: NuxtConfiguration = {
+const nuxtConfig = {
   ssr: true,
   srcDir,
   /*
