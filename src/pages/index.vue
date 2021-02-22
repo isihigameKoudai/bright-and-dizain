@@ -141,10 +141,12 @@
       </section>
 
       <section class="wrapper mt100 taC">
-        <BaseButton
-          title="Contact"
-          @click="onPushRoute('contact')"
-        />
+        <nuxt-link to="/contact">
+          <BaseButton
+            title="Contact"
+          />
+        </nuxt-link>
+
         <LabelNormal class="mt30">
           お問い合わせはこちらから
         </LabelNormal>
@@ -249,9 +251,6 @@ export default Vue.extend({
     moveScroll() {
       if (process.browser)
         $('html,body').animate({ scrollTop: window.innerHeight }, 700, 'swing')
-    },
-    onPushRoute(e = '/') {
-      this.$router.push({ path: e })
     },
     setObserver() {
       const options = {
