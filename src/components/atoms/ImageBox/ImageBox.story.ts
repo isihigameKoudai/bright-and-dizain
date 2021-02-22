@@ -1,25 +1,42 @@
-import { action } from '@storybook/addon-actions';
-import { storiesOf } from '@storybook/vue'
-import { withKnobs, text, boolean } from '@storybook/addon-knobs/vue';
-
 import ImageBox from './ImageBox.vue'
 import image from '@/static/img/TitleWebDevelop.jpg';
 
-storiesOf('atoms', module).addDecorator(withKnobs).add('ImageBox', () => ({
+export default {
   components: { ImageBox },
-  props: {
-    path: {
-      default: image
-    },
-    shadow: {
-      default: boolean('shadow', false)
-    },
-    isSmall: {
-      default: boolean('isSmall', false)
-    }
-  },
-  methods: {
-    onInput: action('text', text)
-  },
-  template: `<ImageBox :path="path" :shadow="shadow" :is-small="isSmall" />`
-}))
+  title: 'atoms/ImageBox',
+  template: '<ImageBox />'
+}
+
+export const withImage = (args, { argTypes }) => ({
+  components: { ImageBox },
+  props: Object.keys(argTypes),
+  template: '<ImageBox :path="path" :shadow="shadow" :is-small="isSmall" />',
+})
+
+withImage.args =  {
+  path: image,
+}
+
+export const isSmall = (args, { argTypes }) => ({
+  components: { ImageBox },
+  props: Object.keys(argTypes),
+  template: '<ImageBox :path="path" :shadow="shadow" :is-small="isSmall" />',
+})
+
+isSmall.args = {
+  path: image,
+  shadow: false,
+  isSmall: true
+}
+
+export const isShadow = (args, { argTypes }) => ({
+  components: { ImageBox },
+  props: Object.keys(argTypes),
+  template: '<ImageBox :path="path" :shadow="shadow" :is-small="isSmall" />',
+})
+
+isShadow.args = {
+  path: image,
+  shadow: true,
+  isSmall: false
+}

@@ -1,24 +1,37 @@
 import { action } from '@storybook/addon-actions';
-import { storiesOf } from '@storybook/vue'
-import { withKnobs, text, boolean } from '@storybook/addon-knobs/vue';
 
 import BaseTextBox from './BaseTextBox.vue'
 
-storiesOf('atoms', module).addDecorator(withKnobs).add('BaseTextBox', () => ({
+export default {
   components: { BaseTextBox },
-  props: {
-    placeHolder: {
-      default: text('placeHolder', 'placeholder')
-    },
-    isInvalid: {
-      default: boolean('isInvalid', false)
-    },
-    value: {
-      default: text('value', '')
-    }
-  },
+  title: 'atoms/BaseTextBox',
+  template: '<BaseTextBox />'
+}
+
+const Template = (args, { argTypes }) => ({
+  components: { BaseTextBox },
+  props: Object.keys(argTypes),
   methods: {
-    onInput: action('text', text)
+    onInput: action('input')
   },
-  template: `<BaseTextBox :place-holder="placeHolder" :is-invalid="isInvalid" :value="value" @text="onInput" />`
-}))
+  template: '<BaseTextBox :place-holder="placeHolder" :is-invalid="isInvalid" :value="value" @text="onInput" />',
+})
+
+export const withPlaceHolder = Template.bind({})
+withPlaceHolder.args =  {
+  placeHolder: '入力してください!'
+}
+
+export const isInvalid = Template.bind({})
+isInvalid.args = {
+  placeHolder: '入力してください!',
+  isInvalid: true
+}
+
+export const hasValue = Template.bind({})
+hasValue.args = {
+  placeHolder: '入力してください!',
+  isInvalid: false,
+  value: 'value!!!'
+}
+

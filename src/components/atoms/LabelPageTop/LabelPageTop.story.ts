@@ -1,14 +1,17 @@
-import { storiesOf } from '@storybook/vue'
-import { withKnobs, text } from '@storybook/addon-knobs/vue';
-
 import LabelPageTop from './LabelPageTop.vue'
 
-storiesOf('atoms', module).addDecorator(withKnobs).add('LabelPageTop', () => ({
+export default {
   components: { LabelPageTop },
-  props: {
-    title: {
-      default: text('title', 'ラベル')
-    }
-  },
+  title: 'atoms/LabelPageTop',
+  template: '<LabelPageTop />'
+}
+
+export const defaultState = (args, { argTypes }) => ({
+  components: { LabelPageTop },
+  props: Object.keys(argTypes),
   template: `<LabelPageTop :title="title" />`
-}))
+});
+
+defaultState.args = {
+  title: 'ラベル',
+}

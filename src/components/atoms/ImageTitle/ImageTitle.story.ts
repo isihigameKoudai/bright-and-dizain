@@ -1,6 +1,3 @@
-import { storiesOf } from '@storybook/vue'
-import { withKnobs, boolean } from '@storybook/addon-knobs/vue';
-
 import ImageTitle from './ImageTitle.vue'
 
 const decorator = () => ({
@@ -9,12 +6,21 @@ const decorator = () => ({
   </div>`
 })
 
-storiesOf('atoms', module).addDecorator(decorator).addDecorator(withKnobs).add('ImageTitle', () => ({
+export default {
   components: { ImageTitle },
-  props: {
-    isDark: {
-      default: boolean('isDrak', false)
-    }
-  },
+  title: 'atoms/ImageTitle',
+  template: '<ImageTitle />',
+  decorators: [decorator]
+}
+
+export const defaultState = (args, { argTypes }) => ({
+  components: { ImageTitle },
+  props: Object.keys(argTypes),
   template: `<ImageTitle :is-dark="isDark" />`
-}))
+});
+
+export const isDark = (args, { argTypes }) => ({
+  components: { ImageTitle },
+  template: `<ImageTitle :is-dark="true" />`
+});
+

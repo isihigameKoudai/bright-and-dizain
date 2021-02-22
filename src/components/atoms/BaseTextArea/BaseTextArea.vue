@@ -8,9 +8,9 @@
   />
 </template>
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import Vue from 'vue'
 
-export default defineComponent({
+export default Vue.extend({
   name: 'BaseTextArea',
   props: {
     placeHolder: {

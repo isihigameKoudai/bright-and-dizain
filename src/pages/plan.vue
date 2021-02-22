@@ -77,10 +77,11 @@
       </div>
     </section>
     <section class="position-title">
-      <BaseButton
-        title="Contact"
-        @click="onPushRoute('contact')"
-      />
+      <nuxt-link to="/contact">
+        <BaseButton
+          title="Contact"
+        />
+      </nuxt-link>
       <LabelNormal class="mt70">
         SNSのDM（ダイレクトメッセージ）
         <br class="pc-dn">からもご連絡可能です。
@@ -130,11 +131,6 @@ export default Vue.extend({
       ]
     }
   },
-  methods: {
-    onPushRoute(e = '/') {
-      this.$router.push({ path: e })
-    }
-  }
 })
 </script>
 

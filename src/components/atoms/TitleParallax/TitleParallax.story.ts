@@ -1,9 +1,6 @@
-import { storiesOf } from '@storybook/vue'
-import { withKnobs, text } from '@storybook/addon-knobs/vue';
-
 import TitleParallax from './TitleParallax.vue'
 
-import { setParallax } from '@/utils/parallax.ts'
+// import { setParallax } from '@/utils/parallax.ts'
 
 const decorator = () => ({
   template: `<div style="padding-top: 300px; padding-bottom: 300px;">
@@ -12,18 +9,22 @@ const decorator = () => ({
   </div>`
 })
 
-storiesOf('atoms', module).addDecorator(decorator).addDecorator(withKnobs).add('TitleParallax', () => ({
+export default {
   components: { TitleParallax },
-  props: {
-    title: {
-      default: text('text', 'Title')
-    },
-    path: {
-      default: text('path', '/img/TitlePhotograph.jpg')
-    }
-  },
-  mounted() {
-    setParallax();
-  },
+  title: 'atoms/TitleParallax',
+  template: '<TitleParallax />',
+  decorators: [decorator]
+}
+
+ const Template = (args, { argTypes }) => ({
+  components: { TitleParallax },
+  props: Object.keys(argTypes),
   template: `<TitleParallax :path="path" :title="title" />`
-}))
+});
+
+export const defaultState = Template.bind({})
+defaultState.args = {
+  path: '/img/TitlePhotograph.jpg',
+}
+
+// setParallax();

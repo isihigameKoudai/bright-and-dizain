@@ -1,21 +1,23 @@
 import { action } from '@storybook/addon-actions';
-import { storiesOf } from '@storybook/vue'
-import { withKnobs, text, boolean } from '@storybook/addon-knobs/vue';
 
 import BaseButton from './BaseButton.vue'
 
-storiesOf('atoms', module).addDecorator(withKnobs).add('BaseButton', () => ({
+export default {
   components: { BaseButton },
-  props: {
-    title: {
-      default: text('name', 'name')
-    },
-    isDisable: {
-      default: boolean('isDisable', false)
-    }
-  },
+  title: 'atoms/BaseButton',
+  template: '<BaseButton />'
+}
+
+export const withTitle = (args, { argTypes }) => ({
+  components: { BaseButton },
+  template: '<BaseButton :title="title" :is-disable="isDisabled" @click="onClick" />',
+  props: Object.keys(argTypes),
   methods: {
     onClick: action('click')
-  },
-  template: `<BaseButton :title="title" :is-disable="isDisable" @click="onClick" />`
-}))
+  }
+});
+
+withTitle.args = {
+  title: 'タイトル',
+  isDisabled: false
+}
