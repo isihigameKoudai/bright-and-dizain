@@ -179,7 +179,6 @@ export default defineComponent({
       state,
       socials,
       onSetTextBy: (key: ContactKey, text: string) => {
-        console.log(key, text)
         emit(`set-${key}`, text)
       },
       onSubmit: () => {
