@@ -1,7 +1,7 @@
 import path from 'path'
 
 const srcDir: string = 'src/'
-require('dotenv').config({path: './.env'})
+require('dotenv').config({ path: './.env' })
 
 const SLACK_API_CODE: string = process.env.SLACK_API_CODE || ''
 const GA: string = process.env.GA || ''
@@ -18,13 +18,13 @@ const nuxtConfig = {
       { charset: 'utf-8' },
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1'
+        content: 'width=device-width, initial-scale=1',
       },
       {
         hid: 'description',
         name: 'description',
         content:
-          'My portfolio site. Photograph, Art direction, Web, Engineering, Creative.'
+          'My portfolio site. Photograph, Art direction, Web, Engineering, Creative.',
       },
       { property: 'og:title', content: 'Bright&dizain' },
       { property: 'og:type', content: 'website' },
@@ -37,22 +37,26 @@ const nuxtConfig = {
       {
         name: 'twitter:description',
         content:
-          'My portfolio site. Photograph, Art direction, Web, Engineering, Creative.'
+          'My portfolio site. Photograph, Art direction, Web, Engineering, Creative.',
       },
-      { name: 'twitter:image', content: '/card.jpg' }
+      { name: 'twitter:image', content: '/card.jpg' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'apple-touch-icon', size: '200x200', href: '/icon.jpg' },
-      { rel: 'preconnect', href: 'https://www.google-analytics.com' , crossorigin: true },
+      {
+        rel: 'preconnect',
+        href: 'https://www.google-analytics.com',
+        crossorigin: true,
+      },
       { rel: 'dns-prefetch', href: 'https://www.brightanddizain.com/' },
-      { rel: 'preload', as: 'image', href: '/img/top/mainImage01.jpg' }
-    ]
+      { rel: 'preload', as: 'image', href: '/img/top/mainImage01.jpg' },
+    ],
   },
   css: [
     `~/assets/css/reset.scss`,
     `~/assets/css/style.scss`,
-    `~/assets/css/util.scss`
+    `~/assets/css/util.scss`,
   ],
   /*
    ** Customize the progress bar color
@@ -65,7 +69,7 @@ const nuxtConfig = {
     splitChunks: {
       layouts: false,
       pages: true,
-      commons: true
+      commons: true,
     },
     /*
      ** Run ESLint on save
@@ -76,11 +80,11 @@ const nuxtConfig = {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
         })
       }
 
-      config.module.rules = config.module.rules.map(rule => {
+      config.module.rules = config.module.rules.map((rule) => {
         if (
           rule.loader === 'url-loader' &&
           rule.test.toString().includes('svg')
@@ -92,15 +96,15 @@ const nuxtConfig = {
 
       config.module.rules.push({
         test: /\.svg$/,
-        loader: 'vue-svg-loader'
+        loader: 'vue-svg-loader',
       })
 
-      const alias = config.resolve.alias;
+      const alias = config.resolve.alias
       config.resolve.alias = {
         ...alias,
-        '@components': path.join( __dirname, srcDir + 'components'),
-        'utils': path.join( __dirname, srcDir + 'utils'),
-        'service': path.join( __dirname, srcDir + 'service'),
+        '@components': path.join(__dirname, srcDir + 'components'),
+        utils: path.join(__dirname, srcDir + 'utils'),
+        service: path.join(__dirname, srcDir + 'service'),
       }
 
       const tsLoader = {
@@ -108,19 +112,19 @@ const nuxtConfig = {
         options: {
           appendTsSuffixTo: [/\.vue$/],
           context: __dirname,
-          configFile: 'tsconfig.json'
-        }
+          configFile: 'tsconfig.json',
+        },
       }
 
       for (let rule of config.module.rules) {
         if (rule.loader === 'vue-loader') {
           rule.options.loaders = {
             ...rule.options.loaders,
-            ts: tsLoader
+            ts: tsLoader,
           }
         }
       }
-    }
+    },
   },
   /*
    ** Extensions
@@ -133,23 +137,23 @@ const nuxtConfig = {
     [
       '@nuxtjs/google-analytics',
       {
-        id: GA
-      }
-    ]
+        id: GA,
+      },
+    ],
   ],
   buildModules: [
-    '@nuxtjs/composition-api',
+    '@nuxtjs/composition-api/module',
     [
       '@nuxt/typescript-build',
       {
         typeCheck: true,
-        ignoreNotFoundWarnings: true
-      }
-    ]
+        ignoreNotFoundWarnings: true,
+      },
+    ],
   ],
   env: {
     SLACK_API_CODE,
-    GA
+    GA,
   },
   plugins: [],
   manifest: {
@@ -161,11 +165,11 @@ const nuxtConfig = {
     description:
       'My portfolio site. Photograph, Art direction, Web, Engineering, Creative.',
     'og:description':
-      'My portfolio site. Photograph, Art direction, Web, Engineering, Creative.'
+      'My portfolio site. Photograph, Art direction, Web, Engineering, Creative.',
   },
   workbox: {
-    dev: false
-  }
+    dev: false,
+  },
 }
 
 export default nuxtConfig
