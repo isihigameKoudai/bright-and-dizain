@@ -75,6 +75,29 @@ const nuxtConfig = {
      ** Run ESLint on save
      */
     extend(config: any, { isDev, isClient }) {
+      config.module.rules.push({
+        test: /\.svg$/,
+        loader: 'vue-svg-loader',
+      })
+
+      const tsLoader = {
+        loader: 'ts-loader',
+        options: {
+          appendTsSuffixTo: [/\.vue$/],
+          context: __dirname,
+          configFile: 'tsconfig.json',
+        },
+      }
+
+      for (let rule of config.module.rules) {
+        if (rule.loader === 'vue-loader') {
+          rule.options.loaders = {
+            ...rule.options.loaders,
+            ts: tsLoader,
+          }
+        }
+      }
+
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
@@ -94,11 +117,6 @@ const nuxtConfig = {
         return rule
       })
 
-      config.module.rules.push({
-        test: /\.svg$/,
-        loader: 'vue-svg-loader',
-      })
-
       const alias = config.resolve.alias
       config.resolve.alias = {
         ...alias,
@@ -106,30 +124,12 @@ const nuxtConfig = {
         utils: path.join(__dirname, srcDir + 'utils'),
         service: path.join(__dirname, srcDir + 'service'),
       }
-
-      const tsLoader = {
-        loader: 'ts-loader',
-        options: {
-          appendTsSuffixTo: [/\.vue$/],
-          context: __dirname,
-          configFile: 'tsconfig.json',
-        },
-      }
-
-      for (let rule of config.module.rules) {
-        if (rule.loader === 'vue-loader') {
-          rule.options.loaders = {
-            ...rule.options.loaders,
-            ts: tsLoader,
-          }
-        }
-      }
     },
   },
   /*
    ** Extensions
    */
-  extensions: ['ts', 'tsx', 'js', 'jsx'],
+  extensions: ['ts', 'tsx', 'js', 'jsx', 'vue'],
   modules: [
     ['@nuxtjs/pwa', { icon: false }],
     '@nuxtjs/axios',
