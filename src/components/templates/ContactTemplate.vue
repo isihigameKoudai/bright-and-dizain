@@ -78,7 +78,6 @@ import BaseTextBox from '@components/atoms/BaseTextBox'
 import BaseTextArea from '@components/atoms/BaseTextArea'
 import LabelNormal from '@components/atoms/LabelNormal'
 import LogoMedia from '@components/atoms/LogoMedia'
-import { log } from 'console'
 
 type State = {
   isFaildConnection: boolean
