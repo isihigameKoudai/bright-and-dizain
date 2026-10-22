@@ -45,8 +45,8 @@ netlify.toml                 # ビルド設定 / publish dir / functions / www�
 - Publish directory: `dist`
 - Functions directory: `netlify/functions`（`netlify.toml` に記載済み）
 
-## 注意点（現行サイトからの挙動を忠実に再現）
+## 注意点（現行サイトからの挙動）
 
-1. **plan ページの「各種料金」見出しが非表示** — 旧コードでは `appear-up` クラスが付いているのに reveal の IntersectionObserver が plan ページにだけ無く、`opacity:0` のまま表示されない状態でした。この挙動を忠実に再現しています（`site.js` は index/profile でのみ reveal を実行）。修正する場合は plan にも reveal を適用してください。
+1. **plan ページの「各種料金」見出しは修正済み** — 旧コードでは `appear-up` に reveal の IntersectionObserver が無く `opacity:0` のまま非表示でした。本プロジェクトでは plan にも reveal を適用し、他ページ同様フェードイン表示されるようにしています。
 2. **お問い合わせの Slack 送信をサーバーサイド化** — 旧実装はブラウザから Webhook URL を直接 POST しており URL が漏洩していました。今回は Netlify Function 経由に変更し、`SLACK_API_CODE` はサーバー内に留めています（見た目・送信内容は同一）。
 3. **ページ内文言は旧のまま** — 「Vue.js,Nuxt.jsなどを取り入れた」「skills: Vue.js / jQuery」等の記述は、見た目を変えない方針のため書き換えていません。必要なら別途コンテンツ更新してください。
