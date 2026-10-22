@@ -1,25 +1,26 @@
 // Netlify Function: お問い合わせを Slack incoming webhook に中継する。
 // SLACK_API_CODE はサーバーサイドでのみ参照し、ブラウザに公開しない。
-export default async function handler(event) {
-  if (event.httpMethod !== 'POST') {
-    return {
-      statusCode: 405,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ error: 'Method Not Allowed' }),
-    }
+//
+// Netlify Functions v2 (Web標準) API を使用: (Request) => Response
+
+const json = (status, obj) =>
+  new Response(JSON.stringify(obj), {
+    status,
+    headers: { 'Content-Type': 'application/json' },
+  })
+
+export default async function handler(req) {
+  if (req.method !== 'POST') {
+    return json(405, { error: 'Method Not Allowed' })
   }
 
   try {
     const { company = '', name = '', email = '', tel = '', message = '' } =
-      JSON.parse(event.body || '{}')
+      await req.json()
 
     const code = process.env.SLACK_API_CODE || ''
     if (!code) {
-      return {
-        statusCode: 500,
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ error: 'SLACK_API_CODE not configured' }),
-      }
+      return json(500, { error: 'SLACK_API_CODE not configured' })
     }
 
     const text = `会社・組織：${company}\n名前：${name}\nEメール：${email}\n電話番号：${tel}\nメッセージ：${message}\n`
@@ -31,23 +32,11 @@ export default async function handler(event) {
     })
 
     if (!slackRes.ok) {
-      return {
-        statusCode: 502,
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ error: `Slack returned ${slackRes.status}` }),
-      }
+      return json(502, { error: `Slack returned ${slackRes.status}` })
     }
 
-    return {
-      statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ok: true }),
-    }
+    return json(200, { ok: true })
   } catch (err) {
-    return {
-      statusCode: 400,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ error: String(err) }),
-    }
+    return json(400, { error: String(err) })
   }
 }
