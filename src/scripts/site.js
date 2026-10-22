@@ -140,7 +140,7 @@ if (document.body.dataset.reveal === 'true') {
       for (const key of Object.keys(inputs)) payload[key] = inputs[key].value
 
       try {
-        const res = await fetch('/netlify/functions/contact', {
+        const res = await fetch('/.netlify/functions/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
