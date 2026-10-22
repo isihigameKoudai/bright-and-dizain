@@ -1,54 +1,5 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "lib": [
-      "esnext",
-      "esnext.asynciterable",
-      "dom"
-    ],
-    "allowSyntheticDefaultImports": true,
-    "noImplicitAny": false,
-    "esModuleInterop": true,
-    "allowJs": true,
-    "sourceMap": true,
-    "strict": true,
-    "noEmit": true,
-    "rootDir": "./src/",
-    "baseUrl": "./src/",
-    "paths": {
-      "@*": [
-        "./*"
-      ],
-      "*": [
-        "*"
-      ]
-    },
-    "types": [
-      "@types/node",
-      "@types/webpack",
-      "@nuxt/types@0.7.9+",
-      "@types/jest",
-      "./src/types/"
-    ]
-  },
-  "files": [
-    "src/types/vue/index.d.ts",
-    "src/types/vuex/index.d.ts",
-    "src/types/window/index.d.ts"
-  ],
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.vue",
-    "src/**/*.spec.ts",
-    "src/**/*.spec.tsx",
-    "src/**/*.test.ts",
-    "src/**/*.test.tsx"
-  ],
-  "exclude": [
-    "node_modules",
-    "src/**/*story.ts",
-    "src/**/*story.tsx"
-  ]
+  "extends": "astro/tsconfigs/strict",
+  "include": [".astro/types.d.ts", "src/**/*"],
+  "exclude": ["dist"]
 }

@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# ルートドメイン -> www へのリダイレクト（現行 Netlify 設定と同じ挙動）
+[[redirects]]
+  from = "https://brightanddizain.com/*"
+  to = "https://www.brightanddizain.com/:splat"
+  status = 301
+
+# SPAフォールバック不要（純粋な静的サイト）だが、存在しないパスは404へ

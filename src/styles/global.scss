@@ -1,0 +1,931 @@
+/* ==========================================================================
+   Bright&dizain — global styles (ported verbatim from Nuxt2 sources)
+   All rules are global (unscoped) to guarantee pixel-identical rendering.
+   ========================================================================== */
+
+/* ---------- reset.scss ---------- */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+/* ---------- style.scss ---------- */
+html {
+  font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.wrapper {
+  width: 970px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (max-width: 768px) {
+    width: 100vw;
+  }
+}
+
+.position-fixed {
+  position: fixed;
+}
+
+.fixed-humburegr {
+  top: 20px;
+  right: 40px;
+}
+
+.fixed-content {
+  top: 0;
+}
+
+.position-title {
+  margin-top: 60px;
+  text-align: center;
+}
+
+/* ---------- util.scss ---------- */
+.fz-24 { font-size: 24px; }
+
+.mt10 { margin-top: 10px; }
+.mt20 { margin-top: 20px; }
+.mt30 { margin-top: 30px; }
+.mt40 { margin-top: 40px; }
+.mt50 { margin-top: 50px; }
+.mt60 { margin-top: 60px; }
+.mt70 { margin-top: 70px; }
+.mt80 { margin-top: 80px; }
+.mt90 { margin-top: 90px; }
+.mt100 { margin-top: 100px; }
+
+.mb100 { margin-bottom: 100px; }
+.pb100 { padding-bottom: 100px; }
+
+.taC { text-align: center; }
+.taR { text-align: right; }
+.taL { text-align: left; }
+
+.sp-dn {
+  @media screen and (max-width: 768px) {
+    display: none !important;
+  }
+}
+
+.pc-dn {
+  @media screen and (min-width: 769px) {
+    display: none !important;
+  }
+}
+
+/* ---------- animation.scss ---------- */
+.appear {
+  opacity: 0;
+  &.on {
+    animation: show 1.5s both;
+  }
+}
+
+@keyframes show {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.appear-up {
+  opacity: 0;
+  &.on {
+    animation: showup 1.5s both;
+  }
+}
+
+@keyframes showup {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% { opacity: 1; }
+}
+
+/* ---------- BaseButton ---------- */
+.btn {
+  position: relative;
+  min-width: 185px;
+  padding: 0 30px;
+  height: 44px;
+  border-radius: 3px;
+  letter-spacing: 2px;
+  font-size: 17px;
+  font-weight: bold;
+  font-family: 'ヒラギノ明朝 ProN W3', 'HiraMinProN-W3', 'HG明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', 'MS 明朝', serif;
+  outline: 0;
+  color: #fff;
+  background-color: #070b10;
+  border: solid 4px #070b10;
+  transition: 0.2s all ease;
+  filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.2));
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 14px;
+    right: 10px;
+    width: 12px;
+    height: 2px;
+    background-color: #fff;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    bottom: 12px;
+    right: 10px;
+    width: 12px;
+    height: 2px;
+    background-color: #fff;
+    transform: rotate(-45deg);
+  }
+
+  &:hover {
+    background-color: #fff;
+    color: #070b10;
+    filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.6));
+
+    &::before { background-color: #070b10; }
+    &::after { background-color: #070b10; }
+  }
+
+  &.disable {
+    background: #c1c1c1;
+    color: #777;
+    border: solid 4px #777;
+    filter: none;
+
+    &::before { background-color: #777; }
+    &::after { background-color: #777; }
+  }
+}
+
+/* ---------- BaseTextBox ---------- */
+.text-box {
+  position: relative;
+  width: 380px;
+  padding: 7px 15px;
+  border: none;
+  background-color: #fff;
+  font-size: 18px;
+  filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.2));
+  outline: 0;
+  box-sizing: border-box;
+  color: #402c2c;
+  font-family: 'HG明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', 'MS 明朝', serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 39.6px;
+  letter-spacing: 1px;
+  -webkit-appearance: none;
+
+  &::-webkit-input-placeholder { color: #c3bfbf; }
+
+  &.is-error { border: solid 1px #f51f1f; }
+
+  @media screen and (max-width: 768px) {
+    width: calc(100% - 100px);
+  }
+}
+
+/* ---------- BaseTextArea ---------- */
+.text-area {
+  width: 380px;
+  height: 300px;
+  padding: 10px 15px;
+  border: none;
+  background-color: #fff;
+  font-size: 18px;
+  line-height: 1.2;
+  filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.2));
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+  outline: 0;
+  resize: none;
+  color: #402c2c;
+  font-family: 'HG明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', 'MS 明朝', serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  letter-spacing: 1px;
+  -webkit-appearance: none;
+
+  &.is-error { border: solid 1px #f51f1f; }
+
+  &::-webkit-input-placeholder { color: #c3bfbf; }
+
+  @media screen and (max-width: 768px) {
+    width: calc(100% - 100px);
+  }
+}
+
+/* ---------- ImageBox ---------- */
+.image-box {
+  width: 480px;
+  height: 320px;
+  object-fit: cover;
+}
+
+.image-box.small {
+  width: 320px;
+  height: 240px;
+}
+
+@media screen and (max-width: 768px) {
+  .image-box,
+  .image-box.small {
+    width: 100vw;
+    height: auto;
+  }
+}
+
+.is-shadow {
+  filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* ---------- ImageBoxThumbnail ---------- */
+.image {
+  width: 300px;
+  height: 300px;
+  border: none;
+  background: none;
+  overflow: hidden;
+  object-fit: cover;
+  transition: 0.2s all ease;
+
+  @media screen and (min-width: 769px) {
+    &:hover {
+      filter: drop-shadow(3px 3px 4px #909090f0);
+      transform: translate(-1px, -1px);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 33vw;
+    height: 33vw;
+  }
+}
+
+/* ---------- ImageCircle ---------- */
+.img-circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+.img-circle > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+/* ---------- LabelNormal ---------- */
+.label-normal {
+  position: relative;
+  font-size: 16px;
+  color: #402c2c;
+  font-family: 'HG明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', 'MS 明朝', serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 36.6px;
+  letter-spacing: 2.5px;
+}
+
+/* ---------- LabelPageTop ---------- */
+.label-top {
+  position: relative;
+  width: auto;
+  text-align: center;
+  height: 60px;
+
+  &::after {
+    position: relative;
+    content: '';
+    display: block;
+    bottom: 0px;
+    width: 50px;
+    height: 3px;
+    top: 18px;
+    background: #402c2c;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .label-top-title {
+    position: relative;
+    font-size: 36px;
+    color: #402c2c;
+    font-family: Cambria, Georgia, serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 39.6px;
+    letter-spacing: 2px;
+  }
+}
+
+/* ---------- LabelSection ---------- */
+.label-section {
+  position: relative;
+  font-size: 29px;
+  color: #402c2c;
+  font-family: Cambria, Georgia, serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 39.6px;
+  letter-spacing: 1px;
+}
+
+/* ---------- LogoMedia ---------- */
+.img-logo {
+  height: 60px;
+  transition: 0.2s all ease;
+  &:hover {
+    filter: brightness(110%) drop-shadow(3px 3px 4px #909090f0);
+  }
+}
+
+/* ---------- TheHamburger ---------- */
+.btn-hamburger {
+  position: fixed;
+  display: block;
+  width: 56px;
+  height: 56px;
+  background: transparent;
+  z-index: 110;
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.3));
+  }
+
+  > div {
+    position: absolute;
+    width: 56px;
+    height: 3px;
+    transition: all 0.2s;
+    background-color: #000;
+
+    &:first-child {
+      top: 15px;
+      left: 0;
+    }
+
+    &:last-child {
+      bottom: 15px;
+      left: 0;
+    }
+  }
+
+  &.is-active > div {
+    background-color: #ffffff;
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.3));
+
+    &:first-child {
+      -webkit-transform: translateY(11px) rotate(45deg);
+      transform: translateY(11px) rotate(45deg);
+    }
+
+    &:last-child {
+      -webkit-transform: translateY(-10px) rotate(-45deg);
+      transform: translateY(-10px) rotate(-45deg);
+    }
+  }
+}
+
+/* ---------- TitleParallax ---------- */
+.box-parallax {
+  position: relative;
+  width: 100vw;
+  height: 300px;
+  background: none;
+  overflow: hidden;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: brightness(90%) opacity(80%);
+
+  @media screen and (max-width: 768px) {
+    height: 100vh;
+    background-size: auto 100vh;
+    background-attachment: scroll;
+  }
+}
+
+.title-text {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.8);
+  font-size: 68px;
+  font-family: Cambria, Georgia, serif;
+  font-style: normal;
+  font-variant: normal;
+}
+
+/* ---------- TheModal ---------- */
+.modal-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(#1d1d24, 0.9);
+}
+
+.modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* ---------- TheModalMenu ---------- */
+.list-menu {
+  position: relative;
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.9));
+  text-align: center;
+  opacity: 1;
+  font-size: 40px;
+  font-family: Cambria, Georgia, serif;
+  letter-spacing: 2px;
+  list-style: none;
+  background: transparent;
+
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &:not(:first-child) {
+    margin-top: 30px;
+  }
+
+  @media screen and (min-width: 769px) {
+    &:after,
+    &::before {
+      position: absolute;
+      content: '';
+      display: block;
+      top: 55px;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: all 0.3s ease;
+    }
+
+    &::before { left: 50%; }
+    &::after { right: 50%; }
+
+    &:hover:after,
+    &:hover:before {
+      width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &:active:after,
+    &:active:before {
+      width: 50%;
+    }
+  }
+}
+
+/* ---------- TheModalImage ---------- */
+.modal-image {
+  max-width: calc(100vw - 200px);
+  max-height: calc(100vh - 100px);
+
+  @media screen and (max-width: 768px) {
+    max-width: calc(100vw - 50px);
+  }
+}
+
+/* ---------- TheModalCompleteEmail ---------- */
+.complete-wrapper {
+  width: 760px;
+  height: 400px;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  border: 4px solid #111415;
+  background-color: #fff;
+  border-radius: 4px;
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+    width: calc(100vw - 100px);
+  }
+}
+
+/* ---------- IndexTemplate ---------- */
+.top-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.title-position {
+  position: absolute;
+  top: 50%;
+  left: 10vw;
+  transform: translate3d(0, -50%, 0);
+  filter: drop-shadow(4px 4px 4px #888);
+}
+
+.main-visual {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  filter: brightness(97%);
+}
+
+.arrow {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border: solid 2px #fff;
+  transition-duration: 0.1s;
+  filter: drop-shadow(2px 2px 2px #402c2caa);
+
+  & > div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+
+    & > span {
+      position: absolute;
+      height: 2px;
+      background-color: #fff;
+      transition-duration: 0.1s;
+
+      &:first-child {
+        bottom: 15px;
+        left: 38%;
+        width: 15px;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+      &:nth-child(2) {
+        top: 50%;
+        left: 50%;
+        width: 25px;
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+      &:last-child {
+        bottom: 15px;
+        right: 2%;
+        width: 16px;
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+  &:hover {
+    filter: drop-shadow(3px 3px 2px #402c2caa);
+    & > div > span {
+      filter: drop-shadow(3px 3px 2px #402c2caa);
+    }
+  }
+}
+
+.area-content-works {
+  width: 480px;
+  height: auto;
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+    width: 100vw;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .area-content > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .area-content.vertical-top > * {
+    vertical-align: top;
+  }
+}
+
+.area-content .sp-space {
+  @media screen and (max-width: 768px) {
+    margin-top: 90px;
+  }
+}
+
+/* ---------- PortfolioTemplate ---------- */
+.flex-con {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.flex-con > * {
+  margin-top: 30px;
+  @media screen and (max-width: 768px) {
+    margin-top: 3px;
+  }
+
+  @media screen and (max-width: 640px) {
+    margin-top: 2px;
+  }
+}
+
+/* ---------- PlanTemplate ---------- */
+.logo-wrapper {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-around;
+
+  @media screen and (max-width: 400px) {
+    width: 100%;
+  }
+}
+
+.container {
+  width: 768px;
+  height: auto;
+  margin: 0 auto;
+  @media screen and (max-width: 768px) {
+    width: 90%;
+  }
+}
+
+.table-container {
+  display: grid;
+  grid-template-rows: 60px auto;
+  grid-template-columns: 20% 20% 1fr;
+  border: 1px solid #ccc;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 30% 30% 40%;
+  }
+
+  .row {
+    padding: 15px;
+    box-sizing: border-box;
+    line-height: 1.6;
+    letter-spacing: 2px;
+    border: 1px solid #ccc;
+
+    &.title {
+      display: grid;
+      align-items: center;
+      word-break: break-all;
+    }
+  }
+}
+
+.label-nomal {
+  font-size: 16px;
+  color: #402c2c;
+  font-family: 'HG明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho', 'MS 明朝', serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 2.5px;
+}
+
+/* ---------- ProfileTemplate ---------- */
+.link-nomal {
+  position: relative;
+  text-decoration: none;
+  color: #402c2c;
+  transition: filter 0.2s;
+  filter: drop-shadow(1px 1px 1px #808080f0);
+  &:hover {
+    filter: drop-shadow(3px 3px 2px #808080f0);
+  }
+
+  &:not(:first-child) {
+    margin-left: 10px;
+    padding-left: 17px;
+
+    &::before {
+      content: '/';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(0, -50%);
+    }
+  }
+}
+
+.area-profile-left,
+.area-profile-right {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.area-profile-left {
+  width: 40%;
+  height: auto;
+  text-align: center;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.area-profile-right {
+  width: 58%;
+  height: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+.position-img-profile {
+  display: inline-block;
+}
+
+.logo-wrapper.wide {
+  width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+/* ---------- ContactTemplate ---------- */
+.wrap-text-box {
+  display: block;
+  margin: 30px auto 0;
+}
+
+/* ---------- error.vue (404) ---------- */
+#error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.error-container {
+  width: 80%;
+}
+
+.error-code {
+  font-size: 100px;
+  text-align: center;
+  letter-spacing: 2.5px;
+}
+
+.link {
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #070b10;
+  transition-duration: 0.2s;
+  &:hover {
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.3));
+  }
+}

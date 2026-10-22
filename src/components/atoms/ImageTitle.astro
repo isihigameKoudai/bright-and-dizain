@@ -1,0 +1,11 @@
+---
+interface Props {
+  isDark?: boolean
+  class?: string
+}
+const { isDark = false, class: className = '' } = Astro.props
+const darkImage = '/svg/title_black.svg'
+const whiteImage = '/svg/title_white.svg'
+const imagePath = isDark ? darkImage : whiteImage
+---
+<img src={imagePath} alt="" width="200px" class:list={[className]} />

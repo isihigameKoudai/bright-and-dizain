@@ -1,0 +1,10 @@
+---
+interface Props {
+  fontSize?: number
+  class?: string
+}
+const { fontSize = 16, class: className = '' } = Astro.props
+---
+<p class:list={['label-normal', className]} style={`font-size:${fontSize}px`}>
+  <slot />
+</p>

@@ -1,0 +1,18 @@
+---
+interface Props {
+  path?: string
+  lrg?: string
+  alt?: string
+}
+const { path = '/img/NonThumbnail.png', lrg = '', alt = 'image' } = Astro.props
+---
+<figure>
+  <img
+    src={path}
+    alt={alt}
+    loading="lazy"
+    decoding="async"
+    class="image"
+    data-lrg={lrg}
+  />
+</figure>

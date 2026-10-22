@@ -1,0 +1,13 @@
+---
+import LabelPageTop from './atoms/LabelPageTop.astro'
+
+interface Props {
+  title?: string
+  id?: string
+}
+const { title = 'None', id } = Astro.props
+---
+<article class="pb100" id={id}>
+  <LabelPageTop title={title} class="position-title" />
+  <slot />
+</article>

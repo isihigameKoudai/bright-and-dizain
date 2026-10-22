@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro'
+import TheDefaultView from '../components/TheDefaultView.astro'
+import BaseButton from '../components/atoms/BaseButton.astro'
+import BaseTextBox from '../components/atoms/BaseTextBox.astro'
+import BaseTextArea from '../components/atoms/BaseTextArea.astro'
+import LabelNormal from '../components/atoms/LabelNormal.astro'
+import LogoMedia from '../components/atoms/LogoMedia.astro'
+
+const socials = [
+  { imagePath: '/svg/LogoFacebook.svg', link: 'https://www.facebook.com/koudai.ishigame' },
+  { imagePath: '/img/LogoTwitter.png', link: 'https://twitter.com/TVK382' },
+  { imagePath: '/img/LogoInstagram.png', link: 'https://www.instagram.com/koudai_ishigame/?hl=ja' },
+]
+---
+
+<Layout>
+  <TheDefaultView title="Contact">
+    <section class="position-title mt100">
+      <BaseTextBox
+        placeHolder="Company"
+        isInvalid
+        value=""
+        id="contact-company"
+        class="wrap-text-box"
+      />
+      <BaseTextBox
+        placeHolder="Name"
+        isInvalid
+        value=""
+        id="contact-name"
+        class="wrap-text-box"
+      />
+      <BaseTextBox
+        placeHolder="E-mail(example@email.com)"
+        isInvalid
+        value=""
+        id="contact-email"
+        class="wrap-text-box"
+      />
+      <BaseTextBox
+        placeHolder="Tel"
+        isInvalid
+        value=""
+        id="contact-tel"
+        class="wrap-text-box"
+      />
+      <BaseTextArea
+        placeHolder="Message"
+        isInvalid
+        id="contact-message"
+        class="wrap-text-box"
+      />
+      <BaseButton
+        title="Send"
+        isDisable
+        id="contact-submit"
+        class="mt70"
+      />
+      <p class="label-normal mt20" id="contact-error" style="display:none;font-size:16px">
+        送信失敗しました、時間を空けてお試しください。
+      </p>
+    </section>
+    <section class="position-title">
+      <div class="logo-wrapper mt70">
+        {socials.map((social) => (
+          <LogoMedia path={social.imagePath} link={social.link} />
+        ))}
+      </div>
+      <LabelNormal class="mt40">
+        SNSのDM（ダイレクトメッセージ）<br class="pc-dn" />
+        からもご連絡可能です。
+      </LabelNormal>
+    </section>
+  </TheDefaultView>
+</Layout>

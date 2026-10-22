@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro'
+import TheDefaultView from '../components/TheDefaultView.astro'
+import ImageBoxThumbnail from '../components/atoms/ImageBoxThumbnail.astro'
+import LabelNormal from '../components/atoms/LabelNormal.astro'
+import { portfolio } from '../data/portfolio'
+---
+
+<Layout>
+  <TheDefaultView title="Portfolio">
+    <LabelNormal fontSize={32} class="position-title mt80">
+      Creative
+    </LabelNormal>
+    <div class="wrapper flex-con mt30">
+      {portfolio.creative.map((image) => (
+        <ImageBoxThumbnail path={image.url} lrg={image.lrg} />
+      ))}
+    </div>
+    <LabelNormal fontSize={32} class="position-title mt80">
+      Portrait
+    </LabelNormal>
+    <div class="wrapper flex-con mt30">
+      {portfolio.portrait.map((image) => (
+        <ImageBoxThumbnail path={image.url} lrg={image.lrg} />
+      ))}
+    </div>
+    <LabelNormal fontSize={32} class="position-title mt80">
+      Landscape
+    </LabelNormal>
+    <div class="wrapper flex-con mt30">
+      {portfolio.landscape.map((image) => (
+        <ImageBoxThumbnail path={image.url} lrg={image.lrg} />
+      ))}
+    </div>
+  </TheDefaultView>
+</Layout>

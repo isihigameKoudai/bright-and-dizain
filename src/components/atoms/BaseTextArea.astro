@@ -1,0 +1,15 @@
+---
+interface Props {
+  placeHolder?: string
+  isInvalid?: boolean
+  id?: string
+  class?: string
+}
+const { placeHolder = '', isInvalid = false, id, class: className = '' } = Astro.props
+---
+<textarea
+  class:list={['text-area', { 'is-error': isInvalid }, className]}
+  placeholder={placeHolder}
+  rows="5"
+  id={id}
+></textarea>
