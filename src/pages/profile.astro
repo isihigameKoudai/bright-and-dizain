@@ -6,6 +6,8 @@ import LabelNormal from '../components/atoms/LabelNormal.astro'
 import LabelSection from '../components/atoms/LabelSection.astro'
 import LogoMedia from '../components/atoms/LogoMedia.astro'
 
+import profileImage from '../assets/img/ProfileImage.jpg'
+
 const socials = [
   { path: '/svg/LogoFacebook.svg', link: 'https://www.facebook.com/koudai.ishigame' },
   { path: '/img/LogoTwitter.png', link: 'https://twitter.com/TVK382' },
@@ -32,7 +34,7 @@ const medias = [
   <TheDefaultView title="Profile">
     <section class="wrapper mt90">
       <div class="area-profile-left appear">
-        <ImageCircle class="position-img-profile" path="/img/ProfileImage.jpg" />
+        <ImageCircle class="position-img-profile" src={profileImage} />
         <LabelSection class="mt40"> Koudai Ishigame </LabelSection>
       </div>
       <div class="area-profile-right">

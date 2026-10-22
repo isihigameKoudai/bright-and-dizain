@@ -2,6 +2,9 @@
 import '../styles/global.scss'
 
 const ga = import.meta.env.PUBLIC_GA || process.env.GA || ''
+const gaInline = ga
+  ? `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${ga}');`
+  : ''
 const title = 'Bright&dezain'
 const description =
   'My portfolio site. Photograph, Art direction, Web, Engineering, Creative.'
@@ -35,7 +38,6 @@ const { reveal = false } = Astro.props
     <link rel="apple-touch-icon" sizes="200x200" href="/icon.jpg" />
     <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.brightanddizain.com/" />
-    <link rel="preload" as="image" href="/img/top/mainImage01.jpg" />
     <link rel="manifest" href="/manifest.webmanifest" />
     {
       ga && (
@@ -45,9 +47,7 @@ const { reveal = false } = Astro.props
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${ga}`}
           ></script>
-          <script is:inline>
-            {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${ga}');`}
-          </script>
+          <script is:inline set:html={gaInline}></script>
         </>
       )
     }

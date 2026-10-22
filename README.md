@@ -32,10 +32,10 @@ netlify.toml                 # ビルド設定 / publish dir / functions / www�
 
 ## 環境変数（Netlify で設定）
 
-| 変数 | 用途 | 備考 |
-|---|---|---|
-| `SLACK_API_CODE` | お問い合わせ送信先 Slack Webhook | 既存の設定がそのまま使える（functions が実行時に参照） |
-| `GA` または `PUBLIC_GA` | Google Analytics 測定ID | 設定時のみ gtag スニペットを注入 |
+| 変数                    | 用途                             | 備考                                                   |
+| ----------------------- | -------------------------------- | ------------------------------------------------------ |
+| `SLACK_API_CODE`        | お問い合わせ送信先 Slack Webhook | 既存の設定がそのまま使える（functions が実行時に参照） |
+| `GA` または `PUBLIC_GA` | Google Analytics 測定ID          | 設定時のみ gtag スニペットを注入                       |
 
 ## デプロイ（Netlify・同一ドメイン引継ぎ）
 
