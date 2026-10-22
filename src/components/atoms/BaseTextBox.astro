@@ -1,0 +1,23 @@
+---
+interface Props {
+  placeHolder?: string
+  isInvalid?: boolean
+  value?: string
+  id?: string
+  class?: string
+}
+const {
+  placeHolder = '',
+  isInvalid = false,
+  value = '',
+  id,
+  class: className = '',
+} = Astro.props
+---
+<input
+  class:list={['text-box', { 'is-error': isInvalid }, className]}
+  type="text"
+  placeholder={placeHolder}
+  value={value}
+  id={id}
+/>

@@ -1,0 +1,15 @@
+---
+interface Props {
+  title?: string
+  isDisable?: boolean
+  id?: string
+  class?: string
+}
+const { title = '', isDisable = false, id, class: className = '' } = Astro.props
+---
+<button
+  class:list={['btn', { disable: isDisable }, className]}
+  disabled={isDisable}
+  id={id}
+  type="button"
+>{title}</button>

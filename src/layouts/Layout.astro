@@ -1,0 +1,89 @@
+---
+import '../styles/global.scss'
+
+const ga = import.meta.env.PUBLIC_GA || process.env.GA || ''
+const title = 'Bright&dezain'
+const description =
+  'My portfolio site. Photograph, Art direction, Web, Engineering, Creative.'
+const ogImage = '/card.jpg'
+const ogUrl = 'https://www.brightanddizain.com/'
+
+interface Props {
+  reveal?: boolean
+}
+const { reveal = false } = Astro.props
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content="Bright&dizain" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content="bnd images" />
+    <meta property="og:url" content={ogUrl} />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bright&dizain" />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="200x200" href="/icon.jpg" />
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.brightanddizain.com/" />
+    <link rel="preload" as="image" href="/img/top/mainImage01.jpg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    {
+      ga && (
+        <>
+          <script
+            is:inline
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${ga}`}
+          ></script>
+          <script is:inline>
+            {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${ga}');`}
+          </script>
+        </>
+      )
+    }
+  </head>
+  <body data-reveal={reveal ? 'true' : undefined}>
+    <div class="btn-hamburger fixed-humburegr" id="btn-hamburger">
+      <div></div>
+      <div></div>
+    </div>
+    <slot />
+    <div class="the-modal positiond-fixed fixed-content" id="the-modal" style="display:none">
+      <div class="modal-wrap" id="modal-wrap"></div>
+      <div class="modal-content" id="modal-menu">
+        <ul>
+          <li class="list-menu"><a href="/">Top</a></li>
+          <li class="list-menu"><a href="/profile/">Profile</a></li>
+          <li class="list-menu"><a href="/portfolio/">Portfolio</a></li>
+          <li class="list-menu"><a href="/plan/">Plan</a></li>
+          <li class="list-menu"><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <img
+        class="modal-image modal-content"
+        id="modal-image"
+        alt="modal-img"
+        loading="lazy"
+        decoding="async"
+        style="display:none"
+      />
+      <div class="complete-wrapper modal-content" id="modal-complete" style="display:none">
+        <h2 class="label-section mt100">お問い合わせが完了しました。</h2>
+        <a href="/"><button class="btn mt100" type="button">Topへ</button></a>
+      </div>
+    </div>
+    <script>
+      import '../scripts/site.js'
+    </script>
+  </body>
+</html>

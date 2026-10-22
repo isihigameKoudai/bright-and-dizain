@@ -1,0 +1,14 @@
+---
+interface Props {
+  path?: string
+  title?: string
+  class?: string
+}
+const { path = '', title = '', class: className = '' } = Astro.props
+---
+<div
+  class:list={['box-parallax', 'jsc-parallax', className]}
+  style={`background-image:url(${path})`}
+>
+  <p class="title-text">{title}</p>
+</div>

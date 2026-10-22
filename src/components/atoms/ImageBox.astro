@@ -1,0 +1,14 @@
+---
+interface Props {
+  path?: string
+  shadow?: boolean
+  isSmall?: boolean
+  class?: string
+}
+const { path = '', shadow = false, isSmall = false, class: className = '' } = Astro.props
+---
+<img
+  src={path}
+  alt=""
+  class:list={['image-box', { 'is-shadow': shadow, small: isSmall }, className]}
+/>

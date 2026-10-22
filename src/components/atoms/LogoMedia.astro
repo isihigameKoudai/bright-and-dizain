@@ -1,0 +1,10 @@
+---
+interface Props {
+  path?: string
+  link?: string
+}
+const { path = '', link = '' } = Astro.props
+---
+<a href={link} target="_blank" rel="noopener">
+  <img src={path} class="img-logo" alt="" />
+</a>

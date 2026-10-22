@@ -1,0 +1,13 @@
+{
+  "name": "BrightAndDizain",
+  "short_name": "Bright&dizain",
+  "description": "My portfolio site. Photograph, Art direction, Web, Engineering, Creative.",
+  "icons": [],
+  "start_url": "/?standalone=true",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "lang": "ja",
+  "title": "Bright&dizain",
+  "og:title": "Bright&dizain",
+  "og:description": "My portfolio site. Photograph, Art direction, Web, Engineering, Creative."
+}
