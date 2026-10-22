@@ -5,14 +5,19 @@ Nuxt.js 2 + Netlify（SSR）で運用していた bright &dizain のサイトを
 - フレームワーク: [Astro](https://astro.build)（静的出力 `output: 'static'`）
 - ホスティング: Netlify（既存サイトを流用 → ドメイン `www.brightanddizain.com` はそのまま）
 - クライアントJS: バニラ（Vue/Vuex/jQuery を撤去）
+- 画像最適化: `astro:assets`（sharp）で WebP/AVIF + srcset を生成、パララックス背景は遅延ロード
+- パッケージマネージャー: pnpm / lint: oxlint / format: oxfmt
 
 ## コマンド
 
 ```bash
-npm install
-npm run dev        # 開発サーバー (localhost:4321)
-npm run build      # SSG ビルド → dist/
-npm run preview    # ビルド結果のプレビュー
+pnpm install
+pnpm dev          # 開発サーバー (localhost:4321)
+pnpm build        # SSG ビルド → dist/（画像最適化込み）
+pnpm preview      # ビルド結果のプレビュー
+pnpm lint         # oxlint
+pnpm format       # oxfmt（整形）
+pnpm format:check # oxfmt（整形チェック）
 ```
 
 ## 構成
