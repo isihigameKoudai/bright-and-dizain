@@ -1,20 +1,28 @@
 {
   "name": "bright-and-dizain",
   "version": "2.0.0",
+  "private": true,
   "description": "Bright&dizain creative studio web site (Astro SSG)",
   "author": "koudaiishigame <koudaiishigame@gmail.com>",
-  "private": true,
   "type": "module",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check"
   },
   "dependencies": {
-    "astro": "^5.7.0"
+    "astro": "^5.7.0",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
+    "oxfmt": "^0.74.0",
+    "oxlint": "^1.89.0",
     "sass": "^1.83.0"
-  }
+  },
+  "packageManager": "pnpm@12.14.0"
 }

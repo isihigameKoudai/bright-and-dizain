@@ -1,4 +1,5 @@
 ---
+import { Picture } from 'astro:assets'
 import Layout from '../layouts/Layout.astro'
 import TheDefaultView from '../components/TheDefaultView.astro'
 import BaseButton from '../components/atoms/BaseButton.astro'
@@ -7,11 +8,30 @@ import ImageTitle from '../components/atoms/ImageTitle.astro'
 import LabelNormal from '../components/atoms/LabelNormal.astro'
 import LabelSection from '../components/atoms/LabelSection.astro'
 import TitleParallax from '../components/atoms/TitleParallax.astro'
+
+import mainImage01 from '../assets/img/mainImage01.jpg'
+import titlePhotograph from '../assets/img/TitlePhotograph.jpg'
+import titleWebDevelop from '../assets/img/TitleWebDevelop.jpg'
+import worksCreative from '../assets/img/worksCreative.jpg'
+import worksPortrait from '../assets/img/worksPortrait.jpg'
+import worksMediaReport from '../assets/img/worksMediaReport.jpg'
+import webCoding from '../assets/img/webCoding.jpg'
+import webApp from '../assets/img/webApp.jpg'
 ---
 
 <Layout reveal>
   <div class="top-container">
-    <img alt="creative" src="/img/top/mainImage01.jpg" class="main-visual appear" />
+    <Picture
+      src={mainImage01}
+      formats={['avif', 'webp']}
+      widths={[640, 750, 828, 1080, 1280, 1600, 1920]}
+      sizes="100vw"
+      alt="creative"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+      class="main-visual appear"
+    />
     <ImageTitle class="title-position appear" />
     <div class="arrow">
       <div>
@@ -49,7 +69,7 @@ import TitleParallax from '../components/atoms/TitleParallax.astro'
       </LabelNormal>
     </div>
     <!-- Photograph Works -->
-    <TitleParallax class="mt90" path="/img/TitlePhotograph.jpg" title="Photograph" />
+    <TitleParallax class="mt90" src={titlePhotograph} title="Photograph" />
     <section class="wrapper area-content mt90">
       <div class="area-content-works">
         <LabelSection class="appear-up"> Creative </LabelSection>
@@ -65,11 +85,11 @@ import TitleParallax from '../components/atoms/TitleParallax.astro'
           世界観を作り出します。
         </LabelNormal>
       </div>
-      <ImageBox shadow class="sp-space appear" path="/img/worksCreative.jpg" />
+      <ImageBox shadow class="sp-space appear" src={worksCreative} />
     </section>
 
     <section class="wrapper area-content mt90">
-      <ImageBox shadow class="sp-dn appear" path="/img/worksPortrait.jpg" />
+      <ImageBox shadow class="sp-dn appear" src={worksPortrait} />
       <div class="area-content-works">
         <LabelSection class="appear-up"> Portrait </LabelSection>
         <LabelNormal class="mt20 appear-up">
@@ -85,7 +105,7 @@ import TitleParallax from '../components/atoms/TitleParallax.astro'
           色褪せない思い出にしていきます。
         </LabelNormal>
       </div>
-      <ImageBox shadow class="pc-dn sp-space appear" path="/img/worksPortrait.jpg" />
+      <ImageBox shadow class="pc-dn sp-space appear" src={worksPortrait} />
     </section>
 
     <section class="wrapper area-content mt90">
@@ -104,7 +124,7 @@ import TitleParallax from '../components/atoms/TitleParallax.astro'
           今、伝えて行きましょう
         </LabelNormal>
       </div>
-      <ImageBox shadow class="sp-space appear" path="/img/worksMediaReport.jpg" />
+      <ImageBox shadow class="sp-space appear" src={worksMediaReport} />
     </section>
 
     <section class="wrapper mt100 taC">
@@ -115,29 +135,29 @@ import TitleParallax from '../components/atoms/TitleParallax.astro'
     </section>
 
     <!-- Web Works -->
-    <TitleParallax class="mt90" path="/img/TitleWebDevelop.jpg" title="Web Works" />
+    <TitleParallax class="mt90" src={titleWebDevelop} title="Web Works" />
     <section class="wrapper area-content vertical-top">
       <div class="area-content-works mt90">
         <LabelSection class="appear-up"> HTML/CSS Coding </LabelSection>
-        <ImageBox isSmall class="mt30 sp-dn appear" path="/img/webCoding.jpg" />
+        <ImageBox isSmall class="mt30 sp-dn appear" src={webCoding} />
         <LabelNormal class="mt20 appear-up">
           各種サービス、Webサイト、<br />
           HP、Webアプリにおける<br />
           小〜中規模なHTML/CSSの<br />
           コーディングをいたします。
         </LabelNormal>
-        <ImageBox isSmall class="mt30 pc-dn sp-space appear" path="/img/webCoding.jpg" />
+        <ImageBox isSmall class="mt30 pc-dn sp-space appear" src={webCoding} />
       </div>
       <div class="area-content-works mt90">
         <LabelSection class="appear-up"> WebApp Develop </LabelSection>
-        <ImageBox isSmall class="mt30 sp-dn appear" path="/img/webApp.jpg" />
+        <ImageBox isSmall class="mt30 sp-dn appear" src={webApp} />
         <LabelNormal class="mt20 appear-up">
           Web上で動くアプリやサイトの<br />
           フロントエンド開発を行います。<br />
           Vue.js,Nuxt.jsなどを取り入れた<br />
           モダンな開発で進めて行きます。
         </LabelNormal>
-        <ImageBox isSmall class="mt30 pc-dn sp-space appear" path="/img/webApp.jpg" />
+        <ImageBox isSmall class="mt30 pc-dn sp-space appear" src={webApp} />
       </div>
     </section>
     <section class="wrapper mt100 taC">

@@ -1,14 +1,16 @@
 ---
+import { getImage } from 'astro:assets'
+import type { ImageMetadata } from 'astro'
+
 interface Props {
-  path?: string
+  src: ImageMetadata
   title?: string
   class?: string
 }
-const { path = '', title = '', class: className = '' } = Astro.props
+const { src, title = '', class: className = '' } = Astro.props
+const bg = await getImage({ src, format: 'webp', width: 1920 })
 ---
-<div
-  class:list={['box-parallax', 'jsc-parallax', className]}
-  style={`background-image:url(${path})`}
->
+
+<div class:list={['box-parallax', 'jsc-parallax', className]} data-bg={bg.src}>
   <p class="title-text">{title}</p>
 </div>

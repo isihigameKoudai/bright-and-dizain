@@ -13,7 +13,7 @@ import { portfolio } from '../data/portfolio'
     </LabelNormal>
     <div class="wrapper flex-con mt30">
       {portfolio.creative.map((image) => (
-        <ImageBoxThumbnail path={image.url} lrg={image.lrg} />
+        <ImageBoxThumbnail src={image.url} lrg={image.lrg} />
       ))}
     </div>
     <LabelNormal fontSize={32} class="position-title mt80">
@@ -21,7 +21,7 @@ import { portfolio } from '../data/portfolio'
     </LabelNormal>
     <div class="wrapper flex-con mt30">
       {portfolio.portrait.map((image) => (
-        <ImageBoxThumbnail path={image.url} lrg={image.lrg} />
+        <ImageBoxThumbnail src={image.url} lrg={image.lrg} />
       ))}
     </div>
     <LabelNormal fontSize={32} class="position-title mt80">
@@ -29,7 +29,7 @@ import { portfolio } from '../data/portfolio'
     </LabelNormal>
     <div class="wrapper flex-con mt30">
       {portfolio.landscape.map((image) => (
-        <ImageBoxThumbnail path={image.url} lrg={image.lrg} />
+        <ImageBoxThumbnail src={image.url} lrg={image.lrg} />
       ))}
     </div>
   </TheDefaultView>

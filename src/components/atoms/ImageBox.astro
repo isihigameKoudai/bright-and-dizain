@@ -1,14 +1,25 @@
 ---
+import { Image } from 'astro:assets'
+import type { ImageMetadata } from 'astro'
+
 interface Props {
-  path?: string
+  src: ImageMetadata
   shadow?: boolean
   isSmall?: boolean
   class?: string
 }
-const { path = '', shadow = false, isSmall = false, class: className = '' } = Astro.props
+const { src, shadow = false, isSmall = false, class: className = '' } = Astro.props
+const widths = isSmall ? [320, 640] : [480, 960]
+const sizes = isSmall ? '320px' : '480px'
 ---
-<img
-  src={path}
+
+<Image
+  src={src}
+  format="webp"
+  widths={widths}
+  sizes={sizes}
   alt=""
+  loading="lazy"
+  decoding="async"
   class:list={['image-box', { 'is-shadow': shadow, small: isSmall }, className]}
 />
