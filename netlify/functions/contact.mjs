@@ -32,7 +32,8 @@ export default async function handler(req) {
     })
 
     if (!slackRes.ok) {
-      return json(502, { error: `Slack returned ${slackRes.status}` })
+      const body = await slackRes.text()
+      return json(502, { error: `Slack returned ${slackRes.status}: ${body}` })
     }
 
     return json(200, { ok: true })
