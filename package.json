@@ -16,7 +16,7 @@
     "format:check": "oxfmt --check"
   },
   "dependencies": {
-    "astro": "^5.7.0",
+    "astro": "^7.3.3",
     "sharp": "^0.34.5"
   },
   "devDependencies": {
